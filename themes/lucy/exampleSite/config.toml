@@ -1,0 +1,21 @@
+theme = "hugo-theme-tailwindcss-starter"
+languageCode = "en-us"
+baseurl = "http://example.com/"
+title = "Hugo Tailwindcss Starter"
+
+author = "Dirk Olbrich"
+copyright = "Copyright © 2019, Dirk Olbrich, all rights reserved."
+
+# Code higlighting settings
+pygmentsCodefences = true
+pygmentsStyle = "vs"
+
+[params]
+    name = "Hugo Tailwindcss Starter"
+    description = "A simple bootstraped theme for Hugo, build with Tailwindcss."
+
+    github_user = "dirkolbrich"
+    github_repo = "https://github.com/dirkolbrich/hugo-theme-tailwindcss-starter"
+    github_banner = true
+
+    favicon = "favicon.ico"

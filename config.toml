@@ -1,0 +1,4 @@
+baseURL = "https://goodfirstissue.dev/"
+languageCode = "en-us"
+title = "Good First Issue"
+theme = "lucy"

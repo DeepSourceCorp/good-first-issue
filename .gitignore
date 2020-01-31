@@ -1,0 +1,10 @@
+# Public dir
+public/
+resources/
+
+# Node modules
+node_modules/
+themes/lucy/node_modules/
+
+# Generated configs
+cdn_config.toml
