@@ -20,5 +20,9 @@ insert_final_newline = ignore
 [Makefile]
 indent_style = tab
 
+[*.py]
+indent_style = space
+indent_size = 4
+
 [*.md]
 trim_trailing_whitespace = false

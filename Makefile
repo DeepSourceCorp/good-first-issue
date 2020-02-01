@@ -1,5 +1,10 @@
 THEME_PATH = 'themes/lucy/'
 
+pre-build:
+	pip install --upgrade poetry && \
+	poetry config virtualenvs.create false && \
+	poetry install
+
 build:
 	cd $(THEME_PATH) && \
 	npm install && \
@@ -10,14 +15,9 @@ build:
 generate:
 	python populate.py
 
-pre-build:
-  curl https://pyenv.run | bash && \
-	eval "$(pyenv init -)" && \
-	pyenv install 3.8 && \
-	pip install --upgrade poetry && \
-	poetry config virtualenvs.create false && \
-	poetry install && \
-	python generate.py
+generate-prod:
+	make pre-build
+	make generate
+	make build
 
 .DEFAULT_GOAL := build
-

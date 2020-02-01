@@ -4,7 +4,6 @@ import logging
 import json
 from os import path
 import re
-from urllib.parse import urlparse
 
 from github3 import GitHub, exceptions
 import toml
@@ -99,10 +98,11 @@ if __name__ == "__main__":
         raise RuntimeError("No config data file found. Exiting.")
 
     repositories = []
-    with open(name := REPO_DATA_FILE, "r") as data_file:
-        data = toml.load(name)
+    with open(REPO_DATA_FILE, "r") as data_file:
+        data = toml.load(REPO_DATA_FILE)
         for repository_url in data["repositories"]:
-            if repo_dict := parse_github_url(repository_url):
+            repo_dict = parse_github_url(repository_url)
+            if repo_dict:
                 repositories.append(
                     get_repository_info(repo_dict["owner"], repo_dict["name"])
                 )
