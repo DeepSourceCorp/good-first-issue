@@ -1,4 +1,13 @@
 repositories = [
+  'github.com/tensorflow/tensorflow',
+  'github.com/einsteinpy/einsteinpy',
+  'github.com/gatsbyjs/gatsby',
+  'github.com/dask/dask-ml',
+  'github.com/dabl/dabl',
+  'github.com/encode/httpx',
+  'github.com/p4lang/behavioral-model',
+  'github.com/OpenTTD/OpenTTD',
+  'github.com/rstudio/keras',
   'github.com/sanketsaurav/s3tree',
   'github.com/sanketsaurav/django-octicons',
 ]
