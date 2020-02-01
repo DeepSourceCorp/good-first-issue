@@ -2,8 +2,7 @@ THEME_PATH = 'themes/lucy/'
 
 pre-build:
 	pip install --upgrade poetry && \
-	poetry config virtualenvs.create false && \
-	poetry install
+	poetry install --no-dev
 
 build:
 	cd $(THEME_PATH) && \
@@ -13,7 +12,7 @@ build:
 	hugo
 
 generate:
-	python populate.py
+	poetry run python populate.py
 
 generate-prod:
 	make pre-build
