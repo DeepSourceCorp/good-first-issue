@@ -1,6 +1,6 @@
 {
   "private": "true",
   "scripts": {
-    "build": "make build"
+    "build": "make pre-build && make build"
   }
 }

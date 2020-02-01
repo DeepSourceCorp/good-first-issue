@@ -1,0 +1,4 @@
+repositories = [
+  'github.com/sanketsaurav/s3tree',
+  'github.com/sanketsaurav/django-octicons',
+]

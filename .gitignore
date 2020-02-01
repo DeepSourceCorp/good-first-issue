@@ -8,3 +8,6 @@ themes/lucy/node_modules/
 
 # Generated configs
 cdn_config.toml
+
+# Generated data files
+data/generated.json

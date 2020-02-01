@@ -1,0 +1,20 @@
+[tool.poetry]
+name = 'good-first-issue'
+version = '0.1.0'
+description = 'https://goodfirstissue.dev'
+license = 'MIT'
+authors = [
+    'Sanket Saurav <sanket@deepsource.io>'
+]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+"github3.py" = "^1.3"
+toml = "^0.10.0"
+
+[tool.poetry.dev-dependencies]
+black = {version = "^18.3-alpha.0", allows-prereleases = true}
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"

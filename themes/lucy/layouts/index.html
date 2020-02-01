@@ -1,6 +1,25 @@
 {{ define "main" }}
-<article class="text-center text-gray-700">
-    <h1 class="font-serif font-thin text-5xl text-gray-500">{{ .Title }}</h1>
-    {{ .Content }}
-</article>
+<section class="container max-w-6xl mx-auto flex flex-col md:flex-row">
+  <section class="masthead font-sans pt-6 w-full md:w-1/3 border-r border-gray-400 px-6">
+    <div>
+      <h3 class="text-xl font-bold pb-1 text-green-500 font-serif italic">About</h3>
+      <p>Good First Issue curates easy pickings from popular open-source projects, and helps you make your first contribution to open-source.</p>
+    </div>
+    <div class="pt-6">
+      <h3 class="text-xl font-bold pb-1 text-green-500 font-serif italic">Add a project</h3>
+      <p>Follow the guide <a href="" class="underline hover:text-green-600">here</a>.</p>
+    </div>
+  </section>
+  <section class="my-6 px-6 w-full md:w-2/3">
+    {{ range $.Site.Data.generated}} {{ partial "repo-box.html" . }} {{ end }}
+  </section>
+</section>
+<script>
+function toggleIssues(id) {
+  var elm = document.querySelector('#' + id + ' > ol')
+  elm.classList.toggle('hidden')
+}
+</script>
+<script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script>
+<script type="text/javascript">window.dojoRequire(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us7.list-manage.com","uuid":"d6efa53a6b024c63837f2816e","lid":"2ca4b2aca5","uniqueMethods":true}) })</script>
 {{ end }}
