@@ -11,6 +11,9 @@ generate:
 	python populate.py
 
 pre-build:
+  curl https://pyenv.run | bash && \
+	eval "$(pyenv init -)" && \
+	pyenv install 3.8 && \
 	pip install --upgrade poetry && \
 	poetry config virtualenvs.create false && \
 	poetry install && \
