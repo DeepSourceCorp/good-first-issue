@@ -1,0 +1,16 @@
+name: CI
+
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v1
+
+    - name: Install dependencies
+      run: make pre-build
+
+    - name: Run tests for data sanity
+      run: make test

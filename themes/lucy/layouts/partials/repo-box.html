@@ -1,15 +1,19 @@
 <div
   class="select-none border border-gray-400 bg-white w-full rounded mb-4 cursor-pointer hover:shadow-md"
   id="repo-{{ .id }}"
-  onclick="toggleIssues('repo-{{ .id }}')"
 >
-  <div class="px-5 py-3">
-    <a
+  <div class="px-5 py-3" onclick="toggleIssues('repo-{{ .id }}')">
+    <div class="flex flex-row">
+      <a
+      title="Open {{ .owner }}/{{ .name }} on GitHub"
       href="{{ .url }}"
       target="_blank"
       class="text-xl font-semibold hover:text-green-600"
-      >{{ .owner }} / {{ .name }}</a
-    >
+      >{{ .owner }} / {{ .name }}</a>
+      <span class="flex-1"></span>
+      {{ $count := len .issues }}
+      <span class="hidden md:inline text-sm border px-3 py-1 ml-2 rounded-full border-green-500 text-green-500 font-semibold">{{ $count }} issue{{if gt $count 1}}s{{end}}</span>
+    </div>
     <div class="flex-row flex text-sm py-1 font-mono">
       <div class="mr-4">
         <span class="text-green-600">lang: </span>{{ .language|lower }}
@@ -22,12 +26,11 @@
       </div>
     </div>
   </div>
-  <ol class="px-5 py-3 text-base leading-relaxed hidden border-t border-gray-400 bg-gray-100">
+  <ol class="px-5 py-3 text-base leading-loose hidden border-t border-gray-400 bg-gray-100">
     {{ range .issues }}
     <li>
-      <a href="{{ .url }}" target="_blank" class="hover:text-green-500"
-        ><span>#{{ .number }}</span> {{ .title }}</a
-      >
+      <span class="text-gray-600">#{{ .number }}</span>
+      <a title="Open issue on GitHub" href="{{ .url }}" target="_blank" class="font-semibold hover:text-green-500">{{ .title }}</a>
     </li>
     {{ end }}
   </ol>

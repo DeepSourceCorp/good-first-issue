@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   {{- partial "head.html" . -}}
-  <body class="flex flex-col min-h-screen bg-yellow-100">
+  <body class="flex flex-col min-h-screen bg-yellow-100 antialiased">
     {{- partial "header.html" . -}}
     <main class="flex-1 flex">
     {{- block "main" . }}{{- end }}

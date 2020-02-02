@@ -19,4 +19,7 @@ generate-prod:
 	make generate
 	make build
 
+test:
+	poetry run python test_data.py
+
 .DEFAULT_GOAL := build

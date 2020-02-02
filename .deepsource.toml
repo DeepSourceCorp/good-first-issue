@@ -1,0 +1,9 @@
+version = 1
+
+test_patterns = [
+  'test_*.py',
+]
+
+[[ analyzers ]]
+  name = 'python'
+  enabled = true
