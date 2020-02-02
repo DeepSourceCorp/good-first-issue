@@ -24,8 +24,6 @@ LOGGER = logging.getLogger(__name__)
 class RepoNotFoundException(Exception):
     """Exception class for repo not found."""
 
-    pass
-
 
 def parse_github_url(url):
     """
@@ -97,16 +95,16 @@ if __name__ == "__main__":
     if not path.exists(REPO_DATA_FILE):
         raise RuntimeError("No config data file found. Exiting.")
 
-    repositories = []
+    REPOSITORIES = []
     with open(REPO_DATA_FILE, "r") as data_file:
-        data = toml.load(REPO_DATA_FILE)
-        for repository_url in data["repositories"]:
+        DATA = toml.load(REPO_DATA_FILE)
+        for repository_url in DATA["repositories"]:
             repo_dict = parse_github_url(repository_url)
             if repo_dict:
-                repositories.append(
+                REPOSITORIES.append(
                     get_repository_info(repo_dict["owner"], repo_dict["name"])
                 )
 
     # write to generated JSON file
     with open(REPO_GENERATED_DATA_FILE, 'w') as file_desc:
-        json.dump(repositories, file_desc)
+        json.dump(REPOSITORIES, file_desc)

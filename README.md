@@ -3,8 +3,10 @@
     <img src="https://goodfirstissue.dev/images/gfi-logo-dark.svg">
   </a>
 </p>
-
 <hr>
+
+[![DeepSource](https://static.deepsource.io/deepsource-badge-light-mini.svg)](https://deepsource.io/gh/deepsourcelabs/good-first-issue/?ref=repository-badge)
+![CI](https://github.com/deepsourcelabs/good-first-issue/workflows/CI/badge.svg)
 
 Welcome! 👋🏼
 
@@ -23,3 +25,4 @@ Follow these simple steps:
 * Add your repository's path in [data/repositories.toml](data/repositories.toml).
 
 * Create a new pull-request. Once the pull-request is merged, the changes will be live on [goodfirstissue.dev](https://goodfirstissue.dev/).
+
