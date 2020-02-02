@@ -1,10 +1,12 @@
 repositories = [
   'github.com/elastic/beats',
   'github.com/tensorflow/tensorflow',
+  'github.com/kubernetes/kubernetes',
+  'github.com/pandas-dev/pandas',
   'github.com/spotify/scio',
   'github.com/ethereum/go-ethereum',
   'github.com/einsteinpy/einsteinpy',
-  'github.com/sorbet/sorbet/',
+  'github.com/sorbet/sorbet',
   'github.com/elastic/kibana',
   'github.com/gatsbyjs/gatsby',
   'github.com/dask/dask-ml',
