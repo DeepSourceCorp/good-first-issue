@@ -1,0 +1,14 @@
+name: Cron
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger deploy on Zeit
+        uses: joelwmale/webhook-action@master
+        env:
+          WEBHOOK_URL: ${{ secrets.ZEIT_DEPLOY_HOOK_URL }}
