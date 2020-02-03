@@ -14,6 +14,9 @@ build:
 generate:
 	poetry run python populate.py
 
+index:
+	poetry run python index.py
+
 generate-prod:
 	make pre-build
 	make generate

@@ -11,6 +11,7 @@ authors = [
 python = "^3.6"
 "github3.py" = "^1.3"
 toml = "^0.10.0"
+algoliasearch = "^2.1.0"
 
 [tool.poetry.dev-dependencies]
 black = {version = "^18.3-alpha.0", allows-prereleases = true}

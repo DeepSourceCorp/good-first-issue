@@ -61,6 +61,7 @@ def get_repository_info(owner, name):
         info["stars"] = repository.stargazers_count
         info["last_modified"] = repository.last_modified
         info["id"] = str(repository.id)
+        info["objectID"] = str(repository.id)  # for indexing on algolia
 
         # get the latest issues with the tag
         issues = []
@@ -76,7 +77,6 @@ def get_repository_info(owner, name):
                     "title": issue.title,
                     "url": issue.html_url,
                     "number": issue.number,
-                    "body": issue.body,
                     "created_at": issue.created_at.isoformat()
                 }
             )

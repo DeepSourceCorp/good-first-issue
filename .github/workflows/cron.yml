@@ -12,3 +12,4 @@ jobs:
         uses: joelwmale/webhook-action@master
         env:
           WEBHOOK_URL: ${{ secrets.ZEIT_DEPLOY_HOOK_URL }}
+          data: ""
