@@ -141,6 +141,14 @@ cryptography = ">=1.5"
 
 [[package]]
 category = "main"
+description = "Convert large numbers into readable numbers for humans."
+name = "numerize"
+optional = false
+python-versions = "*"
+version = "0.12"
+
+[[package]]
+category = "main"
 description = "C parser in Python"
 name = "pycparser"
 optional = false
@@ -214,7 +222,7 @@ secure = ["pyOpenSSL (>=0.14)", "cryptography (>=1.3.4)", "idna (>=2.0.0)", "cer
 socks = ["PySocks (>=1.5.6,<1.5.7 || >1.5.7,<2.0)"]
 
 [metadata]
-content-hash = "3a6b0f948ce05ba3debc69eb314ed391014c42c5cbba8dfcf98c214dbbbab326"
+content-hash = "23dea06252701d9d9a8ae348ce3d52fab59faeaf78b7e107e8ef82c18a773fba"
 python-versions = "^3.6"
 
 [metadata.files]
@@ -315,6 +323,9 @@ idna = [
 jwcrypto = [
     {file = "jwcrypto-0.6.0-py2.py3-none-any.whl", hash = "sha256:e6c517d8998956e531f0a1c158b2f324c29a532a9c4b677bc30b3be14d60ad4d"},
     {file = "jwcrypto-0.6.0.tar.gz", hash = "sha256:a87ac0922d09d9a65011f76d99849f1fbad3d95439c7452cebf4ab0871c2b665"},
+]
+numerize = [
+    {file = "numerize-0.12.tar.gz", hash = "sha256:5548fe72adceb2c7964998179697d80117bb117f57cd02f872cf5db40d615c04"},
 ]
 pycparser = [
     {file = "pycparser-2.19.tar.gz", hash = "sha256:a988718abfad80b6b157acce7bf130a30876d27603738ac39f140993246b25b3"},

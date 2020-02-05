@@ -1,12 +1,15 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-import logging
 import json
-from os import path
+import logging
+import random
 import re
+from os import path
+
+import toml
 
 from github3 import GitHub, exceptions
-import toml
+from numerize import numerize
 
 REPO_DATA_FILE = "data/repositories.toml"
 REPO_GENERATED_DATA_FILE = "data/generated.json"
@@ -59,6 +62,7 @@ def get_repository_info(owner, name):
         info["language"] = repository.language
         info["url"] = repository.html_url
         info["stars"] = repository.stargazers_count
+        info["stars_display"] = numerize.numerize(repository.stargazers_count)
         info["last_modified"] = repository.last_modified
         info["id"] = str(repository.id)
         info["objectID"] = str(repository.id)  # for indexing on algolia
@@ -104,6 +108,9 @@ if __name__ == "__main__":
                 REPOSITORIES.append(
                     get_repository_info(repo_dict["owner"], repo_dict["name"])
                 )
+
+    # shuffle the repository order
+    random.shuffle(REPOSITORIES)
 
     # write to generated JSON file
     with open(REPO_GENERATED_DATA_FILE, 'w') as file_desc:
