@@ -18,5 +18,13 @@ repositories = [
   'github.com/OpenTTD/OpenTTD',
   'github.com/rstudio/keras',
   'github.com/sanketsaurav/s3tree',
-  'github.com/sanketsaurav/django-octicons'
+  'github.com/sanketsaurav/django-octicons',
+  'github.com/okteto/okteto',
+  'github.com/scrapy/scrapy',
+  'github.com/jupyter/notebook',
+  'github.com/zulip/zulip',
+  'github.com/ezaquarii/vpn-at-home',
+  'github.com/cockroachdb/cockroach',
+  'github.com/nushell/nushell',
+  'github.com/rust-lang/rustfmt'
 ]
