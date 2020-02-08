@@ -28,9 +28,9 @@
   </div>
   <ol class="px-5 py-3 text-base leading-loose hidden border-t border-gray-400 bg-gray-100">
     {{ range .issues }}
-    <li>
-      <span class="text-gray-600">#{{ .number }}</span>
-      <a title="Open issue on GitHub" href="{{ .url }}" target="_blank" class="font-semibold hover:text-green-500">{{ .title }}</a>
+    <li class="flex flex-row items-start justify-start py-1">
+      <span class="text-gray-600 text-right px-2 leading-snug" style="min-width: 70px;">#{{ .number }}</span>
+      <a title="Open issue on GitHub" href="{{ .url }}" target="_blank" class="leading-snug font-semibold hover:text-green-500">{{ .title }}</a>
     </li>
     {{ end }}
   </ol>
