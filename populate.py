@@ -56,37 +56,39 @@ def get_repository_info(owner, name):
     try:
         repository = client.repository(owner, name)
 
-        # store the repo info
-        info["name"] = name
-        info["owner"] = owner
-        info["language"] = repository.language
-        info["url"] = repository.html_url
-        info["stars"] = repository.stargazers_count
-        info["stars_display"] = numerize.numerize(repository.stargazers_count)
-        info["last_modified"] = repository.last_modified
-        info["id"] = str(repository.id)
-        info["objectID"] = str(repository.id)  # for indexing on algolia
+        # check if repo has issues
+        if repository.has_issues:
+            # store the repo info
+            info["name"] = name
+            info["owner"] = owner
+            info["language"] = repository.language
+            info["url"] = repository.html_url
+            info["stars"] = repository.stargazers_count
+            info["stars_display"] = numerize.numerize(repository.stargazers_count)
+            info["last_modified"] = repository.last_modified
+            info["id"] = str(repository.id)
+            info["objectID"] = str(repository.id)  # for indexing on algolia
 
-        # get the latest issues with the tag
-        issues = []
-        for issue in repository.issues(
-            labels=ISSUE_LABELS,
-            state=ISSUE_STATE,
-            number=ISSUE_LIMIT,
-            sort=ISSUE_SORT,
-            direction=ISSUE_SORT_DIRECTION,
-        ):
-            issues.append(
-                {
-                    "title": issue.title,
-                    "url": issue.html_url,
-                    "number": issue.number,
-                    "created_at": issue.created_at.isoformat()
-                }
-            )
+            # get the latest issues with the tag
+            issues = []
+            for issue in repository.issues(
+                labels=ISSUE_LABELS,
+                state=ISSUE_STATE,
+                number=ISSUE_LIMIT,
+                sort=ISSUE_SORT,
+                direction=ISSUE_SORT_DIRECTION,
+            ):
+                issues.append(
+                    {
+                        "title": issue.title,
+                        "url": issue.html_url,
+                        "number": issue.number,
+                        "created_at": issue.created_at.isoformat()
+                    }
+                )
 
-        info["issues"] = issues
-        return info
+            info["issues"] = issues
+            return info
     except exceptions.NotFoundError:
         raise RepoNotFoundException()
 
