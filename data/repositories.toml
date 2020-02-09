@@ -25,4 +25,5 @@ repositories = [
   'github.com/cockroachdb/cockroach',
   'github.com/nushell/nushell',
   'github.com/rust-lang/rustfmt'
+  'github.com/square/retrofit'
 ]
