@@ -25,6 +25,7 @@ repositories = [
   'github.com/cockroachdb/cockroach',
   'github.com/nushell/nushell',
   'github.com/rust-lang/rustfmt',
+  'github.com/mailchain/mailchain',
   'github.com/Tinder/Scarlet',
   'github.com/square/retrofit',
   'github.com/crossplaneio/crossplane'
