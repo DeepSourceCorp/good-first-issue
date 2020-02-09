@@ -28,5 +28,6 @@ repositories = [
   'github.com/mailchain/mailchain',
   'github.com/Tinder/Scarlet',
   'github.com/square/retrofit',
-  'github.com/crossplaneio/crossplane'
+  'github.com/crossplaneio/crossplane',
+  'github.com/kubernetes/website'
 ]
