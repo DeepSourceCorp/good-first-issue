@@ -27,6 +27,9 @@ repositories = [
   'github.com/rust-lang/rustfmt',
   'github.com/ardakazanci/Udacity_Popular_Movies_Stage_1',
   'github.com/Tinder/Scarlet',
-  'github.com/square/retrofit'
-
+  'github.com/square/retrofit',
+  'github.com/mailchain/mailchain',
+  'github.com/square/retrofit',
+  'github.com/crossplaneio/crossplane',
+  'github.com/kubernetes/website'
 ]
