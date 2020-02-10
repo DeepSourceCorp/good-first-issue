@@ -56,8 +56,15 @@ def get_repository_info(owner, name):
     try:
         repository = client.repository(owner, name)
 
-        # check if repo has issues
-        if repository.has_issues:
+        good_first_issues = repository.issues(
+                labels=ISSUE_LABELS,
+                state=ISSUE_STATE,
+                number=ISSUE_LIMIT,
+                sort=ISSUE_SORT,
+                direction=ISSUE_SORT_DIRECTION,
+            )
+        # check if repo has at least one good first issue
+        if len(good_first_issues) > 0:
             # store the repo info
             info["name"] = name
             info["owner"] = owner
@@ -71,13 +78,7 @@ def get_repository_info(owner, name):
 
             # get the latest issues with the tag
             issues = []
-            for issue in repository.issues(
-                labels=ISSUE_LABELS,
-                state=ISSUE_STATE,
-                number=ISSUE_LIMIT,
-                sort=ISSUE_SORT,
-                direction=ISSUE_SORT_DIRECTION,
-            ):
+            for issue in good_first_issues:
                 issues.append(
                     {
                         "title": issue.title,
