@@ -91,6 +91,7 @@ def get_repository_info(owner, name):
 
             info["issues"] = issues
             return info
+        return None
     except exceptions.NotFoundError:
         raise RepoNotFoundException()
 
@@ -109,9 +110,9 @@ if __name__ == "__main__":
         for repository_url in DATA["repositories"]:
             repo_dict = parse_github_url(repository_url)
             if repo_dict:
-                REPOSITORIES.append(
-                    get_repository_info(repo_dict["owner"], repo_dict["name"])
-                )
+                repo_details = get_repository_info(repo_dict["owner"], repo_dict["name"])
+                if repo_details:
+                    REPOSITORIES.append(repo_details)
 
     # shuffle the repository order
     random.shuffle(REPOSITORIES)
