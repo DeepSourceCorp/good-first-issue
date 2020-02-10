@@ -64,7 +64,8 @@ def get_repository_info(owner, name):
                 direction=ISSUE_SORT_DIRECTION,
             )
         # check if repo has at least one good first issue
-        if len(good_first_issues) > 0:
+        if len(list(good_first_issues)) > 0:
+
             # store the repo info
             info["name"] = name
             info["owner"] = owner
