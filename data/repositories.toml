@@ -29,5 +29,5 @@ repositories = [
   'github.com/square/retrofit',
   'github.com/crossplaneio/crossplane',
   'github.com/kubernetes/website',
-  'github.com/ardakazanci/Udacity_Popular_Movies_Stage_1'
+  'github.com/square/okhttp'
 ]
