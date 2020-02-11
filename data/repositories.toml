@@ -29,5 +29,6 @@ repositories = [
   'github.com/square/retrofit',
   'github.com/crossplaneio/crossplane',
   'github.com/kubernetes/website',
-  'github.com/darrenburns/ward'
+  'github.com/darrenburns/ward',
+  'github.com/prysmaticlabs/prysm'
 ]
