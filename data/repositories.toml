@@ -30,5 +30,8 @@ repositories = [
   'github.com/crossplaneio/crossplane',
   'github.com/kubernetes/website',
   'github.com/darrenburns/ward',
-  'github.com/WordPress/gutenberg',
+  'github.com/prysmaticlabs/prysm',
+  'github.com/arxiv-vanity/engrafo',
+  'github.com/yanganto/s3rs/',
+  'github.com/WordPress/gutenberg'
 ]

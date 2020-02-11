@@ -1,9 +1,12 @@
 version = 1
 
 test_patterns = [
-  'test_*.py',
+  'gfi/test_*.py',
 ]
 
 [[ analyzers ]]
   name = 'python'
   enabled = true
+
+  [analyzers.meta]
+  max_line_length = 100

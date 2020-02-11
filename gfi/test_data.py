@@ -6,6 +6,7 @@ import toml
 
 DATA_FILE_PATH = 'data/repositories.toml'
 
+
 class TestDataSanity(unittest.TestCase):
     """Test for sanity of the data file."""
 
@@ -20,6 +21,7 @@ class TestDataSanity(unittest.TestCase):
         with open(DATA_FILE_PATH, 'r') as file_desc:
             data = toml.load(file_desc)
         assert 'repositories' in data
+
 
 if __name__ == '__main__':
     unittest.main()
