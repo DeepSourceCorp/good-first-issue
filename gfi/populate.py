@@ -1,15 +1,17 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import json
-import logging
+import logging.config
 import random
 import re
-from os import path
+from os import getenv, path
 
 import toml
 
-from github3 import GitHub, exceptions
+from github3 import login, exceptions
 from numerize import numerize
+
+from config import LOGGING_CONFIG
 
 REPO_DATA_FILE = "data/repositories.toml"
 REPO_GENERATED_DATA_FILE = "data/generated.json"
@@ -21,6 +23,8 @@ ISSUE_STATE = "open"
 ISSUE_SORT = "created"
 ISSUE_SORT_DIRECTION = "desc"
 ISSUE_LIMIT = 10
+
+logging.config.dictConfig(LOGGING_CONFIG)
 LOGGER = logging.getLogger(__name__)
 
 
@@ -47,8 +51,12 @@ def get_repository_info(owner, name):
 
     LOGGER.info("Getting info for %s/%s", owner, name)
 
-    # create an anonymous GitHub client
-    client = GitHub()
+    access_token = getenv('GITHUB_ACCESS_TOKEN')
+    if not access_token:
+        raise AssertionError('Access token not present in the env variable `GITHUB_ACCESS_TOKEN`')
+
+    # create a logged in GitHub client
+    client = login(token=access_token)
 
     info = {}
 
@@ -56,16 +64,16 @@ def get_repository_info(owner, name):
     try:
         repository = client.repository(owner, name)
 
-        good_first_issues = repository.issues(
+        good_first_issues = list(repository.issues(
                 labels=ISSUE_LABELS,
                 state=ISSUE_STATE,
                 number=ISSUE_LIMIT,
                 sort=ISSUE_SORT,
                 direction=ISSUE_SORT_DIRECTION,
-            )
+        ))
+        LOGGER.info('\t found %d good first issues', len(good_first_issues))
         # check if repo has at least one good first issue
-        if len(list(good_first_issues)) > 0:
-
+        if good_first_issues:
             # store the repo info
             info["name"] = name
             info["owner"] = owner
@@ -91,6 +99,7 @@ def get_repository_info(owner, name):
 
             info["issues"] = issues
             return info
+        LOGGER.info('\t skipping the repo')
         return None
     except exceptions.NotFoundError:
         raise RepoNotFoundException()
@@ -107,6 +116,9 @@ if __name__ == "__main__":
     REPOSITORIES = []
     with open(REPO_DATA_FILE, "r") as data_file:
         DATA = toml.load(REPO_DATA_FILE)
+
+        LOGGER.info("Found %d repository entries in %s", len(DATA["repositories"]), REPO_DATA_FILE)
+
         for repository_url in DATA["repositories"]:
             repo_dict = parse_github_url(repository_url)
             if repo_dict:
@@ -120,3 +132,4 @@ if __name__ == "__main__":
     # write to generated JSON file
     with open(REPO_GENERATED_DATA_FILE, 'w') as file_desc:
         json.dump(REPOSITORIES, file_desc)
+    LOGGER.info("Wrote data for %d repos to %s", len(REPOSITORIES), REPO_GENERATED_DATA_FILE)
