@@ -32,5 +32,6 @@ repositories = [
   'github.com/darrenburns/ward',
   'github.com/prysmaticlabs/prysm',
   'github.com/arxiv-vanity/engrafo',
-  'github.com/yanganto/s3rs/'
+  'github.com/yanganto/s3rs/',
+  'github.com/pypa/pip'
 ]
