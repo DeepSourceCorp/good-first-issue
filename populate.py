@@ -56,37 +56,42 @@ def get_repository_info(owner, name):
     try:
         repository = client.repository(owner, name)
 
-        # store the repo info
-        info["name"] = name
-        info["owner"] = owner
-        info["language"] = repository.language
-        info["url"] = repository.html_url
-        info["stars"] = repository.stargazers_count
-        info["stars_display"] = numerize.numerize(repository.stargazers_count)
-        info["last_modified"] = repository.last_modified
-        info["id"] = str(repository.id)
-        info["objectID"] = str(repository.id)  # for indexing on algolia
-
-        # get the latest issues with the tag
-        issues = []
-        for issue in repository.issues(
-            labels=ISSUE_LABELS,
-            state=ISSUE_STATE,
-            number=ISSUE_LIMIT,
-            sort=ISSUE_SORT,
-            direction=ISSUE_SORT_DIRECTION,
-        ):
-            issues.append(
-                {
-                    "title": issue.title,
-                    "url": issue.html_url,
-                    "number": issue.number,
-                    "created_at": issue.created_at.isoformat()
-                }
+        good_first_issues = repository.issues(
+                labels=ISSUE_LABELS,
+                state=ISSUE_STATE,
+                number=ISSUE_LIMIT,
+                sort=ISSUE_SORT,
+                direction=ISSUE_SORT_DIRECTION,
             )
+        # check if repo has at least one good first issue
+        if len(list(good_first_issues)) > 0:
 
-        info["issues"] = issues
-        return info
+            # store the repo info
+            info["name"] = name
+            info["owner"] = owner
+            info["language"] = repository.language
+            info["url"] = repository.html_url
+            info["stars"] = repository.stargazers_count
+            info["stars_display"] = numerize.numerize(repository.stargazers_count)
+            info["last_modified"] = repository.last_modified
+            info["id"] = str(repository.id)
+            info["objectID"] = str(repository.id)  # for indexing on algolia
+
+            # get the latest issues with the tag
+            issues = []
+            for issue in good_first_issues:
+                issues.append(
+                    {
+                        "title": issue.title,
+                        "url": issue.html_url,
+                        "number": issue.number,
+                        "created_at": issue.created_at.isoformat()
+                    }
+                )
+
+            info["issues"] = issues
+            return info
+        return None
     except exceptions.NotFoundError:
         raise RepoNotFoundException()
 
@@ -105,9 +110,9 @@ if __name__ == "__main__":
         for repository_url in DATA["repositories"]:
             repo_dict = parse_github_url(repository_url)
             if repo_dict:
-                REPOSITORIES.append(
-                    get_repository_info(repo_dict["owner"], repo_dict["name"])
-                )
+                repo_details = get_repository_info(repo_dict["owner"], repo_dict["name"])
+                if repo_details:
+                    REPOSITORIES.append(repo_details)
 
     # shuffle the repository order
     random.shuffle(REPOSITORIES)
