@@ -8,10 +8,9 @@ from os import getenv, path
 
 import toml
 
-from github3 import login, exceptions
-from numerize import numerize
-
 from config import LOGGING_CONFIG
+from github3 import exceptions, login
+from numerize import numerize
 
 REPO_DATA_FILE = "data/repositories.toml"
 REPO_GENERATED_DATA_FILE = "data/generated.json"
