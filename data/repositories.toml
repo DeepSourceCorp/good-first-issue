@@ -33,5 +33,6 @@ repositories = [
   'github.com/prysmaticlabs/prysm',
   'github.com/arxiv-vanity/engrafo',
   'github.com/yanganto/s3rs/',
+  'github.com/WordPress/gutenberg',
   'github.com/pypa/pip'
 ]
