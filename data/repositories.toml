@@ -36,6 +36,5 @@ repositories = [
   'github.com/WordPress/gutenberg',
   'github.com/pypa/pip',
   'github.com/Microsoft/vscode',
-  'github.com/Microsoft/vscode',
   'github.com/artalar/reatom'
 ]
