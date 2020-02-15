@@ -2,6 +2,7 @@ repositories = [
   'github.com/elastic/beats',
   'github.com/tensorflow/tensorflow',
   'github.com/kubernetes/kubernetes',
+  'github.com/kubernetes/website',
   'github.com/pandas-dev/pandas',
   'github.com/intel/dffml',
   'github.com/spotify/scio',
