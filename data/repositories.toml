@@ -36,5 +36,6 @@ repositories = [
   'github.com/WordPress/gutenberg',
   'github.com/pypa/pip',
   'github.com/Microsoft/vscode',
-  'github.com/artalar/reatom'
+  'github.com/artalar/reatom',
+  'github.com/mattermost/mattermost-server'
 ]
