@@ -37,5 +37,7 @@ repositories = [
   'github.com/pypa/pip',
   'github.com/Microsoft/vscode',
   'github.com/artalar/reatom',
-  'github.com/mattermost/mattermost-server'
+  'github.com/mattermost/mattermost-server',
+  'github.com/julialang/julia',
+  'github.com/sympy/sympy'
 ]
