@@ -4,12 +4,14 @@ import json
 import logging
 import random
 import re
-from os import path
+import os
 
 import toml
 
 from github3 import GitHub, exceptions
 from numerize import numerize
+from twython import Twython
+from string import Template
 
 REPO_DATA_FILE = "data/repositories.toml"
 REPO_GENERATED_DATA_FILE = "data/generated.json"
@@ -21,6 +23,11 @@ ISSUE_STATE = "open"
 ISSUE_SORT = "created"
 ISSUE_SORT_DIRECTION = "desc"
 ISSUE_LIMIT = 10
+APP_KEY = os.getenv('TWITTER_APP_KEY')
+APP_SECRET = os.getenv('TWITTER_APP_SECRET')
+OAUTH_TOKEN = os.getenv('TWITTER_OAUTH_TOKEN')
+OAUTH_TOKEN_SECRET = os.getenv('TWITTER_OAUTH_TOKEN_SECRET')
+TWEET_TEMPLATE = Template("Hey! Check this new good-first-dev issue by $owner $here")
 LOGGER = logging.getLogger(__name__)
 
 
@@ -101,10 +108,11 @@ if __name__ == "__main__":
     # parse the repositories data file and get the list of repos
     # for generating pages for.
 
-    if not path.exists(REPO_DATA_FILE):
+    if not os.path.exists(REPO_DATA_FILE):
         raise RuntimeError("No config data file found. Exiting.")
 
     REPOSITORIES = []
+    twitter = Twython(APP_KEY, APP_SECRET, OAUTH_TOKEN, OAUTH_TOKEN_SECRET)
     with open(REPO_DATA_FILE, "r") as data_file:
         DATA = toml.load(REPO_DATA_FILE)
         for repository_url in DATA["repositories"]:
@@ -113,6 +121,8 @@ if __name__ == "__main__":
                 repo_details = get_repository_info(repo_dict["owner"], repo_dict["name"])
                 if repo_details:
                     REPOSITORIES.append(repo_details)
+                    tweet_string = TWEET_TEMPLATE.substitute(owner = repo_dict["owner"], url = repo_dict["url"])
+                    twitter.update_status(status=tweet_string)
 
     # shuffle the repository order
     random.shuffle(REPOSITORIES)
