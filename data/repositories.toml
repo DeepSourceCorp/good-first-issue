@@ -25,6 +25,19 @@ repositories = [
   'github.com/cockroachdb/cockroach',
   'github.com/nushell/nushell',
   'github.com/rust-lang/rustfmt',
-  'github.com/Tinder/Scarlet',
-  'github.com/square/retrofit'
+  'github.com/mailchain/mailchain',
+  'github.com/square/retrofit',
+  'github.com/crossplaneio/crossplane',
+  'github.com/kubernetes/website',
+  'github.com/darrenburns/ward',
+  'github.com/prysmaticlabs/prysm',
+  'github.com/arxiv-vanity/engrafo',
+  'github.com/yanganto/s3rs/',
+  'github.com/WordPress/gutenberg',
+  'github.com/pypa/pip',
+  'github.com/Microsoft/vscode',
+  'github.com/artalar/reatom',
+  'github.com/mattermost/mattermost-server',
+  'github.com/julialang/julia',
+  'github.com/sympy/sympy'
 ]

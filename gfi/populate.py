@@ -1,17 +1,16 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import json
-import logging
+import logging.config
 import random
 import re
-import os
+from os import getenv, path
 
 import toml
 
-from github3 import GitHub, exceptions
+from config import LOGGING_CONFIG
+from github3 import exceptions, login
 from numerize import numerize
-from twython import Twython
-from string import Template
 
 REPO_DATA_FILE = "data/repositories.toml"
 REPO_GENERATED_DATA_FILE = "data/generated.json"
@@ -23,11 +22,8 @@ ISSUE_STATE = "open"
 ISSUE_SORT = "created"
 ISSUE_SORT_DIRECTION = "desc"
 ISSUE_LIMIT = 10
-APP_KEY = os.getenv('TWITTER_APP_KEY')
-APP_SECRET = os.getenv('TWITTER_APP_SECRET')
-OAUTH_TOKEN = os.getenv('TWITTER_OAUTH_TOKEN')
-OAUTH_TOKEN_SECRET = os.getenv('TWITTER_OAUTH_TOKEN_SECRET')
-TWEET_TEMPLATE = Template("Hey! Check this new good-first-dev issue by $owner $here")
+
+logging.config.dictConfig(LOGGING_CONFIG)
 LOGGER = logging.getLogger(__name__)
 
 
@@ -54,8 +50,12 @@ def get_repository_info(owner, name):
 
     LOGGER.info("Getting info for %s/%s", owner, name)
 
-    # create an anonymous GitHub client
-    client = GitHub()
+    access_token = getenv('GITHUB_ACCESS_TOKEN')
+    if not access_token:
+        raise AssertionError('Access token not present in the env variable `GITHUB_ACCESS_TOKEN`')
+
+    # create a logged in GitHub client
+    client = login(token=access_token)
 
     info = {}
 
@@ -63,16 +63,16 @@ def get_repository_info(owner, name):
     try:
         repository = client.repository(owner, name)
 
-        good_first_issues = repository.issues(
+        good_first_issues = list(repository.issues(
                 labels=ISSUE_LABELS,
                 state=ISSUE_STATE,
                 number=ISSUE_LIMIT,
                 sort=ISSUE_SORT,
                 direction=ISSUE_SORT_DIRECTION,
-            )
+        ))
+        LOGGER.info('\t found %d good first issues', len(good_first_issues))
         # check if repo has at least one good first issue
-        if len(list(good_first_issues)) > 0:
-
+        if good_first_issues:
             # store the repo info
             info["name"] = name
             info["owner"] = owner
@@ -98,6 +98,7 @@ def get_repository_info(owner, name):
 
             info["issues"] = issues
             return info
+        LOGGER.info('\t skipping the repo')
         return None
     except exceptions.NotFoundError:
         raise RepoNotFoundException()
@@ -108,21 +109,21 @@ if __name__ == "__main__":
     # parse the repositories data file and get the list of repos
     # for generating pages for.
 
-    if not os.path.exists(REPO_DATA_FILE):
+    if not path.exists(REPO_DATA_FILE):
         raise RuntimeError("No config data file found. Exiting.")
 
     REPOSITORIES = []
-    twitter = Twython(APP_KEY, APP_SECRET, OAUTH_TOKEN, OAUTH_TOKEN_SECRET)
     with open(REPO_DATA_FILE, "r") as data_file:
         DATA = toml.load(REPO_DATA_FILE)
+
+        LOGGER.info("Found %d repository entries in %s", len(DATA["repositories"]), REPO_DATA_FILE)
+
         for repository_url in DATA["repositories"]:
             repo_dict = parse_github_url(repository_url)
             if repo_dict:
                 repo_details = get_repository_info(repo_dict["owner"], repo_dict["name"])
                 if repo_details:
                     REPOSITORIES.append(repo_details)
-                    tweet_string = TWEET_TEMPLATE.substitute(owner = repo_dict["owner"], url = repo_dict["url"])
-                    twitter.update_status(status=tweet_string)
 
     # shuffle the repository order
     random.shuffle(REPOSITORIES)
@@ -130,3 +131,4 @@ if __name__ == "__main__":
     # write to generated JSON file
     with open(REPO_GENERATED_DATA_FILE, 'w') as file_desc:
         json.dump(REPOSITORIES, file_desc)
+    LOGGER.info("Wrote data for %d repos to %s", len(REPOSITORIES), REPO_GENERATED_DATA_FILE)

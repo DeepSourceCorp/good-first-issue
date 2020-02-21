@@ -12,10 +12,10 @@ build:
 	hugo
 
 generate:
-	poetry run python populate.py
+	poetry run python gfi/populate.py
 
 index:
-	poetry run python index.py
+	poetry run python gfi/index.py
 
 generate-prod:
 	make pre-build
@@ -23,6 +23,6 @@ generate-prod:
 	make build
 
 test:
-	poetry run python test_data.py
+	poetry run python gfi/test_data.py
 
 .DEFAULT_GOAL := build
