@@ -39,5 +39,7 @@ repositories = [
   'github.com/artalar/reatom',
   'github.com/mattermost/mattermost-server',
   'github.com/julialang/julia',
-  'github.com/sympy/sympy'
+  'github.com/sympy/sympy',
+  'github.com/Factom-Asset-Tokens/fatd',
+  'github.com/gitcoinco/web'
 ]
