@@ -21,6 +21,11 @@ ISSUE_LABELS = ["good first issue"]
 ISSUE_STATE = "open"
 ISSUE_SORT = "created"
 ISSUE_SORT_DIRECTION = "desc"
+APP_KEY = getenv('TWITTER_APP_KEY')
+APP_SECRET = getenv('TWITTER_APP_SECRET')
+OAUTH_TOKEN = getenv('TWITTER_OAUTH_TOKEN')
+OAUTH_TOKEN_SECRET = getenv('TWITTER_OAUTH_TOKEN_SECRET')
+TWEET_TEMPLATE = Template("Hey! Check this new good-first-dev issue by $owner $here")
 ISSUE_LIMIT = 10
 
 logging.config.dictConfig(LOGGING_CONFIG)
@@ -117,13 +122,15 @@ if __name__ == "__main__":
         DATA = toml.load(REPO_DATA_FILE)
 
         LOGGER.info("Found %d repository entries in %s", len(DATA["repositories"]), REPO_DATA_FILE)
-
+        twitter = Twython(APP_KEY, APP_SECRET, OAUTH_TOKEN, OAUTH_TOKEN_SECRET)
         for repository_url in DATA["repositories"]:
             repo_dict = parse_github_url(repository_url)
             if repo_dict:
                 repo_details = get_repository_info(repo_dict["owner"], repo_dict["name"])
                 if repo_details:
                     REPOSITORIES.append(repo_details)
+                    tweet_string = TWEET_TEMPLATE.substitute(owner = repo_dict["owner"], url = repo_dict["url"])
+                    twitter.update_status(status=tweet_string)
 
     # shuffle the repository order
     random.shuffle(REPOSITORIES)
