@@ -12,7 +12,7 @@ import toml
 
 from config import LOGGING_CONFIG
 from github3 import exceptions, login
-from twython import Twython
+from twython import Twython, TwythonError
 from numerize import numerize
 
 REPO_DATA_FILE = "data/repositories.toml"
@@ -148,7 +148,11 @@ if __name__ == "__main__":
                         language=repo_dict["language"],
                         issues_url=good_first_issues_html_url
                     )
-                    TWITTER_CLIENT.update_status(status=tweet_string)
+                    try:
+                        TWITTER_CLIENT.update_status(status=tweet_string)
+                    except TwythonError as e:
+                        if e.error_code == 403:
+                            LOGGER.info("Repo %s already tweeted ", repo_dict["repo_full_name"])
 
     # shuffle the repository order
     random.shuffle(REPOSITORIES)
