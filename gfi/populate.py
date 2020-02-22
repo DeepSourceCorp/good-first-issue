@@ -12,6 +12,7 @@ import toml
 
 from config import LOGGING_CONFIG
 from github3 import exceptions, login
+from twython import Twython
 from numerize import numerize
 
 REPO_DATA_FILE = "data/repositories.toml"
