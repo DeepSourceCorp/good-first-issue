@@ -5,6 +5,8 @@ import logging.config
 import random
 import re
 from os import getenv, path
+from string import Template
+from urllib.parse import quote
 
 import toml
 
@@ -17,7 +19,8 @@ REPO_GENERATED_DATA_FILE = "data/generated.json"
 GH_URL_PATTERN = re.compile(
     r"[http://|https://]?github.com/(?P<owner>[\w\.-]+)/(?P<name>[\w\.-]+)/?"
 )
-ISSUE_LABELS = ["good first issue"]
+GOOD_FIRST_ISSUE = "good first issue"
+ISSUE_LABELS = [GOOD_FIRST_ISSUE]
 ISSUE_STATE = "open"
 ISSUE_SORT = "created"
 ISSUE_SORT_DIRECTION = "desc"
@@ -25,7 +28,8 @@ APP_KEY = getenv('TWITTER_APP_KEY')
 APP_SECRET = getenv('TWITTER_APP_SECRET')
 OAUTH_TOKEN = getenv('TWITTER_OAUTH_TOKEN')
 OAUTH_TOKEN_SECRET = getenv('TWITTER_OAUTH_TOKEN_SECRET')
-TWEET_TEMPLATE = Template("Hey! Check this new good-first-dev issue by $owner $here")
+ISSUES_HTML_URL = Template("$html_url/labels/$good_first_issue")
+TWEET_TEMPLATE = Template("$repo_full_name - $repo_description.\n\nLanguage: $language\nIssues: $issues_url")
 ISSUE_LIMIT = 10
 
 logging.config.dictConfig(LOGGING_CONFIG)
@@ -87,6 +91,8 @@ def get_repository_info(owner, name):
             info["stars_display"] = numerize.numerize(repository.stargazers_count)
             info["last_modified"] = repository.last_modified
             info["id"] = str(repository.id)
+            info["description"] = repository.description
+            info["repo_display_name"] = repository.full_name
             info["objectID"] = str(repository.id)  # for indexing on algolia
 
             # get the latest issues with the tag
@@ -129,7 +135,16 @@ if __name__ == "__main__":
                 repo_details = get_repository_info(repo_dict["owner"], repo_dict["name"])
                 if repo_details:
                     REPOSITORIES.append(repo_details)
-                    tweet_string = TWEET_TEMPLATE.substitute(owner = repo_dict["owner"], url = repo_dict["url"])
+                    good_first_issues_html_url = ISSUES_HTML_URL.substitute(
+                        html_url=repo_dict["url"], 
+                        good_first_issue=quote(GOOD_FIRST_ISSUE)
+                    )
+                    tweet_string = TWEET_TEMPLATE.substitute(
+                        repo_full_name=repo_dict["repo_full_name"], 
+                        repo_description=repo_dict["repo_description"], 
+                        language=repo_dict["language"], 
+                        issues_url=good_first_issues_html_url
+                    )
                     twitter.update_status(status=tweet_string)
 
     # shuffle the repository order
