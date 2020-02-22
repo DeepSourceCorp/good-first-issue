@@ -131,7 +131,7 @@ if __name__ == "__main__":
         DATA = toml.load(REPO_DATA_FILE)
 
         LOGGER.info("Found %d repository entries in %s", len(DATA["repositories"]), REPO_DATA_FILE)
-        twitter_client = Twython(APP_KEY, APP_SECRET, OAUTH_TOKEN, OAUTH_TOKEN_SECRET)
+        TWITTER_CLIENT = Twython(APP_KEY, APP_SECRET, OAUTH_TOKEN, OAUTH_TOKEN_SECRET)
         for repository_url in DATA["repositories"]:
             repo_dict = parse_github_url(repository_url)
             if repo_dict:
@@ -148,7 +148,7 @@ if __name__ == "__main__":
                         language=repo_dict["language"],
                         issues_url=good_first_issues_html_url
                     )
-                    twitter_client.update_status(status=tweet_string)
+                    TWITTER_CLIENT.update_status(status=tweet_string)
 
     # shuffle the repository order
     random.shuffle(REPOSITORIES)
