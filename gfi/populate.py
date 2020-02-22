@@ -30,7 +30,9 @@ APP_SECRET = getenv('TWITTER_APP_SECRET')
 OAUTH_TOKEN = getenv('TWITTER_OAUTH_TOKEN')
 OAUTH_TOKEN_SECRET = getenv('TWITTER_OAUTH_TOKEN_SECRET')
 ISSUES_HTML_URL = Template("$html_url/labels/$good_first_issue")
-TWEET_TEMPLATE = Template("$repo_full_name - $repo_description.\n\nLanguage: $language\nIssues: $issues_url")
+TWEET_TEMPLATE = Template(
+    "$repo_full_name - $repo_desc.\n\nLanguage: $language\nIssues: $issues_url"
+    )
 ISSUE_LIMIT = 10
 
 logging.config.dictConfig(LOGGING_CONFIG)
@@ -129,7 +131,7 @@ if __name__ == "__main__":
         DATA = toml.load(REPO_DATA_FILE)
 
         LOGGER.info("Found %d repository entries in %s", len(DATA["repositories"]), REPO_DATA_FILE)
-        twitter = Twython(APP_KEY, APP_SECRET, OAUTH_TOKEN, OAUTH_TOKEN_SECRET)
+        twitter_client = Twython(APP_KEY, APP_SECRET, OAUTH_TOKEN, OAUTH_TOKEN_SECRET)
         for repository_url in DATA["repositories"]:
             repo_dict = parse_github_url(repository_url)
             if repo_dict:
@@ -137,16 +139,16 @@ if __name__ == "__main__":
                 if repo_details:
                     REPOSITORIES.append(repo_details)
                     good_first_issues_html_url = ISSUES_HTML_URL.substitute(
-                        html_url=repo_dict["url"], 
+                        html_url=repo_dict["url"],
                         good_first_issue=quote(GOOD_FIRST_ISSUE)
                     )
                     tweet_string = TWEET_TEMPLATE.substitute(
-                        repo_full_name=repo_dict["repo_full_name"], 
-                        repo_description=repo_dict["repo_description"], 
-                        language=repo_dict["language"], 
+                        repo_full_name=repo_dict["repo_full_name"],
+                        repo_desc=repo_dict["repo_description"],
+                        language=repo_dict["language"],
                         issues_url=good_first_issues_html_url
                     )
-                    twitter.update_status(status=tweet_string)
+                    twitter_client.update_status(status=tweet_string)
 
     # shuffle the repository order
     random.shuffle(REPOSITORIES)
