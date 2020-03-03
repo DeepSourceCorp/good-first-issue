@@ -41,5 +41,6 @@ repositories = [
   'github.com/julialang/julia',
   'github.com/sympy/sympy',
   'github.com/Factom-Asset-Tokens/fatd',
-  'github.com/gitcoinco/web'
+  'github.com/gitcoinco/web',
+  'github.com/masoniteframework/orm'
 ]
