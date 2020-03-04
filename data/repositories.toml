@@ -45,5 +45,6 @@ repositories = [
   'github.com/wemake-services/wemake-python-styleguide',
   'github.com/masoniteframework/orm',
   'github.com/masoniteframework/masonite',
-  'github.com/sveltejs/svelte'
+  'github.com/sveltejs/svelte',
+  'github.com/sveltejs/sapper'
 ]
