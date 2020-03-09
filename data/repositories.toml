@@ -46,5 +46,6 @@ repositories = [
   'github.com/masoniteframework/orm',
   'github.com/masoniteframework/masonite',
   'github.com/sveltejs/svelte',
-  'github.com/sveltejs/sapper'
+  'github.com/sveltejs/sapper',
+  'github.com/jendrikseipp/vulture',
 ]
