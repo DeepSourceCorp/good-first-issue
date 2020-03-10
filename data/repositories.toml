@@ -48,4 +48,5 @@ repositories = [
   'github.com/sveltejs/svelte',
   'github.com/sveltejs/sapper',
   'github.com/jendrikseipp/vulture',
+  'github.com/lucasburlingham/playertracker/',
 ]
