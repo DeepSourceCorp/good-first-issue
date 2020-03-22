@@ -37,8 +37,8 @@ TWEET_TEMPLATE = Template(
     )
 CREATE_TABLE = '''
     CREATE TABLE IF NOT EXISTS tweets (
-        id INTEGER PRIMARY KEY AUTOINCREMENT, 
-        repo_url varchar(2048) NOT NULL, 
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        repo_url varchar(2048) NOT NULL,
         last_tweeted_on datetime NOT NULL
     );'''
 ISSUE_LIMIT = 10
@@ -158,11 +158,15 @@ if __name__ == "__main__":
                         language=repo_dict["language"],
                         issues_url=good_first_issues_html_url
                     )
-                    cursor.execute("SELECT id FROM tweets WHERE repo_url = '%s'" % good_first_issues_html_url)
-                    if cursor.fetchone() == None:
+                    cursor.execute(
+                        "SELECT id FROM tweets WHERE repo_url = '%s'" % good_first_issues_html_url
+                    )
+                    if cursor.fetchone():
                         try:
                             TWITTER_CLIENT.update_status(status=tweet_string)
-                            cursor.execute("INSERT INTO tweets (repo_url, last_tweeted_on) VALUES ('%s', '%s')")
+                            cursor.execute(
+                                "INSERT INTO tweets (repo_url, last_tweeted_on) VALUES ('%s', '%s')"
+                            )
                             connection.commit()
                         except TwythonError as e:
                             if e.error_code == 403:
