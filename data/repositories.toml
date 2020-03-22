@@ -39,5 +39,13 @@ repositories = [
   'github.com/artalar/reatom',
   'github.com/mattermost/mattermost-server',
   'github.com/julialang/julia',
-  'github.com/sympy/sympy'
+  'github.com/sympy/sympy',
+  'github.com/Factom-Asset-Tokens/fatd',
+  'github.com/gitcoinco/web',
+  'github.com/wemake-services/wemake-python-styleguide',
+  'github.com/masoniteframework/orm',
+  'github.com/masoniteframework/masonite',
+  'github.com/sveltejs/svelte',
+  'github.com/sveltejs/sapper',
+  'github.com/jendrikseipp/vulture',
 ]
