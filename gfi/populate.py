@@ -4,6 +4,7 @@ import json
 import logging.config
 import random
 import re
+import sqlite3
 from os import getenv, path
 from string import Template
 from urllib.parse import quote
@@ -25,6 +26,7 @@ ISSUE_LABELS = [GOOD_FIRST_ISSUE]
 ISSUE_STATE = "open"
 ISSUE_SORT = "created"
 ISSUE_SORT_DIRECTION = "desc"
+GOOD_FIRST_DB_COLLECTION = 'goodfirstissues.db'
 APP_KEY = getenv('TWITTER_APP_KEY')
 APP_SECRET = getenv('TWITTER_APP_SECRET')
 OAUTH_TOKEN = getenv('TWITTER_OAUTH_TOKEN')
@@ -33,6 +35,12 @@ ISSUES_HTML_URL = Template("$html_url/labels/$good_first_issue")
 TWEET_TEMPLATE = Template(
     "$repo_full_name - $repo_desc.\n\nLanguage: $language\nIssues: $issues_url"
     )
+CREATE_TABLE = '''
+    CREATE TABLE IF NOT EXISTS tweets (
+        id INTEGER PRIMARY KEY AUTOINCREMENT, 
+        repo_url varchar(2048) NOT NULL, 
+        last_tweeted_on datetime NOT NULL
+    );'''
 ISSUE_LIMIT = 10
 
 logging.config.dictConfig(LOGGING_CONFIG)
@@ -129,7 +137,9 @@ if __name__ == "__main__":
     REPOSITORIES = []
     with open(REPO_DATA_FILE, "r") as data_file:
         DATA = toml.load(REPO_DATA_FILE)
-
+        connection = sqlite3.connect(GOOD_FIRST_DB_COLLECTION)
+        cursor = connection.cursor()
+        cursor.execute(CREATE_TABLE)
         LOGGER.info("Found %d repository entries in %s", len(DATA["repositories"]), REPO_DATA_FILE)
         TWITTER_CLIENT = Twython(APP_KEY, APP_SECRET, OAUTH_TOKEN, OAUTH_TOKEN_SECRET)
         for repository_url in DATA["repositories"]:
@@ -148,11 +158,18 @@ if __name__ == "__main__":
                         language=repo_dict["language"],
                         issues_url=good_first_issues_html_url
                     )
-                    try:
-                        TWITTER_CLIENT.update_status(status=tweet_string)
-                    except TwythonError as e:
-                        if e.error_code == 403:
-                            LOGGER.info("Repo %s already tweeted ", repo_dict["repo_full_name"])
+                    cursor.execute("SELECT id FROM tweets WHERE repo_url = '%s'" % good_first_issues_html_url)
+                    if cursor.fetchone() == None:
+                        try:
+                            TWITTER_CLIENT.update_status(status=tweet_string)
+                            cursor.execute("INSERT INTO tweets (repo_url, last_tweeted_on) VALUES ('%s', '%s')")
+                            connection.commit()
+                        except TwythonError as e:
+                            if e.error_code == 403:
+                                LOGGER.info("Repo %s already tweeted ", repo_dict["repo_full_name"])
+                    else:
+                        print("Repo %s already tweeted" % good_first_issues_html_url)
+        cursor.close()
 
     # shuffle the repository order
     random.shuffle(REPOSITORIES)
