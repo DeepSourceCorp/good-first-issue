@@ -161,7 +161,7 @@ if __name__ == "__main__":
                     cursor.execute(
                         "SELECT id FROM tweets WHERE repo_url = '%s'" % good_first_issues_html_url
                     )
-                    if cursor.fetchone():
+                    if not cursor.fetchone(): # If the DB does not have the tweet
                         try:
                             TWITTER_CLIENT.update_status(status=tweet_string)
                             cursor.execute(
