@@ -4,6 +4,7 @@ import json
 import logging.config
 import random
 import re
+import time
 import sqlite3
 from os import getenv, path
 from string import Template
@@ -80,13 +81,11 @@ def acquire_db_connection(connection):
     return cursor
 
 def is_repo_tweeted(cursor, repo_url):
-    """
-        Returns True if the repo has been tweeted
-    """
+    # Returns True if the repo has been tweeted
     cursor.execute(
         "SELECT id FROM tweets WHERE repo_url = '%s'" % repo_url
     )
-    return cursor.fetchone() != None
+    return cursor.fetchone() is not None
 
 def tweet_repo(cursor, connection, TWITTER_CLIENT, repo_dict):
     good_first_issues_html_url = ISSUES_HTML_URL.substitute(
@@ -187,7 +186,7 @@ if __name__ == "__main__":
     with open(REPO_DATA_FILE, "r") as data_file:
         DATA = toml.load(REPO_DATA_FILE)
         connection = prepare_db_connection()
-        cursor = acquire_db_connection()
+        cursor = acquire_db_connection(connection)
         LOGGER.info("Found %d repository entries in %s", len(DATA["repositories"]), REPO_DATA_FILE)
         TWITTER_CLIENT = Twython(APP_KEY, APP_SECRET, OAUTH_TOKEN, OAUTH_TOKEN_SECRET)
         for repository_url in DATA["repositories"]:
