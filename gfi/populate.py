@@ -66,70 +66,70 @@ def parse_github_url(url):
 def prepare_db_connection():
     """ Creates a SQLite DB connection """
 
-    connection = sqlite3.connect(GOOD_FIRST_DB_COLLECTION)
-    return connection
+    db_connection = sqlite3.connect(GOOD_FIRST_DB_COLLECTION)
+    return db_connection
 
 
-def create_tweets_table_if_not_exits(cursor):
+def create_tweets_table_if_not_exits(db_cursor):
     """ Creates a table if it doesn't exist """
 
-    cursor.execute(CREATE_TWEETS_TABLE)
+    db_cursor.execute(CREATE_TWEETS_TABLE)
 
 
-def insert_tweet(connection, cursor, repo_url, current_timestamp):
+def insert_tweet(db_connection, db_cursor, repo_url, current_timestamp):
     """ Inserts a tweet into the DB """
 
-    cursor.execute(
+    db_cursor.execute(
         "INSERT INTO tweets (repo_url, last_tweeted_on) VALUES ('%s', '%s')"
         % (repo_url, current_timestamp)
     )
-    connection.commit()
+    db_connection.commit()
 
 
-def acquire_db_connection(connection):
+def acquire_db_connection(db_connection):
     """ Acquires a cursor from the connection """
 
-    cursor = connection.cursor()
-    return cursor
+    db_cursor = db_connection.cursor()
+    return db_cursor
 
 
-def is_repo_tweeted(cursor, repo_url):
+def is_repo_tweeted(db_cursor, repo_url):
     """
     Returns True if the repo is tweeted.
     `fetchone()` method returns an object if select was successful
     """
 
-    cursor.execute(
+    db_cursor.execute(
         "SELECT id FROM tweets WHERE repo_url = '%s'" % repo_url
     )
-    return cursor.fetchone() is not None
+    return db_cursor.fetchone() is not None
 
 
-def tweet_repo(cursor, connection, TWITTER_CLIENT, repo_dict):
+def tweet_repo(db_cursor, db_connection, TWYTHON_TWITTER_CLIENT, repo_dictionary):
     """
     Twitter module
     Tweets a repo if it hasn't been tweeted
     """
 
     good_first_issues_html_url = ISSUES_HTML_URL.substitute(
-                        html_url=repo_dict["url"],
+                        html_url=repo_dictionary["url"],
                         good_first_issue=quote(GOOD_FIRST_ISSUE)
                     )
     tweet_string = TWEET_TEMPLATE.substitute(
-        repo_full_name=repo_dict["repo_full_name"],
-        repo_desc=repo_dict["repo_description"],
-        language=repo_dict["language"],
+        repo_full_name=repo_dictionary["repo_full_name"],
+        repo_desc=repo_dictionary["repo_description"],
+        language=repo_dictionary["language"],
         issues_url=good_first_issues_html_url
     )
 
-    if not is_repo_tweeted(cursor, good_first_issues_html_url):  # If the DB does not have the tweet
+    if not is_repo_tweeted(db_cursor, good_first_issues_html_url):  # If the DB does not have the tweet
         try:
-            TWITTER_CLIENT.update_status(status=tweet_string)
+            TWYTHON_TWITTER_CLIENT.update_status(status=tweet_string)
             current_timestamp = time.strftime("%Y-%m-%d %H:%M:%S")
-            insert_tweet(connection, cursor, good_first_issues_html_url, current_timestamp)
+            insert_tweet(db_connection, db_cursor, good_first_issues_html_url, current_timestamp)
         except TwythonError as e:
             if e.error_code == 403:
-                LOGGER.info("Repo %s already tweeted ", repo_dict["repo_full_name"])
+                LOGGER.info("Repo %s already tweeted ", repo_dictionary["repo_full_name"])
     else:
         print("Repo %s already tweeted" % good_first_issues_html_url)
 
