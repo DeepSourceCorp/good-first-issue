@@ -122,7 +122,7 @@ def tweet_repo(db_cursor, db_connection, TWYTHON_TWITTER_CLIENT, repo_dictionary
         issues_url=good_first_issues_html_url
     )
 
-    if not is_repo_tweeted(db_cursor, good_first_issues_html_url):  # If the DB does not have the tweet
+    if not is_repo_tweeted(db_cursor, good_first_issues_html_url):
         try:
             TWYTHON_TWITTER_CLIENT.update_status(status=tweet_string)
             current_timestamp = time.strftime("%Y-%m-%d %H:%M:%S")
