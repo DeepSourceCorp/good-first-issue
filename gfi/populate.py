@@ -62,36 +62,36 @@ def parse_github_url(url):
         return match.groupdict()
     return {}
 
+
 def prepare_db_connection():
-
-
     """ Creates a SQLite DB connection """
+
     connection = sqlite3.connect(GOOD_FIRST_DB_COLLECTION)
     return connection
 
+
 def create_tweets_table_if_not_exits(cursor):
-
-
     """ Creates a table if it doesn't exist """
+
     cursor.execute(CREATE_TWEETS_TABLE)
 
+
 def insert_tweet(connection, cursor, repo_url, current_timestamp):
-
-
     """ Inserts a tweet into the DB """
+
     cursor.execute(
         "INSERT INTO tweets (repo_url, last_tweeted_on) VALUES ('%s', '%s')"
         % (repo_url, current_timestamp)
     )
     connection.commit()
 
+
 def acquire_db_connection(connection):
-
-
     """ Acquires a cursor from the connection """
 
     cursor = connection.cursor()
     return cursor
+
 
 def is_repo_tweeted(cursor, repo_url):
     """
@@ -103,6 +103,7 @@ def is_repo_tweeted(cursor, repo_url):
         "SELECT id FROM tweets WHERE repo_url = '%s'" % repo_url
     )
     return cursor.fetchone() is not None
+
 
 def tweet_repo(cursor, connection, TWITTER_CLIENT, repo_dict):
     """
@@ -131,6 +132,7 @@ def tweet_repo(cursor, connection, TWITTER_CLIENT, repo_dict):
                 LOGGER.info("Repo %s already tweeted ", repo_dict["repo_full_name"])
     else:
         print("Repo %s already tweeted" % good_first_issues_html_url)
+
 
 def get_repository_info(owner, name):
     """
