@@ -8,7 +8,6 @@ import time
 from tweet_new_repos import TwitterClient
 from sqlite_dao import SQLiteDao
 from os import getenv, path
-from string import Template
 
 import toml
 
@@ -53,15 +52,16 @@ def parse_github_url(url):
 
 
 def prepare_tweets_db():
-    """ 
-        Prepares DB connection and the cursor
-        Returns : the dao object
+    """
+    Prepares DB connection and the cursor
+    Returns : the dao object
     """
     sqlite_dao = SQLiteDao()
     sqlite_dao.prepare_db_connection(GOOD_FIRST_DB_COLLECTION)
     sqlite_dao.acquire_db_connection()
     sqlite_dao.create_tweets_table_if_not_exits()
     return sqlite_dao
+
 
 def get_repository_info(owner, name):
     """
@@ -138,7 +138,7 @@ if __name__ == "__main__":
     REPOSITORIES = []
     with open(REPO_DATA_FILE, "r") as data_file:
         DATA = toml.load(REPO_DATA_FILE)
-        sqlite_dao = prepare_tweets_db()
+        dao = prepare_tweets_db()
         LOGGER.info("Found %d repository entries in %s", len(DATA["repositories"]), REPO_DATA_FILE)
         twitter_client = TwitterClient(APP_KEY, APP_SECRET, OAUTH_TOKEN, OAUTH_TOKEN_SECRET)
         for repository_url in DATA["repositories"]:
@@ -148,11 +148,11 @@ if __name__ == "__main__":
                 if repo_details:
                     REPOSITORIES.append(repo_details)
                     repo_gfi_url = twitter_client.get_repo_url(repo_dict)
-                    if not sqlite_dao.is_repo_tweeted(repo_gfi_url): 
+                    if not dao.is_repo_tweeted(repo_gfi_url):
                         try:
                             twitter_client.tweet_repo(repo_dict)
                             current_timestamp = time.strftime("%Y-%m-%d %H:%M:%S")
-                            sqlite_dao.insert_tweet(repo_gfi_url, current_timestamp)
+                            dao.insert_tweet(repo_gfi_url, current_timestamp)
                         except Exception as err:
                             LOGGER.exception("%s - %s", repo_dict["name"], err.msg)
 

@@ -11,6 +11,7 @@ TWEET_TEMPLATE = Template(
     "$repo_full_name - $repo_desc.\n\nLanguage: $language\nIssues: $issues_url"
 )
 
+
 class TwitterClient:
 
     twitter_client = None
@@ -18,7 +19,7 @@ class TwitterClient:
 
     def __init__(self, APP_KEY, APP_SECRET, OAUTH_TOKEN, OAUTH_TOKEN_SECRET):
         self.twitter_client = Twython(APP_KEY, APP_SECRET, OAUTH_TOKEN, OAUTH_TOKEN_SECRET)
-    
+
 
     def get_repo_url(self, repo_dictionary):
         """ Returns the labelled URL for good first issues """
@@ -27,6 +28,7 @@ class TwitterClient:
                             good_first_issue=quote(GOOD_FIRST_ISSUE)
                         )
         return self.repo_url
+
 
     def tweet_repo(self, repo_dictionary):
         """
