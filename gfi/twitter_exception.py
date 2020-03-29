@@ -14,5 +14,4 @@ class TweetException(TwythonError):
     def __str__(self):
         if self.message:
             return 'TweetException, {0} '.format(self.message)
-        else:
-            return 'TweetException has been raised'
+        return 'TweetException has been raised'
