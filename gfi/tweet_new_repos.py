@@ -4,6 +4,10 @@
 from string import Template
 from twython import Twython, TwythonError
 from urllib.parse import quote
+import logging.config
+
+logging.config.dictConfig(LOGGING_CONFIG)
+LOGGER = logging.getLogger(__name__)
 
 GOOD_FIRST_ISSUE = "good first issue"
 ISSUES_HTML_URL = Template("$html_url/labels/$good_first_issue")
@@ -20,7 +24,6 @@ class TwitterClient:
     def __init__(self, APP_KEY, APP_SECRET, OAUTH_TOKEN, OAUTH_TOKEN_SECRET):
         self.twitter_client = Twython(APP_KEY, APP_SECRET, OAUTH_TOKEN, OAUTH_TOKEN_SECRET)
 
-
     def get_repo_url(self, repo_dictionary):
         """ Returns the labelled URL for good first issues """
         self.repo_url = ISSUES_HTML_URL.substitute(
@@ -28,7 +31,6 @@ class TwitterClient:
                             good_first_issue=quote(GOOD_FIRST_ISSUE)
                         )
         return self.repo_url
-
 
     def tweet_repo(self, repo_dictionary):
         """
@@ -45,4 +47,5 @@ class TwitterClient:
         try:
             self.twitter_client.update_status(status=tweet_string)
         except TwythonError as e:
+            LOGGER.exception("%s - %s", self.repo_url, e.msg)
             raise

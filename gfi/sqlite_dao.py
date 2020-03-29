@@ -22,7 +22,6 @@ class SQLiteDao:
         self.connection = sqlite3.connect(GOOD_FIRST_DB_COLLECTION)
         return self.connection
 
-
     def create_tweets_table_if_not_exits(self):
         """ Creates a table if it doesn't exist """
 
