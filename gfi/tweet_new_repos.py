@@ -49,4 +49,5 @@ class TwitterClient:
         try:
             self.twitter_client.update_status(status=tweet_string)
         except TwythonError as e:
-            raise twitter_exception.TweetException("%s - %s" % (repo_dictionary["repo_full_name"], e.msg))
+            raise TweetException("%s - %s" % 
+                (repo_dictionary["repo_full_name"], e.msg))
