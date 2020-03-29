@@ -6,6 +6,7 @@ import random
 import re
 import time
 from tweet_new_repos import TwitterClient
+from twitter_exception import TweetException
 from sqlite_dao import SQLiteDao
 from os import getenv, path
 
@@ -153,8 +154,8 @@ if __name__ == "__main__":
                             twitter_client.tweet_repo(repo_dict)
                             current_timestamp = time.strftime("%Y-%m-%d %H:%M:%S")
                             dao.insert_tweet(repo_gfi_url, current_timestamp)
-                        except Exception as err:
-                            LOGGER.exception("%s - %s", repo_dict["name"], err.msg)
+                        except TweetException as err:
+                            LOGGER.exception(err)
 
     # shuffle the repository order
     random.shuffle(REPOSITORIES)

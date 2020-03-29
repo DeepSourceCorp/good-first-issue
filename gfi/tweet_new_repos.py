@@ -3,7 +3,9 @@
 
 from string import Template
 from twython import Twython, TwythonError
+from twitter_exception import TweetException
 from urllib.parse import quote
+from config import LOGGING_CONFIG
 import logging.config
 
 logging.config.dictConfig(LOGGING_CONFIG)
@@ -47,5 +49,4 @@ class TwitterClient:
         try:
             self.twitter_client.update_status(status=tweet_string)
         except TwythonError as e:
-            LOGGER.exception("%s - %s", self.repo_url, e.msg)
-            raise
+            raise twitter_exception.TweetException("%s - %s" % (repo_dictionary["repo_full_name"], e.msg))
