@@ -668,4 +668,5 @@ repositories = [
   'https://github.com/apache/dubbo',
   'https://github.com/SAP/chevrotain',
   'https://github.com/crossoverJie/cim',
+  'https://github.com/COVID-science-engine/crowdsourced-papers-prototype',
 ]
