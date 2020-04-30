@@ -2,8 +2,11 @@
 # -*- coding: utf-8 -*-
 import json
 import logging.config
+import os
 import random
 import re
+from collections import Counter
+from operator import itemgetter
 from os import getenv, path
 
 import toml
@@ -14,6 +17,7 @@ from numerize import numerize
 
 REPO_DATA_FILE = "data/repositories.toml"
 REPO_GENERATED_DATA_FILE = "data/generated.json"
+TAGS_GENERATED_DATA_FILE = "data/tags.json"
 GH_URL_PATTERN = re.compile(
     r"[http://|https://]?github.com/(?P<owner>[\w\.-]+)/(?P<name>[\w\.-]+)/?"
 )
@@ -113,6 +117,7 @@ if __name__ == "__main__":
         raise RuntimeError("No config data file found. Exiting.")
 
     REPOSITORIES = []
+    TAGS = Counter()
     with open(REPO_DATA_FILE, "r") as data_file:
         DATA = toml.load(REPO_DATA_FILE)
 
@@ -124,11 +129,24 @@ if __name__ == "__main__":
                 repo_details = get_repository_info(repo_dict["owner"], repo_dict["name"])
                 if repo_details:
                     REPOSITORIES.append(repo_details)
+                    TAGS[repo_details['language']] += 1
 
     # shuffle the repository order
     random.shuffle(REPOSITORIES)
 
-    # write to generated JSON file
+    # write to generated JSON files
+
     with open(REPO_GENERATED_DATA_FILE, 'w') as file_desc:
         json.dump(REPOSITORIES, file_desc)
     LOGGER.info("Wrote data for %d repos to %s", len(REPOSITORIES), REPO_GENERATED_DATA_FILE)
+
+    tags = [{"language": key, "count": value} for (key, value) in TAGS.items()]
+    tags_sorted = sorted(tags, key=itemgetter('count'), reverse=True)
+    with open(TAGS_GENERATED_DATA_FILE, 'w') as file_desc:
+        json.dump(tags_sorted, file_desc)
+    LOGGER.info("Wrote %d tags to %s", len(tags), TAGS_GENERATED_DATA_FILE)
+
+    # populate tag files for hugo
+    for tag in tags_sorted:
+        tag_name = tag['language']
+        os.system(f'hugo new language/{tag_name}.md')

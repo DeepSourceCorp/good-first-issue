@@ -11,6 +11,8 @@ cdn_config.toml
 
 # Generated data files
 data/generated.json
+data/tags.json
+content/language/*.md
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
