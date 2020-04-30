@@ -1,3 +1,3 @@
 ---
-language: "{{ replace .Name "-" " " }}"
+language: "{{ .Name }}"
 ---

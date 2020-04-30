@@ -140,7 +140,8 @@ if __name__ == "__main__":
         json.dump(REPOSITORIES, file_desc)
     LOGGER.info("Wrote data for %d repos to %s", len(REPOSITORIES), REPO_GENERATED_DATA_FILE)
 
-    tags = [{"language": key, "count": value} for (key, value) in TAGS.items()]
+    # use only those tags that have at least three occurrences
+    tags = [{"language": key, "count": value} for (key, value) in TAGS.items() if value >= 3]
     tags_sorted = sorted(tags, key=itemgetter('count'), reverse=True)
     with open(TAGS_GENERATED_DATA_FILE, 'w') as file_desc:
         json.dump(tags_sorted, file_desc)
