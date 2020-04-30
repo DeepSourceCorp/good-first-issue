@@ -2,6 +2,8 @@
 # -*- coding: utf-8 -*-
 import os
 import unittest
+from collections import Counter
+
 import toml
 
 DATA_FILE_PATH = 'data/repositories.toml'
@@ -31,6 +33,7 @@ class TestDataSanity(unittest.TestCase):
         """Verify that all entries are unique."""
         data = _get_data_from_toml(DATA_FILE_PATH)
         repos = data.get('repositories', [])
+        print([item for item, count in Counter(repos).items() if count > 1])
         assert len(repos) == len(set(repos))
 
 
