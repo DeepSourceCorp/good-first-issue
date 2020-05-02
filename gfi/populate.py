@@ -80,6 +80,7 @@ def get_repository_info(owner, name):
             # store the repo info
             info["name"] = name
             info["owner"] = owner
+            info["description"] = repository.description
             info["language"] = repository.language
             info["url"] = repository.html_url
             info["stars"] = repository.stargazers_count
