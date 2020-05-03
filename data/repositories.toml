@@ -650,6 +650,5 @@ repositories = [
   'github.com/SAP/chevrotain',
   'github.com/crossoverJie/cim',
   'github.com/COVID-science-engine/crowdsourced-papers-prototype',
-  'github.com/AdityaMulgundkar/flutter_opencv',
-  'github.com/mopidy/mopidy'
+  'github.com/AdityaMulgundkar/flutter_opencv'
 ]
