@@ -14,8 +14,8 @@
       {{ $count := len .issues }}
       <span class="hidden md:inline text-sm border px-3 py-1 ml-2 rounded-full border-green-500 text-green-500 font-semibold">{{ $count }} issue{{if gt $count 1}}s{{end}}</span>
     </div>
-    <div class="flex-row flex text-sm py-1 font-mono">
-      <span class="font-semibold text-gray-600">Description: </span>{{ .description }}
+    <div class="flex-row flex text-sm py-1">
+        {{.description }}
     </div>
     <div class="flex-row flex text-sm py-1 font-mono">
       <div class="mr-4">
