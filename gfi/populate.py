@@ -71,7 +71,7 @@ def get_repository_info(owner, name):
 
     info = {}
 
-    # get the repository; if the repo is not found, raise an error
+    # get the repository; if the repo is not found, log a warning
     try:
         repository = client.repository(owner, name)
 
@@ -114,7 +114,7 @@ def get_repository_info(owner, name):
         LOGGER.info('\t skipping the repo')
         return None
     except exceptions.NotFoundError:
-        raise RepoNotFoundException()
+        LOGGER.warning('Not Found: %s', f'{owner}/{name}')
 
 
 if __name__ == "__main__":
