@@ -38,6 +38,7 @@ with open(LABELS_DATA_FILE) as labels_file:
 
     ISSUE_LABELS = LABELS_DATA["labels"]
 
+
 class RepoNotFoundException(Exception):
     """Exception class for repo not found."""
 
