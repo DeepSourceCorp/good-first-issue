@@ -21,7 +21,7 @@ TAGS_GENERATED_DATA_FILE = "data/tags.json"
 GH_URL_PATTERN = re.compile(
     r"[http://|https://]?github.com/(?P<owner>[\w\.-]+)/(?P<name>[\w\.-]+)/?"
 )
-ISSUE_LABELS = ["good first issue"]
+LABELS_DATA_FILE = "data/labels.json"
 ISSUE_STATE = "open"
 ISSUE_SORT = "created"
 ISSUE_SORT_DIRECTION = "desc"
@@ -29,6 +29,14 @@ ISSUE_LIMIT = 10
 
 logging.config.dictConfig(LOGGING_CONFIG)
 LOGGER = logging.getLogger(__name__)
+
+if not path.exists(LABELS_DATA_FILE):
+    raise RuntimeError("No labels data file found. Exiting.")
+
+with open(LABELS_DATA_FILE) as labels_file:
+    LABELS_DATA = json.load(labels_file)
+
+    ISSUE_LABELS = LABELS_DATA["labels"]
 
 
 class RepoNotFoundException(Exception):
@@ -63,7 +71,7 @@ def get_repository_info(owner, name):
 
     info = {}
 
-    # get the repository; if the repo is not found, raise an error
+    # get the repository; if the repo is not found, log a warning
     try:
         repository = client.repository(owner, name)
 
@@ -106,7 +114,7 @@ def get_repository_info(owner, name):
         LOGGER.info('\t skipping the repo')
         return None
     except exceptions.NotFoundError:
-        raise RepoNotFoundException()
+        LOGGER.warning('Not Found: %s', f'{owner}/{name}')
 
 
 if __name__ == "__main__":
