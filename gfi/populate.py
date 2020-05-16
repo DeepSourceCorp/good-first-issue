@@ -14,6 +14,7 @@ import toml
 from config import LOGGING_CONFIG
 from github3 import exceptions, login
 from numerize import numerize
+from emoji import emojize
 
 REPO_DATA_FILE = "data/repositories.toml"
 REPO_GENERATED_DATA_FILE = "data/generated.json"
@@ -88,7 +89,7 @@ def get_repository_info(owner, name):
             # store the repo info
             info["name"] = name
             info["owner"] = owner
-            info["description"] = repository.description
+            info["description"] = emojize(repository.description)
             info["language"] = repository.language
             info["url"] = repository.html_url
             info["stars"] = repository.stargazers_count
