@@ -14,12 +14,16 @@ build:
 generate:
 	poetry run python gfi/populate.py
 
+tweet:
+	poetry run python gfi/tweet.py
+
 index:
 	poetry run python gfi/index.py
 
 generate-prod:
 	make pre-build
 	make generate
+	make tweet
 	make build
 
 test:
