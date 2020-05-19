@@ -653,5 +653,6 @@ repositories = [
   'github.com/AdityaMulgundkar/flutter_opencv',
   'github.com/goreleaser/goreleaser',
   'github.com/mateuszz0000/imgprocalgs',
-  'github.com/crossbario/autobahn-python'
+  'github.com/crossbario/autobahn-python',
+  'github.com/buildpacks/pack'
 ]
