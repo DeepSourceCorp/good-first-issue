@@ -654,5 +654,6 @@ repositories = [
   'github.com/goreleaser/goreleaser',
   'github.com/mateuszz0000/imgprocalgs',
   'github.com/crossbario/autobahn-python',
-  'github.com/buildpacks/pack'
+  'github.com/buildpacks/pack',
+  'github.com/fossasia/open-event-server'
 ]
