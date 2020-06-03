@@ -656,5 +656,6 @@ repositories = [
   'github.com/crossbario/autobahn-python',
   'github.com/buildpacks/pack',
   'github.com/fossasia/open-event-server',
-  'github.com/keptn/keptn'
+  'github.com/keptn/keptn',
+  'github.com/IamStefin/Instagram-Image-Downloader',
 ]
