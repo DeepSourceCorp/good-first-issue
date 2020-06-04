@@ -658,4 +658,5 @@ repositories = [
   'github.com/fossasia/open-event-server',
   'github.com/keptn/keptn',
   'github.com/IamStefin/Instagram-Image-Downloader',
+  'github.com/compas-dev/compas_fab',
 ]
