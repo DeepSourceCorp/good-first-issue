@@ -659,4 +659,5 @@ repositories = [
   'github.com/keptn/keptn',
   'github.com/IamStefin/Instagram-Image-Downloader',
   'github.com/compas-dev/compas_fab',
+  'github.com/bacloud14/radio-nostalgia-2',
 ]
