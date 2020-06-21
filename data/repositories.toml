@@ -661,4 +661,5 @@ repositories = [
   'github.com/compas-dev/compas_fab',
   'github.com/bacloud14/radio-nostalgia-2',
   'github.com/apache/incubator-superset',
+  'github.com/lhsazevedo/vuetify-material-auth',
 ]
