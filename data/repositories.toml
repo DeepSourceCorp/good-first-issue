@@ -148,6 +148,7 @@ repositories = [
   'github.com/VSCodeVim/Vim',
   'github.com/slic3r/Slic3r',
   'github.com/OpenLiveWriter/OpenLiveWriter',
+  'github.com/open-sauced/open-sauced',
   'github.com/rust-analyzer/rust-analyzer',
   'github.com/subethaedit/SubEthaEdit',
   'github.com/wasdk/WebAssemblyStudio',
