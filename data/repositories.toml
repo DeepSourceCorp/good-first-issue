@@ -662,5 +662,6 @@ repositories = [
   'github.com/bacloud14/radio-nostalgia-2',
   'github.com/AMU-Code-Squad/food-up',
   'github.com/apache/incubator-superset',
-  'github.com/lhsazevedo/vuetify-material-auth'
+  'github.com/lhsazevedo/vuetify-material-auth',
+  'github.com/open-sauced/open-sauced'
 ]
