@@ -4,9 +4,13 @@ test_patterns = [
   'gfi/test_*.py',
 ]
 
-[[ analyzers ]]
+[[analyzers]]
   name = 'python'
   enabled = true
 
   [analyzers.meta]
   max_line_length = 100
+
+[[transformers]]
+  name = 'black'
+  enabled = true
