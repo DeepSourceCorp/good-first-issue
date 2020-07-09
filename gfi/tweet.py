@@ -57,7 +57,7 @@ class GoodFirstTwitter:
         self.tweeted_already = get_json_bin(JSON_BIN_ID, JSON_BIN_KEY)
         self.tweeted_repos = {}
         self.tweet_count = 0
-        self.TWEET_LIMIT = 5
+        self.TWEET_LIMIT = 1
         self.TWEET_AGAIN = 90  # Days
 
     def tweeted_recently(self, name):
