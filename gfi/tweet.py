@@ -35,26 +35,25 @@ def get_json_bin(json_bin_id, json_bin_key):
     if resp.status_code != 200:
         LOGGER.WARNING("Failed to fetch old tweets. Aborting!")
         sys.exit()
-    LOGGER.info(
-        "<%s>: Successfully fetched JSONBIN: %s", resp.status_code, resp.text)
+    LOGGER.info("<%s>: Successfully fetched JSONBIN: %s", resp.status_code, resp.text)
     return json.loads(resp.text)
 
 
 def update_json_bin(new, json_bin_id, json_bin_key):
     """Updates JSON storeed at `json_bin_id`"""
     url = f"https://api.jsonbin.io/b/{json_bin_id}"
-    headers = {"secret-key": json_bin_key, 'Content-Type': 'application/json'}
+    headers = {"secret-key": json_bin_key, "Content-Type": "application/json"}
     resp = requests.put(url, headers=headers, data=json.dumps(new))
     if resp.status_code != 200:
         LOGGER.warning(
-            "Failed to update tweet DB. <%s>: %s", resp.status_code, resp.text)
+            "Failed to update tweet DB. <%s>: %s", resp.status_code, resp.text
+        )
     LOGGER.info("Successfully updated JSONBIN: %s", resp.text)
 
 
 class GoodFirstTwitter:
     def __init__(self):
-        self.twitter = Twython(
-            APP_KEY, APP_SECRET, ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
+        self.twitter = Twython(APP_KEY, APP_SECRET, ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
         self.tweeted_already = get_json_bin(JSON_BIN_ID, JSON_BIN_KEY)
         self.tweeted_repos = {}
         self.tweet_count = 0
@@ -66,9 +65,7 @@ class GoodFirstTwitter:
         return datetime.now() - last_tweeted < timedelta(days=self.TWEET_AGAIN)
 
     def should_tweet(self, name):
-        return (
-            name not in self.tweeted_already or not self.tweeted_recently(name)
-        )
+        return name not in self.tweeted_already or not self.tweeted_recently(name)
 
     def tweet(self, repo):
         try:
@@ -79,10 +76,10 @@ class GoodFirstTwitter:
             )
             self.twitter.update_status(status=status)
         except:  # noqa: PYL-W0703
-            LOGGER.exception("<%s>: Couldn't tweet status", repo['name'])
+            LOGGER.exception("<%s>: Couldn't tweet status", repo["name"])
             return
 
-        self.tweeted_repos[repo['name']] = {
+        self.tweeted_repos[repo["name"]] = {
             "last_tweeted": datetime.now(),
             "description": repo["description"],
             "language": repo["language"],
@@ -109,7 +106,7 @@ class GoodFirstTwitter:
 
 def main():
     with open(REPO_DATA_FILE, "r") as fd:
-        repos = toml.load(fd)['repositories']
+        repos = toml.load(fd)["repositories"]
     repos.reverse()  # Start with the latest additions
 
     client = GoodFirstTwitter()
