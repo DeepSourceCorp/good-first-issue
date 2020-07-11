@@ -663,5 +663,6 @@ repositories = [
   'github.com/AMU-Code-Squad/food-up',
   'github.com/apache/incubator-superset',
   'github.com/lhsazevedo/vuetify-material-auth',
-  'github.com/open-sauced/open-sauced'
+  'github.com/open-sauced/open-sauced',
+  'github.com/dbidwell94/vanilact'
 ]
