@@ -664,5 +664,6 @@ repositories = [
   'github.com/apache/incubator-superset',
   'github.com/lhsazevedo/vuetify-material-auth',
   'github.com/open-sauced/open-sauced',
-  'github.com/dbidwell94/vanilact'
+  'github.com/dbidwell94/vanilact',
+  'github.com/boa-dev/boa'
 ]
