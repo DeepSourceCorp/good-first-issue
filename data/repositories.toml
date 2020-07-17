@@ -666,5 +666,6 @@ repositories = [
   'github.com/open-sauced/open-sauced',
   'github.com/dbidwell94/vanilact',
   'github.com/boa-dev/boa',
-  'github.com/globaleaks/GlobaLeaks'
+  'github.com/globaleaks/GlobaLeaks',
+  'github.com/Hermit-Tools/Thumbnail-Maker'
 ]
