@@ -19,7 +19,7 @@ superjson = "^0.0.13"
 requests = "^2.23.0"
 
 [tool.poetry.dev-dependencies]
-black = {version = "^18.3-alpha.0", allow-prereleases = true}
+black = {version = "^19.10b0", allow-prereleases = true}
 
 [build-system]
 requires = ["poetry>=0.12"]
