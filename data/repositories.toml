@@ -669,5 +669,6 @@ repositories = [
   'github.com/boa-dev/boa',
   'github.com/globaleaks/GlobaLeaks',
   'github.com/bancodobrasil/stop-analyzing-api',
-  'github.com/bancodobrasil/stop-analyzing-embed'
+  'github.com/bancodobrasil/stop-analyzing-embed',
+  'github.com/ealush/vest'
 ]
