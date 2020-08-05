@@ -1,4 +1,5 @@
 repositories = [
+  'github.com/Arsenic-ATG/Qt-calculator',
   'github.com/intel/dffml',
   'github.com/einsteinpy/einsteinpy',
   'github.com/dask/dask-ml',
@@ -667,5 +668,9 @@ repositories = [
   'github.com/dbidwell94/vanilact',
   'github.com/boa-dev/boa',
   'github.com/globaleaks/GlobaLeaks',
+  'github.com/bancodobrasil/stop-analyzing-api',
+  'github.com/bancodobrasil/stop-analyzing-embed',
+  'github.com/ealush/vest',
+  'github.com/Hermit-Tools/Thumbnail-Maker',
   'https://github.com/maddypie/PyCalc'
 ]
