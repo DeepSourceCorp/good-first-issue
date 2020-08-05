@@ -671,5 +671,6 @@ repositories = [
   'github.com/bancodobrasil/stop-analyzing-api',
   'github.com/bancodobrasil/stop-analyzing-embed',
   'github.com/ealush/vest',
-  'github.com/Hermit-Tools/Thumbnail-Maker'
+  'github.com/Hermit-Tools/Thumbnail-Maker',
+  'https://github.com/maddypie/PyCalc'
 ]
