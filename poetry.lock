@@ -3,8 +3,8 @@ category = "main"
 description = "Algolia Search API Client for Python."
 name = "algoliasearch"
 optional = false
-python-versions = ">=2.7, !=3.0.*, !=3.1.*', !=3.2.*, !=3.3.*'"
-version = "2.3.0"
+python-versions = ">= 2.7, != 3.0.*, != 3.1.*, != 3.2.*, !=3.3.*"
+version = "2.4.0"
 
 [package.dependencies]
 requests = ">=2.21,<3.0"
@@ -312,13 +312,13 @@ secure = ["certifi", "cryptography (>=1.3.4)", "idna (>=2.0.0)", "pyOpenSSL (>=0
 socks = ["PySocks (>=1.5.6,<1.5.7 || >1.5.7,<2.0)"]
 
 [metadata]
-content-hash = "e1d1bcd9a00734ff1f7afb65e535b404da64fffd9d34e19f05cd21298317f3c3"
+content-hash = "2a6f5cc3dc65579d5e338abc697fc6efee271ef9be3a478fed6032603bcf3ed6"
 python-versions = "^3.6"
 
 [metadata.files]
 algoliasearch = [
-    {file = "algoliasearch-2.3.0-py2.py3-none-any.whl", hash = "sha256:271920824e15629af24da93211d9f1157ae41c4a1384e1022b0de2d8d671abd4"},
-    {file = "algoliasearch-2.3.0.tar.gz", hash = "sha256:fc6c9abfe4b652a3b96ab5ebc3e07b5964786899da099a018b688e37ae507503"},
+    {file = "algoliasearch-2.4.0-py2.py3-none-any.whl", hash = "sha256:5f62155450949642fe6ae1c163d89630c9ffce9cca62901893ddc1ad3e653239"},
+    {file = "algoliasearch-2.4.0.tar.gz", hash = "sha256:525f9d50f5363c8ae6603a8e328d8c23957e825fdfe363ecbda55487a0140c76"},
 ]
 appdirs = [
     {file = "appdirs-1.4.4-py2.py3-none-any.whl", hash = "sha256:a841dacd6b99318a741b166adb07e19ee71a274450e68237b4650ca1055ab128"},
