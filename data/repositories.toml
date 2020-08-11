@@ -2,6 +2,7 @@ repositories = [
   'github.com/Arsenic-ATG/Qt-calculator',
   'github.com/intel/dffml',
   'github.com/einsteinpy/einsteinpy',
+  'github.com/shrey27tri01/blog-on-the-go',
   'github.com/dask/dask-ml',
   'github.com/dabl/dabl',
   'github.com/encode/httpx',
