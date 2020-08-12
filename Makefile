@@ -7,7 +7,7 @@ pre-build:
 build:
 	cd $(THEME_PATH) && \
 	npm install && \
-	cd ../.. & \
+	cd ../.. && \
 	npm install -g postcss-cli autoprefixer && \
 	hugo
 
