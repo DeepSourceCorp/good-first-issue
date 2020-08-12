@@ -5,9 +5,11 @@ import logging.config
 import os
 import random
 import re
+import sys
 from collections import Counter
 from operator import itemgetter
 from os import getenv, path
+print(sys.version)
 
 import toml
 
