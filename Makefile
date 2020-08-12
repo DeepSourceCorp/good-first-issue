@@ -8,7 +8,7 @@ build:
 	cd $(THEME_PATH) && \
 	npm install && \
 	cd ../.. & \
-	npm install -g postcss-cli autoprefixer && \
+	npm install -g postcss-cli autoprefixer postcss-import && \
 	hugo -b $$VERCEL_URL
 
 generate:
