@@ -66,7 +66,9 @@ def get_repository_info(owner, name):
 
     access_token = getenv("GITHUB_ACCESS_TOKEN")
     if not access_token:
-        raise AssertionError("Access token not present in the env variable `GITHUB_ACCESS_TOKEN`")
+        raise AssertionError(
+            "Access token not present in the env variable `GITHUB_ACCESS_TOKEN`"
+        )
 
     # create a logged in GitHub client
     client = login(token=access_token)
@@ -101,7 +103,12 @@ def get_repository_info(owner, name):
                 id=str(repository.id),
                 objectID=str(repository.id),  # for indexing on algolia,
                 issues=[
-                    Issue(issue.title, issue.html_url, issue.number, issue.created_at.isoformat())
+                    Issue(
+                        issue.title,
+                        issue.html_url,
+                        issue.number,
+                        issue.created_at.isoformat(),
+                    )
                     for issue in good_first_issues
                 ],
             )
@@ -126,13 +133,17 @@ if __name__ == "__main__":
         DATA = toml.load(REPO_DATA_FILE)
 
         LOGGER.info(
-            "Found %d repository entries in %s", len(DATA["repositories"]), REPO_DATA_FILE,
+            "Found %d repository entries in %s",
+            len(DATA["repositories"]),
+            REPO_DATA_FILE,
         )
 
         for repository_url in DATA["repositories"]:
             repo_dict = parse_github_url(repository_url)
             if repo_dict:
-                repo_details = get_repository_info(repo_dict["owner"], repo_dict["name"])
+                repo_details = get_repository_info(
+                    repo_dict["owner"], repo_dict["name"]
+                )
                 if repo_details:
                     REPOSITORIES.append(repo_details)
                     TAGS[repo_details["language"]] += 1
@@ -144,10 +155,14 @@ if __name__ == "__main__":
 
     with open(REPO_GENERATED_DATA_FILE, "w") as file_desc:
         json.dump(REPOSITORIES, file_desc)
-    LOGGER.info("Wrote data for %d repos to %s", len(REPOSITORIES), REPO_GENERATED_DATA_FILE)
+    LOGGER.info(
+        "Wrote data for %d repos to %s", len(REPOSITORIES), REPO_GENERATED_DATA_FILE
+    )
 
     # use only those tags that have at least three occurrences
-    tags = [{"language": key, "count": value} for (key, value) in TAGS.items() if value >= 3]
+    tags = [
+        {"language": key, "count": value} for (key, value) in TAGS.items() if value >= 3
+    ]
     tags_sorted = sorted(tags, key=itemgetter("count"), reverse=True)
     with open(TAGS_GENERATED_DATA_FILE, "w") as file_desc:
         json.dump(tags_sorted, file_desc)
