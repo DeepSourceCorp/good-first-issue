@@ -116,7 +116,7 @@ def get_repository_info(owner, name):
         LOGGER.info("\t skipping the repo")
         return None
     except exceptions.NotFoundError:
-        LOGGER.warning("Not Found: %s", f"{owner}/{name}")
+        LOGGER.warning("Not Found: %s/%s", f"{owner}/{name}")
 
 
 if __name__ == "__main__":
