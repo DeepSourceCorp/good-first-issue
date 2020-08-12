@@ -171,4 +171,4 @@ if __name__ == "__main__":
     # populate tag files for hugo
     for tag in tags_sorted:
         tag_name = tag["language"]
-        os.system(f"hugo new language/{tag_name}.md")  # skipcq: BAN-B605
+        os.system("hugo new language/{}.md".format(tag_name))  # skipcq: BAN-B605
