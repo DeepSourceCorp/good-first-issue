@@ -23,7 +23,9 @@ index:
 generate-prod:
 	make pre-build
 	make generate
-	make tweet
+	@if [ $$PREVIEW == "false" ]; then\
+		make tweet; \
+	fi; \
 	make build
 
 test:
