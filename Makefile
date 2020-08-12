@@ -9,7 +9,7 @@ build:
 	npm install && \
 	cd ../.. & \
 	npm install -g postcss-cli autoprefixer && \
-	hugo
+	hugo -b $VERCEL_URL
 
 generate:
 	poetry run python gfi/populate.py
