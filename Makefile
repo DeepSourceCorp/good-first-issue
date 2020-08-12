@@ -2,7 +2,7 @@ THEME_PATH = 'themes/lucy/'
 
 pre-build:
 	curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python && \
-	source $HOME/.poetry/env && \
+	source $$HOME/.poetry/env && \
 	poetry self update --preview && \
 	poetry install --no-dev
 
