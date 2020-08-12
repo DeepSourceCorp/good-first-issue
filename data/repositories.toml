@@ -673,5 +673,6 @@ repositories = [
   'github.com/ealush/vest',
   'github.com/Hermit-Tools/Thumbnail-Maker',
   'https://github.com/maddypie/PyCalc',
-  'github.com/MakeContributions/markdown-dungeon'
+  'github.com/MakeContributions/markdown-dungeon',
+  'github.com/Devansh3712/PyCrypt'
 ]
