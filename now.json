@@ -5,7 +5,7 @@
   "build": {
     "env": {
       "HUGO_VERSION": "0.63.2",
-      "GITHUB_ACCESS_TOKEN": "@github-access-token"
+      "GITHUB_ACCESS_TOKEN": "@gh-access-token"
     }
   },
   "github": {
