@@ -16,8 +16,7 @@ jobs:
 
     - name: Install dependencies
       run: |
-        #!/bin/bash
-        make pre-build
+        bash -c "make pre-build"
 
     - name: Run tests for data sanity
       run: make test
