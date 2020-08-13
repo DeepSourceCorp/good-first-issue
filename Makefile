@@ -16,6 +16,7 @@ build:
 	npm install -g postcss-cli autoprefixer postcss-import && \
 	hugo -b $$VERCEL_URL
 
+.ONESHELL:
 generate:
 	poetry run python gfi/populate.py
 
