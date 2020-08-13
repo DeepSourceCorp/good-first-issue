@@ -25,7 +25,7 @@ index:
 generate-prod:
 	make pre-build; \
 	make generate; \
-	@if [ $$PREVIEW == "false" ]; then\
+	@if [ $$PREVIEW == "false" ]; then; \
 		make tweet; \
 	fi; \
 	make build
