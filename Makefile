@@ -8,13 +8,9 @@ pre-build:
 build:
 	cd $(THEME_PATH) && \
 	npm install && \
-	cd ../.. & \
+	cd ../.. && \
 	npm install -g postcss-cli autoprefixer postcss-import && \
-	@if [ $$PREVIEW == "true" ]; then \
-		hugo -b $$VERCEL_URL; \
-	else; \
-	  hugo; \
-	fi; \
+	hugo
 	
 
 generate:
