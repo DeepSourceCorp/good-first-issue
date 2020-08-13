@@ -1,11 +1,14 @@
 THEME_PATH = 'themes/lucy/'
 
+.ONESHELL:
 pre-build:
-	curl -sSL -o get-poetry.py https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py; \
-	python get-poetry.py -y -p; \
-	source $$HOME/.poetry/env; \
+	curl -sSL -o get-poetry.py https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py && \
+	python get-poetry.py -y --preview
+	export PATH=$$HOME/.poetry/bin:$$PATH
+	source $$HOME/.poetry/env
 	poetry install --no-dev
 
+.ONESHELL:
 build:
 	cd $(THEME_PATH) && \
 	npm install && \
@@ -22,10 +25,13 @@ tweet:
 index:
 	poetry run python gfi/index.py
 
+.ONESHELL:
 generate-prod:
-	make pre-build; \
-	make generate; \
-	make tweet; \
+	make pre-build
+	make generate
+	@if [ $$PREVIEW == "false" ]; then\
+		make tweet; \
+	fi; \
 	make build
 
 test:
