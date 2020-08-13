@@ -1,5 +1,6 @@
 THEME_PATH = 'themes/lucy/'
 
+.ONESHELL:
 pre-build:
 	pip install --upgrade poetry && \
 	poetry install --no-dev
@@ -8,8 +9,8 @@ build:
 	cd $(THEME_PATH) && \
 	npm install && \
 	cd ../.. & \
-	npm install -g postcss-cli autoprefixer && \
-	hugo
+	npm install -g postcss-cli autoprefixer postcss-import && \
+	hugo -b $$VERCEL_URL
 
 generate:
 	poetry run python gfi/populate.py
@@ -23,7 +24,9 @@ index:
 generate-prod:
 	make pre-build
 	make generate
-	make tweet
+	@if [ $$PREVIEW == "false" ]; then \
+	  make tweet; \
+	fi; \
 	make build
 
 test:
