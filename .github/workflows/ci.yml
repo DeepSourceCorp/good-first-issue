@@ -15,7 +15,9 @@ jobs:
         python-version: '3.6'
 
     - name: Install dependencies
-      run: make pre-build
+      run: |
+        #!/bin/bash
+        make pre-build
 
     - name: Run tests for data sanity
       run: make test
