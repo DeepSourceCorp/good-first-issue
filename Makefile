@@ -23,8 +23,8 @@ index:
 	poetry run python gfi/index.py
 
 generate-prod:
-	make pre-build
-	make generate
+	make pre-build; \
+	make generate; \
 	@if [ $$PREVIEW == "false" ]; then\
 		make tweet; \
 	fi; \
