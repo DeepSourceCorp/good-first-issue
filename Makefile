@@ -7,8 +7,8 @@ pre-build:
 	export PATH=$$HOME/.poetry/bin:$$PATH
 	source $$HOME/.poetry/env
 	poetry install --no-dev
+	poetry run python gfi/populate.py
 
-.ONESHELL:
 build:
 	cd $(THEME_PATH) && \
 	npm install && \
@@ -16,7 +16,6 @@ build:
 	npm install -g postcss-cli autoprefixer postcss-import && \
 	hugo -b $$VERCEL_URL
 
-.ONESHELL:
 generate:
 	poetry run python gfi/populate.py
 
@@ -29,10 +28,6 @@ index:
 .ONESHELL:
 generate-prod:
 	make pre-build
-	make generate
-	@if [ $$PREVIEW == "false" ]; then\
-		make tweet; \
-	fi; \
 	make build
 
 test:
