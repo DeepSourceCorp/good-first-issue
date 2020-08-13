@@ -1,7 +1,8 @@
 THEME_PATH = 'themes/lucy/'
 
 pre-build:
-	pip install --user --pre poetry -U&& \
+	pip install --user --pre poetry -U && \
+	export PATH=$HOME/.poetry/bin:$PATH && \
 	poetry self update --preview && \
 	poetry install --no-dev
 
