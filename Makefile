@@ -4,7 +4,7 @@ THEME_PATH = 'themes/lucy/'
 pre-build:
 	curl -sSL -o get-poetry.py https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py
 	python get-poetry.py -y -p
-	source $$HOME/.poetry/env
+	. $$HOME/.poetry/env
 	poetry install --no-dev
 	poetry run python gfi/populate.py
 
