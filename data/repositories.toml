@@ -92,7 +92,6 @@ repositories = [
   'github.com/awslabs/serverless-application-model',
   'github.com/rjsf-team/react-jsonschema-form',
   'github.com/quarkusio/quarkus',
-  'github.com/microsoft/vscode',
   'github.com/nuxt/nuxt.js',
   'github.com/PointCloudLibrary/pcl',
   'github.com/RaRe-Technologies/gensim',
