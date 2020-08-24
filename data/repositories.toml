@@ -133,6 +133,7 @@ repositories = [
   'github.com/jupyter-widgets/ipywidgets',
   'github.com/linkerd/linkerd2',
   'github.com/neutraltone/awesome-stock-resources',
+  'github.com/shub-garg/Web-Crawler-to-Extract-Longitude---Latitude-from-Google-maps-API',
   'github.com/kubernetes/dashboard',
   'github.com/scikit-image/scikit-image',
   'github.com/rudderlabs/rudder-server',
