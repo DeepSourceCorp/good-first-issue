@@ -674,5 +674,6 @@ repositories = [
   'https://github.com/maddypie/PyCalc',
   'github.com/MakeContributions/markdown-dungeon',
   'github.com/Devansh3712/PyCrypt',
-  'github.com/muke1908/chat-e2ee'
+  'github.com/muke1908/chat-e2ee',
+  'github.com/hoppscotch/hoppscotch'
 ]
