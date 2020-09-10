@@ -1,4 +1,9 @@
 repositories = [
+  'https://github.com/nidhaloff/igel',
+  'https://github.com/nidhaloff/deep-translator',
+  'https://github.com/nidhaloff/gpx_converter',
+  'https://github.com/nidhaloff/b_rabbit',
+  'https://github.com/nidhaloff/dolmetscher',
   'github.com/Arsenic-ATG/Qt-calculator',
   'github.com/intel/dffml',
   'github.com/einsteinpy/einsteinpy',
