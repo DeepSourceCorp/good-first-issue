@@ -7,11 +7,14 @@
 
 [![DeepSource](https://static.deepsource.io/deepsource-badge-light-mini.svg)](https://deepsource.io/gh/deepsourcelabs/good-first-issue/?ref=repository-badge)
 ![CI](https://github.com/deepsourcelabs/good-first-issue/workflows/CI/badge.svg)
+[![Pull Requests Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
+[![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php) 
 
 Welcome! 👋🏼
 
 **Good First Issue** is an initiaitive to curate easy pickings from popular projects, so developers who've never made a contribution to open-source can get started easily.
 
+### New to Open Source? Good First Issue has you covered!
 Open-source maintainers are always looking to get more people involved, but new developers generally think it's difficult to become a contributor. We believe getting developers to fix super-easy issues removes the barrier for future contributions. This is why Good First Issue exists.
 
 ## Adding a new project
