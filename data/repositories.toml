@@ -675,5 +675,9 @@ repositories = [
   'github.com/MakeContributions/markdown-dungeon',
   'github.com/Devansh3712/PyCrypt',
   'github.com/muke1908/chat-e2ee',
-  'github.com/hoppscotch/hoppscotch'
+  'github.com/hoppscotch/hoppscotch',
+  'github.com/creativecommons/vocabulary',
+  'github.com/creativecommons/cccatalog',
+  'github.com/creativecommons/cccatalog-api',
+  'github.com/creativecommons/cccatalog-frontend'
 ]
