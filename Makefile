@@ -10,7 +10,7 @@ build:
 	npm install && \
 	cd ../.. && \
 	npm install -g postcss-cli autoprefixer postcss-import && \
-	hugo
+	hugo --minify
 	
 
 generate:
