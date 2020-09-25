@@ -680,4 +680,5 @@ repositories = [
   'github.com/creativecommons/cccatalog',
   'github.com/creativecommons/cccatalog-api',
   'github.com/creativecommons/cccatalog-frontend'
+  'github.com/devSouvik/personality-tracker'
 ]
