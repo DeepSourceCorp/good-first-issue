@@ -9,7 +9,7 @@ build:
 	cd $(THEME_PATH) && \
 	npm install && \
 	cd ../.. && \
-	npm install -g postcss-cli autoprefixer postcss-import && \
+	npm install -g postcss-cli autoprefixer postcss-import postcss && \
 	hugo -v
 	
 
