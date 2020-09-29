@@ -679,5 +679,6 @@ repositories = [
   'github.com/creativecommons/vocabulary',
   'github.com/creativecommons/cccatalog',
   'github.com/creativecommons/cccatalog-api',
-  'github.com/creativecommons/cccatalog-frontend'
+  'github.com/creativecommons/cccatalog-frontend',
+  'github.com/jina-ai/jina/'
 ]
