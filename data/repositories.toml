@@ -14,6 +14,7 @@ repositories = [
   'github.com/mailchain/mailchain',
   'github.com/square/retrofit',
   'github.com/crossplaneio/crossplane',
+  'github.com/Vinamra2009/OpenCV',
   'github.com/darrenburns/ward',
   'github.com/prysmaticlabs/prysm',
   'github.com/arxiv-vanity/engrafo',
