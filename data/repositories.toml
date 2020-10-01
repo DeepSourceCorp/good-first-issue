@@ -127,6 +127,7 @@ repositories = [
   'github.com/lightningnetwork/lnd',
   'github.com/Qiskit/qiskit-terra',
   'github.com/themix-project/oomox',
+  'github.com/hewiefreeman/GopherGameServer',
   'github.com/google/timesketch',
   'github.com/lifting-bits/mcsema',
   'github.com/loadimpact/k6',
