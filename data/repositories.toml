@@ -680,5 +680,7 @@ repositories = [
   'github.com/creativecommons/cccatalog',
   'github.com/creativecommons/cccatalog-api',
   'github.com/creativecommons/cccatalog-frontend',
-  'github.com/jina-ai/jina/'
+  'github.com/jina-ai/jina/',
+  'github.com/Code0987/android-ci',
+  'github.com/Code0987/android-ci-github-action'
 ]
