@@ -681,4 +681,5 @@ repositories = [
   'github.com/creativecommons/cccatalog-api',
   'github.com/creativecommons/cccatalog-frontend',
   'github.com/jina-ai/jina/'
+  'github.com/Bhavesh988/Price-Monitoring'
 ]
