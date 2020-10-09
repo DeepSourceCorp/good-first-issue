@@ -1,4 +1,5 @@
 repositories = [
+  'github.com/billimarie/prosecutor-database',
   'github.com/Arsenic-ATG/Qt-calculator',
   'github.com/intel/dffml',
   'github.com/einsteinpy/einsteinpy',
