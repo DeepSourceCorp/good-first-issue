@@ -463,6 +463,7 @@ repositories = [
   'github.com/weaveworks/footloose',
   'github.com/phpmyadmin/phpmyadmin',
   'github.com/tchiotludo/akhq',
+  'github.com/python-geeks/Automation-scripts',
   'github.com/kubernetes/website',
   'github.com/react-native-community/react-native-svg',
   'github.com/opencv/cvat',
