@@ -76,6 +76,7 @@ repositories = [
   'github.com/onivim/oni',
   'github.com/AcademySoftwareFoundation/openvdb',
   'github.com/dmlc/gluon-nlp',
+  'github.com/dmlc/xgboost',
   'github.com/Varying-Vagrant-Vagrants/VVV',
   'github.com/Kong/kong',
   'github.com/scipy/scipy',
