@@ -672,7 +672,7 @@ repositories = [
   'github.com/bancodobrasil/stop-analyzing-embed',
   'github.com/ealush/vest',
   'github.com/Hermit-Tools/Thumbnail-Maker',
-  'https://github.com/maddypie/PyCalc',
+  'github.com/maddypie/PyCalc',
   'github.com/MakeContributions/markdown-dungeon',
   'github.com/Devansh3712/PyCrypt',
   'github.com/muke1908/chat-e2ee',
@@ -681,5 +681,6 @@ repositories = [
   'github.com/creativecommons/cccatalog',
   'github.com/creativecommons/cccatalog-api',
   'github.com/creativecommons/cccatalog-frontend',
-  'github.com/jina-ai/jina/'
+  'github.com/jina-ai/jina',
+  'github.com/dotenv-linter/dotenv-linter'
 ]
