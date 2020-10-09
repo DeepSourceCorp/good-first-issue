@@ -681,6 +681,7 @@ repositories = [
   'github.com/creativecommons/cccatalog',
   'github.com/creativecommons/cccatalog-api',
   'github.com/creativecommons/cccatalog-frontend',
+  'github.com/Sibyx/django_api_forms',
   'github.com/jina-ai/jina',
   'github.com/dotenv-linter/dotenv-linter'
 ]
