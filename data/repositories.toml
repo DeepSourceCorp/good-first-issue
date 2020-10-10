@@ -687,4 +687,5 @@ repositories = [
   'github.com/Sibyx/django_api_forms',
   'github.com/jina-ai/jina',
   'github.com/dotenv-linter/dotenv-linter'
+  'github.com/Usamaliaquat123/usamaliaquatcli'
 ]
