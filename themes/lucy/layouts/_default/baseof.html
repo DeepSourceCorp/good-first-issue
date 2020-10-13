@@ -15,8 +15,9 @@
           <h3 class="text-xl font-bold pb-1 text-green-500 font-serif italic">Browse by language</h3>
           <div>
             {{ range $.Site.Data.tags }}
-              {{ $url := (print "/language/" .language) }}
-              <a href="{{ $url | lower | safeURL }}" title="View only {{ .language }} projects" class="border border-gray-300 hover:border-green-500 px-2 py-1 inline-block rounded my-1 text-sm">{{ .language }} <span class="text-gray-600">&times; {{ .count }}</span></a>
+              {{ $url := (print "/language/" .language "/") }}
+              {{ warnf "Language is %q" .language }}
+              <a href="{{ $url | lower | safeURL | replaceRE "#" "%23" }}" title="View only {{ .language }} projects" class="border border-gray-300 hover:border-green-500 px-2 py-1 inline-block rounded my-1 text-sm">{{ .language }} <span class="text-gray-600">&times; {{ .count }}</span></a>
             {{ end }}
           </div>
         </div>
