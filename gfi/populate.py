@@ -149,7 +149,8 @@ if __name__ == "__main__":
                 )
                 if repo_details:
                     REPOSITORIES.append(repo_details)
-                    TAGS[repo_details["language"]] += 1
+                    if repo_details["language"]:
+                        TAGS[repo_details["language"]] += 1
 
     # shuffle the repository order
     random.shuffle(REPOSITORIES)
