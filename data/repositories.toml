@@ -696,5 +696,6 @@ repositories = [
   'github.com/nidhaloff/deep-translator',
   'github.com/nidhaloff/gpx_converter',
   'github.com/nidhaloff/b_rabbit',
-  'github.com/nidhaloff/dolmetscher'
-]
+  'github.com/nidhaloff/dolmetscher',
+  'github.com/learn-awesome/learn'
+ ]
