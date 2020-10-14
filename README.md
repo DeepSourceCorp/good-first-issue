@@ -32,6 +32,6 @@ Follow these simple steps:
  
 - Add your repository's path in [data/repositories.toml](data/repositories.toml).
 
-- Create a new pull-request. Once the pull-request is merged, the changes will be live on [goodfirstissue.dev](https://goodfirstissue.dev/).
+- Create a new pull-request. Please add the link to the issues page of the repository in the PR description. Once the pull-request is merged, the changes will be live on [goodfirstissue.dev](https://goodfirstissue.dev/).
 
 Oh. Happy Hacktoberfest! This Hacktober, make your PRs count. Find and fix code quality issues from popular open-source projects with Discover. Know more at [deepsource.io/hacktoberfest](https://deepsource.io/hacktoberfest/)
