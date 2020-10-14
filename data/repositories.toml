@@ -690,5 +690,10 @@ repositories = [
   'github.com/Sibyx/django_api_forms',
   'github.com/jina-ai/jina',
   'github.com/dotenv-linter/dotenv-linter',
-  'github.com/npm/cli'
+  'github.com/npm/cli',
+  'github.com/nidhaloff/igel',
+  'github.com/nidhaloff/deep-translator',
+  'github.com/nidhaloff/gpx_converter',
+  'github.com/nidhaloff/b_rabbit',
+  'github.com/nidhaloff/dolmetscher'
 ]
