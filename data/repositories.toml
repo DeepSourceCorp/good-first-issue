@@ -1,4 +1,5 @@
 repositories = [
+  'github.com/billimarie/prosecutor-database',
   'github.com/Arsenic-ATG/Qt-calculator',
   'github.com/intel/dffml',
   'github.com/einsteinpy/einsteinpy',
@@ -76,6 +77,7 @@ repositories = [
   'github.com/onivim/oni',
   'github.com/AcademySoftwareFoundation/openvdb',
   'github.com/dmlc/gluon-nlp',
+  'github.com/dmlc/xgboost',
   'github.com/Varying-Vagrant-Vagrants/VVV',
   'github.com/Kong/kong',
   'github.com/scipy/scipy',
@@ -127,6 +129,7 @@ repositories = [
   'github.com/lightningnetwork/lnd',
   'github.com/Qiskit/qiskit-terra',
   'github.com/themix-project/oomox',
+  'github.com/hewiefreeman/GopherGameServer',
   'github.com/google/timesketch',
   'github.com/lifting-bits/mcsema',
   'github.com/loadimpact/k6',
@@ -463,6 +466,7 @@ repositories = [
   'github.com/weaveworks/footloose',
   'github.com/phpmyadmin/phpmyadmin',
   'github.com/tchiotludo/akhq',
+  'github.com/python-geeks/Automation-scripts',
   'github.com/kubernetes/website',
   'github.com/react-native-community/react-native-svg',
   'github.com/opencv/cvat',
@@ -671,7 +675,7 @@ repositories = [
   'github.com/bancodobrasil/stop-analyzing-embed',
   'github.com/ealush/vest',
   'github.com/Hermit-Tools/Thumbnail-Maker',
-  'https://github.com/maddypie/PyCalc',
+  'github.com/maddypie/PyCalc',
   'github.com/MakeContributions/markdown-dungeon',
   'github.com/Devansh3712/PyCrypt',
   'github.com/muke1908/chat-e2ee',
@@ -681,6 +685,9 @@ repositories = [
   'github.com/creativecommons/cccatalog-api',
   'github.com/creativecommons/cccatalog-frontend',
   'github.com/jina-ai/jina/',
-  'github.com/npm/cli',
-
+  'github.com/SasanLabs/VulnerableApp',
+  'github.com/Sibyx/django_api_forms',
+  'github.com/jina-ai/jina',
+  'github.com/dotenv-linter/dotenv-linter',
+  'github.com/npm/cli'
 ]
