@@ -675,5 +675,5 @@ repositories = [
   'github.com/MakeContributions/markdown-dungeon',
   'github.com/Devansh3712/PyCrypt',
   'github.com/muke1908/chat-e2ee',
-  'github.com/shahednasser/sbuttons
+  'github.com/sButtons/sbuttons'
 ]
