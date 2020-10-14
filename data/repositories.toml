@@ -685,6 +685,7 @@ repositories = [
   'github.com/creativecommons/cccatalog-api',
   'github.com/creativecommons/cccatalog-frontend',
   'github.com/jina-ai/jina/',
+  'github.com/appsmithorg/appsmith',
   'github.com/SasanLabs/VulnerableApp',
   'github.com/Sibyx/django_api_forms',
   'github.com/jina-ai/jina',
