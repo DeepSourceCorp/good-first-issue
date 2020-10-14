@@ -11,6 +11,8 @@ RUN apk update && \
   poetry install --no-dev && \
   poetry run python gfi/populate.py && \
   cd themes/lucy/ && \
+  npm install && \
+  cd ../.. && \
   npm install -g postcss postcss-cli postcss-import autoprefixer && \
   hugo
 
