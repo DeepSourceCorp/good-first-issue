@@ -5,7 +5,7 @@
 </p>
 <hr>
 
-[![DeepSource](https://static.deepsource.io/deepsource-badge-light-mini.svg)](https://deepsource.io/gh/deepsourcelabs/good-first-issue/?ref=repository-badge)
+[![DeepSource](https://deepsource.io/gh/deepsourcelabs/good-first-issue.svg/?label=resolved+issues&show_trend=true)](https://deepsource.io/gh/deepsourcelabs/good-first-issue/?ref=repository-badge)
 ![CI](https://github.com/deepsourcelabs/good-first-issue/workflows/CI/badge.svg)
 
 Welcome! 👋🏼
@@ -20,14 +20,18 @@ You're welcome to add a new project in Good First Issue, and we encourage all pr
 
 Follow these simple steps:
 
-* Our goal is to narrow down projects for new open-source contributors. To maintain the quality of projects in Good First Issue, please make sure your GitHub repository meets the following criteria:
+- Our goal is to narrow down projects for new open-source contributors. To maintain the quality of projects in Good First Issue, please make sure your GitHub repository meets the following criteria:
 
- - At least three issue with the `good first issue` label. This label is already present on all repositories by default. If not, you can follow the steps [here](https://help.github.com/en/github/managing-your-work-on-github/applying-labels-to-issues-and-pull-requests).
- - Detailed setup instructions for the project.
- - CONTRIBUTING.md
- - Actively maintained.
+  - At least three issue with the `good first issue` label. This label is already present on all repositories by default. If not, you can follow the steps [here](https://help.github.com/en/github/managing-your-work-on-github/applying-labels-to-issues-and-pull-requests).
  
-* Add your repository's path in [data/repositories.toml](data/repositories.toml).
+  - Detailed setup instructions for the project.
+ 
+  - CONTRIBUTING.md
+ 
+  - Actively maintained.
+ 
+- Add your repository's path in [data/repositories.toml](data/repositories.toml).
 
-* Create a new pull-request. Once the pull-request is merged, the changes will be live on [goodfirstissue.dev](https://goodfirstissue.dev/).
+- Create a new pull-request. Once the pull-request is merged, the changes will be live on [goodfirstissue.dev](https://goodfirstissue.dev/).
 
+Oh. Happy Hacktoberfest! This Hacktober, make your PRs count. Find and fix code quality issues from popular open-source projects with Discover. Know more at [deepsource.io/hacktoberfest](https://deepsource.io/hacktoberfest/)
