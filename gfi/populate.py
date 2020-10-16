@@ -151,6 +151,8 @@ if __name__ == "__main__":
                     REPOSITORIES.append(repo_details)
                     if repo_details["language"]:
                         TAGS[repo_details["language"]] += 1
+                    else:
+                        TAGS["Unknown"] += 1
 
     # shuffle the repository order
     random.shuffle(REPOSITORIES)
@@ -174,5 +176,5 @@ if __name__ == "__main__":
 
     # populate tag files for hugo
     for tag in tags_sorted:
-        tag_name = tag["language"]
+        tag_name = re.sub(r'\s+', '_', tag["language"])
         os.system(f"hugo new language/{tag_name}.md")  # skipcq: BAN-B605
