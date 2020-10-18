@@ -698,5 +698,6 @@ repositories = [
   'github.com/nidhaloff/gpx_converter',
   'github.com/nidhaloff/b_rabbit',
   'github.com/nidhaloff/dolmetscher',
-  'github.com/learn-awesome/learn'
+  'github.com/learn-awesome/learn',
+  'github.com/mindsphere/mindconnect-nodejs'
  ]
