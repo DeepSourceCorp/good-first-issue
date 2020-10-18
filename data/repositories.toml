@@ -691,7 +691,6 @@ repositories = [
   'github.com/appsmithorg/appsmith',
   'github.com/SasanLabs/VulnerableApp',
   'github.com/Sibyx/django_api_forms',
-  'github.com/jina-ai/jina',
   'github.com/dotenv-linter/dotenv-linter',
   'github.com/npm/cli',
   'github.com/nidhaloff/igel',
