@@ -1,9 +1,9 @@
 name: good-first-issue
 static_sites:
-  - dockerfile_path: Dockerfile
+  - build_command: rm -r ./public && PREVIEW=true make generate-prod
     environment_slug: hugo
     github:
-      branch: master
+      branch: main
       deploy_on_push: true
       repo: ocean/good-first-issue
     name: good-first-issue
