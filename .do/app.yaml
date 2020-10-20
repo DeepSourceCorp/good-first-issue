@@ -1,6 +1,7 @@
 name: good-first-issue
 static_sites:
   - dockerfile_path: Dockerfile
+    environment_slug: hugo
     github:
       branch: master
       deploy_on_push: true
