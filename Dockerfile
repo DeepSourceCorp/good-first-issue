@@ -1,13 +1,10 @@
 FROM python:3.8-alpine as builder
 WORKDIR /
-COPY . .
-RUN apk update && \
-  apk add nodejs curl build-base python3-dev libffi-dev openssl-dev && \
-  curl -L -o hugo.tar.gz https://github.com/gohugoio/hugo/releases/download/v0.76.3/hugo_0.76.3_Linux-64bit.tar.gz && \
+RUN apt install nodejs && \
+  curl -o hugo.tar.gz https://github.com/gohugoio/hugo/releases/download/v0.76.3/hugo_0.76.3_Linux-64bit.tar.gz && \
   tar xzvf hugo.tar.gz && \
-  mv hugo /usr/local/bin && \
+  cp hugo /usr/local/bin && \
   pip install --upgrade poetry && \
-  ls -al && \
   poetry install --no-dev && \
   poetry run python gfi/populate.py && \
   cd themes/lucy/ && \
