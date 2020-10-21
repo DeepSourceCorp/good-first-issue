@@ -115,6 +115,7 @@ repositories = [
   'github.com/denoland/deno',
   'github.com/PyTorchLightning/pytorch-lightning',
   'github.com/kubernetes/test-infra',
+  'github.com/authpass/authpass/',
   'github.com/awslabs/s2n',
   'github.com/whatwg/html',
   'github.com/biopython/biopython',
