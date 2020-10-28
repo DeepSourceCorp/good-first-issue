@@ -700,5 +700,6 @@ repositories = [
   'github.com/nidhaloff/b_rabbit',
   'github.com/nidhaloff/dolmetscher',
   'github.com/learn-awesome/learn',
-  'github.com/mindsphere/mindconnect-nodejs'
+  'github.com/mindsphere/mindconnect-nodejs',
+  'github.com/hubtype/botonic'
  ]
