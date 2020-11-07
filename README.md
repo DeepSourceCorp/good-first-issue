@@ -7,6 +7,7 @@
 
 [![DeepSource](https://deepsource.io/gh/deepsourcelabs/good-first-issue.svg/?label=resolved+issues&show_trend=true)](https://deepsource.io/gh/deepsourcelabs/good-first-issue/?ref=repository-badge)
 ![CI](https://github.com/deepsourcelabs/good-first-issue/workflows/CI/badge.svg)
+[![Gitopia](https://img.shields.io/endpoint?style=&url=https://gitopia.org/mirror-badge.json)](https://gitopia.org/?#/WU8MwK_wNu7had5xKwuD2dilKn9gzCFH6carv-QmIKs/good-first-issue)
 
 Welcome! 👋🏼
 
@@ -23,13 +24,13 @@ Follow these simple steps:
 - Our goal is to narrow down projects for new open-source contributors. To maintain the quality of projects in Good First Issue, please make sure your GitHub repository meets the following criteria:
 
   - At least three issue with the `good first issue` label. This label is already present on all repositories by default. If not, you can follow the steps [here](https://help.github.com/en/github/managing-your-work-on-github/applying-labels-to-issues-and-pull-requests).
- 
+
   - Detailed setup instructions for the project.
- 
+
   - CONTRIBUTING.md
- 
+
   - Actively maintained.
- 
+
 - Add your repository's path in [data/repositories.toml](data/repositories.toml).
 
 - Create a new pull-request. Please add the link to the issues page of the repository in the PR description. Once the pull-request is merged, the changes will be live on [goodfirstissue.dev](https://goodfirstissue.dev/).

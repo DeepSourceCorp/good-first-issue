@@ -1,0 +1,24 @@
+name: Gitopia Mirror
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+          registry-url: https://registry.npmjs.org/
+      - name: Gitopia Mirror Action
+        uses: gitopia/gitopia-mirror-action@v0.1.2
+        with:
+          gitopiaWallet: "${{ secrets.ARWEAVE_WALLET }}"
+          branch: "master"
+          remoteUrl: "gitopia://WU8MwK_wNu7had5xKwuD2dilKn9gzCFH6carv-QmIKs/good-first-issue"
