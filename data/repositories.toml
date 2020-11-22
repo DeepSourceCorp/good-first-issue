@@ -14,6 +14,7 @@ repositories = [
   'github.com/Azure/draft',
   'github.com/Azure/mmlspark',
   'github.com/Brightify/Cuckoo',
+  'github.com/c410-f3r/oapth',
   'github.com/COVID-science-engine/crowdsourced-papers-prototype',
   'github.com/CachetHQ/Cachet',
   'github.com/CesiumGS/cesium',
