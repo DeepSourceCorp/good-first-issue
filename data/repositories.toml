@@ -107,6 +107,7 @@ repositories = [
   'github.com/StackStorm/st2',
   'github.com/Stellarium/stellarium',
   'github.com/Sylius/Sylius',
+  'github.com/sympy/sympy',
   'github.com/TDAmeritrade/stumpy',
   'github.com/TeamAmaze/AmazeFileManager',
   'github.com/TeamNewPipe/NewPipe',
