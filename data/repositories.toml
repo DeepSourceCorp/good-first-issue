@@ -1,5 +1,6 @@
 repositories = [
   'github.com/AMU-Code-Squad/food-up',
+  'github.com/apache/skywalking',
   'github.com/ARMmbed/mbedtls',
   'github.com/AcademySoftwareFoundation/openvdb',
   'github.com/AdityaMulgundkar/flutter_opencv',
