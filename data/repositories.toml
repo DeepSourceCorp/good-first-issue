@@ -354,6 +354,7 @@ repositories = [
   'github.com/ipython/ipython',
   'github.com/isomorphic-git/isomorphic-git',
   'github.com/iterative/dvc',
+  'github.com/iusehooks/usetheform',
   'github.com/jaegertracing/jaeger',
   'github.com/janko/vim-test',
   'github.com/jbush001/NyuziProcessor',
