@@ -66,9 +66,6 @@ export default {
     return {
       tags: Tags
     }
-  },
-  methods: {
-    getTagUrl: function (params) {}
   }
 }
 </script>
