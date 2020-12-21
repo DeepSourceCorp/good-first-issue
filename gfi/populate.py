@@ -176,8 +176,3 @@ if __name__ == "__main__":
     with open(TAGS_GENERATED_DATA_FILE, "w") as file_desc:
         json.dump(tags_sorted, file_desc)
     LOGGER.info("Wrote %d tags to %s", len(tags), TAGS_GENERATED_DATA_FILE)
-
-    # populate tag files for hugo
-    for tag in tags_sorted:
-        tag_name = tag["language"]
-        os.system(f"hugo new language/{tag_name}.md")  # skipcq: BAN-B605
