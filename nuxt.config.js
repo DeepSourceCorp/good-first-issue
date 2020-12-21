@@ -5,7 +5,7 @@ export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
     title: 'Good First Issue: Issues for your first open-source contribution',
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/icon.png' }],
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/images/icon.png' }],
     script: [
       {
         hid: 'plausible',
