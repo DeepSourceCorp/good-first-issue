@@ -15,6 +15,7 @@ from config import LOGGING_CONFIG
 from github3 import exceptions, login
 from numerize import numerize
 from emoji import emojize
+from slugify import slugify
 
 REPO_DATA_FILE = "data/repositories.toml"
 REPO_GENERATED_DATA_FILE = "data/generated.json"
@@ -27,9 +28,13 @@ ISSUE_STATE = "open"
 ISSUE_SORT = "created"
 ISSUE_SORT_DIRECTION = "desc"
 ISSUE_LIMIT = 10
+SLUGIFY_REPLACEMENTS = [
+    ['#', 'sharp'],
+    ['+', 'plus']
+]
 
 logging.config.dictConfig(LOGGING_CONFIG)
-LOGGER = logging.getLogger(__name__)
+LOGGER = logging.getLogger(__file__)
 
 if not path.exists(LABELS_DATA_FILE):
     raise RuntimeError("No labels data file found. Exiting.")
@@ -89,12 +94,13 @@ def get_repository_info(owner, name):
         )
         LOGGER.info("\t found %d good first issues", len(good_first_issues))
         # check if repo has at least one good first issue
-        if good_first_issues:
+        if good_first_issues and repository.language:
             # store the repo info
             info["name"] = name
             info["owner"] = owner
             info["description"] = emojize(repository.description or "")
             info["language"] = repository.language
+            info["slug"] = slugify(repository.language, replacements=SLUGIFY_REPLACEMENTS)
             info["url"] = repository.html_url
             info["stars"] = repository.stargazers_count
             info["stars_display"] = numerize.numerize(repository.stargazers_count)
@@ -164,14 +170,9 @@ if __name__ == "__main__":
 
     # use only those tags that have at least three occurrences
     tags = [
-        {"language": key, "count": value} for (key, value) in TAGS.items() if value >= 3
+        {"language": key, "count": value, "slug": slugify(key, replacements=SLUGIFY_REPLACEMENTS)} for (key, value) in TAGS.items() if value >= 3
     ]
     tags_sorted = sorted(tags, key=itemgetter("count"), reverse=True)
     with open(TAGS_GENERATED_DATA_FILE, "w") as file_desc:
         json.dump(tags_sorted, file_desc)
     LOGGER.info("Wrote %d tags to %s", len(tags), TAGS_GENERATED_DATA_FILE)
-
-    # populate tag files for hugo
-    for tag in tags_sorted:
-        tag_name = tag["language"]
-        os.system(f"hugo new language/{tag_name}.md")  # skipcq: BAN-B605

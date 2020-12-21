@@ -11,6 +11,22 @@ test_patterns = [
   [analyzers.meta]
   max_line_length = 100
 
+[[analyzers]]
+name = "javascript"
+enabled = true
+
+  [analyzers.meta]
+  environment = [
+    "nodejs",
+    "jest",
+    "browser"
+  ]
+  plugins = ["vue"]
+
 [[transformers]]
   name = 'black'
+  enabled = true
+
+[[transformers]]
+  name = 'prettier'
   enabled = true

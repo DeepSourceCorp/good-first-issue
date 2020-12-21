@@ -1,17 +1,11 @@
-THEME_PATH = 'themes/lucy/'
-
 .ONESHELL:
 pre-build:
 	pip install --upgrade poetry && \
-	poetry install --no-dev
+	poetry install && \
+	yarn
 
 build:
-	cd $(THEME_PATH) && \
-	npm install && \
-	cd ../.. && \
-	npm install -g postcss-cli autoprefixer postcss-import && \
-	hugo
-	
+	yarn generate
 
 generate:
 	poetry run python gfi/populate.py

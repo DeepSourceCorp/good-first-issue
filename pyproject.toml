@@ -17,6 +17,7 @@ emoji = "^0.6.0"
 twython = "^3.8.2"
 superjson = "^0.0.13"
 requests = "^2.23.0"
+python-slugify = "^4.0.1"
 
 [tool.poetry.dev-dependencies]
 black = {version = "^20.8b1", allow-prereleases = true}

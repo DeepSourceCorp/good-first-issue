@@ -8,8 +8,8 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Trigger deploy on Zeit
+      - name: Trigger deployment
         uses: joelwmale/webhook-action@master
         env:
-          WEBHOOK_URL: ${{ secrets.ZEIT_DEPLOY_HOOK_URL }}
+          WEBHOOK_URL: ${{ secrets.NETLIFY_CRON_BUILD_HOOK }}
           data: ""
