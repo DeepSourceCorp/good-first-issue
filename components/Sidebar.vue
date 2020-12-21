@@ -1,6 +1,6 @@
 <template>
   <section
-    class="masthead font-sans pt-6 w-full md:w-1/3 border-r border-ink-200 px-6 text-vanilla-300"
+    class="masthead font-sans pt-6 border-r border-ink-200 px-6 text-vanilla-300 flex-none w-full md:max-w-sm"
   >
     <div>
       <h3 class="section-heading">
