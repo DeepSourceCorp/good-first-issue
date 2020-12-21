@@ -94,7 +94,7 @@ def get_repository_info(owner, name):
         )
         LOGGER.info("\t found %d good first issues", len(good_first_issues))
         # check if repo has at least one good first issue
-        if good_first_issues:
+        if good_first_issues and repository.language:
             # store the repo info
             info["name"] = name
             info["owner"] = owner

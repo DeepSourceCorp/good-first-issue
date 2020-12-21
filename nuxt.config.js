@@ -1,3 +1,6 @@
+import Tags from './data/tags.json'
+import { map } from 'lodash'
+
 export default {
   // Target (https://go.nuxtjs.dev/config-target)
   target: 'static',
@@ -54,7 +57,8 @@ export default {
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
     // https://go.nuxtjs.dev/content
-    '@nuxt/content'
+    '@nuxt/content',
+    '@nuxtjs/sitemap'
   ],
 
   // Content module configuration (https://go.nuxtjs.dev/config-content)
@@ -70,5 +74,20 @@ export default {
   },
   googleAnalytics: {
     id: 'UA-125031134-3'
+  },
+  generate: {
+    routes: [
+      ...map(Tags, tag => {
+        return `/language/${tag.slug}`
+      })
+    ]
+  },
+  sitemap: {
+    hostname: 'https://goodfirstissue.dev',
+    gzip: true,
+    defaults: {
+      changefreq: 'daily',
+      lastmod: new Date()
+    }
   }
 }
