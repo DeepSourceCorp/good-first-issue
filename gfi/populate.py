@@ -34,7 +34,7 @@ SLUGIFY_REPLACEMENTS = [
 ]
 
 logging.config.dictConfig(LOGGING_CONFIG)
-LOGGER = logging.getLogger(__name__)
+LOGGER = logging.getLogger(__file__)
 
 if not path.exists(LABELS_DATA_FILE):
     raise RuntimeError("No labels data file found. Exiting.")

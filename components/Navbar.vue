@@ -3,7 +3,7 @@
     <nav class="flex items-center justify-center flex-wrap">
       <nuxt-link to="/" class="flex items-center text-gray-700 font-bold">
         <img
-          src="~/static/gfi-logo-white.svg"
+          src="/gfi-logo-white.svg"
           alt="Good First Issue"
           class="h-12"
         />
