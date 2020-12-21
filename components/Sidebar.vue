@@ -3,28 +3,29 @@
     class="masthead font-sans pt-6 border-r border-ink-200 px-6 text-vanilla-300 flex-none w-full md:max-w-sm"
   >
     <div>
-      <h3 class="section-heading">
-        About
-      </h3>
+      <h3 class="section-heading">About</h3>
       <p class="text-sm">
-        Good First Issue curates easy pickings from popular open-source
-        projects, and helps you make your first contribution to open-source.
+        Good First Issue curates easy pickings from popular open-source projects, and helps you make
+        your first contribution to open-source.
       </p>
     </div>
     <div class="pt-6">
-      <h3 class="section-heading">
-        Browse by language
-      </h3>
+      <h3 class="section-heading">Browse by language</h3>
       <div>
         <nuxt-link
           v-for="tag in tags"
           :key="tag.slug"
           :to="'/language/' + tag.slug"
-          :class="{'active-pill': $route.params.slug === tag.slug, 'border-slate hover:text-juniper hover:border-juniper': $route.params.slug !== tag.slug}"
-          class="group mx-1 border  px-2 py-1 inline-block rounded-sm my-1 text-sm"
+          :class="{
+            'active-pill': $route.params.slug === tag.slug,
+            'border-slate hover:text-juniper hover:border-juniper': $route.params.slug !== tag.slug
+          }"
+          class="group mx-1 border px-2 py-1 inline-block rounded-sm my-1 text-sm"
           >{{ tag.language }}
           <span
-          :class="{'text-vanilla-400 group-hover:text-juniper': $route.params.slug !== tag.slug}"
+            :class="{
+              'text-vanilla-400 group-hover:text-juniper': $route.params.slug !== tag.slug
+            }"
             >&times; {{ tag.count }}</span
           ></nuxt-link
         >
@@ -44,12 +45,10 @@
         target="_blank"
         href="https://deepsource.io?ref=gfi"
       >
-        <img style="width: 14px;" src="/social/heart.svg" alt="Heart" />
+        <img style="width: 14px" src="/social/heart.svg" alt="Heart" />
         <span class="ml-2"
           >A
-          <span
-            class="inline hover:underline text-juniper"
-            title="Visit DeepSource website"
+          <span class="inline hover:underline text-juniper" title="Visit DeepSource website"
             >DeepSource</span
           >
           initative</span
@@ -60,18 +59,18 @@
 </template>
 
 <script>
-import Tags from "~/data/tags.json";
+import Tags from '~/data/tags.json'
 
 export default {
-  data: function() {
+  data: function () {
     return {
       tags: Tags
-    };
+    }
   },
   methods: {
-    getTagUrl: function(params) {}
+    getTagUrl: function (params) {}
   }
-};
+}
 </script>
 
 <style>
@@ -83,6 +82,6 @@ export default {
 }
 
 .active-pill > span {
-    @apply text-juniper;
-  }
+  @apply text-juniper;
+}
 </style>
