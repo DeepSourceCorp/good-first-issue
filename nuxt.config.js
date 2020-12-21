@@ -1,29 +1,38 @@
 export default {
   // Target (https://go.nuxtjs.dev/config-target)
-  target: "static",
+  target: 'static',
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    title: "Good First Issue: Issues for your first open-source contribution",
+    title: 'Good First Issue: Issues for your first open-source contribution',
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/icon.png' }],
+    script: [
+      {
+        hid: 'plausible',
+        src: 'https://plausible.io/js/plausible.js',
+        async: true,
+        'data-domain': 'goodfirstissue.dev'
+      }
+    ],
     meta: [
-      { charset: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
-        hid: "description",
-        name: "description",
+        hid: 'description',
+        name: 'description',
         content:
-          "Making your first open-source contribution is easier than you think. Good First Issue is a curated list of issues from popular open-source projects that you can fix easily. Start today!"
+          'Making your first open-source contribution is easier than you think. Good First Issue is a curated list of issues from popular open-source projects that you can fix easily. Start today!'
       },
       {
-        hid: "keywords",
-        name: "keywords",
+        hid: 'keywords',
+        name: 'keywords',
         content:
-          "good first issue, open source, github, beginner, pull requests, help wanted, deepsource"
+          'good first issue, open source, github, beginner, pull requests, help wanted, deepsource'
       },
       {
-        hid: "og:image",
-        property: "og:image",
-        content: "/images/meta.jpg"
+        hid: 'og:image',
+        property: 'og:image',
+        content: '/images/meta.jpg'
       }
     ]
   },
@@ -38,14 +47,14 @@ export default {
   components: true,
 
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
-  buildModules: ["@nuxtjs/tailwindcss", "@nuxtjs/google-fonts"],
+  buildModules: ['@nuxtjs/tailwindcss', '@nuxtjs/google-fonts'],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
     // https://go.nuxtjs.dev/pwa
-    "@nuxtjs/pwa",
+    '@nuxtjs/pwa',
     // https://go.nuxtjs.dev/content
-    "@nuxt/content"
+    '@nuxt/content'
   ],
 
   // Content module configuration (https://go.nuxtjs.dev/config-content)
@@ -58,5 +67,8 @@ export default {
     families: {
       Inter: [400, 500, 600, 700]
     }
+  },
+  googleAnalytics: {
+    id: 'UA-125031134-3'
   }
-};
+}
