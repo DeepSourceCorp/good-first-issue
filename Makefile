@@ -1,9 +1,7 @@
-THEME_PATH = 'themes/lucy/'
-
 .ONESHELL:
 pre-build:
 	pip install --upgrade poetry && \
-	poetry install --no-dev && \
+	poetry install && \
 	yarn
 
 build:
