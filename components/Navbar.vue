@@ -9,7 +9,7 @@
         />
       </nuxt-link>
       <span class="text-2xl cursor-pointer" v-if="activeTag">
-        <span class="font-normal ml-2 mr-1 text-ink-100">/</span>
+        <span class="font-normal ml-2 mr-1 text-slate">/</span>
       <span class="font-semibold text-juniper">{{ activeTag.language }}</span>
       </span>
     </nav>

@@ -1,5 +1,5 @@
 <template>
-  <div class="p-4">
+  <div class="p-4 w-full">
     <repo-box v-for="repo in repos" :key="repo.id" :repo="repo"></repo-box>
   </div>
 </template>
