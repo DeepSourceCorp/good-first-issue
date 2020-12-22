@@ -1,11 +1,12 @@
 <p align="center">
   <a href="https://goodfirstissue.dev" target="_blank">
-    <img src="https://goodfirstissue.dev/images/gfi-logo-dark.svg">
+    <img src="static/readme-logo.svg">
   </a>
 </p>
 <hr>
 
-[![DeepSource](https://deepsource.io/gh/deepsourcelabs/good-first-issue.svg/?label=resolved+issues&show_trend=true)](https://deepsource.io/gh/deepsourcelabs/good-first-issue/?ref=repository-badge)
+[![DeepSource](https://deepsource.io/gh/deepsourcelabs/good-first-issue.svg/?label=resolved+issues)](https://deepsource.io/gh/deepsourcelabs/good-first-issue/?ref=repository-badge)
+[![DeepSource](https://deepsource.io/gh/deepsourcelabs/good-first-issue.svg/?label=active+issues)](https://deepsource.io/gh/deepsourcelabs/good-first-issue/?ref=repository-badge)
 ![CI](https://github.com/deepsourcelabs/good-first-issue/workflows/CI/badge.svg)
 [![Gitopia](https://img.shields.io/endpoint?style=&url=https://gitopia.org/mirror-badge.json)](https://gitopia.org/?#/WU8MwK_wNu7had5xKwuD2dilKn9gzCFH6carv-QmIKs/good-first-issue)
 
@@ -35,4 +36,4 @@ Follow these simple steps:
 
 - Create a new pull-request. Please add the link to the issues page of the repository in the PR description. Once the pull-request is merged, the changes will be live on [goodfirstissue.dev](https://goodfirstissue.dev/).
 
-We hangout at [DeepSource user group slack](https://deepsourceusers.slack.com). Feel free to ping us in #good-first-issue channel.
+We hangout in [DeepSource's User Group on Slack](https://deepsourceusers.slack.com). Feel free to ping us in `#good-first-issue` channel. 🙌🏼
