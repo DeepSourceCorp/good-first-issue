@@ -431,6 +431,7 @@ repositories = [
   'github.com/mermaid-js/mermaid',
   'github.com/mesonbuild/meson',
   'github.com/microsoft/ChakraCore',
+  'github.com/microsoft/graspologic',
   'github.com/microsoft/GSL',
   'github.com/microsoft/TypeScript',
   'github.com/microsoft/vcpkg',
