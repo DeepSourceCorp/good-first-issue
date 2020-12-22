@@ -21,11 +21,11 @@ export default {
   },
   async asyncData({ params }) {
     const repos = filter(Repositories, { slug: params.slug })
-    const tag = find(Tags, {slug: params.slug})
+    const tag = find(Tags, { slug: params.slug })
     return { repos, tag }
   },
   components: {
     RepoBox
-  },
+  }
 }
 </script>
