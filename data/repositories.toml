@@ -1,5 +1,6 @@
 repositories = [
   'github.com/AMU-Code-Squad/food-up',
+  'github.com/apache/skywalking',
   'github.com/ARMmbed/mbedtls',
   'github.com/AcademySoftwareFoundation/openvdb',
   'github.com/AdityaMulgundkar/flutter_opencv',
@@ -13,6 +14,7 @@ repositories = [
   'github.com/Azure/draft',
   'github.com/Azure/mmlspark',
   'github.com/Brightify/Cuckoo',
+  'github.com/c410-f3r/oapth',
   'github.com/COVID-science-engine/crowdsourced-papers-prototype',
   'github.com/CachetHQ/Cachet',
   'github.com/CesiumGS/cesium',
@@ -354,6 +356,7 @@ repositories = [
   'github.com/ipython/ipython',
   'github.com/isomorphic-git/isomorphic-git',
   'github.com/iterative/dvc',
+  'github.com/iusehooks/usetheform',
   'github.com/jaegertracing/jaeger',
   'github.com/janko/vim-test',
   'github.com/jbush001/NyuziProcessor',
@@ -701,5 +704,6 @@ repositories = [
   'github.com/zsh-users/zsh-completions',
   'github.com/zsh-users/zsh-syntax-highlighting',
   'github.com/zulip/zulip',
-  'github.com/wger-project/wger'
+  'github.com/wger-project/wger',
+  'github.com/shahednasser/awesome-resources'
  ]
