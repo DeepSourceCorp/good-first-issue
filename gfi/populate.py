@@ -27,10 +27,7 @@ ISSUE_STATE = "open"
 ISSUE_SORT = "created"
 ISSUE_SORT_DIRECTION = "desc"
 ISSUE_LIMIT = 10
-SLUGIFY_REPLACEMENTS = [
-    ['#', 'sharp'],
-    ['+', 'plus']
-]
+SLUGIFY_REPLACEMENTS = [["#", "sharp"], ["+", "plus"]]
 
 logging.config.dictConfig(LOGGING_CONFIG)
 LOGGER = logging.getLogger(__file__)
@@ -99,7 +96,9 @@ def get_repository_info(owner, name):
             info["owner"] = owner
             info["description"] = emojize(repository.description or "")
             info["language"] = repository.language
-            info["slug"] = slugify(repository.language, replacements=SLUGIFY_REPLACEMENTS)
+            info["slug"] = slugify(
+                repository.language, replacements=SLUGIFY_REPLACEMENTS
+            )
             info["url"] = repository.html_url
             info["stars"] = repository.stargazers_count
             info["stars_display"] = numerize.numerize(repository.stargazers_count)
@@ -169,7 +168,13 @@ if __name__ == "__main__":
 
     # use only those tags that have at least three occurrences
     tags = [
-        {"language": key, "count": value, "slug": slugify(key, replacements=SLUGIFY_REPLACEMENTS)} for (key, value) in TAGS.items() if value >= 3
+        {
+            "language": key,
+            "count": value,
+            "slug": slugify(key, replacements=SLUGIFY_REPLACEMENTS),
+        }
+        for (key, value) in TAGS.items()
+        if value >= 3
     ]
     tags_sorted = sorted(tags, key=itemgetter("count"), reverse=True)
     with open(TAGS_GENERATED_DATA_FILE, "w") as file_desc:
