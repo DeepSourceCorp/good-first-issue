@@ -1007,7 +1007,7 @@
     rc9 "^1.2.0"
     std-env "^2.2.1"
 
-"@nuxt/content@^1.9.0":
+"@nuxt/content@^1.11.1":
   version "1.11.1"
   resolved "https://registry.yarnpkg.com/@nuxt/content/-/content-1.11.1.tgz#60d850d01d2f946b896ddb8a8736c43cfe2cdd72"
   integrity sha512-aIB1LSJZfTx0cBq+oWi64lvPyX0vnE0D+g0kQCp52RSPWyxPtogrg3rnWQf/NU1JEDHaO8aFuXB/Pk57tjSZMQ==
