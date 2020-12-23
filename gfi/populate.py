@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 import json
 import logging.config
-import os
 import random
 import re
 from collections import Counter
