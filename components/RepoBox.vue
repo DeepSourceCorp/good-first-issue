@@ -21,7 +21,7 @@
           :class="{'text-ink-400 bg-juniper border-transparent': isIssueOpen, 'text-vanilla-200': !isIssueOpen}"
           >{{ issuesDisplay }}</span>
       </div>
-      <div class="flex-row flex text-sm py-1">
+      <div class="flex-row flex text-sm py-1 overflow-auto">
         {{ repo.description }}
       </div>
       <div class="flex-row flex text-sm py-1 font-mono" :class="{'text-honey': isIssueOpen, 'text-vanilla-400': !isIssueOpen}">
