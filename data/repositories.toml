@@ -365,6 +365,7 @@ repositories = [
   'github.com/jetstack/cert-manager',
   'github.com/jgm/pandoc',
   'github.com/jina-ai/jina',
+  'github.com/joomla/joomla-cms',
   'github.com/jopohl/urh',
   'github.com/joshwcomeau/guppy',
   'github.com/jshint/jshint',
