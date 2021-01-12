@@ -12,9 +12,9 @@
 
 Welcome! 👋🏼
 
-**Good First Issue** is an initiaitive to curate easy pickings from popular projects, so developers who've never made a contribution to open-source can get started easily.
+**Good First Issue** is an initiative to curate easy pickings from popular projects, so developers who've never contributed to open-source can get started quickly.
 
-Open-source maintainers are always looking to get more people involved, but new developers generally think it's difficult to become a contributor. We believe getting developers to fix super-easy issues removes the barrier for future contributions. This is why Good First Issue exists.
+Open-source maintainers are always looking to get more people involved, but new developers generally think it's challenging to become a contributor. We believe getting developers to fix super-easy issues removes the barrier for future contributions. This is why Good First Issue exists.
 
 ## Adding a new project
 
@@ -24,7 +24,7 @@ Follow these simple steps:
 
 - Our goal is to narrow down projects for new open-source contributors. To maintain the quality of projects in Good First Issue, please make sure your GitHub repository meets the following criteria:
 
-  - At least three issue with the `good first issue` label. This label is already present on all repositories by default. If not, you can follow the steps [here](https://help.github.com/en/github/managing-your-work-on-github/applying-labels-to-issues-and-pull-requests).
+  - At least three issues with the `good first issue` label. This label is already present on all repositories by default. If not, you can follow the steps [here](https://help.github.com/en/github/managing-your-work-on-github/applying-labels-to-issues-and-pull-requests).
 
   - Detailed setup instructions for the project.
 
@@ -34,6 +34,6 @@ Follow these simple steps:
 
 - Add your repository's path in [data/repositories.toml](data/repositories.toml).
 
-- Create a new pull-request. Please add the link to the issues page of the repository in the PR description. Once the pull-request is merged, the changes will be live on [goodfirstissue.dev](https://goodfirstissue.dev/).
+- Create a new pull-request. Please add the link to the issues page of the repository in the PR description. Once the pull request is merged, the changes will be live on [goodfirstissue.dev](https://goodfirstissue.dev/).
 
-We hangout in [DeepSource's User Group on Slack](https://deepsourceusers.slack.com). Feel free to ping us in `#good-first-issue` channel. 🙌🏼
+We hangout in [DeepSource's User Group on Slack](https://deepsourceusers.slack.com). Feel free to ping us in the `#good-first-issue` channel. 🙌🏼
