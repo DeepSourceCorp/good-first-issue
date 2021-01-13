@@ -1,5 +1,5 @@
 export const state = () => ({
-  activeIssue: '',
+  activeIssue: ''
 })
 
 export const mutations = {
@@ -7,7 +7,7 @@ export const mutations = {
     if (state.activeIssue === id.toString()) {
       state.activeIssue = ''
     } else {
-      state.activeIssue = id.toString();
+      state.activeIssue = id.toString()
     }
   }
 }

@@ -15,7 +15,7 @@ import Navbar from '~/components/Navbar.vue'
 import Sidebar from '~/components/Sidebar.vue'
 
 export default {
-  data: function() {
+  data: function () {
     return {
       tag: {}
     }
@@ -52,7 +52,7 @@ export default {
         )
       )
 
-      chimpPopupLoader.onload = function() {
+      chimpPopupLoader.onload = function () {
         document.body.appendChild(chimpPopup)
       }
       document.body.appendChild(chimpPopupLoader)

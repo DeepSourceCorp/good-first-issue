@@ -77,7 +77,7 @@ export default {
   },
   generate: {
     routes: [
-      ...map(Tags, tag => {
+      ...map(Tags, (tag) => {
         return `/language/${tag.slug}`
       })
     ]
