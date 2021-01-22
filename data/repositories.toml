@@ -694,6 +694,7 @@ repositories = [
   'github.com/wordpress-mobile/WordPress-Android',
   'github.com/wordpress-mobile/WordPress-iOS',
   'github.com/wp-graphql/wp-graphql',
+  'github.com/wyattowalsh/data-science-notes',
   'github.com/xenia-project/xenia',
   'github.com/xtermjs/xterm.js',
   'github.com/xunit/xunit',
