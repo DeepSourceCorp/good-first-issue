@@ -114,6 +114,7 @@ def get_repository_info(owner, name):
                         "title": issue.title,
                         "url": issue.html_url,
                         "number": issue.number,
+                        "comments_count": issue.comments_count,
                         "created_at": issue.created_at.isoformat(),
                     }
                 )
