@@ -45,9 +45,18 @@
         v-for="issue in repo.issues"
         :key="issue.url"
       >
-        <span class="text-slate text-right px-2 leading-snug" style="min-width: 70px"
-          >#{{ issue.number }}</span
+        <div class="flex flex-col sm:flex-row"
         >
+          <span class="text-slate text-right px-2 leading-snug" style="min-width: 70px"
+            >#{{ issue.number }}</span
+          >
+          <span
+            class="text-robin text-right px-2 leading-snug"
+            style="min-width: 70px"
+            :title="getIssueCommentsCounterTooltip(issue)"
+            >{{ issue.comments_count }}</span
+          >
+        </div>
         <a
           title="Open issue on GitHub"
           :href="issue.url"
@@ -89,7 +98,17 @@ export default {
   methods: {
     ...mapMutations({
       toggle: 'expandIssue'
-    })
+    }),
+    getIssueCommentsCounterTooltip: function (issue) {
+      const numComments = issue.comments_count;
+      if (numComments === 0) {
+        return `There are no comments on this issue.`;
+      }
+      if (numComments > 1) {
+        return `There are ${numComments} comments on this issue`;
+      }
+      return `There is one comment on this issue`;
+    }
   }
 }
 </script>
