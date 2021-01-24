@@ -386,6 +386,7 @@ repositories = [
   'github.com/knex/knex',
   'github.com/kognise/water.css',
   'github.com/komeiji-satori/Dress',
+  'github.com/krassowski/jupyterlab-lsp',
   'github.com/ktorio/ktor',
   'github.com/kubeapps/kubeapps',
   'github.com/kubernetes-sigs/krew',
