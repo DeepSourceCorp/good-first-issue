@@ -170,6 +170,8 @@ repositories = [
   'github.com/axel-download-accelerator/axel',
   'github.com/babel/babel',
   'github.com/bacloud14/radio-nostalgia-2',
+  'github.com/bacloud14/Secluded',
+  'github.com/bacloud14/SunnySunday',
   'github.com/badges/shields',
   'github.com/ballercat/walt',
   'github.com/bancodobrasil/stop-analyzing-api',
