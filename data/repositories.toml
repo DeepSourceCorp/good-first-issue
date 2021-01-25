@@ -1,4 +1,6 @@
 repositories = [
+  'github.com/softshape-team/diana-mobile',
+  'github.com/softshape-team/diana-server',
   'github.com/nas5w/use-local-storage',
   'github.com/AMU-Code-Squad/food-up',
   'github.com/apache/skywalking',
