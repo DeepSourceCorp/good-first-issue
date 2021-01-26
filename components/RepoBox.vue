@@ -45,25 +45,26 @@
         v-for="issue in repo.issues"
         :key="issue.url"
       >
-        <div class="flex flex-col sm:flex-row"
+        <span class="text-slate text-right px-2 leading-snug" style="min-width: 70px"
+          >#{{ issue.number }}</span
         >
-          <span class="text-slate text-right px-2 leading-snug" style="min-width: 70px"
-            >#{{ issue.number }}</span
+        <div class="flex">
+          <a
+            title="Open issue on GitHub"
+            :href="issue.url"
+            target="_blank"
+            class="leading-snug font-semibold hover:text-juniper text-vanilla-300"
+            >{{ issue.title }}</a
           >
-          <span
-            class="text-robin text-right px-2 leading-snug"
-            style="min-width: 70px"
+          <div
+            v-if="issue.comments_count > 0"
+            class="flex items-center ml-2"
             :title="getIssueCommentsCounterTooltip(issue)"
-            >{{ issue.comments_count }}</span
           >
+            <message-square-icon size="0.7x" />
+            <span class="ml-1 text-xs leading-snug">{{ issue.comments_count }}</span>
+          </div>
         </div>
-        <a
-          title="Open issue on GitHub"
-          :href="issue.url"
-          target="_blank"
-          class="leading-snug font-semibold hover:text-juniper text-vanilla-300"
-          >{{ issue.title }}</a
-        >
       </li>
     </ol>
   </div>
@@ -72,11 +73,15 @@
 <script>
 import dayjs from 'dayjs'
 import relativeTime from 'dayjs/plugin/relativeTime'
+import { MessageSquareIcon } from 'vue-feather-icons'
 import { mapMutations } from 'vuex'
 
 dayjs.extend(relativeTime)
 
 export default {
+  components: {
+    MessageSquareIcon
+  },
   props: {
     repo: Object
   },
@@ -100,14 +105,14 @@ export default {
       toggle: 'expandIssue'
     }),
     getIssueCommentsCounterTooltip: function (issue) {
-      const numComments = issue.comments_count;
+      const numComments = issue.comments_count
       if (numComments === 0) {
-        return `There are no comments on this issue.`;
+        return `There are no comments on this issue.`
       }
       if (numComments > 1) {
-        return `There are ${numComments} comments on this issue`;
+        return `There are ${numComments} comments on this issue`
       }
-      return `There is one comment on this issue`;
+      return `There is one comment on this issue`
     }
   }
 }
