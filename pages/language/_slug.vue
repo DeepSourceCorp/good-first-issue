@@ -11,6 +11,18 @@ import Tags from '~/data/tags.json'
 import Repositories from '~/data/generated.json'
 
 export default {
+  head () {
+    return {
+      title: `${this.tag.language} · Good First Issue`,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: `Good first issues from popular ${this.tag.language} projects. Get started with your first contribution now!`
+        }
+      ]
+    }
+  },
   data: function () {
     return {
       repos: Repositories

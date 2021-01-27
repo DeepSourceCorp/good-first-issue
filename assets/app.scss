@@ -1,0 +1,8 @@
+nav a {
+  @apply text-vanilla-200 transition-colors duration-200;
+
+  &:hover {
+    @apply text-juniper;
+  }
+}
+

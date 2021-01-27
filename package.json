@@ -12,6 +12,7 @@
     "@nuxt/content": "^1.11.1",
     "@nuxtjs/pwa": "^3.0.2",
     "@nuxtjs/sitemap": "^2.4.0",
+    "@tailwindcss/typography": "^0.3.1",
     "core-js": "^3.6.5",
     "dayjs": "^1.9.7",
     "lodash": "^4.17.20",
@@ -23,7 +24,10 @@
     "@nuxtjs/tailwindcss": "^3.4.1",
     "@tailwindcss/postcss7-compat": "^2.0.2",
     "autoprefixer": "^9",
+    "fibers": "^5.0.0",
     "postcss": "^7",
+    "sass": "^1.30.0",
+    "sass-loader": "^10.1.0",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat"
   },
   "prettier": {

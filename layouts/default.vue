@@ -1,6 +1,6 @@
 <template>
   <div class="bg-ink-400 flex flex-col min-h-screen antialiased text-vanilla-300">
-    <navbar :tag="tag"></navbar>
+    <navbar :section="section"></navbar>
     <main class="flex flex-1">
       <section class="container max-w-6xl mx-auto flex flex-col md:flex-row">
         <sidebar></sidebar>
@@ -17,7 +17,7 @@ import Sidebar from '~/components/Sidebar.vue'
 export default {
   data: function() {
     return {
-      tag: {}
+      section: {}
     }
   },
   components: {

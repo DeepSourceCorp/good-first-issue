@@ -11,7 +11,7 @@
     </div>
     <div class="pt-6">
       <h3 class="section-heading">Browse by language</h3>
-      <div>
+      <div class="flex flex-row flex-wrap gap-2">
         <nuxt-link
           v-for="tag in tags"
           :key="tag.slug"
@@ -20,7 +20,7 @@
             'active-pill': $route.params.slug === tag.slug,
             'border-slate hover:text-juniper hover:border-juniper': $route.params.slug !== tag.slug
           }"
-          class="group mx-1 border px-2 py-1 inline-block rounded-sm my-1 text-sm"
+          class="group border px-2 py-1 inline-block rounded-sm text-sm"
           >{{ tag.language }}
           <span
             :class="{

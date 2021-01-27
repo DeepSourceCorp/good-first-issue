@@ -1,5 +1,6 @@
 export const state = () => ({
   activeIssue: '',
+  sectionName: ''
 })
 
 export const mutations = {
@@ -9,5 +10,11 @@ export const mutations = {
     } else {
       state.activeIssue = id.toString();
     }
+  },
+  setSectionName(state, name) {
+    state.sectionName = name
+  },
+  clearSectionName(state) {
+    state.sectionName = ''
   }
 }

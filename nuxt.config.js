@@ -2,12 +2,10 @@ import Tags from './data/tags.json'
 import { map } from 'lodash'
 
 export default {
-  // Target (https://go.nuxtjs.dev/config-target)
   target: 'static',
-
-  // Global page headers (https://go.nuxtjs.dev/config-head)
+  ssr: false,
   head: {
-    title: 'Good First Issue: Issues for your first open-source contribution',
+    title: 'Good First Issue: Make your first open-source contribution',
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/images/icon.png' }],
     script: [
       {
@@ -39,10 +37,9 @@ export default {
       }
     ]
   },
-
-  // Global CSS (https://go.nuxtjs.dev/config-css)
-  css: [],
-
+  css: [
+    '@/assets/app.scss'
+  ],
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [],
 
