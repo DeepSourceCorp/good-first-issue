@@ -9,13 +9,13 @@ import RepoBox from '~/components/RepoBox.vue'
 import Repositories from '~/data/generated.json'
 
 export default {
+  components: {
+    RepoBox
+  },
   data: function () {
     return {
       repos: Repositories
     }
-  },
-  components: {
-    RepoBox
   }
 }
 </script>
