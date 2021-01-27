@@ -1,8 +1,8 @@
 <template>
   <div
-    class="select-none border w-full rounded-md mb-4 cursor-pointer hover:bg-ink-300 group"
-    :class="{ 'border-juniper hover:bg-ink-400': isIssueOpen, 'border-ink-200': !isIssueOpen }"
     :id="`repo-${repo.id}`"
+    :class="{ 'border-juniper hover:bg-ink-400': isIssueOpen, 'border-ink-200': !isIssueOpen }"
+    class="select-none border w-full rounded-md mb-4 cursor-pointer hover:bg-ink-300 group"
     @click="toggle(repo.id)"
   >
     <div class="px-5 py-3">
@@ -39,11 +39,11 @@
         </div>
       </div>
     </div>
-    <ol class="px-5 py-3 text-base leading-loose border-t border-ink-200" v-if="isIssueOpen">
+    <ol v-if="isIssueOpen" class="px-5 py-3 text-base leading-loose border-t border-ink-200">
       <li
-        class="flex flex-row items-start justify-start py-1"
         v-for="issue in repo.issues"
         :key="issue.url"
+        class="flex flex-row items-start justify-start py-1"
       >
         <span class="text-slate text-right px-2 leading-snug" style="min-width: 70px"
           >#{{ issue.number }}</span
@@ -83,7 +83,10 @@ export default {
     MessageSquareIcon
   },
   props: {
-    repo: Object
+    repo: {
+      type: Object,
+      required: true
+    }
   },
   computed: {
     issuesDisplay: function () {
