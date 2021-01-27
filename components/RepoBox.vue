@@ -48,21 +48,21 @@
         <span class="text-slate text-right px-2 leading-snug" style="min-width: 70px"
           >#{{ issue.number }}</span
         >
-        <div class="flex">
+        <div class="flex items-start flex-row flex-auto">
           <a
             title="Open issue on GitHub"
             :href="issue.url"
             target="_blank"
-            class="leading-snug font-semibold hover:text-juniper text-vanilla-300"
+            class="leading-snug font-semibold hover:text-juniper text-vanilla-300 block flex-auto"
             >{{ issue.title }}</a
           >
           <div
             v-if="issue.comments_count > 0"
-            class="flex items-center ml-2"
+            class="flex flex-row items-center justify-end mt-1 w-10"
             :title="getIssueCommentsCounterTooltip(issue)"
           >
-            <message-square-icon size="0.7x" />
-            <span class="ml-1 text-xs leading-snug">{{ issue.comments_count }}</span>
+            <message-square-icon size="0.8x" class="mt-px" />
+            <span class="ml-1 text-sm leading-snug">{{ issue.comments_count }}</span>
           </div>
         </div>
       </li>
@@ -107,7 +107,7 @@ export default {
     getIssueCommentsCounterTooltip: function (issue) {
       const numComments = issue.comments_count
       if (numComments === 0) {
-        return `There are no comments on this issue.`
+        return `There are no comments on this issue`
       }
       if (numComments > 1) {
         return `There are ${numComments} comments on this issue`
