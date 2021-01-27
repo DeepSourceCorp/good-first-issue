@@ -11,10 +11,8 @@ import Tags from '~/data/tags.json'
 import Repositories from '~/data/generated.json'
 
 export default {
-  data: function () {
-    return {
-      repos: Repositories
-    }
+  components: {
+    RepoBox
   },
   validate({ params }) {
     return includes(map(Tags, 'slug'), params.slug)
@@ -24,8 +22,10 @@ export default {
     const tag = find(Tags, { slug: params.slug })
     return { repos, tag }
   },
-  components: {
-    RepoBox
+  data: function () {
+    return {
+      repos: Repositories
+    }
   }
 }
 </script>

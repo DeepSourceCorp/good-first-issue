@@ -4,7 +4,7 @@
       <nuxt-link to="/" class="flex items-center text-gray-700 font-bold">
         <img src="~/assets/gfi-logo-white.svg" alt="Good First Issue" class="h-12" />
       </nuxt-link>
-      <span class="text-2xl cursor-pointer" v-if="activeTag">
+      <span v-if="activeTag" class="text-2xl cursor-pointer">
         <span class="font-normal ml-2 mr-1 text-slate">/</span>
         <span class="font-semibold text-juniper">{{ activeTag.language }}</span>
       </span>
@@ -18,7 +18,10 @@ import Tags from '~/data/tags.json'
 
 export default {
   props: {
-    tag: Object
+    tag: {
+      type: Object,
+      required: true
+    }
   },
   computed: {
     activeTag: function () {

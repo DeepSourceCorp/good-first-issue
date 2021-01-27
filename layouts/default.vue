@@ -15,14 +15,14 @@ import Navbar from '~/components/Navbar.vue'
 import Sidebar from '~/components/Sidebar.vue'
 
 export default {
+  components: {
+    Navbar,
+    Sidebar
+  },
   data: function () {
     return {
       tag: {}
     }
-  },
-  components: {
-    Navbar,
-    Sidebar
   },
   mounted() {
     this.setupMailchimpPopup()
