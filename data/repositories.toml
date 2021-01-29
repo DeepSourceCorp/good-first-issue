@@ -95,6 +95,7 @@ repositories = [
   'github.com/PrestaShop/PrestaShop',
   'github.com/PrismJS/prism',
   'github.com/Provenance-Emu/Provenance',
+  'github.com/pyroscope-io/pyroscope',
   'github.com/PyTorchLightning/pytorch-lightning',
   'github.com/Qiskit/qiskit-terra',
   'github.com/QuantConnect/Lean',
