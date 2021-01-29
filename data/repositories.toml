@@ -303,7 +303,6 @@ repositories = [
   'github.com/joshwcomeau/guppy',
   'github.com/jshint/jshint',
   'github.com/julialang/julia',
-  'github.com/julialang/julia',
   'github.com/JuliaOpt/JuMP.jl',
   'github.com/jupyter-widgets/ipywidgets',
   'github.com/jupyter/notebook',
@@ -567,7 +566,7 @@ repositories = [
   'github.com/serverless/components',
   'github.com/serverless/serverless',
   'github.com/SFTtech/openage',
-  'github.com/shahednasser/awesome-resources'
+  'github.com/shahednasser/awesome-resources',
   'github.com/SheetJS/sheetjs',
   'github.com/shentao/vue-multiselect',
   'github.com/shogun-toolbox/shogun',
@@ -716,5 +715,5 @@ repositories = [
   'github.com/zio/zio',
   'github.com/zsh-users/zsh-completions',
   'github.com/zsh-users/zsh-syntax-highlighting',
-  'github.com/zulip/zulip',
+  'github.com/zulip/zulip'
  ]
