@@ -497,6 +497,7 @@ repositories = [
   'github.com/pypa/warehouse',
   'github.com/pyqtgraph/pyqtgraph',
   'github.com/pyro-ppl/pyro',
+  'github.com/pyroscope-io/pyroscope',
   'github.com/python-geeks/Automation-scripts',
   'github.com/python-visualization/folium',
   'github.com/pythonnet/pythonnet',
