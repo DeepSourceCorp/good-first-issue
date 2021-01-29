@@ -10,7 +10,7 @@
 <script>
 export default {
   layout: 'content',
-  head () {
+  head() {
     return {
       title: `${this.article.title} · Good First Issue`,
       meta: [

@@ -37,9 +37,7 @@ export default {
       }
     ]
   },
-  css: [
-    '@/assets/app.scss'
-  ],
+  css: ['@/assets/app.scss'],
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [],
 
@@ -50,11 +48,7 @@ export default {
   buildModules: ['@nuxtjs/tailwindcss', '@nuxtjs/google-fonts'],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
-  modules: [
-    '@nuxtjs/pwa',
-    '@nuxt/content',
-    '@nuxtjs/sitemap'
-  ],
+  modules: ['@nuxtjs/pwa', '@nuxt/content', '@nuxtjs/sitemap'],
 
   // Content module configuration (https://go.nuxtjs.dev/config-content)
   content: {},
@@ -72,7 +66,7 @@ export default {
   },
   generate: {
     routes: [
-      ...map(Tags, tag => {
+      ...map(Tags, (tag) => {
         return `/language/${tag.slug}`
       })
     ]

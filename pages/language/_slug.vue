@@ -11,7 +11,7 @@ import Tags from '~/data/tags.json'
 import Repositories from '~/data/generated.json'
 
 export default {
-  head () {
+  head() {
     return {
       title: `${this.tag.language} · Good First Issue`,
       meta: [
