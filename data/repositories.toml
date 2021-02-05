@@ -172,7 +172,6 @@ repositories = [
   'github.com/eclipse/che',
   'github.com/eclipse/eclipse-collections',
   'github.com/eclipsesource/J2V8',
-  'github.com/education/classroom',
   'github.com/EFForg/https-everywhere',
   'github.com/einsteinpy/einsteinpy',
   'github.com/elastic/beats',
