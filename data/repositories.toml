@@ -392,6 +392,7 @@ repositories = [
   'github.com/mlpack/mlpack',
   'github.com/moaazsidat/react-native-qrcode-scanner',
   'github.com/mobile-shell/mosh',
+  'github.com/mockk/mockk',
   'github.com/modin-project/modin',
   'github.com/monicahq/monica',
   'github.com/mono/mono',
