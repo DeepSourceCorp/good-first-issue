@@ -208,6 +208,7 @@ repositories = [
   'github.com/fish-shell/fish-shell',
   'github.com/fishtown-analytics/dbt',
   'github.com/flarum/core',
+  'github.com/fluffyP4nd4/NoteIt',
   'github.com/fortio/fortio',
   'github.com/fossasia/open-event-server',
   'github.com/Foundry376/Mailspring',
