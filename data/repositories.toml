@@ -433,6 +433,7 @@ repositories = [
   'github.com/nushell/nushell',
   'github.com/nuxt/nuxt.js',
   'github.com/oauth-xx/oauth2',
+  'github.com/objectbox/objectbox-dart',
   'github.com/obsproject/obs-studio',
   'github.com/OfflineIMAP/offlineimap',
   'github.com/oilshell/oil',
