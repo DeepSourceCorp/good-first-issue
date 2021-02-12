@@ -309,6 +309,7 @@ repositories = [
   'github.com/jupyterhub/binderhub',
   'github.com/jupyterlab/jupyterlab',
   'github.com/justadudewhohacks/opencv4nodejs',
+  'github.com/kariustobias/acme-rs',
   'github.com/KaTeX/KaTeX',
   'github.com/keptn/keptn',
   'github.com/keras-team/keras',
@@ -649,7 +650,6 @@ repositories = [
   'github.com/timothycrosley/isort',
   'github.com/tinacms/tinacms',
   'github.com/tizonia/tizonia-openmax-il',
-  'github.com/kariustobias/acme-rs'
   'github.com/tomkp/react-split-pane',
   'github.com/tongueroo/jets',
   'github.com/trailofbits/manticore',
