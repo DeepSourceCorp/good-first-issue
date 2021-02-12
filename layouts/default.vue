@@ -1,8 +1,15 @@
 <template>
   <div class="bg-ink-400 flex flex-col min-h-screen antialiased text-vanilla-300">
-    <banner cta-link="https://deepsource.io/discover">
-      <span slot="text">Find issues in any open source repository and fix them automatically with Discover.</span>
-      <template slot="cta">LEARN MORE <ExternalLinkIcon class="h-4 md:h-6 ml-1 md:ml-2 text-vanilla-400"/></template>
+    <banner>
+      {{ BANNER.TEXT }}
+      <a
+        :href="BANNER.CTA.LINK"
+        target="_blank"
+        class="flex items-center md:ml-2 mr-auto md:mr-0 mt-2 md:mt-0 whitespace-nowrap"
+      >
+        {{ BANNER.CTA.TEXT }}
+        <ExternalLinkIcon class="h-4 mb-0.5 ml-0.5 text-vanilla-400" />
+      </a>
     </banner>
     <navbar :tag="tag"></navbar>
     <main class="flex flex-1">
@@ -20,6 +27,14 @@ import Sidebar from '~/components/Sidebar.vue'
 import Banner from '~/components/Banner.vue'
 import { ExternalLinkIcon } from 'vue-feather-icons'
 
+const BANNER = {
+  TEXT: 'Find issues in any open source repository and fix them automatically with Discover.',
+  CTA: {
+    TEXT: 'LEARN MORE',
+    LINK: 'https://deepsource.io/discover'
+  }
+}
+
 export default {
   components: {
     Navbar,
@@ -27,9 +42,10 @@ export default {
     Banner,
     ExternalLinkIcon
   },
-  data: function () {
+  data: function() {
     return {
-      tag: {}
+      tag: {},
+      BANNER
     }
   },
   mounted() {
@@ -60,7 +76,7 @@ export default {
         )
       )
 
-      chimpPopupLoader.onload = function () {
+      chimpPopupLoader.onload = function() {
         document.body.appendChild(chimpPopup)
       }
       document.body.appendChild(chimpPopupLoader)
