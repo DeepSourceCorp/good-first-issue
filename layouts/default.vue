@@ -1,5 +1,9 @@
 <template>
   <div class="bg-ink-400 flex flex-col min-h-screen antialiased text-vanilla-300">
+    <banner cta-link="https://deepsource.io/discover">
+      <span slot="text">Find issues in any open source repository and fix them automatically with Discover.</span>
+      <template slot="cta">LEARN MORE <ExternalLinkIcon class="h-4 md:h-6 ml-1 md:ml-2 text-vanilla-400"/></template>
+    </banner>
     <navbar :tag="tag"></navbar>
     <main class="flex flex-1">
       <section class="container max-w-6xl mx-auto flex flex-col md:flex-row">
@@ -13,11 +17,15 @@
 <script>
 import Navbar from '~/components/Navbar.vue'
 import Sidebar from '~/components/Sidebar.vue'
+import Banner from '~/components/Banner.vue'
+import { ExternalLinkIcon } from 'vue-feather-icons'
 
 export default {
   components: {
     Navbar,
-    Sidebar
+    Sidebar,
+    Banner,
+    ExternalLinkIcon
   },
   data: function () {
     return {
