@@ -496,7 +496,7 @@ module.exports = {
       opacity: 'opacity',
       shadow: 'box-shadow',
       transform: 'transform',
-      'background': 'background'
+      background: 'background'
     },
     transitionTimingFunction: {
       linear: 'linear',

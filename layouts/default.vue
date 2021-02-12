@@ -42,7 +42,7 @@ export default {
     Banner,
     ExternalLinkIcon
   },
-  data: function() {
+  data: function () {
     return {
       tag: {},
       BANNER
@@ -76,7 +76,7 @@ export default {
         )
       )
 
-      chimpPopupLoader.onload = function() {
+      chimpPopupLoader.onload = function () {
         document.body.appendChild(chimpPopup)
       }
       document.body.appendChild(chimpPopupLoader)
