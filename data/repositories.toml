@@ -309,6 +309,7 @@ repositories = [
   'github.com/jupyterhub/binderhub',
   'github.com/jupyterlab/jupyterlab',
   'github.com/justadudewhohacks/opencv4nodejs',
+  'github.com/kariustobias/acme-rs',
   'github.com/KaTeX/KaTeX',
   'github.com/keptn/keptn',
   'github.com/keras-team/keras',
