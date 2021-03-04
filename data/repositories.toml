@@ -90,6 +90,8 @@ repositories = [
   'github.com/buzzfeed/sso',
   'github.com/c410-f3r/oapth',
   'github.com/CachetHQ/Cachet',
+  'github.com/cake-build/cake',
+  'github.com/cake-build/website',
   'github.com/canonical/multipass',
   'github.com/casey/just',
   'github.com/catboost/catboost',
