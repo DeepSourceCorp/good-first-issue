@@ -705,6 +705,7 @@ repositories = [
   'github.com/xunit/xunit',
   'github.com/yanganto/s3rs/',
   'github.com/yarnpkg/yarn',
+  'github.com/yashaka/selene',
   'github.com/yewstack/yew',
   'github.com/Yoast/wordpress-seo',
   'github.com/yugabyte/yugabyte-db',
