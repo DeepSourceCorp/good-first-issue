@@ -120,6 +120,7 @@ repositories = [
   'github.com/cornellius-gp/gpytorch',
   'github.com/cortexlabs/cortex',
   'github.com/cosmos/cosmos-sdk',
+  'github.com/Couchers-org/couchers',
   'github.com/COVID-science-engine/crowdsourced-papers-prototype',
   'github.com/crate/crate',
   'github.com/creativecommons/cccatalog',
