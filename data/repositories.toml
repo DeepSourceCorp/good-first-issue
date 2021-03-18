@@ -419,7 +419,7 @@ repositories = [
   'github.com/neovim/neovim',
   'github.com/nestjsx/crud',
   'github.com/netlify/netlify-cms',
-  'github.com/neurodata/hyppo'
+  'github.com/neurodata/hyppo',
   'github.com/neutraltone/awesome-stock-resources',
   'github.com/newsboat/newsboat',
   'github.com/nextcloud/android',
