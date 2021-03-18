@@ -171,6 +171,8 @@ repositories = [
   'github.com/EasyEngine/easyengine',
   'github.com/eclipse/che',
   'github.com/eclipse/eclipse-collections',
+  'github.com/eclipse/omr',
+  'github.com/eclipse/openj9',
   'github.com/eclipsesource/J2V8',
   'github.com/EFForg/https-everywhere',
   'github.com/einsteinpy/einsteinpy',
