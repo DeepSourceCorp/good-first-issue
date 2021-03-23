@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+import itertools
 import json
 import logging.config
 import random
@@ -79,13 +80,16 @@ def get_repository_info(owner, name):
     try:
         repository = client.repository(owner, name)
 
-        good_first_issues = list(
-            repository.issues(
-                labels=ISSUE_LABELS,
-                state=ISSUE_STATE,
-                number=ISSUE_LIMIT,
-                sort=ISSUE_SORT,
-                direction=ISSUE_SORT_DIRECTION,
+        good_first_issues = set(
+            itertools.chain.from_iterable(
+                repository.issues(
+                    labels=label,
+                    state=ISSUE_STATE,
+                    number=ISSUE_LIMIT,
+                    sort=ISSUE_SORT,
+                    direction=ISSUE_SORT_DIRECTION,
+                )
+                for label in ISSUE_LABELS
             )
         )
         LOGGER.info("\t found %d good first issues", len(good_first_issues))
