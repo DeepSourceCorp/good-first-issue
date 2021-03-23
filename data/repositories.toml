@@ -362,6 +362,7 @@ repositories = [
   'github.com/lusaxweb/vuesax',
   'github.com/maartenbreddels/ipyvolume',
   'github.com/maddypie/PyCalc',
+  'github.com/MadhuNimmo/QuinesInAllLangs',
   'github.com/magento/magento2',
   'github.com/mailchain/mailchain',
   'github.com/MakeContributions/markdown-dungeon',
