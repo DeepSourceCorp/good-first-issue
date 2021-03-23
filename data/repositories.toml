@@ -225,6 +225,7 @@ repositories = [
   'github.com/git-cola/git-cola',
   'github.com/git-tfs/git-tfs',
   'github.com/gitcoinco/web',
+  'github.com/gitcommitshow/auth-jwt',
   'github.com/gizak/termui',
   'github.com/Glavin001/atom-beautify',
   'github.com/globaleaks/GlobaLeaks',
@@ -719,6 +720,5 @@ repositories = [
   'github.com/zio/zio',
   'github.com/zsh-users/zsh-completions',
   'github.com/zsh-users/zsh-syntax-highlighting',
-  'github.com/zulip/zulip',
-  'github.com/gitcommitshow/auth-jwt'
+  'github.com/zulip/zulip'
  ]
