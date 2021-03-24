@@ -9,12 +9,12 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "@nuxt/content": "^1.9.0",
-    "@nuxtjs/pwa": "^3.0.2",
+    "@nuxt/content": "^1.12.0",
+    "@nuxtjs/pwa": "^3.3.5",
     "@nuxtjs/sitemap": "^2.4.0",
-    "core-js": "^3.6.5",
-    "dayjs": "^1.9.7",
-    "lodash": "^4.17.20",
+    "core-js": "^3.8.3",
+    "dayjs": "^1.10.4",
+    "lodash": "^4.17.21",
     "nuxt": "^2.15.0",
     "vue-feather-icons": "^5.1.0"
   },
@@ -22,7 +22,7 @@
     "@nuxtjs/google-analytics": "^2.4.0",
     "@nuxtjs/google-fonts": "^1.2.0",
     "@nuxtjs/tailwindcss": "^3.4.1",
-    "@tailwindcss/postcss7-compat": "^2.0.2",
+    "@tailwindcss/postcss7-compat": "npm:@tailwindcss/postcss7-compat",
     "autoprefixer": "^9",
     "postcss": "^7",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat"
