@@ -158,3 +158,5 @@ cython_debug/
 media
 
 .nuxt
+
+static/sw.js
