@@ -1,14 +1,13 @@
 <template>
   <div class="bg-ink-400 flex flex-col min-h-screen antialiased text-vanilla-300">
     <banner>
-      {{ BANNER.TEXT }}
       <a
         :href="BANNER.CTA.LINK"
         target="_blank"
-        class="flex items-center md:ml-2 mr-auto md:mr-0 mt-2 md:mt-0 whitespace-nowrap"
+        class="flex flex-row items-center text-center justify-center space-x-2"
       >
-        {{ BANNER.CTA.TEXT }}
-        <ExternalLinkIcon class="h-4 mb-0.5 ml-0.5 text-vanilla-400" />
+        <span>{{ BANNER.TEXT }}</span>
+        <ExternalLinkIcon class="md:inline-block hidden" size="1x" />
       </a>
     </banner>
     <navbar :tag="tag"></navbar>
@@ -28,9 +27,8 @@ import Banner from '~/components/Banner.vue'
 import { ExternalLinkIcon } from 'vue-feather-icons'
 
 const BANNER = {
-  TEXT: 'Find issues in any open source repository and fix them automatically with Discover.',
+  TEXT: 'Find and fix code quality issues in 10,000+ open-source projects with DeepSource Discover',
   CTA: {
-    TEXT: 'LEARN MORE',
     LINK: 'https://deepsource.io/discover'
   }
 }

@@ -4,7 +4,7 @@
     :class="[`${bannerActive ? 'bg-robin' : 'bg-ink-300'}`]"
   >
     <span class="flex items-center justify-center flex-wrap text-sm font-medium">
-      <span class="md:flex items-center md:ml-2 mr-auto md:mr-0">
+      <span class="md:flex items-center">
         <slot></slot>
       </span>
     </span>
