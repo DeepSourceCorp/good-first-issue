@@ -230,6 +230,7 @@ repositories = [
   'github.com/git-cola/git-cola',
   'github.com/git-tfs/git-tfs',
   'github.com/gitcoinco/web',
+  'github.com/gitcommitshow/auth-jwt',
   'github.com/gizak/termui',
   'github.com/Glavin001/atom-beautify',
   'github.com/globaleaks/GlobaLeaks',
