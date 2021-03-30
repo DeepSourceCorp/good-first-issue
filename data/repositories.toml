@@ -592,6 +592,7 @@ repositories = [
   'github.com/slackapi/node-slack-sdk',
   'github.com/slic3r/Slic3r',
   'github.com/snabbdom/snabbdom',
+  'github.com/snowtrack/snowfs',
   'github.com/softshape-team/diana-mobile',
   'github.com/softshape-team/diana-server',
   'github.com/solid/node-solid-server',
