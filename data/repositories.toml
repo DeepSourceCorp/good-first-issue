@@ -430,6 +430,7 @@ repositories = [
   'github.com/newsboat/newsboat',
   'github.com/nextcloud/android',
   'github.com/nextcloud/server',
+  'github.com/kodadot/nft-gallery',
   'github.com/nidhaloff/b_rabbit',
   'github.com/nidhaloff/deep-translator',
   'github.com/nidhaloff/dolmetscher',
