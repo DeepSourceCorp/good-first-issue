@@ -7,6 +7,7 @@ repositories = [
   'github.com/akiran/react-slick',
   'github.com/akxcv/vuera',
   'github.com/alexkirsz/dispatch-proxy',
+  'github.com/alfasoftware/astra',
   'github.com/alibaba/nacos',
   'github.com/alibaba/Sentinel',
   'github.com/allure-framework/allure2',
