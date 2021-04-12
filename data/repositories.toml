@@ -731,4 +731,5 @@ repositories = [
   'github.com/zsh-users/zsh-completions',
   'github.com/zsh-users/zsh-syntax-highlighting',
   'github.com/zulip/zulip',
+  'github.com/MakeContributions/ideahub',
  ]
