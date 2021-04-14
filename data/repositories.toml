@@ -439,6 +439,7 @@ repositories = [
   'github.com/nidhaloff/gpx_converter',
   'github.com/nidhaloff/igel',
   'github.com/nodejs/node',
+  'github.com/Noovolari/leapp',
   'github.com/npm/cli',
   'github.com/nteract/hydrogen',
   'github.com/nukeop/nuclear',
