@@ -273,6 +273,7 @@ repositories = [
   'github.com/hazelcast/hazelcast',
   'github.com/helm/helm',
   'github.com/helm/monocular',
+  'github.com/Heptagram-Bot/Heptagram',
   'github.com/Hermit-Tools/Thumbnail-Maker',
   'github.com/hewiefreeman/GopherGameServer',
   'github.com/hoppscotch/hoppscotch',
