@@ -454,6 +454,7 @@ repositories = [
   'github.com/oilshell/oil',
   'github.com/okteto/okteto',
   'github.com/onivim/oni',
+  'github.com/Online-test-system-Nomre/Nomreazma',
   'github.com/open-sauced/open-sauced',
   'github.com/openatx/uiautomator2',
   'github.com/opencv/cvat',
