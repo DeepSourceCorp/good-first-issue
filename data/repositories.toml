@@ -330,6 +330,7 @@ repositories = [
   'github.com/Kong/kong',
   'github.com/Kong/kuma',
   'github.com/krassowski/jupyterlab-lsp',
+  'github.com/krishdevdb/reseter.css',
   'github.com/ktorio/ktor',
   'github.com/kubeapps/kubeapps',
   'github.com/KubeOperator/KubeOperator',
