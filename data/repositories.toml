@@ -369,6 +369,7 @@ repositories = [
   'github.com/magento/magento2',
   'github.com/mailchain/mailchain',
   'github.com/MakeContributions/markdown-dungeon',
+  'github.com/MakeContributions/ideahub',
   'github.com/mamamia5x/markdownpedia',
   'github.com/mapbox/mapbox-gl-js',
   'github.com/mapbox/mapbox-gl-native',
