@@ -455,6 +455,7 @@ repositories = [
   'github.com/OfflineIMAP/offlineimap',
   'github.com/oilshell/oil',
   'github.com/okteto/okteto',
+  'github.com/OneStep-elecTRON/onestep-electron-content'
   'github.com/onivim/oni',
   'github.com/Online-test-system-Nomre/Nomreazma',
   'github.com/open-sauced/open-sauced',
