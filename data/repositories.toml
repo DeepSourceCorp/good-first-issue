@@ -367,6 +367,7 @@ repositories = [
   'github.com/maddypie/PyCalc',
   'github.com/MadhuNimmo/QuinesInAllLangs',
   'github.com/magento/magento2',
+  'github.com/Magicianred/learn-by-doing',
   'github.com/mailchain/mailchain',
   'github.com/MakeContributions/markdown-dungeon',
   'github.com/mamamia5x/markdownpedia',
@@ -731,5 +732,4 @@ repositories = [
   'github.com/zsh-users/zsh-completions',
   'github.com/zsh-users/zsh-syntax-highlighting',
   'github.com/zulip/zulip',
-  'github.com/Magicianred/learn-by-doing',
  ]
