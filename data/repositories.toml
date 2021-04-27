@@ -595,6 +595,7 @@ repositories = [
   'github.com/SheetJS/sheetjs',
   'github.com/shentao/vue-multiselect',
   'github.com/shogun-toolbox/shogun',
+  'github.com/shravan20/github-readme-quotes',
   'github.com/Sibyx/django_api_forms',
   'github.com/simonmichael/hledger',
   'github.com/simple-icons/simple-icons',
