@@ -692,6 +692,7 @@ repositories = [
   'github.com/valhalla/valhalla',
   'github.com/validatorjs/validator.js',
   'github.com/Varying-Vagrant-Vagrants/VVV',
+  'github.com/version0chiro/Find-Me-Issues',
   'github.com/vesoft-inc/nebula',
   'github.com/vespa-engine/vespa',
   'github.com/vicky002/AlgoWiki',
