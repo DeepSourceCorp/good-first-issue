@@ -15,7 +15,7 @@
     "core-js": "^3.8.3",
     "dayjs": "^1.10.4",
     "lodash": "^4.17.21",
-    "nuxt": "^2.15.0",
+    "nuxt": "^2.15.5",
     "vue-feather-icons": "^5.1.0"
   },
   "devDependencies": {
