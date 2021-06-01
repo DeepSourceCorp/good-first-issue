@@ -36,7 +36,34 @@ export default {
         hid: 'og:image',
         property: 'og:image',
         content: '/images/meta.jpg'
-      }
+      },
+{
+  hid: 'twitter:card',
+  name: 'twitter:card',
+  content: 'summary_large_image',
+},
+{ hid: 'twitter:site', name: 'twitter:site', content: '@nuxt_js' },
+{
+  hid: 'twitter:url',
+  name: 'twitter:url',
+  content: 'https://goodfirstissue.dev',
+},
+{
+  hid: 'twitter:title',
+  name: 'twitter:title',
+  content: 'Goodfirstissue.dev',
+},
+{
+  hid: 'twitter:description',
+  name: 'twitter:description',
+  content: 'Make your first open-source contribution.',
+},
+{
+  hid: 'twitter:image',
+  name: 'twitter:image',
+  content:
+    'https://goodfirstissue.dev/images/meta.jpg',
+},
     ]
   },
 
