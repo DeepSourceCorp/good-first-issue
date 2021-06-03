@@ -60,7 +60,7 @@
         >Add your project</a
       >
     </div>
-        <div class="pt-6">
+    <div class="pt-6">
       <h3 class="section-heading">Newsletter</h3>
       <p class="text-sm">
         A weekly update on popular open-source projects including the digest of open good first
