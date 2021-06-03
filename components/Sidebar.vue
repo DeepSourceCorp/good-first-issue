@@ -60,6 +60,54 @@
         >Add your project</a
       >
     </div>
+        <div class="pt-6">
+      <h3 class="section-heading">Newsletter</h3>
+      <p class="text-sm">
+        A weekly update on popular open-source projects including the digest of open good first
+        issues, right into your inbox.
+      </p>
+    </div>
+    <div class="pt-6">
+      <form
+        action="https://buttondown.email/api/emails/embed-subscribe/Goodfirstissue"
+        method="post"
+        target="popupwindow"
+        onsubmit='window.open("https://buttondown.email/Goodfirstissue","popupwindow")'
+        class="embeddable-buttondown-form"
+        style="display: flex; flex-direction: column; justify-content: space-between"
+      >
+        <input
+          type="email"
+          name="email"
+          placeholder="Email address"
+          id="bd-email"
+          class="
+            rounded-md
+            focus:outline-none
+            focus:ring-1 focus:ring-current
+            focus:border-transparent
+          "
+          style="padding: 10px; background-color: #52575c; color: white"
+        />
+        <input type="hidden" value="1" name="embed" />
+        <a
+          class="
+            block
+            bg-juniper
+            hover:bg-light_juniper
+            text-ink-400
+            uppercase
+            rounded-md
+            font-bold
+            text-center
+            px-1
+            py-3
+          "
+          style="margin-top: 1.5rem"
+          ><input type="submit" value="Keep Me Posted" style="all: unset"
+        /></a>
+      </form>
+    </div>
     <div class="text-sm pt-6">
       <a
         class="flex flex-row justify-center items-center"
