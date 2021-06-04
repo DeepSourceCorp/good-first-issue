@@ -604,6 +604,7 @@ repositories = [
   'github.com/shogun-toolbox/shogun',
   'github.com/shravan20/github-readme-quotes',
   'github.com/Sibyx/django_api_forms',
+  'github.com/Signoz/signoz',
   'github.com/simonmichael/hledger',
   'github.com/simple-icons/simple-icons',
   'github.com/sindresorhus/refined-github',
