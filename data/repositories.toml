@@ -693,6 +693,7 @@ repositories = [
   'github.com/unisonweb/unison',
   'github.com/UniversalMediaServer/UniversalMediaServer',
   'github.com/unoplatform/uno',
+  'github.com/uutils/coreutils',
   'github.com/valhalla/valhalla',
   'github.com/validatorjs/validator.js',
   'github.com/Varying-Vagrant-Vagrants/VVV',
