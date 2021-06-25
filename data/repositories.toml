@@ -101,6 +101,7 @@ repositories = [
   'github.com/certbot/certbot',
   'github.com/CesiumGS/cesium',
   'github.com/chapel-lang/chapel',
+  'github.com/chatwoot/chatwoot',
   'github.com/Chocobozzz/PeerTube',
   'github.com/ckb-next/ckb-next',
   'github.com/ckeditor/ckeditor4',
