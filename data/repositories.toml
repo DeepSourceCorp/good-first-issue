@@ -602,6 +602,7 @@ repositories = [
   'github.com/serverless/serverless',
   'github.com/SFTtech/openage',
   'github.com/shahednasser/awesome-resources',
+  'github.com/shaynethiessen/terrene',
   'github.com/SheetJS/sheetjs',
   'github.com/shentao/vue-multiselect',
   'github.com/shogun-toolbox/shogun',
