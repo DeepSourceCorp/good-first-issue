@@ -98,6 +98,7 @@ repositories = [
   'github.com/casey/just',
   'github.com/catboost/catboost',
   'github.com/ccrama/Slide',
+  'github.com/centerofci/mathesar',
   'github.com/certbot/certbot',
   'github.com/CesiumGS/cesium',
   'github.com/chapel-lang/chapel',
