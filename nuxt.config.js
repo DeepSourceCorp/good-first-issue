@@ -41,24 +41,23 @@ export default {
         hid: 'og:title',
         name: 'twitter:title',
         content: 'Good First Issue: Issues for your first open-source contribution'
-          
       },
       {
         hid: 'og:description',
         name: 'twitter:description',
-        content: 'Making your first open-source contribution is easier than you think. Good First Issue is a curated list of issues from popular open-source projects that you can fix easily. Start today!'
+        content:
+          'Making your first open-source contribution is easier than you think. Good First Issue is a curated list of issues from popular open-source projects that you can fix easily. Start today!'
       },
       {
         hid: 'twitter:site',
         name: 'twitter:site',
-        content:'@DeepSourceHQ'
+        content: '@DeepSourceHQ'
       },
       {
         hid: 'twitter:card',
         name: 'twitter:card',
         content: 'summary'
-      },
-      
+      }
     ]
   },
 
