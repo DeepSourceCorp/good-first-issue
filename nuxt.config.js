@@ -38,30 +38,25 @@ export default {
         content: '/images/meta.jpg'
       },
       {
+        hid: 'og:title',
+        name: 'twitter:title',
+        content: 'Good First Issue: Issues for your first open-source contribution'
+      },
+      {
+        hid: 'og:description',
+        name: 'twitter:description',
+        content:
+          'Making your first open-source contribution is easier than you think. Good First Issue is a curated list of issues from popular open-source projects that you can fix easily. Start today!'
+      },
+      {
+        hid: 'twitter:site',
+        name: 'twitter:site',
+        content: '@DeepSourceHQ'
+      },
+      {
         hid: 'twitter:card',
         name: 'twitter:card',
-        content: 'summary_large_image'
-      },
-      { hid: 'twitter:site', name: 'twitter:site', content: '@nuxt_js' },
-      {
-        hid: 'twitter:url',
-        name: 'twitter:url',
-        content: 'https://goodfirstissue.dev'
-      },
-      {
-        hid: 'twitter:title',
-        name: 'twitter:title',
-        content: 'Goodfirstissue.dev'
-      },
-      {
-        hid: 'twitter:description',
-        name: 'twitter:description',
-        content: 'Make your first open-source contribution.'
-      },
-      {
-        hid: 'twitter:image',
-        name: 'twitter:image',
-        content: 'https://goodfirstissue.dev/images/meta.jpg'
+        content: 'summary'
       }
     ]
   },

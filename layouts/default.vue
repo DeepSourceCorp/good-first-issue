@@ -4,6 +4,7 @@
       <a
         :href="BANNER.CTA.LINK"
         target="_blank"
+        rel="noopener noreferrer"
         class="flex flex-row items-center text-center justify-center space-x-2"
       >
         <span>{{ BANNER.TEXT }}</span>

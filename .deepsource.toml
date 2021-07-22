@@ -30,3 +30,7 @@ enabled = true
 [[transformers]]
   name = 'prettier'
   enabled = true
+
+[[analyzers]]
+name = "secrets"
+enabled = true
