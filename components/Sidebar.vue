@@ -57,6 +57,7 @@
         "
         href="https://github.com/deepsourcelabs/good-first-issue#adding-a-new-project"
         target="_blank"
+        rel="noopener noreferrer"
         >Add your project</a
       >
     </div>
@@ -64,6 +65,7 @@
       <a
         class="flex flex-row justify-center items-center"
         target="_blank"
+        rel="noopener noreferrer"
         href="https://deepsource.io?ref=gfi"
       >
         <img style="width: 14px" src="/social/heart.svg" alt="Heart" />
