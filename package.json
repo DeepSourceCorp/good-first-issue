@@ -13,7 +13,7 @@
     "@nuxtjs/pwa": "^3.3.5",
     "@nuxtjs/sitemap": "^2.4.0",
     "core-js": "^3.8.3",
-    "dayjs": "^1.10.4",
+    "dayjs": "^1.10.5",
     "lodash": "^4.17.21",
     "nuxt": "^2.15.5",
     "vue-feather-icons": "^5.1.0"

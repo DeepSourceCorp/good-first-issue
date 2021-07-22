@@ -1,6 +1,16 @@
 <template>
   <section
-    class="masthead font-sans pt-6 border-r border-ink-200 px-6 text-vanilla-300 flex-none w-full md:max-w-sm"
+    class="
+      masthead
+      font-sans
+      pt-6
+      border-r border-ink-200
+      px-6
+      text-vanilla-300
+      flex-none
+      w-full
+      md:max-w-sm
+    "
   >
     <div>
       <h3 class="section-heading">About</h3>
@@ -33,9 +43,21 @@
     </div>
     <div class="pt-6">
       <a
-        class="block bg-juniper hover:bg-light_juniper text-ink-400 uppercase rounded-md font-bold text-center px-1 py-3"
+        class="
+          block
+          bg-juniper
+          hover:bg-light_juniper
+          text-ink-400
+          uppercase
+          rounded-md
+          font-bold
+          text-center
+          px-1
+          py-3
+        "
         href="https://github.com/deepsourcelabs/good-first-issue#adding-a-new-project"
         target="_blank"
+        rel="noopener noreferrer"
         >Add your project</a
       >
     </div>
@@ -43,6 +65,7 @@
       <a
         class="flex flex-row justify-center items-center"
         target="_blank"
+        rel="noopener noreferrer"
         href="https://deepsource.io?ref=gfi"
       >
         <img style="width: 14px" src="/social/heart.svg" alt="Heart" />

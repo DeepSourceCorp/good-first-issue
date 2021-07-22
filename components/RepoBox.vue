@@ -11,6 +11,7 @@
           :title="`Open ${repo.owner}/${repo.name} on GitHub`"
           :href="repo.url"
           target="_blank"
+          rel="noopener noreferrer"
           class="text-xl font-bold group-hover:text-juniper"
           :class="{ 'text-juniper': isIssueOpen }"
           >{{ repo.owner }} / {{ repo.name }}</a
@@ -53,6 +54,7 @@
             title="Open issue on GitHub"
             :href="issue.url"
             target="_blank"
+            rel="noopener noreferrer"
             class="leading-snug font-semibold hover:text-juniper text-vanilla-300 block flex-auto"
             >{{ issue.title }}</a
           >
