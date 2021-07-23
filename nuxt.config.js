@@ -1,6 +1,8 @@
 import Tags from './data/tags.json'
 import { map } from 'lodash'
 
+const REQUIRED_FONT_WEIGHTS = [400, 500, 600, 700]
+
 export default {
   // Target (https://go.nuxtjs.dev/config-target)
   target: 'static',
@@ -90,7 +92,7 @@ export default {
 
   googleFonts: {
     families: {
-      Inter: [400, 500, 600, 700]
+      Inter: REQUIRED_FONT_WEIGHTS
     }
   },
   googleAnalytics: {
