@@ -6,6 +6,7 @@ repositories = [
   'github.com/airsonic/airsonic',
   'github.com/akiran/react-slick',
   'github.com/akxcv/vuera',
+  'github.com/alexfertel/rust-algorithms',
   'github.com/alexkirsz/dispatch-proxy',
   'github.com/alfasoftware/astra',
   'github.com/alibaba/nacos',
