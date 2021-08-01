@@ -101,6 +101,7 @@ repositories = [
   'github.com/centerofci/mathesar',
   'github.com/certbot/certbot',
   'github.com/CesiumGS/cesium',
+  'github.com/chaos-mesh/chaos-mesh',
   'github.com/chapel-lang/chapel',
   'github.com/chatwoot/chatwoot',
   'github.com/Chocobozzz/PeerTube',
