@@ -35,7 +35,7 @@ export default {
       {
         hid: 'og:image',
         property: 'og:image',
-        content: '/images/meta.jpg'
+        content: require('/images/meta.jpg')
       },
       {
         hid: 'og:title',
