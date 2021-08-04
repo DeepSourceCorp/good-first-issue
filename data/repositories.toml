@@ -148,6 +148,7 @@ repositories = [
   'github.com/dask/dask',
   'github.com/dask/dask-ml',
   'github.com/datafuselabs/datafuse',
+  'github.com/Davidy22/SkunkBooth/',
   'github.com/db-migrate/node-db-migrate',
   'github.com/dbeaver/dbeaver',
   'github.com/dbidwell94/vanilact',
