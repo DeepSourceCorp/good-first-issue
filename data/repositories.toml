@@ -538,6 +538,7 @@ repositories = [
   'github.com/python-geeks/Automation-scripts',
   'github.com/python-visualization/folium',
   'github.com/pythonnet/pythonnet',
+  'github.com/pytorch/ignite',
   'github.com/pytorch/glow',
   'github.com/pytorch/pytorch',
   'github.com/PyTorchLightning/pytorch-lightning',
