@@ -391,6 +391,7 @@ repositories = [
   'github.com/mamamia5x/markdownpedia',
   'github.com/mapbox/mapbox-gl-js',
   'github.com/mapbox/mapbox-gl-native',
+  'github.com/margaritahumanitarian/helpafamily',
   'github.com/marmelab/react-admin',
   'github.com/mars-project/mars',
   'github.com/masoniteframework/masonite',
