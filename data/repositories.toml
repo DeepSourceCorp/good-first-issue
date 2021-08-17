@@ -126,6 +126,7 @@ repositories = [
   'github.com/coq/coq',
   'github.com/corda/corda',
   'github.com/cornellius-gp/gpytorch',
+  'github.com/CorsixTH/CorsixTH',
   'github.com/cortexlabs/cortex',
   'github.com/cosmos/cosmos-sdk',
   'github.com/Couchers-org/couchers',
