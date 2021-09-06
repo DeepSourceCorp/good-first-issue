@@ -275,6 +275,7 @@ repositories = [
   'github.com/Graylog2/graylog2-server',
   'github.com/grpc-ecosystem/grpc-gateway',
   'github.com/gruntwork-io/terragrunt',
+  'github.com/Guake/guake',
   'github.com/hackmdio/codimd',
   'github.com/haproxy/haproxy',
   'github.com/hardkoded/puppeteer-sharp',
