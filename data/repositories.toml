@@ -676,6 +676,7 @@ repositories = [
   'github.com/TeamAmaze/AmazeFileManager',
   'github.com/TeamNewPipe/NewPipe',
   'github.com/tektoncd/pipeline',
+  'github.com/TelegramHelpBot/Helper-Bot',
   'github.com/telepresenceio/telepresence',
   'github.com/tenancy/multi-tenant',
   'github.com/Tencent/wepy',
