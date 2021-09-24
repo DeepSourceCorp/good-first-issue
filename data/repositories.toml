@@ -620,6 +620,7 @@ repositories = [
   'github.com/shogun-toolbox/shogun',
   'github.com/shravan20/github-readme-quotes',
   'github.com/Sibyx/django_api_forms',
+  'github.com/Sid672/Java',
   'github.com/sif/Ghost-Artemis',
   'github.com/Signoz/signoz',
   'github.com/simonmichael/hledger',
