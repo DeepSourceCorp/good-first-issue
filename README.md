@@ -25,6 +25,8 @@ Follow these simple steps:
 
   - At least three issues with the `good first issue` label. This label is already present on all repositories by default. If not, you can follow the steps [here](https://help.github.com/en/github/managing-your-work-on-github/applying-labels-to-issues-and-pull-requests).
 
+  - At least 10 contributors.
+
   - Detailed setup instructions for the project.
 
   - CONTRIBUTING.md
@@ -35,4 +37,4 @@ Follow these simple steps:
 
 - Create a new pull-request. Please add the link to the issues page of the repository in the PR description. Once the pull request is merged, the changes will be live on [goodfirstissue.dev](https://goodfirstissue.dev/).
 
-We hangout in [DeepSource's User Group on Slack](https://deepsourceusers.slack.com). Feel free to ping us in the `#good-first-issue` channel. 🙌🏼
+We hangout in our [Discord server](https://deepsource.io/discord). Stop by to say hi! 🙌🏼
