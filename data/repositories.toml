@@ -483,6 +483,7 @@ repositories = [
   'github.com/Online-test-system-Nomre/Nomreazma',
   'github.com/open-sauced/open-sauced',
   'github.com/openatx/uiautomator2',
+  'github.com/openchemistry/avogadrolibs',
   'github.com/opencv/cvat',
   'github.com/opencv/opencv',
   'github.com/OpenDroneMap/WebODM',
