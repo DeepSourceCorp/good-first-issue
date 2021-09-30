@@ -740,6 +740,7 @@ repositories = [
   'github.com/wemake-services/wemake-python-styleguide',
   'github.com/wesnoth/wesnoth',
   'github.com/wger-project/wger',
+  'github.com/wger-project/flutter',
   'github.com/whatwg/fetch',
   'github.com/whatwg/html',
   'github.com/whitesmith/rubycritic',
