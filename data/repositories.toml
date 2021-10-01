@@ -158,6 +158,7 @@ repositories = [
   'github.com/denoland/deno',
   'github.com/denysdovhan/spaceship-prompt',
   'github.com/dephell/dephell',
+  'github.com/DiFronzo/blockchair',
   'github.com/DesignSystemsOSS/eccentrictouch',
   'github.com/DesignSystemsOSS/eccentrictouch.website.frontend',
   'github.com/DesignSystemsOSS/eccentrictouch.docs',
