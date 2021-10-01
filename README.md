@@ -9,7 +9,7 @@
 [![DeepSource](https://deepsource.io/gh/deepsourcelabs/good-first-issue.svg/?label=active+issues&show_trend=true&token=GaQBiR4ajzi3optn72C17BDB)](https://deepsource.io/gh/deepsourcelabs/good-first-issue/?ref=repository-badge)
 ![CI](https://github.com/deepsourcelabs/good-first-issue/workflows/CI/badge.svg)
 
-Welcome! 👋🏼
+Welcome ! 👋🏼
 
 **Good First Issue** is an initiative to curate easy pickings from popular projects, so developers who've never contributed to open-source can get started quickly.
 
