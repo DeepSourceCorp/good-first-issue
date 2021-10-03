@@ -722,6 +722,7 @@ repositories = [
   'github.com/vesoft-inc/nebula',
   'github.com/vespa-engine/vespa',
   'github.com/vicky002/AlgoWiki',
+  'github.com/vimeo/psalm',
   'github.com/vmware-tanzu/velero',
   'github.com/volta-cli/volta',
   'github.com/VSCodeVim/Vim',
