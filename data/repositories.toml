@@ -255,6 +255,7 @@ repositories = [
   'github.com/globaleaks/GlobaLeaks',
   'github.com/glpi-project/glpi',
   'github.com/gnuradio/gnuradio',
+  'github.com/go-gitea/gitea',
   'github.com/go-swagger/go-swagger',
   'github.com/gomods/athens',
   'github.com/google/data-transfer-project',
