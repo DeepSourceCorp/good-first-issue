@@ -785,4 +785,5 @@ repositories = [
   'github.com/ZupIT/ritchie-cli',
   'github.com/ZupIT/ritchie-formulas',
   'github.com/bmarvinb/react-trello-clone',
+  'github.com/questdb/questdb'
  ]
