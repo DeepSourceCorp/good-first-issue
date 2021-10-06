@@ -78,6 +78,7 @@ repositories = [
   'github.com/bisq-network/bisq',
   'github.com/bitcoin/bitcoin',
   'github.com/blockstack/blockstack-browser',
+  'github.com/bmarvinb/react-trello-clone',
   'github.com/boa-dev/boa',
   'github.com/bokeh/bokeh',
   'github.com/borgbackup/borg',
@@ -559,6 +560,7 @@ repositories = [
   'github.com/quantumblacklabs/kedro',
   'github.com/quantumlib/Cirq',
   'github.com/quarkusio/quarkus',
+  'github.com/questdb/questdb',
   'github.com/quicktype/quicktype',
   'github.com/radareorg/cutter',
   'github.com/radareorg/radare2',
@@ -783,7 +785,5 @@ repositories = [
   'github.com/zulip/zulip',
   'github.com/ZupIT/charlescd',
   'github.com/ZupIT/ritchie-cli',
-  'github.com/ZupIT/ritchie-formulas',
-  'github.com/bmarvinb/react-trello-clone',
-  'github.com/questdb/questdb'
+  'github.com/ZupIT/ritchie-formulas'
  ]
