@@ -493,6 +493,7 @@ repositories = [
   'github.com/OpenDroneMap/WebODM',
   'github.com/openemr/openemr',
   'github.com/OpenGenus/cosmos',
+  'github.com/OpenLightingProject/open-fixture-library',
   'github.com/OpenLiveWriter/OpenLiveWriter',
   'github.com/OpenMined/PySyft',
   'github.com/OpenRCT2/OpenRCT2',
