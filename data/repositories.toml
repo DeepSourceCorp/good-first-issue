@@ -22,7 +22,7 @@ repositories = [
   'github.com/ansible/awx',
   'github.com/AntennaPod/AntennaPod',
   'github.com/apache/dubbo',
-  'github.com/apache/incubator-apisix',
+  'github.com/apache/apisix',
   'github.com/apache/incubator-doris',
   'github.com/apache/incubator-mxnet',
   'github.com/apache/incubator-superset',
