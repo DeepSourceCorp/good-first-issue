@@ -45,6 +45,7 @@ repositories = [
   'github.com/artalar/reatom',
   'github.com/arxiv-vanity/engrafo',
   'github.com/AssemblyScript/assemblyscript',
+  'github.com/assertj/assertj-core',
   'github.com/astropy/astropy',
   'github.com/atlassian/react-beautiful-dnd',
   'github.com/AtomicGameEngine/AtomicGameEngine',
