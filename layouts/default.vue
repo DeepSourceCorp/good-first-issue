@@ -28,7 +28,7 @@ import Banner from '~/components/Banner.vue'
 import { ExternalLinkIcon } from 'vue-feather-icons'
 
 const BANNER = {
-  TEXT: 'This Hacktoberfest, ship good code with DeepSource Discover',
+  TEXT: 'Fix code quality issues in 10,000+ open-source projects with DeepSource Discover',
   CTA: {
     LINK: 'https://deepsource.io/discover'
   }
