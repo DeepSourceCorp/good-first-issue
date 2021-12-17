@@ -143,6 +143,7 @@ repositories = [
   'github.com/crossbario/autobahn-python',
   'github.com/crossoverJie/cim',
   'github.com/crossplaneio/crossplane',
+  'github.com/cupy/cupy',
   'github.com/cython/cython',
   'github.com/cztomczak/cefpython',
   'github.com/dabl/dabl',
