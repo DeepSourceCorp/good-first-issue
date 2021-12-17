@@ -347,6 +347,7 @@ repositories = [
   'github.com/KaTeX/KaTeX',
   'github.com/keptn/keptn',
   'github.com/keras-team/keras',
+  'github.com/kevinfjiang/FuncNotify',
   'github.com/keystonejs/keystone',
   'github.com/kiali/kiali',
   'github.com/knative/serving',
