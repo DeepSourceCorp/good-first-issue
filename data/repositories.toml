@@ -310,6 +310,7 @@ repositories = [
   'github.com/Icinga/icinga2',
   'github.com/Igglybuff/awesome-piracy',
   'github.com/imsnif/bandwhich',
+  'github.com/indeedeng/starfish',
   'github.com/infection/infection',
   'github.com/intel/dffml',
   'github.com/internetarchive/openlibrary',
