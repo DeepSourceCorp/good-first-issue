@@ -81,6 +81,7 @@ repositories = [
   'github.com/blockstack/blockstack-browser',
   'github.com/bmarvinb/react-trello-clone',
   'github.com/boa-dev/boa',
+  'github.com/bobychaudhary/bitmarket',
   'github.com/bokeh/bokeh',
   'github.com/borgbackup/borg',
   'github.com/bpmn-io/bpmn-js',
