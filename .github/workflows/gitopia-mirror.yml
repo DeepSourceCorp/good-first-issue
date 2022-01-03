@@ -17,7 +17,7 @@ jobs:
           node-version: 12
           registry-url: https://registry.npmjs.org/
       - name: Gitopia Mirror Action
-        uses: gitopia/gitopia-mirror-action@v0.1.2
+        uses: gitopia/gitopia-mirror-action@v0.3.0
         with:
           gitopiaWallet: "${{ secrets.ARWEAVE_WALLET }}"
           branch: "master"
