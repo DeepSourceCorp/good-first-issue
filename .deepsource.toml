@@ -34,3 +34,5 @@ enabled = true
 [[analyzers]]
 name = "secrets"
 enabled = true
+
+
