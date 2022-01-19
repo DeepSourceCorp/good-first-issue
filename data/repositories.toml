@@ -646,6 +646,8 @@ repositories = [
   'github.com/sitespeedio/sitespeed.io',
   'github.com/slackapi/node-slack-sdk',
   'github.com/slic3r/Slic3r',
+  'github.com/smallstep/certificates',
+  'github.com/smallstep/cli',
   'github.com/snabbdom/snabbdom',
   'github.com/snowtrack/snowfs',
   'github.com/softshape-team/diana-mobile',
