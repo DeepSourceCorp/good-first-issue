@@ -736,7 +736,7 @@ repositories = [
   'github.com/vespa-engine/vespa',
   'github.com/vicky002/AlgoWiki',
   'github.com/vimeo/psalm',
-  'github.com/vmware-tanzu/carvel'
+  'github.com/vmware-tanzu/carvel',
   'github.com/vmware-tanzu/velero',
   'github.com/vmware/versatile-data-kit',
   'github.com/volta-cli/volta',
