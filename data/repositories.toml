@@ -282,6 +282,7 @@ repositories = [
   'github.com/grafana/loki',
   'github.com/grammyjs/grammY',
   'github.com/grandnode/grandnode',
+  'github.com/graph-gophers/graphql-go',
   'github.com/graphhopper/graphhopper',
   'github.com/Graylog2/graylog2-server',
   'github.com/grpc-ecosystem/grpc-gateway',
