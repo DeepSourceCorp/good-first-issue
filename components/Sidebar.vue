@@ -42,6 +42,28 @@
       </div>
     </div>
     <div class="pt-6">
+      <h3 class="section-heading">Sort By</h3>
+      <div>
+        <button
+          v-for="sortby in sortBys"
+          :key="sortby.slug"
+          @click="toggleSortBy(sortby.slug)"
+          :class="{
+            'active-pill': activeSortBy === sortby.slug,
+            'border-slate hover:text-juniper hover:border-juniper': activeSortBy !== sortby.slug
+          }"
+          class="group mx-1 border px-2 py-1 inline-block rounded-sm my-1 text-sm"
+          >{{ sortby.name }}
+          <span
+            :class="{
+              'text-vanilla-400 group-hover:text-juniper': activeSortBy !== sortby.slug
+            }"
+            ></span
+          ></button
+        >
+      </div>
+    </div>
+    <div class="pt-6">
       <a
         class="
           block
@@ -83,12 +105,25 @@
 
 <script>
 import Tags from '~/data/tags.json'
+import SortBys from '~/data/sortbys.json'
+import { mapMutations } from 'vuex'
 
 export default {
   data: function () {
     return {
-      tags: Tags
+      tags: Tags,
+      sortBys: SortBys
     }
+  },
+  computed: {
+    activeSortBy() {
+      return this.$store.state.activeSortBy
+    }
+  },
+  methods: {
+    ...mapMutations({
+      toggleSortBy: 'setActiveSortBy'
+    }),
   }
 }
 </script>

@@ -1,5 +1,6 @@
 export const state = () => ({
-  activeIssue: ''
+  activeIssue: '',
+  activeSortBy: ''
 })
 
 export const mutations = {
@@ -8,6 +9,13 @@ export const mutations = {
       state.activeIssue = ''
     } else {
       state.activeIssue = id.toString()
+    }
+  },
+  setActiveSortBy(state, sortBy) {
+    if (state.activeSortBy === sortBy) {
+      state.activeSortBy = ''
+    } else {
+      state.activeSortBy = sortBy
     }
   }
 }

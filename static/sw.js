@@ -1,7 +1,3 @@
-// THIS FILE SHOULD NOT BE VERSION CONTROLLED
-
-// https://github.com/NekR/self-destroying-sw
-
 self.addEventListener('install', function () {
   self.skipWaiting()
 })
