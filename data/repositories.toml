@@ -798,7 +798,9 @@ repositories = [
   'github.com/zsh-users/zsh-completions',
   'github.com/zsh-users/zsh-syntax-highlighting',
   'github.com/zulip/zulip',
+  'github.com/ZupIT/beagle',
   'github.com/ZupIT/charlescd',
+  'github.com/ZupIT/horusec',
   'github.com/ZupIT/ritchie-cli',
   'github.com/ZupIT/ritchie-formulas'
  ]
