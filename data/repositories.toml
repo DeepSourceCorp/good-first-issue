@@ -681,6 +681,7 @@ repositories = [
   'github.com/STVIR/pysot',
   'github.com/styleguidist/react-styleguidist',
   'github.com/stylelint/stylelint',
+  'github.com/sujana-kamasany/javacodes',
   'github.com/subethaedit/SubEthaEdit',
   'github.com/supercollider/supercollider',
   'github.com/sveltejs/sapper',
