@@ -740,6 +740,7 @@ repositories = [
   'github.com/vicky002/AlgoWiki',
   'github.com/vimeo/psalm',
   'github.com/vmware/versatile-data-kit',
+  'github.com/vmware-tanzu/community-edition',
   'github.com/vmware-tanzu/velero',
   'github.com/volta-cli/volta',
   'github.com/VSCodeVim/Vim',
