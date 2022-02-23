@@ -342,6 +342,7 @@ repositories = [
   'github.com/JdeRobot/RoboticsAcademy',
   'github.com/jendrikseipp/vulture',
   'github.com/jenkins-x/jx',
+  'github.com/JetBrains/Exposed',
   'github.com/jetstack/cert-manager',
   'github.com/jgm/pandoc',
   'github.com/JiahuiYu/generative_inpainting',
