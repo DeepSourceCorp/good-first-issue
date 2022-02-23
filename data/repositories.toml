@@ -34,6 +34,7 @@ repositories = [
   'github.com/apache/trafficserver',
   'github.com/apifytech/apify-js',
   'github.com/apoclyps/reviews',
+  'github.com/apollographql/apollo-kotlin',
   'github.com/apostrophecms/apostrophe',
   'github.com/appbaseio/reactivesearch',
   'github.com/appium/appium-desktop',
