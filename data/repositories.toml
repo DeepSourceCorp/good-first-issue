@@ -692,6 +692,7 @@ repositories = [
   'github.com/sympy/sympy',
   'github.com/syncthing/syncthing',
   'github.com/sysgears/apollo-universal-starter-kit',
+  'github.com/TandoorRecipes/recipes',
   'github.com/tantivy-search/tantivy',
   'github.com/tarantool/tarantool',
   'github.com/tchiotludo/akhq',
