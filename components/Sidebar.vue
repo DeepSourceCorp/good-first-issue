@@ -61,6 +61,12 @@
         >Add your project</a
       >
     </div>
+
+    <div class="pt-6">
+      <h3 class="section-heading">Subscribe to the newsletter</h3>
+      <subscription-form />
+    </div>
+
     <div class="text-sm pt-6">
       <a
         class="flex flex-row justify-center items-center"
@@ -83,8 +89,12 @@
 
 <script>
 import Tags from '~/data/tags.json'
+import SubscriptionForm from '~/components/SubscriptionForm.vue'
 
 export default {
+  components: {
+    SubscriptionForm
+  },
   data: function () {
     return {
       tags: Tags
