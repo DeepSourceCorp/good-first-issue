@@ -7,22 +7,13 @@
     <div class="flex flex-col space-y-2">
       <p>
         <input
-          class="bg-ink-300 text-vanilla-100 flex flex-grow h-10 text-sm py-2 px-3 rounded-sm"
+          class="bg-ink-300 text-vanilla-100 flex flex-grow h-10 text-sm py-2 px-3 rounded-sm w-full"
           type="text"
           name="email"
           placeholder="E-mail"
           required
         />
       </p>
-      <p>
-        <input
-          class="bg-ink-300 text-vanilla-100 flex flex-grow h-10 text-sm py-2 px-3 rounded-sm"
-          type="text"
-          name="name"
-          placeholder="Name (optional)"
-        />
-      </p>
-
       <div class="hidden">
         <p>
           <input
@@ -48,7 +39,7 @@
 
       <p>
         <!-- prettier-ignore -->
-        <input class="bg-juniper hover:bg-light_juniper text-ink-400 rounded-md font-medium text-center h-10 px-4 py-2 text-base space-x-2 leading-8 cursor-pointer" type="submit" value="Subscribe" />
+        <input class="bg-ink-300 hover:bg-ink-200 text-vanilla-100 rounded-md font-medium text-center h-10 px-4 py-2 text-base space-x-2 leading-8 cursor-pointer" type="submit" value="Subscribe" />
       </p>
     </div>
   </form>
