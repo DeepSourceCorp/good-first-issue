@@ -4,13 +4,13 @@
     action="https://listmonk.deepsource.io/subscription/form"
     class="listmonk-form"
   >
-    <div class="flex flex-col space-y-2">
+    <div class="flex flex-row space-x-2">
       <p>
         <input
           class="bg-ink-300 text-vanilla-100 flex flex-grow h-10 text-sm py-2 px-3 rounded-sm w-full"
           type="text"
           name="email"
-          placeholder="E-mail"
+          placeholder="Enter your email"
           required
         />
       </p>
@@ -39,7 +39,7 @@
 
       <p>
         <!-- prettier-ignore -->
-        <input class="bg-ink-300 hover:bg-ink-200 text-vanilla-100 rounded-md font-medium text-center h-10 px-4 py-2 text-base space-x-2 leading-8 cursor-pointer" type="submit" value="Subscribe" />
+        <input class="bg-ink-300 hover:bg-ink-200 text-vanilla-100 rounded-md font-semibold text-center h-10 px-4 py-2 text-sm space-x-2 leading-8 cursor-pointer" type="submit" value="Subscribe" />
       </p>
     </div>
   </form>
