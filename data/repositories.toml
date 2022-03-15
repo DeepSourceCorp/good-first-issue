@@ -469,7 +469,7 @@ repositories = [
   'github.com/neurodata/hyppo',
   'github.com/neutraltone/awesome-stock-resources',
   'github.com/newsboat/newsboat',
-  'github.com/nextB/scancode-toolkit',
+  'github.com/nexB/scancode-toolkit',
   'github.com/nextcloud/android',
   'github.com/nextcloud/server',
   'github.com/nidhaloff/b_rabbit',
