@@ -522,6 +522,8 @@ repositories = [
   'github.com/OpenRCT2/OpenRCT2',
   'github.com/OpenRefine/OpenRefine',
   'github.com/openseadragon/openseadragon',
+  'github.com/opensearch-project/OpenSearch',
+  'github.com/opensearch-project/OpenSearch-Dashboards',
   'github.com/openssl/openssl',
   'github.com/OpenTTD/OpenTTD',
   'github.com/openzfs/zfs',
