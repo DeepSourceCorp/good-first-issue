@@ -217,6 +217,8 @@ repositories = [
   'github.com/ethereum/go-ethereum',
   'github.com/ethereum/solidity',
   'github.com/ethereum/web3.py',
+  'github.com/ethyca/fides',
+  'github.com/ethyca/fidesops',
   'github.com/evhub/coconut',
   'github.com/ezaquarii/vpn-at-home',
   'github.com/facebook/docusaurus',
