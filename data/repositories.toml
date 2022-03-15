@@ -1,4 +1,5 @@
 repositories = [
+  'github.com/4paradigm/OpenMLDB',
   'github.com/AcademySoftwareFoundation/openvdb',
   'github.com/activecm/rita',
   'github.com/AdityaMulgundkar/flutter_opencv',
