@@ -716,6 +716,7 @@ repositories = [
   'github.com/thanos-io/thanos',
   'github.com/themix-project/oomox',
   'github.com/thepracticaldev/dev.to',
+  'github.com/theroopesh/freshbey',
   'github.com/theupdateframework/tuf',
   'github.com/ThreeMammals/Ocelot',
   'github.com/tiangolo/fastapi',
