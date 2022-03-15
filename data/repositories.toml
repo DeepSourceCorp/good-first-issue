@@ -389,6 +389,7 @@ repositories = [
   'github.com/less/less.js',
   'github.com/lhsazevedo/vuetify-material-auth',
   'github.com/lifting-bits/mcsema',
+  'github.com/lightdash/lightdash',
   'github.com/lightningnetwork/lnd',
   'github.com/LightTable/LightTable',
   'github.com/line/armeria',
