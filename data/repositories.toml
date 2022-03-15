@@ -230,6 +230,7 @@ repositories = [
   'github.com/facebookincubator/Bowler',
   'github.com/facebookresearch/pythia',
   'github.com/Factom-Asset-Tokens/fatd',
+  'github.com/fairfield-programming/backend-server',
   'github.com/falconry/falcon',
   'github.com/fastify/fastify',
   'github.com/FeatureLabs/featuretools',
