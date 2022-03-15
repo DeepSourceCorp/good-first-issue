@@ -54,6 +54,7 @@ repositories = [
   'github.com/AutoFixture/AutoFixture',
   'github.com/Automattic/wp-calypso',
   'github.com/automl/auto-sklearn',
+  'github.com/aws-amplify/amplify-cli',
   'github.com/aws-amplify/amplify-js',
   'github.com/aws/amazon-vpc-cni-k8s',
   'github.com/aws/aws-cdk',
