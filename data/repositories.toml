@@ -216,6 +216,7 @@ repositories = [
   'github.com/electron/electronjs.org',
   'github.com/ElementsProject/lightning',
   'github.com/ember-cli/ember-cli',
+  'github.com/empathyco/x',
   'github.com/encode/httpx',
   'github.com/epicmaxco/vuestic-admin',
   'github.com/eslint/eslint',
