@@ -75,6 +75,7 @@ repositories = [
   'github.com/bastion-rs/bastion',
   'github.com/bazelbuild/bazel',
   'github.com/bbatsov/projectile',
+  `github.com/bevyengine/bevy`,
   'github.com/bcherny/json-schema-to-typescript',
   'github.com/beautify-web/js-beautify',
   'github.com/billimarie/prosecutor-database',
