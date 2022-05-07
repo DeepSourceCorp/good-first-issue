@@ -195,6 +195,7 @@ repositories = [
   'github.com/dotnetcore/FreeSql',
   'github.com/Dreamacro/clash',
   'github.com/duo-labs/cloudmapper',
+  'github.com/dylan-power/dinosaur-exploder',
   'github.com/DynamoRIO/drmemory',
   'github.com/DynamoRIO/dynamorio',
   'github.com/ealush/vest',
