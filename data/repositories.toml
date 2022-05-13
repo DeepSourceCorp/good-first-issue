@@ -640,6 +640,8 @@ repositories = [
   'github.com/scipy/scipy',
   'github.com/scrapy/scrapy',
   'github.com/SeaQL/sea-orm',
+  'github.com/SeaQL/sea-query',
+  'github.com/SeaQL/sea-schema',
   'github.com/seata/seata',
   'github.com/sebastianbergmann/phpunit',
   'github.com/sendgrid/sendgrid-php',
