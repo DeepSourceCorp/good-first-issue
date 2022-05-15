@@ -11,5 +11,5 @@ jobs:
       - name: Trigger deployment
         uses: joelwmale/webhook-action@master
         env:
-          WEBHOOK_URL: ${{ secrets.NETLIFY_CRON_BUILD_HOOK }}
+          WEBHOOK_URL: ${{ secrets.DEPLOY_HOOK_URL }}
           data: ""
