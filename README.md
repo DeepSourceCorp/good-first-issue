@@ -47,13 +47,14 @@ To contribute new features and changes to the website, you would want to run the
 
 For Linux and Mac users (WSL or bash emulator on Windows may also be applicable):
 ```bash
-$ make first-install # This will also run `yarn` and `yarn dev -o` for you to install dependencies and start the development server.
+$ make first-run # This will also run `yarn` and `yarn dev -o` for you to install dependencies and start the development server.
 ```
 
 For cmd/PowerShell users:
 ```bash
 $ cp data/generated.sample.json data/generated.json
 $ cp data/tags.sample.json data/tags.json
+$ cp static/sw.sample.js static/sw.js
 ```
 
 3. Build the front-end app and start the development server.
