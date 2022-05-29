@@ -28,3 +28,9 @@ test:
 	poetry run python gfi/test_data.py
 
 .DEFAULT_GOAL := build
+
+first-install:
+	cp data/generated.sample.json data/generated.json
+	cp data/tags.sample.json data/tags.json
+	yarn
+	yarn dev -o

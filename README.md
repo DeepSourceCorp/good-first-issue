@@ -45,6 +45,12 @@ To contribute new features and changes to the website, you would want to run the
 
 2. Make a copy of the sample data files for your local app to use and rename them to the filename that the app expects. **This step is important, as the front-end app won't work without these data files.**
 
+For Linux and Mac users (WSL or bash emulator on Windows may also be applicable):
+```bash
+$ make first-install # This will also run `yarn` and `yarn dev -o` for you to install dependencies and start the development server.
+```
+
+For cmd/PowerShell users:
 ```bash
 $ cp data/generated.sample.json data/generated.json
 $ cp data/tags.sample.json data/tags.json
