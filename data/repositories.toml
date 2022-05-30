@@ -485,6 +485,7 @@ repositories = [
   'github.com/oilshell/oil',
   'github.com/okteto/okteto',
   'github.com/OneStep-elecTRON/onestep-electron-content',
+  'github.com/onlydustxyz/starklings',
   'github.com/open-sauced/open-sauced',
   'github.com/openatx/uiautomator2',
   'github.com/openchemistry/avogadrolibs',
