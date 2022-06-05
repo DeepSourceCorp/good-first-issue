@@ -41,6 +41,7 @@ repositories = [
   'github.com/ArduPilot/ardupilot',
   'github.com/argoproj/argo-cd',
   'github.com/argoproj/argo',
+  'github.com/ARK-Builders/ARK-Navigator',
   'github.com/ARMmbed/mbedtls',
   'github.com/Arsenic-ATG/Qt-calculator',
   'github.com/artalar/reatom',
