@@ -639,6 +639,7 @@ repositories = [
   'github.com/SirVer/ultisnips',
   'github.com/sitespeedio/coach',
   'github.com/sitespeedio/sitespeed.io',
+  'github.com/skully-coder/competitiveprogramming',
   'github.com/slackapi/node-slack-sdk',
   'github.com/slic3r/Slic3r',
   'github.com/smallstep/certificates',
