@@ -3,7 +3,7 @@
     class="masthead font-sans pt-6 border-r border-ink-200 px-6 text-vanilla-300 flex-none w-full md:max-w-sm"
   >
     <div>
-      <h3 class="section-heading">About</h3>
+      <h3 class="section-heading">About me</h3>
       <p class="text-sm">
         Good First Issue curates easy pickings from popular open-source projects, and helps you make
         your first contribution to open-source.
