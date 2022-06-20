@@ -199,6 +199,7 @@ repositories = [
   'github.com/ElementsProject/lightning',
   'github.com/ember-cli/ember-cli',
   'github.com/empathyco/x',
+  'github.com/empathyco/x-archetype',
   'github.com/encode/httpx',
   'github.com/epicmaxco/vuestic-admin',
   'github.com/eslint/eslint',
