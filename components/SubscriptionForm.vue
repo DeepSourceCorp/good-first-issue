@@ -28,7 +28,7 @@
           checked
           value="4c2a780e-f85b-4d28-8a60-9e2a43f0e0d4"
         />
-        <label for="4c2a7">Community newsletter</label>
+        <label for="4c2a7">Community Newsletter</label>
       </div>
       <!-- prettier-ignore -->
       <input class="bg-ink-300 hover:bg-ink-200 text-vanilla-100 rounded-md font-semibold text-center h-10 px-4 py-2 text-sm space-x-2 leading-8 cursor-pointer" type="submit" value="Subscribe" />
