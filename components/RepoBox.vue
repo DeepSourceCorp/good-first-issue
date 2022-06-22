@@ -117,7 +117,7 @@ export default {
       if (numComments > 1) {
         return `There are ${numComments} comments on this issue`
       }
-      return `There is one comment on this issue`
+      return `There is only one comment on this issue`
     }
   }
 }
