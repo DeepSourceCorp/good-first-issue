@@ -239,6 +239,7 @@ repositories = [
   'github.com/gatsbyjs/gatsby',
   'github.com/gchq/CyberChef',
   'github.com/gcushen/hugo-academic',
+  'github.com/geminabox/geminabox',
   'github.com/geopandas/geopandas',
   'github.com/getgauge/taiko',
   'github.com/getzola/zola',
