@@ -1,3 +1,5 @@
+import { sortingMutations } from './mutations/sorting'
+
 export const state = () => ({
   activeIssue: '',
   activeSortOption: {},
@@ -12,14 +14,5 @@ export const mutations = {
       state.activeIssue = id.toString()
     }
   },
-  handleActiveSortOptionToggle(state, sortOption) {
-    if (state.activeSortOption === sortOption) {
-      state.activeSortOption = {}
-    } else {
-      state.activeSortOption = sortOption
-    }
-  },
-  handleOrderByToggle(state, isOrderByDesc) {
-    state.isOrderByDesc = isOrderByDesc
-  }
+  ...sortingMutations
 }
