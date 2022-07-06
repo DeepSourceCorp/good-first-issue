@@ -1,5 +1,7 @@
 export const state = () => ({
-  activeIssue: ''
+  activeIssue: '',
+  activeSortOption: {},
+  isOrderByDesc: true
 })
 
 export const mutations = {
@@ -9,5 +11,15 @@ export const mutations = {
     } else {
       state.activeIssue = id.toString()
     }
+  },
+  handleActiveSortOptionToggle(state, sortOption) {
+    if (state.activeSortOption === sortOption) {
+      state.activeSortOption = {}
+    } else {
+      state.activeSortOption = sortOption
+    }
+  },
+  handleOrderByToggle(state, isOrderByDesc) {
+    state.isOrderByDesc = isOrderByDesc
   }
 }
