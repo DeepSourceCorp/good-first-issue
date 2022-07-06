@@ -1,0 +1,53 @@
+[
+    {
+        "id": "792fe292-fc9c-11ec-b939-0242ac120002",
+        "name": "Popularity",
+        "pathToValue": "stars",
+        "orderByOptions": [
+            {
+                "id": "792fe724-fc9c-11ec-b939-0242ac120002",
+                "name": "Most Popular First",
+                "isOrderByDesc": true
+            },
+            {
+                "id": "792fe990-fc9c-11ec-b939-0242ac120002",
+                "name": "Least Popular First",
+                "isOrderByDesc": false
+            }
+        ]
+    },
+    {
+        "id": "792feabc-fc9c-11ec-b939-0242ac120002",
+        "name": "Open Issues",
+        "pathToValue": "issues",
+        "orderByOptions": [
+            {
+                "id": "792febde-fc9c-11ec-b939-0242ac120002",
+                "name": "More Issues First",
+                "isOrderByDesc": true
+            },
+            {
+                "id": "792fedfa-fc9c-11ec-b939-0242ac120002",
+                "name": "Less Issues First",
+                "isOrderByDesc": false
+            }
+        ]
+    },
+    {
+        "id": "792fef08-fc9c-11ec-b939-0242ac120002",
+        "name": "Activity",
+        "pathToValue": "last_modified",
+        "orderByOptions": [
+            {
+                "id": "792ff142-fc9c-11ec-b939-0242ac120002",
+                "name": "Active First",
+                "isOrderByDesc": true
+            },
+            {
+                "id": "792ff2fa-fc9c-11ec-b939-0242ac120002",
+                "name": "Inactive First",
+                "isOrderByDesc": false
+            }
+        ]
+    }
+]
