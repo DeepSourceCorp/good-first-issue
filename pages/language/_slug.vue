@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import { filter, includes, map, find, cloneDeep, get } from 'lodash'
+import { filter, includes, map, find, get } from 'lodash'
 import RepoBox from '~/components/RepoBox.vue'
 import Tags from '~/data/tags.json'
 import Repositories from '~/data/generated.json'
