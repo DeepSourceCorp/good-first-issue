@@ -26,30 +26,29 @@ export default {
     ...mapState(['activeSortOption', 'isOrderByDesc']),
     filteredRepos() {
       const repositoriesData = filter(Repositories, { slug: this.$route.params.slug })
-
-      const getRepoDataBySortOption = repo => {
-        const sortOptionPath = this.activeSortOption.pathToValue
-        const repoValueOfSortOption = get(repo, sortOptionPath)
-        if (sortOptionPath === 'stars') {
-          return repoValueOfSortOption
-        } else if (sortOptionPath === 'issues') {
-          return repoValueOfSortOption.length
-        } else if (sortOptionPath === 'last_modified') {
-          return new Date(repoValueOfSortOption)
-        }
-      }
-
       if (this.activeSortOption.id) {
         repositoriesData.sort((a, b) => {
           if (this.isOrderByDesc) {
-            return getRepoDataBySortOption(a) < getRepoDataBySortOption(b) ? 1 : -1
+            return this.getRepoDataBySortOption(a) < this.getRepoDataBySortOption(b) ? 1 : -1
           } else {
-            return getRepoDataBySortOption(a) > getRepoDataBySortOption(b) ? 1 : -1
+            return this.getRepoDataBySortOption(a) > this.getRepoDataBySortOption(b) ? 1 : -1
           }
         })
       }
 
       return repositoriesData
+    }
+  },
+  methods: {
+    getRepoDataBySortOption(repo) {
+      const sortOptionPath = this.activeSortOption.pathToValue
+      const repoValueOfSortOption = get(repo, sortOptionPath)
+      if (sortOptionPath === 'issues') {
+        return repoValueOfSortOption.length
+      } else if (sortOptionPath === 'last_modified') {
+        return new Date(repoValueOfSortOption)
+      }
+      return repoValueOfSortOption
     }
   }
 }
