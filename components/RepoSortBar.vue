@@ -53,6 +53,7 @@
 <script>
 import { mapState, mapMutations } from 'vuex'
 import sortOptions from '~/data/sortOptions.json'
+
 export default {
   data() {
     return {
