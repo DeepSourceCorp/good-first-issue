@@ -8,8 +8,8 @@
           :key="sortOption.id"
           @click="handleActiveSortOptionToggle(sortOption)"
           :class="{
-            'active-pill': activeSortOption.id === sortOption.id,
-            'border-slate hover:text-juniper hover:border-juniper':
+            'active-pill focus:outline-none': activeSortOption.id === sortOption.id,
+            'border-slate hover:text-juniper hover:border-juniper focus:outline-none':
               activeSortOption.id !== sortOption.id
           }"
           class="group mx-1 border px-2 py-1 inline-block rounded-sm my-1 text-sm"
@@ -31,8 +31,8 @@
           :key="orderByOption.id"
           @click="handleOrderByToggle(orderByOption.isOrderByDesc)"
           :class="{
-            'active-pill': isOrderByDesc === orderByOption.isOrderByDesc,
-            'border-slate hover:text-juniper hover:border-juniper':
+            'active-pill focus:outline-none': isOrderByDesc === orderByOption.isOrderByDesc,
+            'border-slate hover:text-juniper hover:border-juniper focus:outline-none':
               isOrderByDesc !== orderByOption.isOrderByDesc
           }"
           class="group mx-1 border px-2 py-1 inline-block rounded-sm my-1 text-sm"
