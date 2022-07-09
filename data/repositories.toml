@@ -691,6 +691,7 @@ repositories = [
   'github.com/tchiotludo/akhq',
   'github.com/TDAmeritrade/stumpy',
   'github.com/TeamAmaze/AmazeFileManager',
+  'github.com/TEAMMATES/teammates',
   'github.com/TeamNewPipe/NewPipe',
   'github.com/tektoncd/pipeline',
   'github.com/telepresenceio/telepresence',
