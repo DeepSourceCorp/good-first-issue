@@ -749,6 +749,7 @@ repositories = [
   'github.com/wagtail/wagtail',
   'github.com/WallarooLabs/wallaroo',
   'github.com/wasdk/WebAssemblyStudio',
+  'github.com/watermelontools/wm-extension',
   'github.com/weaveworks/eksctl',
   'github.com/weaveworks/footloose',
   'github.com/weaveworks/ignite',
