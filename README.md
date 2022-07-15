@@ -63,4 +63,4 @@ The app should open in your browser.
 
 We usually hang out in our [Discord server](https://deepsource.io/discord).   Stop saying hi! 🙌🏼
 Share your issues we are happy to help 💯🚀
-Thank you for reading🤗
+Thanks for reading🤗
