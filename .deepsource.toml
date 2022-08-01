@@ -5,8 +5,8 @@ test_patterns = [
 ]
 
 [[analyzers]]
-  name = 'python'
-  enabled = true
+name = 'python'
+enabled = true
 
   [analyzers.meta]
   max_line_length = 100
