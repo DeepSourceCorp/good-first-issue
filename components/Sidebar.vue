@@ -9,9 +9,6 @@
         your first contribution to open-source.
       </p>
     </div>
-    <div>
-      <repo-sort-bar />
-    </div>
     <div class="pt-6">
       <h3 class="section-heading">Browse by language</h3>
       <div>
@@ -33,6 +30,9 @@
           ></nuxt-link
         >
       </div>
+    </div>
+    <div>
+      <repo-sort-bar />
     </div>
     <div class="pt-6">
       <a
