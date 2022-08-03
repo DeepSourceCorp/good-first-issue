@@ -1,6 +1,6 @@
 import { filter } from 'lodash'
 import { getRepoDataBySortOption } from '~/utils/sortUtils'
-import Repositories from '~/data/generated.json'
+import Repositories from '~/data/generated'
 
 export const repoGetters = {
   filteredRepos: state => slug => {
@@ -13,12 +13,11 @@ export const repoGetters = {
             getRepoDataBySortOption(b, sortOptionPath)
             ? 1
             : -1
-        } else {
-          return getRepoDataBySortOption(a, sortOptionPath) >
-            getRepoDataBySortOption(b, sortOptionPath)
-            ? 1
-            : -1
         }
+        return getRepoDataBySortOption(a, sortOptionPath) >
+          getRepoDataBySortOption(b, sortOptionPath)
+          ? 1
+          : -1
       })
     }
     return repositoriesData
