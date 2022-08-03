@@ -5,25 +5,27 @@
       <div>
         <button
           v-for="sortOption in sortOptions"
-          :key="sortOption.id"
+          :key="sortOption.pathToValue"
           @click="handleActiveSortOptionToggle(sortOption)"
           :class="{
-            'active-pill focus:outline-none': activeSortOption.id === sortOption.id,
+            'active-pill focus:outline-none':
+              activeSortOption.pathToValue === sortOption.pathToValue,
             'border-slate hover:text-juniper hover:border-juniper focus:outline-none':
-              activeSortOption.id !== sortOption.id
+              activeSortOption.pathToValue !== sortOption.pathToValue
           }"
           class="group mx-1 border px-2 py-1 inline-block rounded-sm my-1 text-sm"
         >
           {{ sortOption.name }}
           <span
             :class="{
-              'text-vanilla-400 group-hover:text-juniper': activeSortOption.id !== sortOption.id
+              'text-vanilla-400 group-hover:text-juniper':
+                activeSortOption.pathToValue !== sortOption.pathToValue
             }"
           ></span>
         </button>
       </div>
     </div>
-    <div v-if="activeSortOption.id" class="pt-6">
+    <div v-if="activeSortOption.pathToValue" class="pt-6">
       <h3 class="section-heading">Order By</h3>
       <div>
         <button
