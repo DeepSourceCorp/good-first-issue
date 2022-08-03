@@ -31,6 +31,9 @@
         >
       </div>
     </div>
+    <div>
+      <repo-sort-bar />
+    </div>
     <div class="pt-6">
       <a
         class="block bg-juniper hover:bg-light_juniper text-ink-400 uppercase rounded-md font-bold text-center px-1 py-3"
@@ -69,12 +72,14 @@
 <script>
 import Tags from '~/data/tags.json'
 import SubscriptionForm from '~/components/SubscriptionForm.vue'
+import RepoSortBar from '~/components/RepoSortBar.vue'
 
 export default {
   components: {
-    SubscriptionForm
+    SubscriptionForm,
+    RepoSortBar
   },
-  data: function () {
+  data: function() {
     return {
       tags: Tags
     }
