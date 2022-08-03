@@ -659,6 +659,7 @@ repositories = [
   'github.com/spotbugs/spotbugs',
   'github.com/spotify/backstage',
   'github.com/spotify/scio',
+  'github.com/spring-projects-experimental/spring-boot-migrator',
   'github.com/square/retrofit',
   'github.com/SSENSE/vue-carousel',
   'github.com/StackStorm/st2',
