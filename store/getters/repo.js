@@ -1,6 +1,6 @@
+import Repositories from '~/data/generated'
 import { filter } from 'lodash'
 import { getRepoDataBySortOption } from '~/utils/sortUtils'
-import Repositories from '~/data/generated'
 
 export const repoGetters = {
   filteredRepos: state => slug => {
