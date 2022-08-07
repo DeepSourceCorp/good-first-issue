@@ -41,10 +41,12 @@
       >
     </div>
 
+<!--
     <div class="pt-6">
       <h3 class="section-heading">Subscribe to the newsletter</h3>
       <subscription-form class="py-1" />
     </div>
+-->
 
     <div class="text-sm pt-6">
       <a
