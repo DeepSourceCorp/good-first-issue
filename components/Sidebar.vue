@@ -63,12 +63,8 @@
 
 <script>
 import Tags from '~/data/tags.json'
-import SubscriptionForm from '~/components/SubscriptionForm.vue'
 
 export default {
-  components: {
-    SubscriptionForm
-  },
   data: function () {
     return {
       tags: Tags
