@@ -38,6 +38,7 @@ repositories = [
   'github.com/appium/appium-desktop',
   'github.com/appleseedhq/appleseed',
   'github.com/appsmithorg/appsmith',
+  'github.com/appwrite/appwrite',
   'github.com/arduino/arduino-cli',
   'github.com/ArduPilot/ardupilot',
   'github.com/argoproj/argo-cd',
