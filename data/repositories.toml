@@ -1,4 +1,5 @@
 repositories = [
+  'github.com/harisdev-netizen/connect.git'
   'github.com/4paradigm/OpenMLDB',
   'github.com/abpframework/abp',
   'github.com/AcademySoftwareFoundation/openvdb',
