@@ -646,6 +646,7 @@ repositories = [
   'github.com/slic3r/Slic3r',
   'github.com/smallstep/certificates',
   'github.com/smallstep/cli',
+  'github.com/smapiot/piral',
   'github.com/snabbdom/snabbdom',
   'github.com/snowtrack/snowfs',
   'github.com/solid/node-solid-server',
