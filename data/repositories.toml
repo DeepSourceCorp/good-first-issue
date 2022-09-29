@@ -605,6 +605,7 @@ repositories = [
   'github.com/rust-windowing/winit',
   'github.com/rustsim/nalgebra',
   'github.com/Sable/soot',
+  'github.com/saeloun/miru-web',
   'github.com/SAP/chevrotain',
   'github.com/SasanLabs/VulnerableApp',
   'github.com/sayanarijit/xplr',
