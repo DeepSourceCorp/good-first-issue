@@ -343,6 +343,7 @@ repositories = [
   'github.com/kevinfjiang/FuncNotify',
   'github.com/keystonejs/keystone',
   'github.com/kiali/kiali',
+  'github.com/kiwix/kiwix-android',
   'github.com/knative/serving',
   'github.com/knex/knex',
   'github.com/kodadot/nft-gallery',
