@@ -705,6 +705,8 @@ repositories = [
   'github.com/testcontainers/testcontainers-java',
   'github.com/textlint/textlint',
   'github.com/thanos-io/thanos',
+  'github.com/thecyberworld/thecyberhub.org',
+  'github.com/thecyberworld/thecyberhub-app',
   'github.com/themesberg/flowbite-react',
   'github.com/themix-project/oomox',
   'github.com/thepracticaldev/dev.to',
