@@ -1,3 +1,4 @@
+<h1>hactober fest</h1>
 <template>
   <header
     class="w-full py-4 px-6 border-b border-ink-200 transition-background duration-1000"
