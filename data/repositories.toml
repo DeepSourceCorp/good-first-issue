@@ -470,6 +470,7 @@ repositories = [
   'github.com/nidhaloff/dolmetscher',
   'github.com/nidhaloff/gpx_converter',
   'github.com/nidhaloff/igel',
+  'github.com/nitin-787/mynotes',
   'github.com/nodejs/node',
   'github.com/nokia/ntt',
   'github.com/Noovolari/leapp',
