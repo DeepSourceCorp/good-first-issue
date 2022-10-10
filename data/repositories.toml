@@ -567,6 +567,7 @@ repositories = [
   'github.com/quantumblacklabs/kedro',
   'github.com/quantumlib/Cirq',
   'github.com/quarkusio/quarkus',
+  'github.com/quelea-projection/Quelea',
   'github.com/questdb/questdb',
   'github.com/quicktype/quicktype',
   'github.com/radareorg/cutter',
