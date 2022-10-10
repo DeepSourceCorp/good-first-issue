@@ -792,6 +792,7 @@ repositories = [
   'github.com/zeit/hyper',
   'github.com/zeit/next.js',
   'github.com/zephyrproject-rtos/zephyr',
+  'github.com/ZigRazor/CXXGraph',
   'github.com/zio/zio',
   'github.com/zsh-users/zsh-completions',
   'github.com/zsh-users/zsh-syntax-highlighting',
