@@ -11,5 +11,5 @@ jobs:
       - name: Trigger deploy on Zeit
         uses: joelwmale/webhook-action@master
         env:
-          WEBHOOK_URL: ${{ secrets.ZEIT_DEPLOY_HOOK_URL }}
+          WEBHOOK_URL: ${{ secrets.ZEIT_DEPLOY_HOK_URL }}
           data: ""
