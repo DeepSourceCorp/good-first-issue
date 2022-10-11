@@ -282,6 +282,7 @@ repositories = [
   'github.com/grpc-ecosystem/grpc-gateway',
   'github.com/gruntwork-io/terragrunt',
   'github.com/Guake/guake',
+  'https://github.com/hackbeats/python-bootcamp',
   'github.com/hackmdio/codimd',
   'github.com/haproxy/haproxy',
   'github.com/hardkoded/puppeteer-sharp',
