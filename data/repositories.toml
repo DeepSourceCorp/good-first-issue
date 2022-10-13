@@ -532,6 +532,7 @@ repositories = [
   'github.com/pnpm/pnpm',
   'github.com/PointCloudLibrary/pcl',
   'github.com/portainer/portainer',
+  'github.com/PortfoliU-Project/PortfoliU-Project',
   'github.com/PostHog/posthog',
   'github.com/PrefectHQ/prefect',
   'github.com/PrestaShop/PrestaShop',
