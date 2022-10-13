@@ -76,6 +76,8 @@ repositories = [
   'github.com/biopython/biopython',
   'github.com/bisq-network/bisq',
   'github.com/bitcoin/bitcoin',
+  'github.com/bitwarden/clients',
+  'github.com/bitwarden/mobile',
   'github.com/BlitzKraft/saythanks.io',
   'github.com/blockstack/blockstack-browser',
   'github.com/bmarvinb/react-trello-clone',
