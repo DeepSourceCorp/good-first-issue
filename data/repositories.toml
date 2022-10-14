@@ -653,7 +653,6 @@ repositories = [
   'github.com/solidusio/solidus',
   'github.com/sorbet/sorbet',
   'github.com/sourcegraph/sourcegraph',
-  'github.com/sourcerer-io/sourcerer-app',
   'github.com/spaceuptech/space-cloud',
   'github.com/spack/spack',
   'github.com/splitbrain/dokuwiki',
