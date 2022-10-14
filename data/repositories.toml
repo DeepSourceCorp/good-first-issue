@@ -283,6 +283,7 @@ repositories = [
   'github.com/gruntwork-io/terragrunt',
   'github.com/Guake/guake',
   'github.com/hackmdio/codimd',
+  'github.com/hamaluik/timecop',
   'github.com/haproxy/haproxy',
   'github.com/hardkoded/puppeteer-sharp',
   'github.com/Harvey-OS/harvey',
