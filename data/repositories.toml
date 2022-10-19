@@ -12,6 +12,7 @@ repositories = [
   'github.com/alexfertel/rust-algorithms',
   'github.com/alfasoftware/astra',
   'github.com/alibaba/nacos',
+  'github.com/novuhq/novu',
   'github.com/alibaba/Sentinel',
   'github.com/allure-framework/allure2',
   'github.com/ampproject/amphtml',
