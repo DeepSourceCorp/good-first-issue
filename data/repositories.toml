@@ -8,6 +8,7 @@ repositories = [
   'github.com/agershun/alasql',
   'github.com/akiran/react-slick',
   'github.com/akxcv/vuera',
+  'github.com/khushi2706/Blog-App-using-MERN-stack'
   'github.com/alexellis/arkade',
   'github.com/alexfertel/rust-algorithms',
   'github.com/alfasoftware/astra',
