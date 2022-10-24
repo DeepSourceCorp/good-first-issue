@@ -6,6 +6,7 @@ repositories = [
   'github.com/activecm/rita',
   'github.com/AdityaMulgundkar/flutter_opencv',
   'github.com/agershun/alasql',
+  'github.com/airqo-platform/AirQo-frontend',
   'github.com/akiran/react-slick',
   'github.com/akxcv/vuera',
   'github.com/alexellis/arkade',
