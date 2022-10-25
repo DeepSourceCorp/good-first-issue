@@ -732,6 +732,7 @@ repositories = [
   'github.com/unisonweb/unison',
   'github.com/UniversalMediaServer/UniversalMediaServer',
   'github.com/unoplatform/uno',
+  'github.com/UPC/ravada',
   'github.com/uutils/coreutils',
   'github.com/valhalla/valhalla',
   'github.com/validatorjs/validator.js',
