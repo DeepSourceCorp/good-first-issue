@@ -415,6 +415,7 @@ repositories = [
   'github.com/mattermost/mattermost-server',
   'github.com/mattgodbolt/compiler-explorer',
   'github.com/mavoweb/mavo',
+  'github.com/MayankSingh1993/Java-Code-Examples.git',
   'github.com/mcollina/autocannon',
   'github.com/mdx-js/mdx',
   'github.com/medusajs/medusa',
