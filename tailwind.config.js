@@ -17,7 +17,7 @@ module.exports = {
       robin: '#4568dc',
       slate: '#52575c',
       cherry: '#df6145',
-      honey: '#f6d87c',
+      red: '#f6d87c',
       aqua: '#23c4f8',
       gitlab: '#6753B5',
       vanilla: {
