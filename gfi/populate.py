@@ -79,6 +79,9 @@ def get_repository_info(owner, name):
     # get the repository; if the repo is not found, log a warning
     try:
         repository = client.repository(owner, name)
+        # Don't find issues inside archived repos.
+        if repository.archived:
+            return None
 
         good_first_issues = set(
             itertools.chain.from_iterable(
