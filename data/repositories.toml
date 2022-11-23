@@ -684,6 +684,7 @@ repositories = [
   'github.com/sveltejs/sapper',
   'github.com/sveltejs/svelte',
   'github.com/swapagarwal/swag-for-dev',
+  'github.com/Syknapse/Contribute-To-This-Project',
   'github.com/sylabs/singularity',
   'github.com/Sylius/Sylius',
   'github.com/symfony/symfony',
