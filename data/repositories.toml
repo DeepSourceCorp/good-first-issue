@@ -477,6 +477,7 @@ repositories = [
   'github.com/nidhaloff/igel',
   'github.com/nodejs/node',
   'github.com/nokia/ntt',
+  'github.com/novuhq/novu',
   'github.com/Noovolari/leapp',
   'github.com/npm/cli',
   'github.com/nteract/hydrogen',
