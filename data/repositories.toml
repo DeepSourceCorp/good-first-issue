@@ -621,6 +621,7 @@ repositories = [
   'github.com/scikit-learn/scikit-learn',
   'github.com/scipy/scipy',
   'github.com/scrapy/scrapy',
+  'github.com/scribe-org/Scribe-iOS',
   'github.com/SeaQL/sea-orm',
   'github.com/SeaQL/sea-query',
   'github.com/SeaQL/sea-schema',
