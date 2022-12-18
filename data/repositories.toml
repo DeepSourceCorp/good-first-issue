@@ -596,6 +596,7 @@ repositories = [
   'github.com/remacs/remacs',
   'github.com/renovatebot/renovate',
   'github.com/responsively-org/responsively-app',
+  'github.com/restqa/restqa',
   'github.com/RetroShare/RetroShare',
   'github.com/rigetti/pyquil',
   'github.com/ripple/rippled',
