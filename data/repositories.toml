@@ -1,4 +1,5 @@
 repositories = [
+ 'https://github.com/swapniltake1/LP-III-SPPU-2019-PATTERN-BE-COMPUTER-ENGINEERING-LP-III-PRACTICALS-CODES-MINIPROJECTS-ML-DAA-BLOCKCH/tree/main/Titanic-Survival-Prediction',
   'github.com/deepsourcelabs/good-first-issue',
   'github.com/4paradigm/OpenMLDB',
   'github.com/abpframework/abp',
