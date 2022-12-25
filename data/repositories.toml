@@ -258,6 +258,7 @@ repositories = [
   'github.com/gnuradio/gnuradio',
   'github.com/go-gitea/gitea',
   'github.com/go-swagger/go-swagger',
+  'github.com/goatshriek/stumpless',
   'github.com/goharbor/harbor',
   'github.com/gomods/athens',
   'github.com/google/data-transfer-project',
