@@ -520,6 +520,7 @@ repositories = [
   'github.com/oppia/oppia',
   'github.com/optuna/optuna',
   'github.com/oracle/opengrok',
+  'github.com/origranot/reduced.to',
   'github.com/osm-search/Nominatim',
   'github.com/owncloud/client',
   'github.com/oxyplot/oxyplot',
