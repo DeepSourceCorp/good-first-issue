@@ -697,6 +697,7 @@ repositories = [
   'github.com/TandoorRecipes/recipes',
   'github.com/tantivy-search/tantivy',
   'github.com/tarantool/tarantool',
+  'github.com/Tc2r1/Hacktoberfest_Interview_App',
   'github.com/tchiotludo/akhq',
   'github.com/TDAmeritrade/stumpy',
   'github.com/TeamAmaze/AmazeFileManager',
