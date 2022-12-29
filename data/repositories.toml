@@ -24,7 +24,7 @@ repositories = [
   'github.com/apache/apisix',
   'github.com/apache/dubbo',
   'github.com/apache/incubator-doris',
-  'github.com/apache/incubator-eventmesh'
+  'github.com/apache/incubator-eventmesh',
   'github.com/apache/incubator-mxnet',
   'github.com/apache/incubator-superset',
   'github.com/apache/openwhisk',
