@@ -15,7 +15,7 @@
         <nuxt-link
           v-for="tag in tags"
           :key="tag.slug"
-          :to="'/language/' + tag.slug"
+          :to="getTagUrl($route.params.slug, tag.slug)"
           :class="{
             'active-pill': $route.params.slug === tag.slug,
             'border-slate hover:text-juniper hover:border-juniper': $route.params.slug !== tag.slug
@@ -68,6 +68,11 @@ export default {
   data: function () {
     return {
       tags: Tags
+    }
+  },
+  methods: {
+    getTagUrl(routeSlug, slug) {
+      return (routeSlug !== slug) ? '/language/' + slug : '/';
     }
   }
 }
