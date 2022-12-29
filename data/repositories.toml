@@ -724,6 +724,7 @@ repositories = [
   'github.com/timothycrosley/isort',
   'github.com/tinacms/tinacms',
   'github.com/tizonia/tizonia-openmax-il',
+  'github.com/Together-Java/TJ-Bot',
   'github.com/tomkp/react-split-pane',
   'github.com/tongueroo/jets',
   'github.com/ToolJet/ToolJet',
