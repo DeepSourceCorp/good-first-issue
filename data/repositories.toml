@@ -159,6 +159,7 @@ repositories = [
   'github.com/denysdovhan/spaceship-prompt',
   'github.com/DesignSystemsOSS/eccentrictouch',
   'github.com/developit/microbundle',
+  'github.com/DevScript/Code-Khata/',
   'github.com/diasurgical/devilutionX',
   'github.com/diesel-rs/diesel',
   'github.com/DiFronzo/blockchair',
