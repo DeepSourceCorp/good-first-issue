@@ -56,6 +56,7 @@
             target="_blank"
             rel="noopener noreferrer"
             class="leading-snug font-semibold hover:text-juniper text-vanilla-300 block flex-auto"
+            @click="toggle(repo.id)"
             >{{ issue.title }}</a
           >
           <div
