@@ -119,6 +119,8 @@ repositories = [
   'github.com/cobrateam/splinter',
   'github.com/cockroachdb/cockroach',
   'github.com/codenameone/CodenameOne',
+  'github.com/CodeYourFuture/immersive-go-course',
+  'github.com/CodeYourFuture/syllabus',
   'github.com/collectd/collectd',
   'github.com/commandlineparser/commandline',
   'github.com/compas-dev/compas_fab',
