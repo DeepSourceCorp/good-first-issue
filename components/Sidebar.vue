@@ -48,7 +48,7 @@
         rel="noopener noreferrer"
         href="https://deepsource.io?ref=gfi"
       >
-        <img style="width: 14px" src="/social/heart.svg" alt="Heart" />
+        <img style="inline-size: 14px" src="/social/heart.svg" alt="Heart" />
         <span class="ml-2"
           >A
           <span class="inline hover:underline text-juniper" title="Visit DeepSource website"

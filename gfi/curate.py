@@ -4,7 +4,7 @@ import os
 from pathlib import Path
 from itertools import count
 
-import requests
+import requests 
 import toml
 
 STARS_GT = os.getenv("STARS_GT", "1000")
