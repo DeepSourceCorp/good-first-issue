@@ -155,6 +155,7 @@ repositories = [
   'github.com/db-migrate/node-db-migrate',
   'github.com/dbeaver/dbeaver',
   'github.com/dbidwell94/vanilact',
+  'github.com/dbpunk-labs/db3',
   'github.com/denoland/deno',
   'github.com/denysdovhan/spaceship-prompt',
   'github.com/DesignSystemsOSS/eccentrictouch',
