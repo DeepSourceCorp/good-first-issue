@@ -500,6 +500,7 @@ repositories = [
   'github.com/onlydustxyz/starklings',
   'github.com/open-sauced/open-sauced',
   'github.com/openatx/uiautomator2',
+  'github.com/OpenBeta/open-tacos',
   'github.com/openchemistry/avogadrolibs',
   'github.com/opencv/cvat',
   'github.com/opencv/opencv',
