@@ -116,6 +116,7 @@ repositories = [
   'github.com/CleverRaven/Cataclysm-DDA',
   'github.com/clojure-emacs/cider',
   'github.com/cloudflare/wrangler',
+  'github.com/cncf/tag-security',
   'github.com/cobrateam/splinter',
   'github.com/cockroachdb/cockroach',
   'github.com/codenameone/CodenameOne',
