@@ -205,6 +205,7 @@ repositories = [
   'github.com/empathyco/x',
   'github.com/empathyco/x-archetype',
   'github.com/encode/httpx',
+  'github.com/envless/envless',
   'github.com/epicmaxco/vuestic-admin',
   'github.com/eslint/eslint',
   'github.com/ethereum/go-ethereum',
