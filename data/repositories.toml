@@ -400,6 +400,7 @@ repositories = [
   'github.com/maartenbreddels/ipyvolume',
   'github.com/maddypie/PyCalc',
   'github.com/MadhuNimmo/QuinesInAllLangs',
+  'github.com/mage-ai/mage-ai',
   'github.com/magento/magento2',
   'github.com/Magicianred/learn-by-doing',
   'github.com/mailchain/mailchain',
