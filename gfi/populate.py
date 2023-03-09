@@ -109,7 +109,7 @@ def get_repository_info(owner, name):
             info["url"] = repository.html_url
             info["stars"] = repository.stargazers_count
             info["stars_display"] = numerize.numerize(repository.stargazers_count)
-            info["last_modified"] = repository.pushed_at.isoformat()
+            info["last_modified"] = repository.pushed_at.format()
             info["id"] = str(repository.id)
             info["objectID"] = str(repository.id)  # for indexing on algolia
 
@@ -122,7 +122,7 @@ def get_repository_info(owner, name):
                         "url": issue.html_url,
                         "number": issue.number,
                         "comments_count": issue.comments_count,
-                        "created_at": issue.created_at.isoformat(),
+                        "created_at": issue.created_at.format(),
                     }
                 )
 
