@@ -212,6 +212,7 @@ repositories = [
   'github.com/ethereum/web3.py',
   'github.com/ethyca/fides',
   'github.com/ethyca/fidesops',
+  'github.com/data-umbrella/event-board-web,
   'github.com/evhub/coconut',
   'github.com/external-secrets/external-secrets',
   'github.com/facebook/docusaurus',
