@@ -8,10 +8,10 @@ self.addEventListener('install', () =>{
 
 self.addEventListener('activate', () => {
   self.registration.unregister()
-    .then(function () {
+    .then( () => {
       return self.clients.matchAll()
     })
-    .then(function (clients) {
+    .then( (clients) => {
       clients.forEach(client => client.navigate(client.url))
     })
 })
