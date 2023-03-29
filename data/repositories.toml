@@ -252,7 +252,6 @@ repositories = [
   'github.com/gitcoinco/web',
   'github.com/gitcommitshow/auth-jwt',
   'github.com/gizak/termui',
-  'github.com/Glavin001/atom-beautify',
   'github.com/globaleaks/GlobaLeaks',
   'github.com/glpi-project/glpi',
   'github.com/gnuradio/gnuradio',
