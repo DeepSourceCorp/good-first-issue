@@ -788,6 +788,7 @@ repositories = [
   'github.com/WordPress/openverse',
   'github.com/wp-graphql/wp-graphql',
   'github.com/wyattowalsh/data-science-notes',
+  'https://github.com/wagnerdelima/drf-social-oauth2',
   'github.com/xenia-project/xenia',
   'github.com/xtermjs/xterm.js',
   'github.com/xunit/xunit',
