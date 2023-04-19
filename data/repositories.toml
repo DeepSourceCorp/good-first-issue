@@ -721,6 +721,8 @@ repositories = [
   'github.com/theupdateframework/tuf',
   'github.com/ThreeMammals/Ocelot',
   'github.com/tiangolo/fastapi',
+  'github.com/tigrisdata/tigris',
+  'github.com/tigrisdata/tigris-client-ts',
   'github.com/timothycrosley/isort',
   'github.com/tinacms/tinacms',
   'github.com/tizonia/tizonia-openmax-il',
