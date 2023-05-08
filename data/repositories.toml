@@ -29,6 +29,7 @@ repositories = [
   'github.com/apache/openwhisk',
   'github.com/apache/shardingsphere',
   'github.com/apache/skywalking',
+  'github.com/apache/streampipes',
   'github.com/apache/trafficserver',
   'github.com/apifytech/apify-js',
   'github.com/apoclyps/reviews',
