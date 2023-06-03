@@ -214,6 +214,7 @@ repositories = [
   'github.com/ethyca/fidesops',
   'github.com/evhub/coconut',
   'github.com/external-secrets/external-secrets',
+  'github.com/f3d-app/f3d',
   'github.com/facebook/docusaurus',
   'github.com/facebook/draft-js',
   'github.com/facebook/flipper',
