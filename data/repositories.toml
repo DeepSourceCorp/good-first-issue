@@ -729,6 +729,7 @@ repositories = [
   'github.com/ToolJet/ToolJet',
   'github.com/trailofbits/manticore',
   'github.com/tridactyl/tridactyl',
+  'github.com/AlbertSolomon/tubepy',
   'github.com/tweag/asterius',
   'github.com/typescript-eslint/typescript-eslint',
   'github.com/tzapu/WiFiManager',
