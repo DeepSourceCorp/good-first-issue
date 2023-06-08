@@ -312,6 +312,7 @@ repositories = [
   'github.com/indeedeng/starfish',
   'github.com/infection/infection',
   'github.com/Infisical/infisical',
+  'github.com/inspektor-gadget/inspektor-gadget',
   'github.com/intel/cve-bin-tool',
   'github.com/intel/dffml',
   'github.com/internetarchive/openlibrary',
