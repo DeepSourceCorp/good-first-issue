@@ -176,6 +176,7 @@ repositories = [
   'github.com/dotnet/command-line-api',
   'github.com/dotnet/efcore',
   'github.com/dotnet/extensions',
+  'github.com/dotnet/fsharp',
   'github.com/dotnet/machinelearning',
   'github.com/dotnet/spark',
   'github.com/dotnetcore/FreeSql',
