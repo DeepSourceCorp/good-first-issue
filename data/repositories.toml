@@ -599,6 +599,7 @@ repositories = [
   'github.com/responsively-org/responsively-app',
   'github.com/RetroShare/RetroShare',
   'github.com/rigetti/pyquil',
+  'github.com/riok/mapperly',
   'github.com/ripple/rippled',
   'github.com/rjsf-team/react-jsonschema-form',
   'github.com/rodrigo-arenas/Sklearn-genetic-opt',
