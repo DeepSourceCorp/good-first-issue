@@ -307,6 +307,7 @@ repositories = [
   'github.com/Hypfer/Valetudo',
   'github.com/ibis-project/ibis',
   'github.com/Icinga/icinga2',
+  'github.com/idodav/sharkio',
   'github.com/Igglybuff/awesome-piracy',
   'github.com/imsnif/bandwhich',
   'github.com/indeedeng/starfish',
