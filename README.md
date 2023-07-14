@@ -19,7 +19,7 @@ Follow these simple steps:
 
 - Our goal is to narrow down projects for new open-source contributors. To maintain the quality of projects in Good First Issue, please make sure your GitHub repository meets the following criteria:
 
-  - It has at least three issues with the `good first issue` label. This label is already present on all repositories by default. If not, you can follow the steps [here](https://help.github.com/en/github/managing-your-work-on-github/applying-labels-to-issues-and-pull-requests).
+  - It have at least three issues with the `good first issue` label. This label is already present on all repositories by default. If not, you can follow the steps [here](https://help.github.com/en/github/managing-your-work-on-github/applying-labels-to-issues-and-pull-requests).
 
   - It has at least 10 contributors.
 
@@ -35,7 +35,7 @@ Follow these simple steps:
 
 Good First Issue has two components — the front-end app built with Nuxt.js and a data population script written in Python.
 
-To contribute new features and changes to the website, you would want to run the app locally. Please follow these steps:
+To contribute new features and changes to the website, you will want to run the app locally. Please follow these steps:
 
 1. Clone the project locally. Make sure you have Python 3 and a recent version of Node.js installed on your computer.
 
