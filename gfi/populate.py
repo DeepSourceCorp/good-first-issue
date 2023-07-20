@@ -135,7 +135,6 @@ def get_repository_info(owner, name):
 
 
 if __name__ == "__main__":
-
     # parse the repositories data file and get the list of repos
     # for generating pages for.
 
