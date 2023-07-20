@@ -347,6 +347,7 @@ repositories = [
   'github.com/kariustobias/acme-rs',
   'github.com/KaTeX/KaTeX',
   'github.com/keptn/keptn',
+  'github.com/keptn/keptn-lifecycle-toolkit'
   'github.com/keras-team/keras',
   'github.com/kevinfjiang/FuncNotify',
   'github.com/keystonejs/keystone',
