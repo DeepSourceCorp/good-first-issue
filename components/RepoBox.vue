@@ -6,19 +6,18 @@
     @click="toggle(repo.id)"
   >
     <div class="px-5 py-3">
-      <div class="flex flex-row">
+      <div class="flex flex-row justify-between">
         <a
           :title="`Open ${repo.owner}/${repo.name} on GitHub`"
           :href="repo.url"
           target="_blank"
           rel="noopener noreferrer"
-          class="text-xl font-bold group-hover:text-juniper"
+          class="w-4/6 text-xl font-bold break-all group-hover:text-juniper"
           :class="{ 'text-juniper': isIssueOpen }"
           >{{ repo.owner }} / {{ repo.name }}</a
         >
-        <span class="flex-1"></span>
         <span
-          class="hidden md:inline text-sm border px-3 py-1 ml-2 rounded-full font-semibold"
+          class="hidden md:inline text-sm border px-3 py-1 ml-2 rounded-full font-semibold h-full"
           :class="{
             'text-ink-400 bg-juniper border-transparent': isIssueOpen,
             'text-vanilla-200': !isIssueOpen
@@ -91,17 +90,17 @@ export default {
     }
   },
   computed: {
-    issuesDisplay: function () {
+    issuesDisplay: function() {
       const numIssues = this.repo.issues.length
       if (numIssues > 1) {
         return `${numIssues} issues`
       }
       return `${numIssues} issue`
     },
-    lastModifiedDisplay: function () {
+    lastModifiedDisplay: function() {
       return dayjs(this.repo.last_modified).fromNow()
     },
-    isIssueOpen: function () {
+    isIssueOpen: function() {
       return this.$store.state.activeIssue === this.repo.id
     }
   },
@@ -109,7 +108,7 @@ export default {
     ...mapMutations({
       toggle: 'expandIssue'
     }),
-    getIssueCommentsCounterTooltip: function (issue) {
+    getIssueCommentsCounterTooltip: function(issue) {
       const numComments = issue.comments_count
       if (numComments === 0) {
         return `There are no comments on this issue`
