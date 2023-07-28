@@ -810,5 +810,6 @@ repositories = [
   'github.com/zulip/zulip',
   'github.com/ZupIT/charlescd',
   'github.com/ZupIT/ritchie-cli',
-  'github.com/ZupIT/ritchie-formulas'
+  'github.com/ZupIT/ritchie-formulas',
+  'github.com/bistecglobal/blockchain-certificates-issuer'
  ]
