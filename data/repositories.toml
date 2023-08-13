@@ -746,6 +746,7 @@ repositories = [
   'github.com/vesoft-inc/nebula',
   'github.com/vespa-engine/vespa',
   'github.com/vicky002/AlgoWiki',
+  'github.com/Vidhanvyrs/WeatherApp',
   'github.com/vimeo/psalm',
   'github.com/vmware-tanzu/carvel',
   'github.com/vmware-tanzu/community-edition',
