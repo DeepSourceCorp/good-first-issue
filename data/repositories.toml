@@ -213,6 +213,7 @@ repositories = [
   'github.com/ethyca/fides',
   'github.com/ethyca/fidesops',
   'github.com/evhub/coconut',
+  'github.com/exogee-technology/graphweaver',
   'github.com/external-secrets/external-secrets',
   'github.com/facebook/docusaurus',
   'github.com/facebook/draft-js',
