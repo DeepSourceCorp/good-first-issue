@@ -85,6 +85,7 @@ repositories = [
   'github.com/boa-dev/boa',
   'github.com/bokeh/bokeh',
   'github.com/borgbackup/borg',
+  'https://github.com/boxyhq/jackson',
   'github.com/bpmn-io/bpmn-js',
   'github.com/brave/brave-browser',
   'github.com/brianegan/flutter_architecture_samples',
