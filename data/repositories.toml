@@ -516,6 +516,7 @@ repositories = [
   'github.com/opensearch-project/OpenSearch-Dashboards',
   'github.com/openssl/openssl',
   'github.com/OpenTTD/OpenTTD',
+  'github.com/openvinotoolkit/openvino',
   'github.com/openzfs/zfs',
   'github.com/oppia/oppia',
   'github.com/optuna/optuna',
