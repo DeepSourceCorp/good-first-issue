@@ -53,4 +53,4 @@ $ yarn # install the dependencies
 $ yarn dev -o # start the development server
 ```
 
-The app should open in your browser.
+The app should open in your browser very easily!
