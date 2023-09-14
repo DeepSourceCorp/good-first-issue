@@ -354,7 +354,6 @@ repositories = [
   'github.com/knative/serving',
   'github.com/knex/knex',
   'github.com/kodadot/nft-gallery',
-  'github.com/kognise/water.css',
   'github.com/komeiji-satori/Dress',
   'github.com/Kong/insomnia',
   'github.com/Kong/kong',
