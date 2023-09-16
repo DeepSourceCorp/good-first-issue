@@ -722,6 +722,7 @@ repositories = [
   'github.com/ThreeMammals/Ocelot',
   'github.com/tiangolo/fastapi',
   'github.com/timothycrosley/isort',
+  'github.com/TimothyStiles/poly',
   'github.com/tinacms/tinacms',
   'github.com/tizonia/tizonia-openmax-il',
   'github.com/tomkp/react-split-pane',
