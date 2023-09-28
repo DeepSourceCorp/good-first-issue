@@ -1,5 +1,6 @@
 repositories = [
   'github.com/deepsourcelabs/good-first-issue',
+  'github.com/Gyanthakur/news_app_gps',
   'github.com/4paradigm/OpenMLDB',
   'github.com/abpframework/abp',
   'github.com/AcademySoftwareFoundation/openvdb',
