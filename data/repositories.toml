@@ -296,6 +296,7 @@ repositories = [
   'github.com/hasura/gitkube',
   'github.com/hasura/graphql-engine',
   'github.com/hazelcast/hazelcast',
+  'github.com/HridoyHazard/HazzWeather',
   'github.com/helm/helm',
   'github.com/Heptagram-Bot/Heptagram',
   'github.com/Hermit-Tools/Thumbnail-Maker',
