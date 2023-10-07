@@ -261,6 +261,8 @@ repositories = [
   'github.com/goatshriek/stumpless',
   'github.com/goharbor/harbor',
   'github.com/gomods/athens',
+  'github.com/gomzyakov/laravel-blog',
+  'github.com/gomzyakov/secretic',
   'github.com/google/data-transfer-project',
   'github.com/google/gvisor',
   'github.com/google/jax',
