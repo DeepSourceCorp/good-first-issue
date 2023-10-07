@@ -263,6 +263,7 @@ repositories = [
   'github.com/gomods/athens',
   'github.com/gomzyakov/laravel-blog',
   'github.com/gomzyakov/secretic',
+  'github.com/gomzyakov/shifter',
   'github.com/google/data-transfer-project',
   'github.com/google/gvisor',
   'github.com/google/jax',
