@@ -66,6 +66,8 @@ repositories = [
   'github.com/babel/babel',
   'github.com/badges/shields',
   'github.com/ballercat/walt',
+  'github.com/ballerina-platform/ballerina-lang',
+  'github.com/ballerina-platform/ballerina-standard-library',
   'github.com/bancodobrasil/stop-analyzing-api',
   'github.com/bancodobrasil/stop-analyzing-embed',
   'github.com/bastion-rs/bastion',
