@@ -300,6 +300,7 @@ repositories = [
   'github.com/Heptagram-Bot/Heptagram',
   'github.com/Hermit-Tools/Thumbnail-Maker',
   'github.com/hewiefreeman/GopherGameServer',
+  'github.com/highlightjs/highlight.js',
   'github.com/hoppscotch/hoppscotch',
   'github.com/http4s/http4s',
   'github.com/hubtype/botonic',
