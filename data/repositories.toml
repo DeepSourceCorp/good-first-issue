@@ -163,6 +163,7 @@ repositories = [
   'github.com/diesel-rs/diesel',
   'github.com/DiFronzo/blockchair',
   'github.com/dis-moi/extension',
+  'github.com/django-import-export/django-import-export',
   'github.com/djc/quinn',
   'github.com/dmlc/gluon-nlp',
   'github.com/dmlc/xgboost',
