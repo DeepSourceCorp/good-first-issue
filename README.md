@@ -39,14 +39,21 @@ To contribute new features and changes to the website, you would want to run the
 
 1. Clone the project locally. Make sure you have Python 3 and a recent version of Node.js installed on your computer.
 
-2. Make a copy of the sample data files for your local app to use and rename them to the filename that the app expects. **This step is important, as the front-end app won't work without these data files.**
+2.Install Yarn for the dependencies.Since you have Node.js installed in step one,which
+contains npm package manager,simply run those following to install and upgrade Yarn
+
+```bash
+$ npm install --global yarn
+```
+
+3. Make a copy of the sample data files for your local app to use and rename them to the filename that the app expects. **This step is important, as the front-end app won't work without these data files.**
 
 ```bash
 $ cp data/generated.sample.json data/generated.json
 $ cp data/tags.sample.json data/tags.json
 ```
 
-3. Build the front-end app and start the development server.
+4. Build the front-end app and start the development server.
 
 ```bash
 $ yarn # install the dependencies
