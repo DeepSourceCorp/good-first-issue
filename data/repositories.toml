@@ -226,6 +226,7 @@ repositories = [
   'github.com/facebookresearch/pythia',
   'github.com/Factom-Asset-Tokens/fatd',
   'github.com/fairfield-programming/backend-server',
+  'github.com/cieslarmichal/faker-cxx',
   'github.com/falconry/falcon',
   'github.com/fastify/fastify',
   'github.com/FeatureLabs/featuretools',
