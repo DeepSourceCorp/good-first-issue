@@ -4,6 +4,7 @@ repositories = [
   'github.com/abpframework/abp',
   'github.com/AcademySoftwareFoundation/openvdb',
   'github.com/activecm/rita',
+  'https://github.com/Akshat111111/Hedging-of-Financial-Derivatives',
   'github.com/AdityaMulgundkar/flutter_opencv',
   'github.com/agershun/alasql',
   'github.com/akiran/react-slick',
