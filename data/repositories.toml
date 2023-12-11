@@ -343,6 +343,7 @@ repositories = [
   'github.com/jupyter/notebook',
   'github.com/jupyterhub/binderhub',
   'github.com/jupyterlab/jupyterlab',
+  'github.com/juspay/hyperswitch',
   'github.com/justadudewhohacks/opencv4nodejs',
   'github.com/kariustobias/acme-rs',
   'github.com/KaTeX/KaTeX',
