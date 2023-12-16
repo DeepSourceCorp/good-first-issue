@@ -18,4 +18,7 @@ generate-prod:
 test:
 	poetry run python gfi/test_data.py
 
+format:
+	poetry run ruff format .
+
 .DEFAULT_GOAL := build

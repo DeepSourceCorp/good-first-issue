@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 import itertools
 import json
-import logging.config
 import random
 import re
 from collections import Counter
@@ -11,27 +10,23 @@ from os import getenv, path
 
 import toml
 
-from config import LOGGING_CONFIG
 from github3 import exceptions, login
 from numerize import numerize
 from emoji import emojize
 from slugify import slugify
+from loguru import logger
+
 
 REPO_DATA_FILE = "data/repositories.toml"
 REPO_GENERATED_DATA_FILE = "data/generated.json"
 TAGS_GENERATED_DATA_FILE = "data/tags.json"
-GH_URL_PATTERN = re.compile(
-    r"[http://|https://]?github.com/(?P<owner>[\w\.-]+)/(?P<name>[\w\.-]+)/?"
-)
+GH_URL_PATTERN = re.compile(r"[http://|https://]?github.com/(?P<owner>[\w\.-]+)/(?P<name>[\w\.-]+)/?")
 LABELS_DATA_FILE = "data/labels.json"
 ISSUE_STATE = "open"
 ISSUE_SORT = "created"
 ISSUE_SORT_DIRECTION = "desc"
 ISSUE_LIMIT = 10
 SLUGIFY_REPLACEMENTS = [["#", "sharp"], ["+", "plus"]]
-
-logging.config.dictConfig(LOGGING_CONFIG)  # skipcq: PY-A6006
-LOGGER = logging.getLogger(__file__)
 
 if not path.exists(LABELS_DATA_FILE):
     raise RuntimeError("No labels data file found. Exiting.")
@@ -62,7 +57,7 @@ def get_repository_info(owner: str, name: str):
     Get the relevant information needed for the repository from
     its owner login and name.
     """
-    LOGGER.info("Getting info for %s/%s", owner, name)
+    logger.info("Getting info for {}/{}", owner, name)
 
     access_token = getenv("GITHUB_ACCESS_TOKEN")
 
@@ -90,7 +85,7 @@ def get_repository_info(owner: str, name: str):
                 for label in ISSUE_LABELS
             )
         )
-        LOGGER.info("\t found %d good first issues", len(good_first_issues))
+        logger.info("\t found {} good first issues", len(good_first_issues))
         # check if repo has at least one good first issue
         if good_first_issues and repository.language:
             # store the repo info
@@ -98,9 +93,7 @@ def get_repository_info(owner: str, name: str):
             info["owner"] = owner
             info["description"] = emojize(repository.description or "")
             info["language"] = repository.language
-            info["slug"] = slugify(
-                repository.language, replacements=SLUGIFY_REPLACEMENTS
-            )
+            info["slug"] = slugify(repository.language, replacements=SLUGIFY_REPLACEMENTS)
             info["url"] = repository.html_url
             info["stars"] = repository.stargazers_count
             info["stars_display"] = numerize.numerize(repository.stargazers_count)
@@ -123,14 +116,13 @@ def get_repository_info(owner: str, name: str):
 
             info["issues"] = issues
             return info
-        LOGGER.info("\t skipping the repo")
+        logger.info("\t skipping the repo")
         return None
     except exceptions.NotFoundError:
-        LOGGER.warning("Not Found: %s", f"{owner}/{name}")
+        logger.warning("Not Found: {}", f"{owner}/{name}")
 
 
 if __name__ == "__main__":
-
     # parse the repositories data file and get the list of repos
     # for generating pages for.
 
@@ -138,28 +130,24 @@ if __name__ == "__main__":
         raise RuntimeError("No config data file found. Exiting.")
 
     # if the GitHub Access Token isn't found, raise an error
-    if not getenv('GITHUB_ACCESS_TOKEN'):
-        raise AssertionError(
-            "Access token not present in the env variable `GITHUB_ACCESS_TOKEN`"
-        )
+    if not getenv("GITHUB_ACCESS_TOKEN"):
+        raise RuntimeError("Access token not present in the env variable `GITHUB_ACCESS_TOKEN`")
 
     REPOSITORIES = []
     TAGS = Counter()
     with open(REPO_DATA_FILE, "r") as data_file:
         DATA = toml.load(REPO_DATA_FILE)
 
-        LOGGER.info(
-            "Found %d repository entries in %s",
+        logger.info(
+            "Found {} repository entries in {}",
             len(DATA["repositories"]),
             REPO_DATA_FILE,
         )
 
-        for repository_url in DATA["repositories"]:
+        for repository_url in DATA["repositories"][:20]:  # todo: remove the limit before pushing
             repo_dict = parse_github_url(repository_url)
             if repo_dict:
-                repo_details = get_repository_info(
-                    repo_dict["owner"], repo_dict["name"]
-                )
+                repo_details = get_repository_info(repo_dict["owner"], repo_dict["name"])
                 if repo_details:
                     REPOSITORIES.append(repo_details)
                     TAGS[repo_details["language"]] += 1
@@ -171,9 +159,7 @@ if __name__ == "__main__":
 
     with open(REPO_GENERATED_DATA_FILE, "w") as file_desc:
         json.dump(REPOSITORIES, file_desc)
-    LOGGER.info(
-        "Wrote data for %d repos to %s", len(REPOSITORIES), REPO_GENERATED_DATA_FILE
-    )
+    logger.info("Wrote data for {} repos to {}", len(REPOSITORIES), REPO_GENERATED_DATA_FILE)
 
     # use only those tags that have at least three occurrences
     tags = [
@@ -188,4 +174,4 @@ if __name__ == "__main__":
     tags_sorted = sorted(tags, key=itemgetter("count"), reverse=True)
     with open(TAGS_GENERATED_DATA_FILE, "w") as file_desc:
         json.dump(tags_sorted, file_desc)
-    LOGGER.info("Wrote %d tags to %s", len(tags), TAGS_GENERATED_DATA_FILE)
+    logger.info("Wrote {} tags to {}", len(tags), TAGS_GENERATED_DATA_FILE)
