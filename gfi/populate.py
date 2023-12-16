@@ -30,7 +30,7 @@ ISSUE_SORT_DIRECTION = "desc"
 ISSUE_LIMIT = 10
 SLUGIFY_REPLACEMENTS = [["#", "sharp"], ["+", "plus"]]
 
-logging.config.dictConfig(LOGGING_CONFIG)
+logging.config.dictConfig(LOGGING_CONFIG)  # skipcq: PY-A6006
 LOGGER = logging.getLogger(__file__)
 
 if not path.exists(LABELS_DATA_FILE):
@@ -46,7 +46,7 @@ class RepoNotFoundException(Exception):
     """Exception class for repo not found."""
 
 
-def parse_github_url(url):
+def parse_github_url(url: str) -> dict:
     """
     Take the GitHub repo URL and return a tuple with
     owner login and repo name.
@@ -57,19 +57,14 @@ def parse_github_url(url):
     return {}
 
 
-def get_repository_info(owner, name):
+def get_repository_info(owner: str, name: str):
     """
     Get the relevant information needed for the repository from
     its owner login and name.
     """
-
     LOGGER.info("Getting info for %s/%s", owner, name)
 
     access_token = getenv("GITHUB_ACCESS_TOKEN")
-    if not access_token:
-        raise AssertionError(
-            "Access token not present in the env variable `GITHUB_ACCESS_TOKEN`"
-        )
 
     # create a logged in GitHub client
     client = login(token=access_token)
@@ -141,6 +136,12 @@ if __name__ == "__main__":
 
     if not path.exists(REPO_DATA_FILE):
         raise RuntimeError("No config data file found. Exiting.")
+
+    # if the GitHub Access Token isn't found, raise an error
+    if not getenv('GITHUB_ACCESS_TOKEN'):
+        raise AssertionError(
+            "Access token not present in the env variable `GITHUB_ACCESS_TOKEN`"
+        )
 
     REPOSITORIES = []
     TAGS = Counter()
