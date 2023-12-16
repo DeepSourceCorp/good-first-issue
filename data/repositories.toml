@@ -727,6 +727,7 @@ repositories = [
   'github.com/tomkp/react-split-pane',
   'github.com/tongueroo/jets',
   'github.com/ToolJet/ToolJet',
+  'github.com/traceloop/openllmetry',
   'github.com/trailofbits/manticore',
   'github.com/tridactyl/tridactyl',
   'github.com/tweag/asterius',
