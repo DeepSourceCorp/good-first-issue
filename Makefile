@@ -1,7 +1,7 @@
 .ONESHELL:
 pre-build:
 	pip install --upgrade poetry && \
-	poetry install && \
+	poetry install --no-root && \
 	yarn
 
 build:
@@ -10,18 +10,9 @@ build:
 generate:
 	poetry run python gfi/populate.py
 
-tweet:
-	poetry run python gfi/tweet.py
-
-index:
-	poetry run python gfi/index.py
-
 generate-prod:
 	make pre-build
 	make generate
-	@if [ $$PREVIEW == "false" ]; then \
-	  make tweet; \
-	fi; \
 	make build
 
 test:

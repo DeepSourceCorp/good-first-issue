@@ -11,11 +11,8 @@ authors = [
 python = "^3.12"
 "github3.py" = "^4.0.1"
 toml = "^0.10.2"
-algoliasearch = "^2.4.0"
 numerize = "^0.12"
 emoji = "^0.6.0"
-twython = "^3.8.2"
-superjson = "^0.0.13"
 requests = "^2.23.0"
 python-slugify = "^4.0.1"
 
