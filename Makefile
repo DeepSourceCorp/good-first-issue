@@ -1,11 +1,11 @@
 .ONESHELL:
 pre-build:
-	pip install --upgrade poetry && \
-	poetry install --no-root && \
-	yarn
+	pip install --upgrade poetry
+	poetry install --no-root
 
 build:
-	yarn generate
+	bun install
+	bun generate
 
 generate:
 	poetry run python gfi/populate.py
@@ -21,5 +21,6 @@ test:
 
 format:
 	poetry run ruff format .
+	bunx prettier --write .
 
 .DEFAULT_GOAL := build

@@ -1,0 +1,5 @@
+.nuxt
+pnpm-lock.yaml
+dist
+.output
+*.json

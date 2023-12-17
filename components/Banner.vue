@@ -11,19 +11,15 @@
   </header>
 </template>
 
-<script>
-const BANNER_ACTIVE_TIME = 2000
+<script setup>
+import { ref, onMounted } from 'vue'
 
-export default {
-  data() {
-    return {
-      bannerActive: true
-    }
-  },
-  mounted() {
-    setTimeout(() => {
-      this.bannerActive = false
-    }, BANNER_ACTIVE_TIME)
-  }
-}
+const BANNER_ACTIVE_TIME = 2000
+const bannerActive = ref(true)
+
+onMounted(() => {
+  setTimeout(() => {
+    bannerActive.value = false
+  }, BANNER_ACTIVE_TIME)
+})
 </script>
