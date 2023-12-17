@@ -6,7 +6,7 @@ license = "MIT"
 authors = ["Sanket Saurav <sanket@deepsource.io>"]
 
 [tool.poetry.dependencies]
-python = "^3.12"
+python = "^3.9"
 "github3.py" = "^4.0.1"
 toml = "^0.10.2"
 numerize = "^0.12"
