@@ -5,8 +5,10 @@ import json
 import random
 import re
 from collections import Counter
+from concurrent.futures import ThreadPoolExecutor
 from operator import itemgetter
 from os import getenv, path
+from typing import TypedDict, Dict, Union, Sequence, Optional, Mapping
 
 import toml
 
@@ -16,7 +18,8 @@ from emoji import emojize
 from slugify import slugify
 from loguru import logger
 
-
+MAX_CONCURRENCY = 25  # max number of requests to make to GitHub in parallel
+MAX_REPOSITORIES = 500  # max number of repositories populated in one session
 REPO_DATA_FILE = "data/repositories.toml"
 REPO_GENERATED_DATA_FILE = "data/generated.json"
 TAGS_GENERATED_DATA_FILE = "data/tags.json"
@@ -42,29 +45,31 @@ class RepoNotFoundException(Exception):
 
 
 def parse_github_url(url: str) -> dict:
-    """
-    Take the GitHub repo URL and return a tuple with
-    owner login and repo name.
-    """
+    """Take the GitHub repo URL and return a tuple with owner login and repo name."""
     match = GH_URL_PATTERN.search(url)
     if match:
         return match.groupdict()
     return {}
 
 
-def get_repository_info(owner: str, name: str):
-    """
-    Get the relevant information needed for the repository from
-    its owner login and name.
-    """
+class RepositoryIdentifier(TypedDict):
+    owner: str
+    name: str
+
+
+RepositoryInfo = Dict["str", Union[str, int, Sequence]]
+
+
+def get_repository_info(identifier: RepositoryIdentifier) -> Optional[RepositoryInfo]:
+    """Get the relevant information needed for the repository from its owner login and name."""
+    owner, name = identifier["owner"], identifier["name"]
+
     logger.info("Getting info for {}/{}", owner, name)
 
-    access_token = getenv("GITHUB_ACCESS_TOKEN")
-
     # create a logged in GitHub client
-    client = login(token=access_token)
+    client = login(token=getenv("GITHUB_ACCESS_TOKEN"))
 
-    info = {}
+    info: RepositoryInfo = {}
 
     # get the repository; if the repo is not found, log a warning
     try:
@@ -99,7 +104,6 @@ def get_repository_info(owner: str, name: str):
             info["stars_display"] = numerize.numerize(repository.stargazers_count)
             info["last_modified"] = repository.pushed_at.isoformat()
             info["id"] = str(repository.id)
-            info["objectID"] = str(repository.id)  # for indexing on algolia
 
             # get the latest issues with the tag
             issues = []
@@ -115,11 +119,16 @@ def get_repository_info(owner: str, name: str):
                 )
 
             info["issues"] = issues
-            return info
-        logger.info("\t skipping the repo")
-        return None
+        else:
+            logger.info("\t skipping due to insufficient issues or info")
     except exceptions.NotFoundError:
-        logger.warning("Not Found: {}", f"{owner}/{name}")
+        logger.warning("Not Found: {}/{}", owner, name)
+    except exceptions.ForbiddenError:
+        logger.warning("Skipped due to rate-limits: {}/{}", owner, name)
+    except exceptions.ConnectionError:
+        logger.warning("Skipped due to connection errors: {}/{}", owner, name)
+
+    return info
 
 
 if __name__ == "__main__":
@@ -134,7 +143,7 @@ if __name__ == "__main__":
         raise RuntimeError("Access token not present in the env variable `GITHUB_ACCESS_TOKEN`")
 
     REPOSITORIES = []
-    TAGS = Counter()
+    TAGS: Counter = Counter()
     with open(REPO_DATA_FILE, "r") as data_file:
         DATA = toml.load(REPO_DATA_FILE)
 
@@ -144,16 +153,20 @@ if __name__ == "__main__":
             REPO_DATA_FILE,
         )
 
-        for repository_url in DATA["repositories"][:20]:  # todo: remove the limit before pushing
-            repo_dict = parse_github_url(repository_url)
-            if repo_dict:
-                repo_details = get_repository_info(repo_dict["owner"], repo_dict["name"])
-                if repo_details:
-                    REPOSITORIES.append(repo_details)
-                    TAGS[repo_details["language"]] += 1
+        # pre-process the URLs and only continue with the list of valid GitHub URLs
+        repositories = list(filter(bool, [parse_github_url(url) for url in DATA["repositories"]]))
 
-    # shuffle the repository order
-    random.shuffle(REPOSITORIES)
+        # shuffle the order of the repositories
+        random.shuffle(repositories)
+
+        with ThreadPoolExecutor(max_workers=MAX_CONCURRENCY) as executor:
+            results = executor.map(get_repository_info, repositories[:MAX_REPOSITORIES])
+
+        # filter out repositories with valid data and increment tag counts
+        for result in results:
+            if result:
+                REPOSITORIES.append(result)
+                TAGS[result["language"]] += 1
 
     # write to generated JSON files
 

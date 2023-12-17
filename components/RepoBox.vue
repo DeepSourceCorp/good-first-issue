@@ -12,7 +12,7 @@
           :href="repo.url"
           target="_blank"
           rel="noopener noreferrer"
-          class="text-xl font-bold group-hover:text-juniper"
+          class="text-lg font-semibold group-hover:text-juniper"
           :class="{ 'text-juniper': isIssueOpen }"
           >{{ repo.owner }} / {{ repo.name }}</a
         >

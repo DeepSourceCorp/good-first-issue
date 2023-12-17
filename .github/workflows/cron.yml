@@ -10,6 +10,6 @@ jobs:
     steps:
       - name: Trigger deployment
         uses: joelwmale/webhook-action@master
-        env:
-          WEBHOOK_URL: ${{ secrets.DEPLOY_HOOK_URL }}
-          data: ""
+        with:
+          url: ${{ secrets.DEPLOY_HOOK_URL }}
+

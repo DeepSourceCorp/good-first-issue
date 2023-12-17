@@ -17,6 +17,7 @@ generate-prod:
 
 test:
 	poetry run python gfi/test_data.py
+	poetry run mypy gfi/*.py
 
 format:
 	poetry run ruff format .

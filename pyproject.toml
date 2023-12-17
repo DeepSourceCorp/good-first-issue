@@ -19,6 +19,7 @@ ruff = "^0.1.8"
 types-toml = "^0.10.8.7"
 types-python-slugify = "^8.0.0.3"
 loguru = "^0.7.2"
+mypy = "^1.7.1"
 
 [tool.ruff]
 line-length = 120
