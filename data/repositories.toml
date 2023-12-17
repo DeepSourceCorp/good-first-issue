@@ -597,6 +597,7 @@ repositories = [
   'github.com/reactjs/reactjs.org',
   'github.com/readthedocs/readthedocs.org',
   'github.com/redux-saga/redux-saga',
+  'github.com/refinedev/refine',
   'github.com/remacs/remacs',
   'github.com/renovatebot/renovate',
   'github.com/responsively-org/responsively-app',
