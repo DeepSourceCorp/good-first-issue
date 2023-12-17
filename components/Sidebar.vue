@@ -1,19 +1,17 @@
 <template>
-  <section
-    class="masthead font-sans pt-6 border-r border-ink-200 px-6 text-vanilla-300 flex-none w-full md:max-w-sm"
-  >
+  <section class="masthead font-sans pt-6 border-r border-ink-200 px-6 text-vanilla-300 flex-none w-full md:max-w-sm">
     <div>
       <h3 class="section-heading">About</h3>
       <p class="text-sm">
-        Good First Issue curates easy pickings from popular open-source projects, and helps you make
-        your first contribution to open-source.
+        Good First Issue curates easy pickings from popular open-source projects, and helps you make your first
+        contribution to open-source.
       </p>
     </div>
     <div class="pt-6">
       <h3 class="section-heading">Browse by language</h3>
       <div>
         <nuxt-link
-          v-for="tag in tags"
+          v-for="tag in Tags"
           :key="tag.slug"
           :to="'/language/' + tag.slug"
           :class="{
@@ -33,11 +31,14 @@
     </div>
     <div class="pt-6">
       <a
-        class="block bg-juniper hover:bg-light_juniper text-ink-400 uppercase rounded-md font-bold text-center px-1 py-3"
+        class="bg-juniper hover:bg-light_juniper text-ink-400 uppercase rounded-md font-bold text-center px-1 py-3 flex flex-row items-center justify-center space-x-1"
         href="https://github.com/deepsourcelabs/good-first-issue#adding-a-new-project"
         target="_blank"
         rel="noopener noreferrer"
-        >Add your project</a
+        >
+          <PlusCircleIcon class="h-5 w-5 stroke-2" />
+          <span>Add your project</span>
+        </a
       >
     </div>
 
@@ -46,14 +47,12 @@
         class="flex flex-row justify-center items-center"
         target="_blank"
         rel="noopener noreferrer"
-        href="https://deepsource.io?ref=gfi"
+        href="https://deepsource.com?ref=gfi"
       >
-        <img style="width: 14px" src="/social/heart.svg" alt="Heart" />
+        <HeartIcon class="w-4 h-4 text-cherry" />
         <span class="ml-2"
           >A
-          <span class="inline hover:underline text-juniper" title="Visit DeepSource website"
-            >DeepSource</span
-          >
+          <span class="inline hover:underline text-juniper" title="Visit DeepSource website">DeepSource</span>
           initative</span
         >
       </a>
@@ -61,18 +60,11 @@
   </section>
 </template>
 
-<script>
+<script setup>
 import Tags from '~/data/tags.json'
-
-export default {
-  data: function () {
-    return {
-      tags: Tags
-    }
-  }
-}
+import { PlusCircleIcon } from '@heroicons/vue/24/outline'
+import {HeartIcon} from '@heroicons/vue/24/solid'
 </script>
-
 <style>
 .section-heading {
   @apply text-sm font-bold uppercase tracking-wider mb-2 text-slate;
