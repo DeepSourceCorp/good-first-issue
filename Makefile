@@ -11,8 +11,7 @@ generate:
 	poetry run python gfi/populate.py
 
 generate-prod:
-	make pre-build
-	make generate
+	bun sync down
 	make build
 
 test:
