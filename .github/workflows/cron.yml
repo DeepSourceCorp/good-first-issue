@@ -27,9 +27,13 @@ jobs:
 
       - name: Populate the latest data
         run: make generate
+        env:
+          GH_ACCESS_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
 
       - name: Sync data to the blob store
         run: bun sync up
+        env:
+          BLOB_READ_WRITE_TOKEN: ${{ secrets.BLOB_READ_WRITE_TOKEN }}
 
       - name: Trigger deployment
         uses: joelwmale/webhook-action@master
