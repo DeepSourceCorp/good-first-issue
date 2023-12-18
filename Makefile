@@ -11,8 +11,9 @@ generate:
 	poetry run python gfi/populate.py
 
 generate-prod:
+	bun install
 	bun sync down
-	make build
+	bun generate
 
 test:
 	poetry run python gfi/test_data.py
