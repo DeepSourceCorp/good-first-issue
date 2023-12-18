@@ -67,7 +67,7 @@ def get_repository_info(identifier: RepositoryIdentifier) -> Optional[Repository
     logger.info("Getting info for {}/{}", owner, name)
 
     # create a logged in GitHub client
-    client = login(token=getenv("GITHUB_ACCESS_TOKEN"))
+    client = login(token=getenv("GH_ACCESS_TOKEN"))
 
     info: RepositoryInfo = {}
 
@@ -139,8 +139,8 @@ if __name__ == "__main__":
         raise RuntimeError("No config data file found. Exiting.")
 
     # if the GitHub Access Token isn't found, raise an error
-    if not getenv("GITHUB_ACCESS_TOKEN"):
-        raise RuntimeError("Access token not present in the env variable `GITHUB_ACCESS_TOKEN`")
+    if not getenv("GH_ACCESS_TOKEN"):
+        raise RuntimeError("Access token not present in the env variable `GH_ACCESS_TOKEN`")
 
     REPOSITORIES = []
     TAGS: Counter = Counter()
