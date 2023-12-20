@@ -544,6 +544,7 @@ repositories = [
   'github.com/phpmd/phpmd',
   'github.com/phpmyadmin/phpmyadmin',
   'github.com/phpservermon/phpservermon',
+  'github.com/pieces-app/example-ts',
   'github.com/playframework/playframework',
   'github.com/Plume-org/Plume',
   'github.com/pmd/pmd',
