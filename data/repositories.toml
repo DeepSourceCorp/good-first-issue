@@ -692,6 +692,7 @@ repositories = [
   'github.com/streamlit/streamlit',
   'github.com/strongbox/strongbox',
   'github.com/strongloop/loopback-next',
+  'github.com/stryker-mutator/stryker-net',
   'github.com/STVIR/pysot',
   'github.com/styleguidist/react-styleguidist',
   'github.com/stylelint/stylelint',
