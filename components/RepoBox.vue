@@ -12,7 +12,7 @@
       <div class="flex flex-row">
         <a
           :title="`Open ${repo.owner}/${repo.name} on GitHub`"
-          :href="repo.url"
+          :href="`${repo.url}/contribute`"
           target="_blank"
           rel="noopener noreferrer"
           class="text-lg font-semibold group-hover:text-juniper"
