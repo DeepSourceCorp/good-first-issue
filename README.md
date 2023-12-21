@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://goodfirstissue.dev" target="_blank">
-    <img src="static/readme-logo.svg">
+    <img src="public/readme-logo.svg">
   </a>
 </p>
 <hr>
@@ -49,8 +49,8 @@ $ cp data/tags.sample.json data/tags.json
 3. Build the front-end app and start the development server.
 
 ```bash
-$ yarn # install the dependencies
-$ yarn dev -o # start the development server
+$ bun install # install the dependencies
+$ bun dev # start the development server
 ```
 
 The app should open in your browser.

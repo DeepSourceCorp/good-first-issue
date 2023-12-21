@@ -9,7 +9,7 @@ test_patterns = [
   enabled = true
 
   [analyzers.meta]
-  max_line_length = 100
+  max_line_length = 120
 
 [[analyzers]]
 name = "javascript"
