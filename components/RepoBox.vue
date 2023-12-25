@@ -8,8 +8,8 @@
     class="select-none border w-full rounded-md mb-4 cursor-pointer hover:bg-ink-300 group"
     @click="toggle(repo.id)"
   >
-    <div class="px-5 py-3">
-      <div class="flex flex-row">
+    <div class="px-5 py-3 flex-wrap">
+      <div class="flex flex-row " >
         <a
           :title="`Open ${repo.owner}/${repo.name} on GitHub`"
           :href="repo.url"
