@@ -451,6 +451,7 @@ repositories = [
   'github.com/mimblewimble/grin',
   'github.com/mindsphere/mindconnect-nodejs',
   'github.com/miroiu/nodify',
+  'github.com/mlco2/codecarbon',
   'github.com/mlflow/mlflow',
   'github.com/mlpack/mlpack',
   'github.com/moaazsidat/react-native-qrcode-scanner',
