@@ -817,6 +817,7 @@ repositories = [
   'github.com/zeek/zeek',
   'github.com/zeit/hyper',
   'github.com/zeit/next.js',
+  'github.com/zenml-io/zenml',
   'github.com/zephyrproject-rtos/zephyr',
   'github.com/zio/zio',
   'github.com/zitadel/zitadel',
