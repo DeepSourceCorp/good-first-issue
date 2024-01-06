@@ -1,3 +1,28 @@
 {
-  "labels": ["good first issue", "good-first-issue"]
+  "labels": [
+    "good first issue",
+    "good-first-issue",
+    "beginner",
+    "beginner-friendly",
+    "beginner friendly",
+    "easy-to-understand",
+    "easy to understand",
+    "easy",
+    "first-timer",
+    "first timer",
+    "first-timers",
+    "first timers",
+    "first-timer-friendly",
+    "first timer friendly",
+    "first-timer-only",
+    "first timer only",
+    "first-timers-only",
+    "first timers only",
+    "newcomers",
+    "newcomer",
+    "newcomer friendly",
+    "newcomer-friendly",
+    "newcomers-only",
+    "newcomers only"
+  ]
 }
