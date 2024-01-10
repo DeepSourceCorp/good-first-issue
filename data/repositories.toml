@@ -716,6 +716,7 @@ repositories = [
   'github.com/TDAmeritrade/stumpy',
   'github.com/TeamAmaze/AmazeFileManager',
   'github.com/TeamNewPipe/NewPipe',
+  'github.com/Tecvity/tecvity-website',
   'github.com/tektoncd/pipeline',
   'github.com/telepresenceio/telepresence',
   'github.com/tenancy/multi-tenant',
