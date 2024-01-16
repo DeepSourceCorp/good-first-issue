@@ -29,3 +29,4 @@ __pycache__
 data/generated.json
 data/tags.json
 content/language/*.md
+pnpm-lock.yaml
