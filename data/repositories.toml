@@ -55,6 +55,7 @@ repositories = [
   'github.com/atlassian/react-beautiful-dnd',
   'github.com/AtomicGameEngine/AtomicGameEngine',
   'github.com/auroraeditor/auroraeditor',
+  'github.com/authzed/spicedb'
   'github.com/AutoFixture/AutoFixture',
   'github.com/Automattic/wp-calypso',
   'github.com/automl/auto-sklearn',
