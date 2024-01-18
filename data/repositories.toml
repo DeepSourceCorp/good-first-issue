@@ -763,6 +763,7 @@ repositories = [
   'github.com/vespa-engine/vespa',
   'github.com/vicky002/AlgoWiki',
   'github.com/vimeo/psalm',
+  'github.com/VishnuSanal/Quotes',
   'github.com/vmware-tanzu/carvel',
   'github.com/vmware-tanzu/community-edition',
   'github.com/vmware-tanzu/velero',
