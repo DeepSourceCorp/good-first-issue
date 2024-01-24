@@ -24,3 +24,10 @@ format:
 	bunx prettier --write .
 
 .DEFAULT_GOAL := build
+
+first-run:
+	cp data/generated.sample.json data/generated.json
+	cp data/tags.sample.json data/tags.json
+	cp static/sw.sample.js static/sw.js
+	yarn
+	yarn dev -o
