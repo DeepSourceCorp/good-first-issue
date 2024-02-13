@@ -612,6 +612,7 @@ repositories = [
   'github.com/renovatebot/renovate',
   'github.com/responsively-org/responsively-app',
   'github.com/RetroShare/RetroShare',
+  'github.com/revertinc/revert',
   'github.com/rigetti/pyquil',
   'github.com/ripple/rippled',
   'github.com/rjsf-team/react-jsonschema-form',
