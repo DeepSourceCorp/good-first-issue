@@ -208,6 +208,7 @@ repositories = [
   'github.com/electron/electron',
   'github.com/electron/electronjs.org',
   'github.com/ElementsProject/lightning',
+  'github.com/emanuele-em/proxelar',
   'github.com/ember-cli/ember-cli',
   'github.com/empathyco/x',
   'github.com/empathyco/x-archetype',
