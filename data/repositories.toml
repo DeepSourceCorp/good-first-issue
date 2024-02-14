@@ -262,6 +262,7 @@ repositories = [
   'github.com/gitcommitshow/auth-jwt',
   'github.com/Giuliano1993/make-js-component',
   'github.com/gizak/termui',
+  'github.com/glasskube/glasskube',
   'github.com/Glavin001/atom-beautify',
   'github.com/globaleaks/GlobaLeaks',
   'github.com/glpi-project/glpi',
