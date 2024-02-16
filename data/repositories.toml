@@ -318,6 +318,7 @@ repositories = [
   'github.com/ibis-project/ibis',
   'github.com/Icinga/icinga2',
   'github.com/Idrinth/api-bench',
+  'github.com/implerhq/impler.io',
   'github.com/imsnif/bandwhich',
   'github.com/indeedeng/starfish',
   'github.com/infection/infection',
