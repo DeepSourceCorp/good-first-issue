@@ -313,6 +313,7 @@ repositories = [
   'github.com/hoppscotch/hoppscotch',
   'github.com/http4s/http4s',
   'github.com/hubtype/botonic',
+  'github.com/huggingface/transformers' ,
   'github.com/hudson-and-thames/mlfinlab',
   'github.com/Hypfer/Valetudo',
   'github.com/ibis-project/ibis',
