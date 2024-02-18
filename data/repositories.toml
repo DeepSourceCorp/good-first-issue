@@ -168,6 +168,7 @@ repositories = [
   'github.com/diasurgical/devilutionX',
   'github.com/diesel-rs/diesel',
   'github.com/DiFronzo/blockchair',
+  'github.com/digitomize/digitomize',
   'github.com/dis-moi/extension',
   'github.com/django-import-export/django-import-export',
   'github.com/djc/quinn',
