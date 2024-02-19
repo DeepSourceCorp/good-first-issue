@@ -823,6 +823,7 @@ repositories = [
   'github.com/zeit/next.js',
   'github.com/zenml-io/zenml',
   'github.com/zephyrproject-rtos/zephyr',
+  'github.com/ZigRazor/CXXGraph',
   'github.com/zio/zio',
   'github.com/zitadel/zitadel',
   'github.com/zsh-users/zsh-completions',
