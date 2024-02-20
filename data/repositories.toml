@@ -409,6 +409,8 @@ repositories = [
   'github.com/LMMS/lmms',
   'github.com/loadimpact/k6',
   'github.com/lobsters/lobsters',
+  'github.com/loft-sh/devpod',
+  'github.com/loft-sh/vcluster',
   'github.com/lukasoppermann/html5sortable',
   'github.com/lusaxweb/vuesax',
   'github.com/maartenbreddels/ipyvolume',
