@@ -297,6 +297,7 @@ repositories = [
   'github.com/grpc-ecosystem/grpc-gateway',
   'github.com/gruntwork-io/terragrunt',
   'github.com/Guake/guake',
+  'github.com/gurkenlabs/litiengine',
   'github.com/hackmdio/codimd',
   'github.com/hamaluik/timecop',
   'github.com/haproxy/haproxy',
