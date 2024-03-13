@@ -623,6 +623,7 @@ repositories = [
   'github.com/rubberduck-vba/Rubberduck',
   'github.com/rubocop-hq/rubocop',
   'github.com/rudderlabs/rudder-server',
+  'github.com/rudransh61/NextGenCSS-',
   'github.com/rust-analyzer/rust-analyzer',
   'github.com/rust-lang/rust-by-example',
   'github.com/rust-lang/rust-clippy',
