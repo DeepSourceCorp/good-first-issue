@@ -13,7 +13,7 @@
         <nuxt-link
           v-for="tag in Tags"
           :key="tag.slug"
-          :to="'/language/' + tag.slug"
+          :to="$route.params.slug === tag.slug? '/': '/language/'+ tag.slug"
           :class="{
             'active-pill': $route.params.slug === tag.slug,
             'border-slate hover:text-juniper hover:border-juniper': $route.params.slug !== tag.slug
