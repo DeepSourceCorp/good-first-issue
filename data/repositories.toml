@@ -81,6 +81,7 @@ repositories = [
   'github.com/billimarie/prosecutor-database',
   'github.com/biopython/biopython',
   'github.com/bisq-network/bisq',
+  'github.com/bit-team/backintime',
   'github.com/bitcoin/bitcoin',
   'github.com/bitwarden/clients',
   'github.com/bitwarden/mobile',
