@@ -294,6 +294,7 @@ repositories = [
   'github.com/goreleaser/goreleaser',
   'github.com/gpbl/react-day-picker',
   'github.com/grafana/loki',
+  'github.com/grafana/mimir',
   'github.com/grammyjs/grammY',
   'github.com/grandnode/grandnode',
   'github.com/graph-gophers/graphql-go',
