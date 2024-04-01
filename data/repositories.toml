@@ -1,4 +1,5 @@
 repositories = [
+  'https://github.com/apache/incubator-answer',
   'github.com/deepsourcelabs/good-first-issue',
   'github.com/4paradigm/OpenMLDB',
   'github.com/abpframework/abp',
