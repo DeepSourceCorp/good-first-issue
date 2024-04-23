@@ -274,6 +274,7 @@ repositories = [
   'github.com/go-gitea/gitea',
   'github.com/go-swagger/go-swagger',
   'github.com/goatshriek/stumpless',
+  'github.com/gofr-dev/gofr',
   'github.com/goharbor/harbor',
   'github.com/gomods/athens',
   'github.com/google/data-transfer-project',
