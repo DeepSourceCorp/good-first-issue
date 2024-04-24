@@ -468,6 +468,7 @@ repositories = [
   'github.com/mockk/mockk',
   'github.com/modin-project/modin',
   'github.com/monicahq/monica',
+  'github.com/mondaycom/vibe',
   'github.com/mono/mono',
   'github.com/MonoGame/MonoGame',
   'github.com/MontFerret/ferret',
