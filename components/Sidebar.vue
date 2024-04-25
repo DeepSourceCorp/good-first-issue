@@ -61,7 +61,7 @@
 </template>
 
 <script setup>
-import Tags from '~/data/tags.json'
+import Tags from '~/data/tags.sample.json'
 import { PlusCircleIcon } from '@heroicons/vue/24/outline'
 import {HeartIcon} from '@heroicons/vue/24/solid'
 </script>
