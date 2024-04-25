@@ -5,7 +5,7 @@
 </template>
 
 <script setup>
-import Repositories from '~/data/generated.json'
+import Repositories from '~/data/generated.sample.json'
 
 useHead({
   title: 'Good First Issue: Make your first open-source contribution',
