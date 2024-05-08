@@ -1,5 +1,6 @@
 repositories = [
   'github.com/deepsourcelabs/good-first-issue',
+  'github.com/saipradyumnagoud/restaurantwebsite',
   'github.com/4paradigm/OpenMLDB',
   'github.com/abpframework/abp',
   'github.com/AcademySoftwareFoundation/openvdb',
@@ -172,6 +173,7 @@ repositories = [
   'github.com/developit/microbundle',
   'github.com/diasurgical/devilutionX',
   'github.com/diesel-rs/diesel',
+
   'github.com/DiFronzo/blockchair',
   'github.com/dis-moi/extension',
   'github.com/django-import-export/django-import-export',
