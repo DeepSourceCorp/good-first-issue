@@ -44,17 +44,23 @@
       </div>
     </div>
     <ol v-if="isCardOpen" class="px-5 py-3 text-base leading-loose border-t border-ink-200">
-      <li v-for="issue in repo.issues" :key="issue.url" class="flex flex-row items-start justify-start py-1">
+      <li v-for="issue in repo.issues" :key="issue.url" class="flex flex-row items-center justify-start py-1">
         <span class="text-slate text-right px-2 leading-snug font-mono" style="min-width: 70px">#{{ issue.number }}</span>
-        <div class="flex items-start flex-row flex-auto">
+        <div class="flex items-center flex-row flex-auto">
           <a
             title="Open issue on GitHub"
             :href="issue.url"
             target="_blank"
             rel="noopener noreferrer"
-            class="leading-snug font-medium hover:text-juniper text-vanilla-300 block flex-auto"
+            class="leading-snug font-medium hover:text-juniper text-vanilla-300 block w-3/4"
             >{{ issue.title }}</a
           >
+          <div
+            class="flex flex-row items-center justify-end mt-1"
+            title="Date this issue created at"
+          >
+            <span class="text-slate ml-1 text-sm leading-snug font-mono pl-2">{{ issue.created_at.split('T')[0].split('-').reverse().join('/') }}</span>
+          </div>
           <div
             v-if="issue.comments_count > 0"
             class="flex flex-row items-center justify-end mt-1 w-10"
