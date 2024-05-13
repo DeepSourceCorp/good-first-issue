@@ -157,6 +157,7 @@ repositories = [
   'github.com/cztomczak/cefpython',
   'github.com/dabl/dabl',
   'github.com/dabreegster/abstreet',
+  'github.com/DataKitchen/data-observability-installer',
   'github.com/dagster-io/dagster',
   'github.com/dapr/dapr',
   'github.com/darrenburns/ward',
