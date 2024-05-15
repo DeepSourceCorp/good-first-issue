@@ -826,6 +826,7 @@ repositories = [
   'github.com/zaproxy/zaproxy',
   'github.com/zcash/zcash',
   'github.com/zeebe-io/zeebe',
+  'https://github.com/Hassaan68/eZyPasswordManager',
   'github.com/zeek/zeek',
   'github.com/zeit/hyper',
   'github.com/zeit/next.js',
