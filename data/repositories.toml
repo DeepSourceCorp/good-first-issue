@@ -78,6 +78,7 @@ repositories = [
   'github.com/bbatsov/projectile',
   'github.com/bcherny/json-schema-to-typescript',
   'github.com/beautify-web/js-beautify',
+  'github.com/bhawnaniankit/AJsMedium',
   'github.com/billimarie/prosecutor-database',
   'github.com/biopython/biopython',
   'github.com/bisq-network/bisq',
