@@ -389,6 +389,7 @@ repositories = [
   'github.com/kubernetes/minikube',
   'github.com/kubernetes/test-infra',
   'github.com/kubernetes/website',
+  'github.com/kubestellar/kubestellar'
   'github.com/kumahq/kuma',
   'github.com/lagom/lagom',
   'github.com/lando/lando',
