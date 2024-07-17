@@ -2,3 +2,10 @@
   // https://nuxt.com/docs/guide/concepts/typescript
   "extends": "./.nuxt/tsconfig.json"
 }
+{
+  "compilerOptions": {
+    "target": "es6", // or a later version
+    "lib": ["es2015", "dom"], // Add other libs as needed
+    // other options...
+  }
+}
