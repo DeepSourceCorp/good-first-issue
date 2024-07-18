@@ -26,7 +26,8 @@ jobs:
           bun install
 
       - name: Populate the latest data
-        run: make generate
+        run: |
+          make generate
 
 
       - name: Sync data to the blob store
