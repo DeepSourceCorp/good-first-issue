@@ -27,8 +27,7 @@ jobs:
 
       - name: Populate the latest data
         run: make generate
-        env:
-          GH_ACCESS_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
+
 
       - name: Sync data to the blob store
         run: bun sync up
@@ -39,3 +38,5 @@ jobs:
         uses: joelwmale/webhook-action@master
         with:
           url: ${{ secrets.DEPLOY_HOOK_URL }}
+        env:
+          DEPLOY_HOOK_URL: ${{ secrets.DEPLOY_HOOK_URL }}
