@@ -4,6 +4,7 @@ repositories = [
   'github.com/abpframework/abp',
   'github.com/AcademySoftwareFoundation/openvdb',
   'github.com/activecm/rita',
+  'github.com/ant-design/ant-design',
   'github.com/AdityaMulgundkar/flutter_opencv',
   'github.com/agershun/alasql',
   'github.com/akiran/react-slick',
