@@ -86,6 +86,7 @@ repositories = [
   'github.com/bitwarden/mobile',
   'github.com/BlitzKraft/saythanks.io',
   'github.com/blockstack/blockstack-browser',
+  'github.com/bluewave-labs/bluewave-uptime',
   'github.com/bmarvinb/react-trello-clone',
   'github.com/boa-dev/boa',
   'github.com/bokeh/bokeh',
