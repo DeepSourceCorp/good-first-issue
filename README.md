@@ -29,6 +29,24 @@ Follow these simple steps:
 
 - Add your repository's path (in lexicographic order) in [data/repositories.toml](data/repositories.toml).
 
+  - Lexicographic Order Definition:
+     - Lexicographic order is like dictionary order, where sequences (like strings) are compared element by element from  left to right. The first differing element determines the order.
+
+  - Example
+     - Given the strings "apple", "app", and "banana":
+
+      - "app" vs. "apple":
+      - "app" comes before "apple" because "app" is a prefix and shorter.
+      - "apple" vs. "banana":
+
+      - Compare first letters: 'a' vs 'b'. Since 'a' comes before 'b', "apple" comes first.
+  - Lexicographic order: "app", "apple", "banana".
+
+   - Adding Code Files in Lexicographic Order
+      1. Name Files: Use names that naturally sort in order, e.g., 01-init.cpp, 02-main.cpp.
+      2. Add Files:
+       - Like: git add 01-init.cpp 02-main.cpp
+
 - Create a new pull-request. Please add the link to the issues page of the repository in the PR description. Once the pull request is merged, the changes will be live on [goodfirstissue.dev](https://goodfirstissue.dev/).
 
 ## Setting up the project locally
