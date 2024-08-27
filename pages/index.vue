@@ -1,7 +1,9 @@
 <template>
-  <div class="p-4 w-full">
+<div class="pt-24 md:pt-24 ml-[384px]"></div>
+  <div class="4 w-full">
     <RepoBox v-for="repo in Repositories" :key="repo.id" :repo="repo" />
   </div>
+</div>
 </template>
 
 <script setup>

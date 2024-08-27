@@ -1,5 +1,7 @@
 <template>
-  <section class="masthead font-sans pt-6 border-r border-ink-200 px-6 text-vanilla-300 flex-none w-full md:max-w-sm">
+  <section
+    class="masthead font-sans pt-6 border-r border-ink-200 px-6 text-vanilla-300 fixed top-1 left-1 w-full md:max-w-sm z-50"
+  >
     <div>
       <h3 class="section-heading">About</h3>
       <p class="text-sm">
@@ -35,11 +37,10 @@
         href="https://github.com/deepsourcelabs/good-first-issue#adding-a-new-project"
         target="_blank"
         rel="noopener noreferrer"
-        >
-          <PlusCircleIcon class="h-5 w-5 stroke-2" />
-          <span>Add your project</span>
-        </a
       >
+        <PlusCircleIcon class="h-5 w-5 stroke-2" />
+        <span>Add your project</span>
+      </a>
     </div>
 
     <div class="text-sm pt-6">
@@ -63,7 +64,7 @@
 <script setup>
 import Tags from '~/data/tags.json'
 import { PlusCircleIcon } from '@heroicons/vue/24/outline'
-import {HeartIcon} from '@heroicons/vue/24/solid'
+import { HeartIcon } from '@heroicons/vue/24/solid'
 </script>
 <style>
 .section-heading {
