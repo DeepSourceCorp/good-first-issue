@@ -251,6 +251,7 @@ repositories = [
   'github.com/fortio/fortio',
   'github.com/fossasia/open-event-server',
   'github.com/Foundry376/Mailspring',
+  'github.com/freeCodeCamp/freeCodeCamp',
   'github.com/freedomofpress/securedrop',
   'github.com/FreshRSS/FreshRSS',
   'github.com/FStarLang/FStar',
