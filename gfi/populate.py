@@ -12,6 +12,7 @@ from typing import TypedDict, Dict, Union, Sequence, Optional, Mapping
 
 import toml
 
+
 from github3 import exceptions, login
 from numerize import numerize
 from emoji import emojize

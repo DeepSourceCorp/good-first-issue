@@ -57,8 +57,9 @@
         >
       </a>
     </div>
-  </section>
+  </section> 
 </template>
+
 
 <script setup>
 import Tags from '~/data/tags.json'
