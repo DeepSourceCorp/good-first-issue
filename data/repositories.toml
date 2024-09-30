@@ -480,6 +480,7 @@ repositories = [
   'github.com/mumble-voip/mumble',
   'github.com/Musish/Musish',
   'github.com/namespace-ee/react-calendar-timeline',
+  'github.com/namespacecomm/namespace-community-website',
   'github.com/namhyung/uftrace',
   'github.com/nannou-org/nannou',
   'github.com/nas5w/use-local-storage',
