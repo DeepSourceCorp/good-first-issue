@@ -805,6 +805,7 @@ repositories = [
   'github.com/winstonjs/winston',
   'github.com/winsw/winsw',
   'github.com/withspectrum/spectrum',
+  'github.com/woltapp/wolt_modal_sheet',
   'github.com/woocommerce/woocommerce',
   'github.com/wordpress-mobile/WordPress-Android',
   'github.com/wordpress-mobile/WordPress-iOS',
