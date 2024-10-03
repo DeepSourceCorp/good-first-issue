@@ -53,6 +53,7 @@ useHead({
   }]
 })
 </script>
+<<<<<<< HEAD
 
 <style scoped>
 .search-input {
@@ -74,4 +75,3 @@ useHead({
   color: teal;
 }
 </style>
-
