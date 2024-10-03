@@ -105,6 +105,7 @@ repositories = [
   'github.com/cake-build/cake',
   'github.com/cake-build/website',
   'github.com/canonical/multipass',
+  'github.com/carlspring/idempotence',
   'github.com/casey/just',
   'github.com/catboost/catboost',
   'github.com/ccrama/Slide',
