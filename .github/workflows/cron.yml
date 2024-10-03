@@ -1,0 +1,41 @@
+name: Cron
+
+on:
+  schedule:
+    - cron: '0 8 * * *'
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Set up bun
+        uses: oven-sh/setup-bun@v1
+
+      - name: Install dependencies
+        run: |
+          make pre-build
+          bun install
+
+      - name: Populate the latest data
+        run: make generate
+        env:
+          GH_ACCESS_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
+
+      - name: Sync data to the blob store
+        run: bun sync up
+        env:
+          BLOB_READ_WRITE_TOKEN: ${{ secrets.BLOB_READ_WRITE_TOKEN }}
+
+      - name: Trigger deployment
+        uses: joelwmale/webhook-action@master
+        with:
+          url: ${{ secrets.DEPLOY_HOOK_URL }}
