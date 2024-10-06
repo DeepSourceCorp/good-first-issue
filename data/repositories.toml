@@ -638,6 +638,7 @@ repositories = [
   'github.com/rust-windowing/glutin',
   'github.com/rust-windowing/winit',
   'github.com/rustsim/nalgebra',
+  'github.com/Ryczko/FormsLab',
   'github.com/Sable/soot',
   'github.com/SAP/chevrotain',
   'github.com/SasanLabs/VulnerableApp',
