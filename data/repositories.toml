@@ -441,6 +441,7 @@ repositories = [
   'github.com/mattgodbolt/compiler-explorer',
   'github.com/mavoweb/mavo',
   'github.com/mcollina/autocannon',
+  'github.com/mckinsey/vizro',
   'github.com/mdx-js/mdx',
   'github.com/medusajs/medusa',
   'github.com/meilisearch/MeiliSearch',
