@@ -594,6 +594,7 @@ repositories = [
   'github.com/pywinauto/pywinauto',
   'github.com/Qiskit/qiskit-terra',
   'github.com/qmk/qmk_firmware',
+  'github.com/qtop/qtop',
   'github.com/qTox/qTox',
   'github.com/QuantConnect/Lean',
   'github.com/quantumlib/Cirq',
