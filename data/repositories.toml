@@ -444,6 +444,8 @@ repositories = [
   'github.com/mdx-js/mdx',
   'github.com/medusajs/medusa',
   'github.com/meilisearch/MeiliSearch',
+  'github.com/meltano/meltano',
+  'github.com/meltano/sdk',
   'github.com/mermaid-js/mermaid',
   'github.com/meshery/meshery',
   'github.com/mesonbuild/meson',
