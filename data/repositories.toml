@@ -220,6 +220,7 @@ repositories = [
   'github.com/encode/httpx',
   'github.com/epicmaxco/vuestic-admin',
   'github.com/eslint/eslint',
+  'github.com/ethereum/ethereum-org-website',
   'github.com/ethereum/go-ethereum',
   'github.com/ethereum/solidity',
   'github.com/ethereum/web3.py',
