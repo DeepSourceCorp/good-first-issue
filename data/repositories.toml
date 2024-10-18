@@ -367,6 +367,7 @@ repositories = [
   'github.com/keptn/keptn',
   'github.com/keephq/keep',
   'github.com/keras-team/keras',
+  'github.com/kestra-io/kestra',
   'github.com/kevinfjiang/FuncNotify',
   'github.com/kevinanielsen/go-fast-cdn',
   'github.com/keystonejs/keystone',
