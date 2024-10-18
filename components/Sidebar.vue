@@ -76,4 +76,8 @@ import {HeartIcon} from '@heroicons/vue/24/solid'
 .active-pill > span {
   @apply text-juniper;
 }
+.pt-6{
+  position: fixed;
+  overflow-y: auto;
+}
 </style>
