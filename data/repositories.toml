@@ -427,6 +427,7 @@ repositories = [
   'github.com/MakeContributions/ideahub',
   'github.com/MakeContributions/markdown-dungeon',
   'github.com/mamamia5x/markdownpedia',
+  'github.com/Map-Rank/residat-front-office'
   'github.com/mapbox/mapbox-gl-js',
   'github.com/mapbox/mapbox-gl-native',
   'github.com/margaritahumanitarian/helpafamily',
