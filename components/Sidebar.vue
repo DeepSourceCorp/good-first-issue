@@ -12,8 +12,10 @@
       <div>
         <nuxt-link
           v-for="tag in Tags"
-          :key="tag.slug"
+          :title="`View ${tag.language} repositories`"
           :to="'/language/' + tag.slug"
+          :id="`${tag.slug}`"
+          @click="toggle(tag.slug)"
           :class="{
             'active-pill': $route.params.slug === tag.slug,
             'border-slate hover:text-juniper hover:border-juniper': $route.params.slug !== tag.slug
@@ -64,6 +66,12 @@
 import Tags from '~/data/tags.json'
 import { PlusCircleIcon } from '@heroicons/vue/24/outline'
 import {HeartIcon} from '@heroicons/vue/24/solid'
+function toggle(id) {
+  const button = document.getElementById(id);
+  button.addEventListener('click', () => {
+    button.classList.toggle("readability");
+  });
+}
 </script>
 <style>
 .section-heading {
@@ -76,4 +84,13 @@ import {HeartIcon} from '@heroicons/vue/24/solid'
 .active-pill > span {
   @apply text-juniper;
 }
+.readability {
+  text-decoration: underline;
+}
+
+
+
+
+
+
 </style>
