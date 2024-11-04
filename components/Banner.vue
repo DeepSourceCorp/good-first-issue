@@ -12,12 +12,12 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, watchEffect } from 'vue'
 
 const BANNER_ACTIVE_TIME = 2000
 const bannerActive = ref(true)
 
-onMounted(() => {
+watchEffect(() => {
   setTimeout(() => {
     bannerActive.value = false
   }, BANNER_ACTIVE_TIME)
