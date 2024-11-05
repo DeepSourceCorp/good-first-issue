@@ -839,5 +839,10 @@ repositories = [
   'github.com/zulip/zulip',
   'github.com/ZupIT/charlescd',
   'github.com/ZupIT/ritchie-cli',
-  'github.com/ZupIT/ritchie-formulas'
+  'github.com/ZupIT/ritchie-formulas',
+  'github.com/OneLiteFeatherNET/Microtus',
+  'github.com/OneLiteFeatherNET/wiki',
+  'github.com/OneLiteFeatherNET/AntiRedstoneClock-Remastered',
+  'github.com/OneLiteFeatherNET/OwnGarden',
+  'github.com/OneLiteFeatherNET/BetterGoPaint'
  ]
