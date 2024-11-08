@@ -167,6 +167,9 @@ if __name__ == "__main__":
             if result:
                 REPOSITORIES.append(result)
                 TAGS[result["language"]] += 1
+    # sort REPOSITORIES based on number of stars
+    REPOSITORIES = sorted(key=lambda repo: repo["stars"], reverse=True)
+
 
     # write to generated JSON files
 
