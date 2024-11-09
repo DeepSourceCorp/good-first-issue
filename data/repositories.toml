@@ -364,6 +364,7 @@ repositories = [
   'github.com/KaTeX/KaTeX',
   'github.com/kedro-org/kedro',
   'github.com/kelektiv/node-cron',
+  'github.com/keploy/keploy',
   'github.com/keptn/keptn',
   'github.com/keephq/keep',
   'github.com/keras-team/keras',
