@@ -1,5 +1,6 @@
 repositories = [
   'github.com/deepsourcelabs/good-first-issue',
+  'https://github.com/Maximekgn/SchoolManagementSystem_ElectronJs',
   'github.com/4paradigm/OpenMLDB',
   'github.com/abpframework/abp',
   'github.com/AcademySoftwareFoundation/openvdb',
