@@ -139,6 +139,7 @@ repositories = [
   'github.com/containers/skopeo',
   'github.com/continuedev/continue',
   'github.com/conversejs/converse.js',
+  'https://github.com/CopilotKit/CopilotKit',
   'github.com/coq/coq',
   'github.com/corda/corda',
   'github.com/cornellius-gp/gpytorch',
