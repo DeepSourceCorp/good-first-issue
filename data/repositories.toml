@@ -1,4 +1,8 @@
 repositories = [
+  'github.com/ayerhssb/Appointment-booking-app',
+  'github.com/ayerhssb/login-design',
+  'github.com/ayerhssb/todo',
+  'github.com/ayerhssb/website-blocker-extension',
   'github.com/deepsourcelabs/good-first-issue',
   'github.com/4paradigm/OpenMLDB',
   'github.com/abpframework/abp',
