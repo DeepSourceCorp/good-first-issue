@@ -1,5 +1,6 @@
 <template>
-  <section class="masthead font-sans pt-6 border-r border-ink-200 px-6 text-vanilla-300 flex-none w-full md:max-w-sm">
+  <section class="masthead font-sans pt-6 border-r border-ink-200 px-6 text-vanilla-300 flex-none w-80 md:w-75
+           sticky top-0 left-80 h-screen overflow-y-auto">
     <div>
       <h3 class="section-heading">About</h3>
       <p class="text-sm">

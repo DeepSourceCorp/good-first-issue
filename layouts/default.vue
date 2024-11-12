@@ -2,14 +2,14 @@
   <div class="bg-ink-400 flex flex-col min-h-screen antialiased text-vanilla-300">
     <Navbar />
     <main class="flex flex-1">
-      <section class="container max-w-6xl mx-auto flex flex-col md:flex-row">
-        <Sidebar />
+      <Sidebar />
+      <section class="container max-w-6xl mx-auto flex flex-col md:flex-row pl-10 md:pl-40">
         <slot />
       </section>
     </main>
   </div>
 </template>
-
+s
 <script setup>
 import Tags from '~/data/tags.json'
 const route = useRoute()
