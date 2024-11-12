@@ -1,0 +1,1 @@
+I make a new change in pages\langusge\slug.
