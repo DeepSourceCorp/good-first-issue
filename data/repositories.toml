@@ -482,6 +482,7 @@ repositories = [
   'github.com/Musish/Musish',
   'github.com/namespace-ee/react-calendar-timeline',
   'github.com/namhyung/uftrace',
+  'github.com/Namit2111/bible-verse-finder',
   'github.com/nannou-org/nannou',
   'github.com/nas5w/use-local-storage',
   'github.com/NativeScript/NativeScript',
