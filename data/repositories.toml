@@ -501,6 +501,7 @@ repositories = [
   'github.com/nidhaloff/dolmetscher',
   'github.com/nidhaloff/gpx_converter',
   'github.com/nidhaloff/igel',
+  'github.com/nitrictech/nitric',
   'github.com/nodejs/node',
   'github.com/nokia/ntt',
   'github.com/Noovolari/leapp',
