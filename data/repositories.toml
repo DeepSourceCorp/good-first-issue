@@ -135,6 +135,7 @@ repositories = [
   'github.com/composer/composer',
   'github.com/conan-io/conan',
   'github.com/concourse/concourse',
+  'github.com/configu/configu',
   'github.com/containers/libpod',
   'github.com/containers/skopeo',
   'github.com/continuedev/continue',
