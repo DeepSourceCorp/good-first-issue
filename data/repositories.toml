@@ -1,4 +1,5 @@
 repositories = [
+  'github.com/BeforeIDieCode/BeforeIDieAchievements',
   'github.com/deepsourcelabs/good-first-issue',
   'github.com/4paradigm/OpenMLDB',
   'github.com/abpframework/abp',
