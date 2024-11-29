@@ -37,9 +37,10 @@ Good First Issue has two components — the front-end app built with Nuxt.js and
 
 To contribute new features and changes to the website, you would want to run the app locally. Please follow these steps:
 
-1. Clone the project locally. Make sure you have Python 3 and a recent version of Node.js installed on your computer.
+1. Clone the project locally (git clone the URL). Make sure you have Python 3, Bun, and a recent version of Node.js installed on your computer.
+   - To install bun on macos using homwbrew, click [here](https://preeteshjain.com/install-bun-macos/). Otherwise, insallation instructions [here](https://bun.sh/docs/installation).
 
-2. Make a copy of the sample data files for your local app to use and rename them to the filename that the app expects. **This step is important, as the front-end app won't work without these data files.**
+2. CD into the 'good-first-issue' directory and make a copy of the sample data files for your local app to use, renaming them to the filename that the app expects. **This step is important, as the front-end app won't work without these data files.**
 
 ```bash
 $ cp data/generated.sample.json data/generated.json
