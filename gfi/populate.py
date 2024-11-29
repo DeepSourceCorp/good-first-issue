@@ -102,7 +102,7 @@ def get_repository_info(identifier: RepositoryIdentifier) -> Optional[Repository
             info["url"] = repository.html_url
             info["stars"] = repository.stargazers_count
             info["stars_display"] = numerize.numerize(repository.stargazers_count)
-            info["last_modified"] = repository.pushed_at.isoformat()
+            info["last_modified"] = repository.pushed_at.format()
             info["id"] = str(repository.id)
 
             # get the latest issues with the tag
