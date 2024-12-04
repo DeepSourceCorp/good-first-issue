@@ -13,20 +13,21 @@
         <nuxt-link
           v-for="tag in Tags"
           :key="tag.slug"
-          :to="'/language/' + tag.slug"
-          :class="{
-            'active-pill': $route.params.slug === tag.slug,
-            'border-slate hover:text-juniper hover:border-juniper': $route.params.slug !== tag.slug
-          }"
-          class="group mx-1 border px-2 py-1 inline-block rounded-sm my-1 text-sm"
-          >{{ tag.language }}
-          <span
-            :class="{
-              'text-vanilla-400 group-hover:text-juniper': $route.params.slug !== tag.slug
-            }"
-            >&times; {{ tag.count }}</span
-          ></nuxt-link
+          :to="`/language/${tag.slug}`"
+          :class="[
+            'group mx-1 border px-2 py-1 inline-block rounded-sm my-1 text-sm',
+            $route.params.slug === tag.slug ? 'active-pill' : 'border-slate hover:text-juniper hover:border-juniper'
+          ]"
         >
+          {{ tag.language }}
+          <span
+            :class="[
+              $route.params.slug !== tag.slug && 'text-vanilla-400 group-hover:text-juniper'
+            ]"
+          >
+            &times; {{ tag.count }}
+          </span>
+        </nuxt-link>
       </div>
     </div>
     <div class="pt-6">
@@ -35,11 +36,10 @@
         href="https://github.com/deepsourcelabs/good-first-issue#adding-a-new-project"
         target="_blank"
         rel="noopener noreferrer"
-        >
-          <PlusCircleIcon class="h-5 w-5 stroke-2" />
-          <span>Add your project</span>
-        </a
       >
+        <PlusCircleIcon class="h-5 w-5 stroke-2" />
+        <span>Add your project</span>
+      </a>
     </div>
 
     <div class="text-sm pt-6">
@@ -50,11 +50,11 @@
         href="https://deepsource.com?ref=gfi"
       >
         <HeartIcon class="w-4 h-4 text-cherry" />
-        <span class="ml-2"
-          >A
+        <span class="ml-2">
+          A
           <span class="inline hover:underline text-juniper" title="Visit DeepSource website">DeepSource</span>
-          initative</span
-        >
+          initiative
+        </span>
       </a>
     </div>
   </section>
@@ -63,8 +63,9 @@
 <script setup>
 import Tags from '~/data/tags.json'
 import { PlusCircleIcon } from '@heroicons/vue/24/outline'
-import {HeartIcon} from '@heroicons/vue/24/solid'
+import { HeartIcon } from '@heroicons/vue/24/solid'
 </script>
+
 <style>
 .section-heading {
   @apply text-sm font-bold uppercase tracking-wider mb-2 text-slate;
@@ -72,7 +73,6 @@ import {HeartIcon} from '@heroicons/vue/24/solid'
 .active-pill {
   @apply text-juniper font-semibold border-juniper;
 }
-
 .active-pill > span {
   @apply text-juniper;
 }
