@@ -1,79 +1,78 @@
 <template>
-  <section class="masthead font-sans pt-6 border-r border-ink-200 px-6 text-vanilla-300 flex-none w-full md:max-w-sm">
-    <div>
+  <aside class="w-full md:max-w-sm p-6 border-r border-ink-200 bg-ink-500 text-vanilla-300">
+    <section>
       <h3 class="section-heading">About</h3>
       <p class="text-sm">
         Good First Issue curates easy pickings from popular open-source projects, and helps you make your first
         contribution to open-source.
       </p>
-    </div>
-    <div class="pt-6">
+    </section>
+
+    <section class="pt-6">
       <h3 class="section-heading">Browse by language</h3>
       <div>
         <nuxt-link
           v-for="tag in Tags"
           :key="tag.slug"
           :to="'/language/' + tag.slug"
-          :class="{
-            'active-pill': $route.params.slug === tag.slug,
-            'border-slate hover:text-juniper hover:border-juniper': $route.params.slug !== tag.slug
-          }"
-          class="group mx-1 border px-2 py-1 inline-block rounded-sm my-1 text-sm"
-          >{{ tag.language }}
-          <span
-            :class="{
-              'text-vanilla-400 group-hover:text-juniper': $route.params.slug !== tag.slug
-            }"
-            >&times; {{ tag.count }}</span
-          ></nuxt-link
+          :class="{ 'active-pill': isActiveTag(tag.slug) }"
+          class="mx-1 my-1 px-2 py-1 border rounded-sm text-sm inline-block group border-slate hover:border-juniper hover:text-juniper"
         >
+          {{ tag.language }}
+          <span
+            class="text-vanilla-400 group-hover:text-juniper ml-1"
+          >&times; {{ tag.count }}</span>
+        </nuxt-link>
       </div>
-    </div>
-    <div class="pt-6">
+    </section>
+
+    <section class="pt-6">
       <a
-        class="bg-juniper hover:bg-light_juniper text-ink-400 uppercase rounded-md font-bold text-center px-1 py-3 flex flex-row items-center justify-center space-x-1"
         href="https://github.com/deepsourcelabs/good-first-issue#adding-a-new-project"
         target="_blank"
         rel="noopener noreferrer"
-        >
-          <PlusCircleIcon class="h-5 w-5 stroke-2" />
-          <span>Add your project</span>
-        </a
+        class="cta-button"
       >
-    </div>
+        <PlusCircleIcon class="h-5 w-5 stroke-2" />
+        <span>Add your project</span>
+      </a>
+    </section>
 
-    <div class="text-sm pt-6">
+    <section class="pt-6 text-sm">
       <a
-        class="flex flex-row justify-center items-center"
+        href="https://deepsource.com?ref=gfi"
         target="_blank"
         rel="noopener noreferrer"
-        href="https://deepsource.com?ref=gfi"
+        class="flex items-center justify-center"
       >
         <HeartIcon class="w-4 h-4 text-cherry" />
-        <span class="ml-2"
-          >A
-          <span class="inline hover:underline text-juniper" title="Visit DeepSource website">DeepSource</span>
-          initative</span
-        >
+        <span class="ml-2">
+          A
+          <span class="inline hover:underline text-juniper">DeepSource</span>
+          initiative
+        </span>
       </a>
-    </div>
-  </section>
+    </section>
+  </aside>
 </template>
 
 <script setup>
-import Tags from '~/data/tags.json'
-import { PlusCircleIcon } from '@heroicons/vue/24/outline'
-import {HeartIcon} from '@heroicons/vue/24/solid'
+import Tags from '~/data/tags.json';
+import { PlusCircleIcon } from '@heroicons/vue/24/outline';
+import { HeartIcon } from '@heroicons/vue/24/solid';
+
+const route = useRoute();
+const isActiveTag = slug => route.params.slug === slug;
 </script>
+
 <style>
 .section-heading {
   @apply text-sm font-bold uppercase tracking-wider mb-2 text-slate;
 }
 .active-pill {
-  @apply text-juniper font-semibold border-juniper;
+  @apply border-juniper text-juniper font-semibold;
 }
-
-.active-pill > span {
-  @apply text-juniper;
+.cta-button {
+  @apply bg-juniper hover:bg-light_juniper text-ink-400 font-bold uppercase rounded-md px-4 py-2 flex items-center space-x-2;
 }
 </style>
