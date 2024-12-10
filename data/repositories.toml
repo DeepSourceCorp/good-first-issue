@@ -534,6 +534,8 @@ repositories = [
   'github.com/OpenMined/PySyft',
   'github.com/OpenRCT2/OpenRCT2',
   'github.com/OpenRefine/OpenRefine',
+  'github.com/OpenRewrite/rewrite-static-analysis',
+  'github.com/OpenRewrite/rewrite-testing-frameworks',
   'github.com/openseadragon/openseadragon',
   'github.com/opensearch-project/OpenSearch',
   'github.com/opensearch-project/OpenSearch-Dashboards',
