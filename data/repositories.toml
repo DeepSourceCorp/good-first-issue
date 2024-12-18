@@ -475,6 +475,7 @@ repositories = [
   'github.com/mopidy/mopidy',
   'github.com/morenoh149/react-native-contacts',
   'github.com/MovingBlocks/Terasology',
+  'github.com/mozilla-mobile/firefox-ios',
   'github.com/MrSwitch/hello.js',
   'github.com/mui-org/material-ui',
   'github.com/muke1908/chat-e2ee',
