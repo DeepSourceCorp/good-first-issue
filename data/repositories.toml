@@ -460,6 +460,7 @@ repositories = [
   'github.com/milvus-io/bootcamp',
   'github.com/milvus-io/milvus',
   'github.com/mimblewimble/grin',
+  'github.com/mindersec/minder/',
   'github.com/mindsphere/mindconnect-nodejs',
   'github.com/miroiu/nodify',
   'github.com/mlflow/mlflow',
