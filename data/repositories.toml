@@ -461,6 +461,7 @@ repositories = [
   'github.com/milvus-io/milvus',
   'github.com/mimblewimble/grin',
   'github.com/mindsphere/mindconnect-nodejs',
+  'github.com/mindersec/minder/',
   'github.com/miroiu/nodify',
   'github.com/mlflow/mlflow',
   'github.com/mlpack/mlpack',
