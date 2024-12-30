@@ -1,8 +1,9 @@
 <template>
   <div class="bg-ink-400 flex flex-col min-h-screen antialiased text-vanilla-300">
     <Navbar />
+    <Banner />
     <main class="flex flex-1">
-      <section class="container max-w-6xl mx-auto flex flex-col md:flex-row">
+      <section class="container max-w-6xl mx-auto flex flex-col md:flex-row my-6">
         <Sidebar />
         <slot />
       </section>

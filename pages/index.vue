@@ -7,6 +7,8 @@
 <script setup>
 import Repositories from '~/data/generated.json'
 
+  
+
 useHead({
   title: 'Good First Issue: Make your first open-source contribution',
   meta: [
