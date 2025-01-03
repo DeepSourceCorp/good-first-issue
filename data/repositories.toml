@@ -254,6 +254,7 @@ repositories = [
   'github.com/freedomofpress/securedrop',
   'github.com/FreshRSS/FreshRSS',
   'github.com/FStarLang/FStar',
+  'github.com/f-klubben/stregsystemet'
   'github.com/GameFoundry/bsf',
   'github.com/gatsbyjs/gatsby',
   'github.com/gchq/CyberChef',
