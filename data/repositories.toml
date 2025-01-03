@@ -561,6 +561,7 @@ repositories = [
   'github.com/playframework/playframework',
   'github.com/Plume-org/Plume',
   'github.com/pmd/pmd',
+  'github.com/pmqtt/palladium',
   'github.com/pnpm/pnpm',
   'github.com/PointCloudLibrary/pcl',
   'github.com/portainer/portainer',
