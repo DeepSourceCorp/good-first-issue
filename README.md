@@ -5,15 +5,53 @@
 </p>
 <hr>
 
-Welcome! 👋🏼
+# Welcome to Good First Issue! 👋🏼
 
-**Good First Issue** is an initiative to curate easy pickings from popular projects, so developers who've never contributed to open-source can get started quickly.
+**Good First Issue** is an initiative to curate beginner-friendly issues from popular projects, enabling developers new to open-source to contribute effortlessly.
 
-Open-source maintainers are always looking to get more people involved, but new developers generally think it's challenging to become a contributor. We believe getting developers to fix super-easy issues removes the barrier for future contributions. This is why Good First Issue exists.
+Maintainers are always looking for new contributors, but for many developers, starting out in open-source can feel daunting. We aim to bridge this gap by highlighting "good first issues" — easy fixes that lower the entry barrier for future contributions.
 
-## Adding a new project
+---
 
-You're welcome to add a new project in Good First Issue, and we encourage all projects &mdash; old and new, big and small.
+## 🚀 Adding a New Project
+
+You're encouraged to add new projects to **Good First Issue**, regardless of their size or age. Here's how you can contribute:  
+
+### Requirements for Projects
+To ensure quality, please ensure your project meets these criteria before adding it:  
+1. **Good First Issue Label**: The repository must have at least three issues with the `good first issue` label. (If the label isn’t available, follow [these steps](https://docs.github.com/en/issues/using-labels).)  
+2. **Contributors**: The project must have at least 10 contributors.  
+3. **Documentation**: The repository should include:
+   - A `README.md` with detailed setup instructions.
+   - A `CONTRIBUTING.md` file outlining guidelines for new contributors.  
+4. **Active Maintenance**: The project must be actively maintained.  
+
+### Steps to Add Your Project
+1. Add your repository's path (in lexicographic order) in `data/repositories.toml`.  
+2. Create a pull request (PR) with your changes.  
+3. Include a link to your repository's issues page in the PR description.  
+4. Once your PR is merged, your project will be live on [goodfirstissue.dev](https://goodfirstissue.dev). 🎉  
+
+---
+
+## 🛠️ Setting Up the Project Locally
+
+**Good First Issue** consists of two components:  
+- A **front-end app** built with Nuxt.js.  
+- A **data population script** written in Python.  
+
+Follow these steps to set up the project locally:  
+
+### Prerequisites  
+- Python 3 installed on your computer.  
+- A recent version of Node.js.  
+- Bun package manager (used for dependency management and running the app).  
+Install dependencies and start the development server:
+
+🖋️ Contributing
+We welcome contributions from everyone! Whether you're a beginner or an experienced developer, check out the issues labeled good first issue to get started.
+
+For more details on contributing, please refer to the CONTRIBUTING.md file.
 
 Follow these simple steps:
 
@@ -53,4 +91,4 @@ $ bun install # install the dependencies
 $ bun dev # start the development server
 ```
 
-The app should open in your browser.
+Open the app in your browser. It should now be running locally! 🎉
