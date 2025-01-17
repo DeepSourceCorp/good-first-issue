@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+
 import itertools
 import json
 import random
@@ -10,74 +11,68 @@ from operator import itemgetter
 from os import getenv, path
 from typing import TypedDict, Dict, Union, Sequence, Optional, Mapping
 
-import toml
+import toml  # Ensure this library is installed: pip install toml
 
-from github3 import exceptions, login
-from numerize import numerize
-from emoji import emojize
-from slugify import slugify
-from loguru import logger
+from github3 import exceptions, login  # Ensure this library is installed: pip install github3.py
+from numerize import numerize  # Ensure this library is installed: pip install numerize
+from emoji import emojize  # Ensure this library is installed: pip install emoji
+from slugify import slugify  # Ensure this library is installed: pip install python-slugify
+from loguru import logger  # Ensure this library is installed: pip install loguru
 
-MAX_CONCURRENCY = 25  # max number of requests to make to GitHub in parallel
-MAX_REPOSITORIES = 500  # max number of repositories populated in one session
-REPO_DATA_FILE = "data/repositories.toml"
-REPO_GENERATED_DATA_FILE = "data/generated.json"
-TAGS_GENERATED_DATA_FILE = "data/tags.json"
-GH_URL_PATTERN = re.compile(r"[http://|https://]?github.com/(?P<owner>[\w\.-]+)/(?P<name>[\w\.-]+)/?")
-LABELS_DATA_FILE = "data/labels.json"
-ISSUE_STATE = "open"
-ISSUE_SORT = "created"
-ISSUE_SORT_DIRECTION = "desc"
-ISSUE_LIMIT = 10
-SLUGIFY_REPLACEMENTS = [["#", "sharp"], ["+", "plus"]]
+# Configuration constants
+MAX_CONCURRENCY = 25  # Max number of parallel GitHub requests
+MAX_REPOSITORIES = 500  # Max repositories processed in one session
+REPO_DATA_FILE = "data/repositories.toml"  # Input file with repository data
+REPO_GENERATED_DATA_FILE = "data/generated.json"  # Output file for repository info
+TAGS_GENERATED_DATA_FILE = "data/tags.json"  # Output file for tag info
+LABELS_DATA_FILE = "data/labels.json"  # File containing labels for issues
+ISSUE_STATE = "open"  # Only process open issues
+ISSUE_SORT = "created"  # Sort issues by creation date
+ISSUE_SORT_DIRECTION = "desc"  # Sort issues in descending order
+ISSUE_LIMIT = 10  # Max issues fetched per repository
+SLUGIFY_REPLACEMENTS = [["#", "sharp"], ["+", "plus"]]  # Replacements for slug generation
 
+# Ensure the labels file exists
 if not path.exists(LABELS_DATA_FILE):
     raise RuntimeError("No labels data file found. Exiting.")
 
+# Load labels data
 with open(LABELS_DATA_FILE) as labels_file:
     LABELS_DATA = json.load(labels_file)
-
     ISSUE_LABELS = LABELS_DATA["labels"]
 
-
+# Custom exception for missing repositories
 class RepoNotFoundException(Exception):
-    """Exception class for repo not found."""
+    """Exception raised when a repository is not found."""
 
-
+# Parse GitHub repository URL
 def parse_github_url(url: str) -> dict:
-    """Take the GitHub repo URL and return a tuple with owner login and repo name."""
-    match = GH_URL_PATTERN.search(url)
-    if match:
-        return match.groupdict()
-    return {}
+    """Extract owner and name from a GitHub repository URL."""
+    match = re.search(r"[http://|https://]?github.com/(?P<owner>[\w\.-]+)/(?P<name>[\w\.-]+)/?", url)
+    return match.groupdict() if match else {}
 
-
+# Type definitions for repository data
 class RepositoryIdentifier(TypedDict):
     owner: str
     name: str
 
+RepositoryInfo = Dict[str, Union[str, int, Sequence]]
 
-RepositoryInfo = Dict["str", Union[str, int, Sequence]]
-
-
+# Fetch repository information
 def get_repository_info(identifier: RepositoryIdentifier) -> Optional[RepositoryInfo]:
-    """Get the relevant information needed for the repository from its owner login and name."""
+    """Fetch information about a repository using its owner and name."""
     owner, name = identifier["owner"], identifier["name"]
 
-    logger.info("Getting info for {}/{}", owner, name)
+    logger.info("Fetching information for {}/{}", owner, name)
 
-    # create a logged in GitHub client
-    client = login(token=getenv("GH_ACCESS_TOKEN"))
-
-    info: RepositoryInfo = {}
-
-    # get the repository; if the repo is not found, log a warning
     try:
-        repository = client.repository(owner, name)
-        # Don't find issues inside archived repos.
-        if repository.archived:
-            return None
+        client = login(token=getenv("GH_ACCESS_TOKEN"))  # Authenticate GitHub client
+        repository = client.repository(owner, name)  # Fetch repository
 
+        if repository.archived:
+            return None  # Skip archived repositories
+
+        # Fetch issues labeled as "good first issue"
         good_first_issues = set(
             itertools.chain.from_iterable(
                 repository.issues(
@@ -90,25 +85,22 @@ def get_repository_info(identifier: RepositoryIdentifier) -> Optional[Repository
                 for label in ISSUE_LABELS
             )
         )
-        logger.info("\t found {} good first issues", len(good_first_issues))
-        # check if repo has at least one good first issue
-        if good_first_issues and repository.language:
-            # store the repo info
-            info["name"] = name
-            info["owner"] = owner
-            info["description"] = emojize(repository.description or "")
-            info["language"] = repository.language
-            info["slug"] = slugify(repository.language, replacements=SLUGIFY_REPLACEMENTS)
-            info["url"] = repository.html_url
-            info["stars"] = repository.stargazers_count
-            info["stars_display"] = numerize.numerize(repository.stargazers_count)
-            info["last_modified"] = repository.pushed_at.isoformat()
-            info["id"] = str(repository.id)
+        
+        logger.info("Found {} good first issues.", len(good_first_issues))
 
-            # get the latest issues with the tag
-            issues = []
-            for issue in good_first_issues:
-                issues.append(
+        if good_first_issues and repository.language:
+            info = {
+                "name": name,
+                "owner": owner,
+                "description": emojize(repository.description or ""),
+                "language": repository.language,
+                "slug": slugify(repository.language, replacements=SLUGIFY_REPLACEMENTS),
+                "url": repository.html_url,
+                "stars": repository.stargazers_count,
+                "stars_display": numerize.numerize(repository.stargazers_count),
+                "last_modified": repository.pushed_at.isoformat(),
+                "id": str(repository.id),
+                "issues": [
                     {
                         "title": issue.title,
                         "url": issue.html_url,
@@ -116,75 +108,62 @@ def get_repository_info(identifier: RepositoryIdentifier) -> Optional[Repository
                         "comments_count": issue.comments_count,
                         "created_at": issue.created_at.isoformat(),
                     }
-                )
+                    for issue in good_first_issues
+                ],
+            }
+            return info
 
-            info["issues"] = issues
-        else:
-            logger.info("\t skipping due to insufficient issues or info")
     except exceptions.NotFoundError:
-        logger.warning("Not Found: {}/{}", owner, name)
+        logger.warning("Repository not found: {}/{}", owner, name)
     except exceptions.ForbiddenError:
-        logger.warning("Skipped due to rate-limits: {}/{}", owner, name)
+        logger.warning("Rate-limited: {}/{}", owner, name)
     except exceptions.ConnectionError:
-        logger.warning("Skipped due to connection errors: {}/{}", owner, name)
+        logger.warning("Connection error: {}/{}", owner, name)
 
-    return info
-
+    return None
 
 if __name__ == "__main__":
-    # parse the repositories data file and get the list of repos
-    # for generating pages for.
-
+    # Validate configuration files
     if not path.exists(REPO_DATA_FILE):
-        raise RuntimeError("No config data file found. Exiting.")
+        raise RuntimeError("Configuration file not found. Exiting.")
 
-    # if the GitHub Access Token isn't found, raise an error
     if not getenv("GH_ACCESS_TOKEN"):
-        raise RuntimeError("Access token not present in the env variable `GH_ACCESS_TOKEN`")
+        raise RuntimeError("GitHub Access Token is missing. Please set GH_ACCESS_TOKEN.")
 
     REPOSITORIES = []
-    TAGS: Counter = Counter()
+    TAGS = Counter()
+
+    # Load repository data from file
     with open(REPO_DATA_FILE, "r") as data_file:
-        DATA = toml.load(REPO_DATA_FILE)
+        DATA = toml.load(data_file)
+        repositories = [parse_github_url(url) for url in DATA["repositories"] if parse_github_url(url)]
 
-        logger.info(
-            "Found {} repository entries in {}",
-            len(DATA["repositories"]),
-            REPO_DATA_FILE,
-        )
+    random.shuffle(repositories)  # Shuffle repository list
 
-        # pre-process the URLs and only continue with the list of valid GitHub URLs
-        repositories = list(filter(bool, [parse_github_url(url) for url in DATA["repositories"]]))
+    # Fetch repository information concurrently
+    with ThreadPoolExecutor(max_workers=MAX_CONCURRENCY) as executor:
+        results = executor.map(get_repository_info, repositories[:MAX_REPOSITORIES])
 
-        # shuffle the order of the repositories
-        random.shuffle(repositories)
+    for result in results:
+        if result:
+            REPOSITORIES.append(result)
+            TAGS[result["language"]] += 1
 
-        with ThreadPoolExecutor(max_workers=MAX_CONCURRENCY) as executor:
-            results = executor.map(get_repository_info, repositories[:MAX_REPOSITORIES])
+    # Write repository data to JSON
+    with open(REPO_GENERATED_DATA_FILE, "w") as file:
+        json.dump(REPOSITORIES, file)
+    logger.info("Saved repository data to {}", REPO_GENERATED_DATA_FILE)
 
-        # filter out repositories with valid data and increment tag counts
-        for result in results:
-            if result:
-                REPOSITORIES.append(result)
-                TAGS[result["language"]] += 1
-
-    # write to generated JSON files
-
-    with open(REPO_GENERATED_DATA_FILE, "w") as file_desc:
-        json.dump(REPOSITORIES, file_desc)
-    logger.info("Wrote data for {} repos to {}", len(REPOSITORIES), REPO_GENERATED_DATA_FILE)
-
-    # use only those tags that have at least three occurrences
+    # Write tag data to JSON
     tags = [
         {
             "language": key,
             "count": value,
             "slug": slugify(key, replacements=SLUGIFY_REPLACEMENTS),
         }
-        for (key, value) in TAGS.items()
-        if value >= 3
+        for key, value in TAGS.items() if value >= 3
     ]
-    tags_sorted = sorted(tags, key=itemgetter("count"), reverse=True)
-    with open(TAGS_GENERATED_DATA_FILE, "w") as file_desc:
-        json.dump(tags_sorted, file_desc)
-    logger.info("Wrote {} tags to {}", len(tags), TAGS_GENERATED_DATA_FILE)
+
+    with open(TAGS_GENERATED_DATA_FILE, "w") as file:
+        json.dump(sorted(tags, key=itemgetter("count"), reverse=True), file)
+    logger.info("Saved tag data to {}", TAGS_GENERATED_DATA_FILE)
