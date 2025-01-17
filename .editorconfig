@@ -1,28 +1,46 @@
+# Set this file as the root for EditorConfig configuration
 root = true
 
+# General configuration for all files
 [*]
+# Use spaces for indentation
 indent_style = space
+# Each indentation level uses 2 spaces
 indent_size = 2
+# Use Unix-style line endings (LF)
 end_of_line = lf
+# File encoding set to UTF-8
 charset = utf-8
+# Remove trailing whitespace from the end of lines
 trim_trailing_whitespace = true
+# Insert a blank line at the end of each file
 insert_final_newline = true
 
-# The JSON files contain newlines inconsistently
+# Specific configuration for JSON files
 [*.json]
+# Ignore adding final blank lines as they are not always needed in JSON
 insert_final_newline = ignore
 
-# Minified JavaScript files shouldn't be changed
+# Specific configuration for minified JavaScript files
 [**.min.js]
+# Ignore indentation style since minified files should not be modified
 indent_style = ignore
+# Ignore adding final blank lines
 insert_final_newline = ignore
 
+# Specific configuration for Makefile files
 [Makefile]
+# Use tabs instead of spaces as required by Makefile
 indent_style = tab
 
+# Specific configuration for Python files
 [*.py]
+# Use spaces for indentation (standard in Python)
 indent_style = space
+# Each indentation level uses 4 spaces, as per PEP 8
 indent_size = 4
 
+# Specific configuration for Markdown files
 [*.md]
+# Allow trailing whitespace at the end of lines, useful for forcing line breaks in Markdown
 trim_trailing_whitespace = false

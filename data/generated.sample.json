@@ -17,72 +17,83 @@
         "url": "https://github.com/wp-graphql/wp-graphql/issues/942",
         "number": 942,
         "comments_count": 1,
-        "created_at": "2019-08-16T08:35:25+00:00"
+        "created_at": "2019-08-16T08:35:25+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Feature: Add location to menu idType's",
         "url": "https://github.com/wp-graphql/wp-graphql/issues/1458",
         "number": 1458,
         "comments_count": 0,
-        "created_at": "2020-09-11T11:05:49+00:00"
+        "created_at": "2020-09-11T11:05:49+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Filter API inconsistencies ",
         "url": "https://github.com/wp-graphql/wp-graphql/issues/1588",
         "number": 1588,
         "comments_count": 0,
-        "created_at": "2020-11-16T22:02:12+00:00"
+        "created_at": "2020-11-16T22:02:12+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Correct & standardize descriptions for global \"id\" input fields",
         "url": "https://github.com/wp-graphql/wp-graphql/issues/1095",
         "number": 1095,
         "comments_count": 1,
-        "created_at": "2019-12-26T15:47:00+00:00"
+        "created_at": "2019-12-26T15:47:00+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "WP-CLI Schema Validation Command",
         "url": "https://github.com/wp-graphql/wp-graphql/issues/512",
         "number": 512,
         "comments_count": 1,
-        "created_at": "2018-09-04T20:37:32+00:00"
+        "created_at": "2018-09-04T20:37:32+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Introduce WordPress VIP coding standards and fixes for existing errors",
         "url": "https://github.com/wp-graphql/wp-graphql/issues/1535",
         "number": 1535,
         "comments_count": 0,
-        "created_at": "2020-10-26T17:26:27+00:00"
+        "created_at": "2020-10-26T17:26:27+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Add register_graphql_edge_field() method",
         "url": "https://github.com/wp-graphql/wp-graphql/issues/1214",
         "number": 1214,
         "comments_count": 1,
-        "created_at": "2020-04-02T15:59:09+00:00"
+        "created_at": "2020-04-02T15:59:09+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Closures with space",
         "url": "https://github.com/wp-graphql/wp-graphql/issues/1561",
         "number": 1561,
         "comments_count": 3,
-        "created_at": "2020-11-07T15:48:35+00:00"
+        "created_at": "2020-11-07T15:48:35+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Cannot return null for non-nullable field \"CommentAuthor.databaseId\".",
         "url": "https://github.com/wp-graphql/wp-graphql/issues/1923",
         "number": 1923,
         "comments_count": 0,
-        "created_at": "2021-05-25T15:25:11+00:00"
+        "created_at": "2021-05-25T15:25:11+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Add tests for register_graphql_fields function",
         "url": "https://github.com/wp-graphql/wp-graphql/issues/1522",
         "number": 1522,
         "comments_count": 0,
-        "created_at": "2020-10-21T20:47:50+00:00"
+        "created_at": "2020-10-21T20:47:50+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       }
-    ]
+    ],
+    "__comment__": "This section describes the project repository details."
   },
   {
     "name": "zulip",
@@ -102,72 +113,83 @@
         "url": "https://github.com/zulip/zulip/issues/17998",
         "number": 17998,
         "comments_count": 20,
-        "created_at": "2021-04-05T19:26:14+00:00"
+        "created_at": "2021-04-05T19:26:14+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Create incoming webhook integration for Patreon",
         "url": "https://github.com/zulip/zulip/issues/18321",
         "number": 18321,
         "comments_count": 19,
-        "created_at": "2021-04-30T00:06:28+00:00"
+        "created_at": "2021-04-30T00:06:28+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Bot Email Field",
         "url": "https://github.com/zulip/zulip/issues/17716",
         "number": 17716,
         "comments_count": 8,
-        "created_at": "2021-03-20T17:58:35+00:00"
+        "created_at": "2021-03-20T17:58:35+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "UX improvement: display \"user not found\" for invalid user search query",
         "url": "https://github.com/zulip/zulip/issues/17842",
         "number": 17842,
         "comments_count": 15,
-        "created_at": "2021-03-27T19:14:10+00:00"
+        "created_at": "2021-03-27T19:14:10+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Customize \"Activate your Zulip account\" email when creating a new org",
         "url": "https://github.com/zulip/zulip/issues/17786",
         "number": 17786,
         "comments_count": 22,
-        "created_at": "2021-03-25T05:13:45+00:00"
+        "created_at": "2021-03-25T05:13:45+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Improve time widget text",
         "url": "https://github.com/zulip/zulip/issues/17731",
         "number": 17731,
         "comments_count": 14,
-        "created_at": "2021-03-22T04:24:15+00:00"
+        "created_at": "2021-03-22T04:24:15+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Create incoming webhook integration for Github Sponsors",
         "url": "https://github.com/zulip/zulip/issues/18320",
         "number": 18320,
         "comments_count": 7,
-        "created_at": "2021-04-30T00:02:40+00:00"
+        "created_at": "2021-04-30T00:02:40+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "In Development environment setup instructions, make external links open in a new tab",
         "url": "https://github.com/zulip/zulip/issues/18286",
         "number": 18286,
         "comments_count": 13,
-        "created_at": "2021-04-27T19:43:39+00:00"
+        "created_at": "2021-04-27T19:43:39+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Fix test suites that do not use `sanity_check` and/or `assert_provisioning_status_ok`",
         "url": "https://github.com/zulip/zulip/issues/17929",
         "number": 17929,
         "comments_count": 8,
-        "created_at": "2021-04-01T18:16:06+00:00"
+        "created_at": "2021-04-01T18:16:06+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Create incoming webhook integration for Open Collective",
         "url": "https://github.com/zulip/zulip/issues/18319",
         "number": 18319,
         "comments_count": 3,
-        "created_at": "2021-04-29T23:58:19+00:00"
+        "created_at": "2021-04-29T23:58:19+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       }
-    ]
+    ],
+    "__comment__": "This section describes the project repository details."
   },
   {
     "name": "rubycritic",
@@ -187,58 +209,67 @@
         "url": "https://github.com/whitesmith/rubycritic/issues/146",
         "number": 146,
         "comments_count": 1,
-        "created_at": "2016-06-17T21:55:42+00:00"
+        "created_at": "2016-06-17T21:55:42+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Update references to 'master' in codebase",
         "url": "https://github.com/whitesmith/rubycritic/issues/381",
         "number": 381,
         "comments_count": 7,
-        "created_at": "2021-01-26T08:49:12+00:00"
+        "created_at": "2021-01-26T08:49:12+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Settings file",
         "url": "https://github.com/whitesmith/rubycritic/issues/30",
         "number": 30,
         "comments_count": 8,
-        "created_at": "2015-02-26T18:40:25+00:00"
+        "created_at": "2015-02-26T18:40:25+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "undefined method `cost' for nil:NilClass (NoMethodError)",
         "url": "https://github.com/whitesmith/rubycritic/issues/307",
         "number": 307,
         "comments_count": 2,
-        "created_at": "2019-04-11T07:49:34+00:00"
+        "created_at": "2019-04-11T07:49:34+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Ignores Ruby files without a .rb extension",
         "url": "https://github.com/whitesmith/rubycritic/issues/308",
         "number": 308,
         "comments_count": 4,
-        "created_at": "2019-05-03T16:17:25+00:00"
+        "created_at": "2019-05-03T16:17:25+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Summary of all RubyCritic features that are lacking documentation.",
         "url": "https://github.com/whitesmith/rubycritic/issues/109",
         "number": 109,
         "comments_count": 5,
-        "created_at": "2016-01-23T16:05:23+00:00"
+        "created_at": "2016-01-23T16:05:23+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Rubycritic does not handle inline classes very well",
         "url": "https://github.com/whitesmith/rubycritic/issues/154",
         "number": 154,
         "comments_count": 3,
-        "created_at": "2016-07-09T16:53:27+00:00"
+        "created_at": "2016-07-09T16:53:27+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "When specify more directories = mess in git repository",
         "url": "https://github.com/whitesmith/rubycritic/issues/150",
         "number": 150,
         "comments_count": 5,
-        "created_at": "2016-06-27T06:15:58+00:00"
+        "created_at": "2016-06-27T06:15:58+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       }
-    ]
+    ],
+    "__comment__": "This section describes the project repository details."
   },
   {
     "name": "xenia",
@@ -258,72 +289,83 @@
         "url": "https://github.com/xenia-project/xenia/issues/1572",
         "number": 1572,
         "comments_count": 1,
-        "created_at": "2020-03-05T21:42:24+00:00"
+        "created_at": "2020-03-05T21:42:24+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Custom Controls Support",
         "url": "https://github.com/xenia-project/xenia/issues/1333",
         "number": 1333,
         "comments_count": 4,
-        "created_at": "2019-02-18T03:32:31+00:00"
+        "created_at": "2019-02-18T03:32:31+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "DIV_I32 and others don't handle INT_MIN / -1",
         "url": "https://github.com/xenia-project/xenia/issues/1085",
         "number": 1085,
         "comments_count": 2,
-        "created_at": "2018-02-12T17:37:28+00:00"
+        "created_at": "2018-02-12T17:37:28+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Xenia silently fails with invalid launch parameters",
         "url": "https://github.com/xenia-project/xenia/issues/1445",
         "number": 1445,
         "comments_count": 4,
-        "created_at": "2019-08-20T12:09:36+00:00"
+        "created_at": "2019-08-20T12:09:36+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Log files are huge",
         "url": "https://github.com/xenia-project/xenia/issues/1526",
         "number": 1526,
         "comments_count": 5,
-        "created_at": "2020-01-04T21:33:50+00:00"
+        "created_at": "2020-01-04T21:33:50+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Automatically compress log file",
         "url": "https://github.com/xenia-project/xenia/issues/1154",
         "number": 1154,
         "comments_count": 1,
-        "created_at": "2018-05-14T19:14:35+00:00"
+        "created_at": "2018-05-14T19:14:35+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "[GPU] Alert user when compiling shaders",
         "url": "https://github.com/xenia-project/xenia/issues/1314",
         "number": 1314,
         "comments_count": 4,
-        "created_at": "2018-12-29T23:25:33+00:00"
+        "created_at": "2018-12-29T23:25:33+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Add a texture dump feature",
         "url": "https://github.com/xenia-project/xenia/issues/780",
         "number": 780,
         "comments_count": 4,
-        "created_at": "2017-08-09T19:15:59+00:00"
+        "created_at": "2017-08-09T19:15:59+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Give an error for XNA/.NET games instead of just crashing",
         "url": "https://github.com/xenia-project/xenia/issues/1496",
         "number": 1496,
         "comments_count": 1,
-        "created_at": "2019-10-28T06:38:39+00:00"
+        "created_at": "2019-10-28T06:38:39+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Add a disclaimer about Vulkan being buggy",
         "url": "https://github.com/xenia-project/xenia/issues/1579",
         "number": 1579,
         "comments_count": 2,
-        "created_at": "2020-03-28T19:49:46+00:00"
+        "created_at": "2020-03-28T19:49:46+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       }
-    ]
+    ],
+    "__comment__": "This section describes the project repository details."
   },
   {
     "name": "selene",
@@ -343,23 +385,27 @@
         "url": "https://github.com/yashaka/selene/issues/313",
         "number": 313,
         "comments_count": 4,
-        "created_at": "2021-04-11T11:07:00+00:00"
+        "created_at": "2021-04-11T11:07:00+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "upgrade to python 3.7 ",
         "url": "https://github.com/yashaka/selene/issues/288",
         "number": 288,
         "comments_count": 2,
-        "created_at": "2021-02-28T13:04:56+00:00"
+        "created_at": "2021-02-28T13:04:56+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Document mentioning issue number in commit messega for contributed PR ",
         "url": "https://github.com/yashaka/selene/issues/311",
         "number": 311,
         "comments_count": 5,
-        "created_at": "2021-04-11T10:40:10+00:00"
+        "created_at": "2021-04-11T10:40:10+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       }
-    ]
+    ],
+    "__comment__": "This section describes the project repository details."
   },
   {
     "name": "react-trello-clone",
@@ -379,72 +425,83 @@
         "url": "https://github.com/bmarvinb/react-trello-clone/issues/33",
         "number": 33,
         "comments_count": 0,
-        "created_at": "2021-05-24T06:06:13+00:00"
+        "created_at": "2021-05-24T06:06:13+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Home page",
         "url": "https://github.com/bmarvinb/react-trello-clone/issues/22",
         "number": 22,
         "comments_count": 6,
-        "created_at": "2021-05-23T19:18:07+00:00"
+        "created_at": "2021-05-23T19:18:07+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "[Feature] Shared boards",
         "url": "https://github.com/bmarvinb/react-trello-clone/issues/24",
         "number": 24,
         "comments_count": 1,
-        "created_at": "2021-05-23T19:20:24+00:00"
+        "created_at": "2021-05-23T19:20:24+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "PWA features",
         "url": "https://github.com/bmarvinb/react-trello-clone/issues/23",
         "number": 23,
         "comments_count": 0,
-        "created_at": "2021-05-23T19:18:37+00:00"
+        "created_at": "2021-05-23T19:18:37+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "[Feature] Create workspace",
         "url": "https://github.com/bmarvinb/react-trello-clone/issues/29",
         "number": 29,
         "comments_count": 0,
-        "created_at": "2021-05-23T19:41:25+00:00"
+        "created_at": "2021-05-23T19:41:25+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Email validation",
         "url": "https://github.com/bmarvinb/react-trello-clone/issues/21",
         "number": 21,
         "comments_count": 3,
-        "created_at": "2021-05-23T19:14:59+00:00"
+        "created_at": "2021-05-23T19:14:59+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "[Feature] Card search",
         "url": "https://github.com/bmarvinb/react-trello-clone/issues/30",
         "number": 30,
         "comments_count": 0,
-        "created_at": "2021-05-23T19:43:08+00:00"
+        "created_at": "2021-05-23T19:43:08+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "[Feature] Code splitting",
         "url": "https://github.com/bmarvinb/react-trello-clone/issues/26",
         "number": 26,
         "comments_count": 0,
-        "created_at": "2021-05-23T19:32:33+00:00"
+        "created_at": "2021-05-23T19:32:33+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "[Ideas] Discuss future improvements",
         "url": "https://github.com/bmarvinb/react-trello-clone/issues/20",
         "number": 20,
         "comments_count": 0,
-        "created_at": "2021-05-23T19:13:34+00:00"
+        "created_at": "2021-05-23T19:13:34+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Replace ant-design with ChakraUI",
         "url": "https://github.com/bmarvinb/react-trello-clone/issues/25",
         "number": 25,
         "comments_count": 2,
-        "created_at": "2021-05-23T19:23:34+00:00"
+        "created_at": "2021-05-23T19:23:34+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       }
-    ]
+    ],
+    "__comment__": "This section describes the project repository details."
   },
   {
     "name": "weave",
@@ -464,51 +521,59 @@
         "url": "https://github.com/weaveworks/weave/issues/3102",
         "number": 3102,
         "comments_count": 3,
-        "created_at": "2017-08-26T01:07:48+00:00"
+        "created_at": "2017-08-26T01:07:48+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Make sleeve/fastdp status visible in Prometheus",
         "url": "https://github.com/weaveworks/weave/issues/3376",
         "number": 3376,
         "comments_count": 3,
-        "created_at": "2018-08-10T15:44:31+00:00"
+        "created_at": "2018-08-10T15:44:31+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Provide count / metric for automatically removed peers",
         "url": "https://github.com/weaveworks/weave/issues/3357",
         "number": 3357,
         "comments_count": 0,
-        "created_at": "2018-07-25T11:02:01+00:00"
+        "created_at": "2018-07-25T11:02:01+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "After removing weave-npc container (part of weave-net DaemonSet) WEAVE-NPC-* iptables chains are kept",
         "url": "https://github.com/weaveworks/weave/issues/2631",
         "number": 2631,
         "comments_count": 5,
-        "created_at": "2016-11-08T15:49:50+00:00"
+        "created_at": "2016-11-08T15:49:50+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "failure when docker iptables=false option in use",
         "url": "https://github.com/weaveworks/weave/issues/2917",
         "number": 2917,
         "comments_count": 1,
-        "created_at": "2017-04-27T15:37:36+00:00"
+        "created_at": "2017-04-27T15:37:36+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Add a section to docs on how to run Weave Net on arm{,64}",
         "url": "https://github.com/weaveworks/weave/issues/2800",
         "number": 2800,
         "comments_count": 0,
-        "created_at": "2017-02-14T15:59:59+00:00"
+        "created_at": "2017-02-14T15:59:59+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "--log-level=warning|error is not documented for weave router",
         "url": "https://github.com/weaveworks/weave/issues/2834",
         "number": 2834,
         "comments_count": 0,
-        "created_at": "2017-03-09T14:09:19+00:00"
+        "created_at": "2017-03-09T14:09:19+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       }
-    ]
+    ],
+    "__comment__": "This section describes the project repository details."
   },
   {
     "name": "xterm.js",
@@ -528,72 +593,83 @@
         "url": "https://github.com/xtermjs/xterm.js/issues/2533",
         "number": 2533,
         "comments_count": 0,
-        "created_at": "2019-11-04T15:48:34+00:00"
+        "created_at": "2019-11-04T15:48:34+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Wide nerd font characters are cut to single width",
         "url": "https://github.com/xtermjs/xterm.js/issues/3342",
         "number": 3342,
         "comments_count": 6,
-        "created_at": "2021-05-14T13:48:55+00:00"
+        "created_at": "2021-05-14T13:48:55+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Calling `XTerm.fit` with a non-visable terminal results in thrown error",
         "url": "https://github.com/xtermjs/xterm.js/issues/3118",
         "number": 3118,
         "comments_count": 2,
-        "created_at": "2020-09-30T19:53:21+00:00"
+        "created_at": "2020-09-30T19:53:21+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Fit addon excludes terminals that are the child of a ShadowRoot",
         "url": "https://github.com/xtermjs/xterm.js/issues/2643",
         "number": 2643,
         "comments_count": 3,
-        "created_at": "2019-12-20T01:00:41+00:00"
+        "created_at": "2019-12-20T01:00:41+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Improve .npmignore of xterm-addon-search",
         "url": "https://github.com/xtermjs/xterm.js/issues/3138",
         "number": 3138,
         "comments_count": 7,
-        "created_at": "2020-10-21T09:19:35+00:00"
+        "created_at": "2020-10-21T09:19:35+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "DOM renderer selection isn't re-drawn after resizing the terminal",
         "url": "https://github.com/xtermjs/xterm.js/issues/2818",
         "number": 2818,
         "comments_count": 9,
-        "created_at": "2020-04-06T16:58:20+00:00"
+        "created_at": "2020-04-06T16:58:20+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Support 'px' format in lineHeight option",
         "url": "https://github.com/xtermjs/xterm.js/issues/2612",
         "number": 2612,
         "comments_count": 2,
-        "created_at": "2019-12-06T11:03:33+00:00"
+        "created_at": "2019-12-06T11:03:33+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Random 1px white borders in Firefox in `xterm-text-layer` canvas",
         "url": "https://github.com/xtermjs/xterm.js/issues/1974",
         "number": 1974,
         "comments_count": 12,
-        "created_at": "2019-03-21T16:40:53+00:00"
+        "created_at": "2019-03-21T16:40:53+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Search addon does not search start of wrapped line when ydisp is in the middle of it",
         "url": "https://github.com/xtermjs/xterm.js/issues/2325",
         "number": 2325,
         "comments_count": 4,
-        "created_at": "2019-07-20T01:07:03+00:00"
+        "created_at": "2019-07-20T01:07:03+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Support configuring anti-aliasing on renderer",
         "url": "https://github.com/xtermjs/xterm.js/issues/2464",
         "number": 2464,
         "comments_count": 2,
-        "created_at": "2019-10-10T18:46:12+00:00"
+        "created_at": "2019-10-10T18:46:12+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       }
-    ]
+    ],
+    "__comment__": "This section describes the project repository details."
   },
   {
     "name": "zeebe",
@@ -613,72 +689,83 @@
         "url": "https://github.com/camunda-cloud/zeebe/issues/5289",
         "number": 5289,
         "comments_count": 5,
-        "created_at": "2020-09-03T12:16:37+00:00"
+        "created_at": "2020-09-03T12:16:37+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "zbctl: extend deadline for withResult with flag",
         "url": "https://github.com/camunda-cloud/zeebe/issues/5415",
         "number": 5415,
         "comments_count": 2,
-        "created_at": "2020-09-24T06:58:11+00:00"
+        "created_at": "2020-09-24T06:58:11+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Wrong response is send back for deployment when partitions are not available",
         "url": "https://github.com/camunda-cloud/zeebe/issues/5702",
         "number": 5702,
         "comments_count": 5,
-        "created_at": "2020-10-27T13:42:13+00:00"
+        "created_at": "2020-10-27T13:42:13+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Set fixed limit as default back pressure configuration",
         "url": "https://github.com/camunda-cloud/zeebe/issues/5113",
         "number": 5113,
         "comments_count": 6,
-        "created_at": "2020-08-04T14:50:51+00:00"
+        "created_at": "2020-08-04T14:50:51+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "MessagingException$NoRemoteHandler: No remote message handler registered for this message",
         "url": "https://github.com/camunda-cloud/zeebe/issues/5518",
         "number": 5518,
         "comments_count": 7,
-        "created_at": "2020-10-06T10:09:32+00:00"
+        "created_at": "2020-10-06T10:09:32+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Client should accept the job to send complete command",
         "url": "https://github.com/camunda-cloud/zeebe/issues/5763",
         "number": 5763,
         "comments_count": 2,
-        "created_at": "2020-11-05T07:49:08+00:00"
+        "created_at": "2020-11-05T07:49:08+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Improve Zbctl create worker help",
         "url": "https://github.com/camunda-cloud/zeebe/issues/5866",
         "number": 5866,
         "comments_count": 0,
-        "created_at": "2020-11-17T20:10:34+00:00"
+        "created_at": "2020-11-17T20:10:34+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Failed to convert JSON to MessagePack in Gateway",
         "url": "https://github.com/camunda-cloud/zeebe/issues/5565",
         "number": 5565,
         "comments_count": 4,
-        "created_at": "2020-10-12T07:55:18+00:00"
+        "created_at": "2020-10-12T07:55:18+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Separate embedded from standalone gateway configuration",
         "url": "https://github.com/camunda-cloud/zeebe/issues/2017",
         "number": 2017,
         "comments_count": 1,
-        "created_at": "2019-02-18T09:27:00+00:00"
+        "created_at": "2019-02-18T09:27:00+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "fail nicely when broker can not be reached on client start",
         "url": "https://github.com/camunda-cloud/zeebe/issues/462",
         "number": 462,
         "comments_count": 2,
-        "created_at": "2017-09-27T12:33:55+00:00"
+        "created_at": "2017-09-27T12:33:55+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       }
-    ]
+    ],
+    "__comment__": "This section describes the project repository details."
   },
   {
     "name": "yew",
@@ -698,37 +785,43 @@
         "url": "https://github.com/yewstack/yew/issues/1263",
         "number": 1263,
         "comments_count": 13,
-        "created_at": "2020-05-25T06:49:47+00:00"
+        "created_at": "2020-05-25T06:49:47+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Server Sent Event support",
         "url": "https://github.com/yewstack/yew/issues/1346",
         "number": 1346,
         "comments_count": 13,
-        "created_at": "2020-06-22T16:24:38+00:00"
+        "created_at": "2020-06-22T16:24:38+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Not using `gloo` for FileReader service",
         "url": "https://github.com/yewstack/yew/issues/885",
         "number": 885,
         "comments_count": 0,
-        "created_at": "2020-01-19T06:37:35+00:00"
+        "created_at": "2020-01-19T06:37:35+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Private agents don't implement Threaded",
         "url": "https://github.com/yewstack/yew/issues/1122",
         "number": 1122,
         "comments_count": 2,
-        "created_at": "2020-04-23T14:27:24+00:00"
+        "created_at": "2020-04-23T14:27:24+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Update and add issue links to the docs",
         "url": "https://github.com/yewstack/yew/issues/1421",
         "number": 1421,
         "comments_count": 2,
-        "created_at": "2020-07-19T14:35:36+00:00"
+        "created_at": "2020-07-19T14:35:36+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       }
-    ]
+    ],
+    "__comment__": "This section describes the project repository details."
   },
   {
     "name": "hint",
@@ -748,72 +841,83 @@
         "url": "https://github.com/webhintio/hint/issues/2589",
         "number": 2589,
         "comments_count": 0,
-        "created_at": "2019-06-11T22:06:40+00:00"
+        "created_at": "2019-06-11T22:06:40+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Use list of approved domains instead of ignored ones",
         "url": "https://github.com/webhintio/hint/issues/766",
         "number": 766,
         "comments_count": 11,
-        "created_at": "2018-01-20T22:46:42+00:00"
+        "created_at": "2018-01-20T22:46:42+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "[Hint] Deprecated cache-related headers and directives",
         "url": "https://github.com/webhintio/hint/issues/2730",
         "number": 2730,
         "comments_count": 1,
-        "created_at": "2019-07-24T15:31:46+00:00"
+        "created_at": "2019-07-24T15:31:46+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "[Docs] Explain the valid format for `Expires` in `Set-Cookie` headers",
         "url": "https://github.com/webhintio/hint/issues/2641",
         "number": 2641,
         "comments_count": 4,
-        "created_at": "2019-06-26T22:55:51+00:00"
+        "created_at": "2019-06-26T22:55:51+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Confusing documentation for highest-available-document-mode",
         "url": "https://github.com/webhintio/hint/issues/3506",
         "number": 3506,
         "comments_count": 3,
-        "created_at": "2020-01-31T14:16:57+00:00"
+        "created_at": "2020-01-31T14:16:57+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Allow `stale-while-revalidate` (and `stale-if-error`?) Cache-Control extensions",
         "url": "https://github.com/webhintio/hint/issues/3691",
         "number": 3691,
         "comments_count": 26,
-        "created_at": "2020-04-23T14:19:22+00:00"
+        "created_at": "2020-04-23T14:19:22+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "[Bug] Enable hint-doctype by default",
         "url": "https://github.com/webhintio/hint/issues/4481",
         "number": 4481,
         "comments_count": 1,
-        "created_at": "2021-04-13T17:02:21+00:00"
+        "created_at": "2021-04-13T17:02:21+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "[Bug] Use `importHelpers: true` in tsconfig.json to reduce code size",
         "url": "https://github.com/webhintio/hint/issues/3947",
         "number": 3947,
         "comments_count": 4,
-        "created_at": "2020-08-14T22:28:53+00:00"
+        "created_at": "2020-08-14T22:28:53+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "[Bug] hint-compat-api/css reports missing vendor prefixes even when using Autoprefixer",
         "url": "https://github.com/webhintio/hint/issues/2847",
         "number": 2847,
         "comments_count": 1,
-        "created_at": "2019-08-22T15:39:44+00:00"
+        "created_at": "2019-08-22T15:39:44+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "[Feature] Add schema auto completion in the vs code extension",
         "url": "https://github.com/webhintio/hint/issues/3039",
         "number": 3039,
         "comments_count": 4,
-        "created_at": "2019-09-27T18:19:42+00:00"
+        "created_at": "2019-09-27T18:19:42+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       }
-    ]
+    ],
+    "__comment__": "This section describes the project repository details."
   },
   {
     "name": "gutenberg",
@@ -833,72 +937,83 @@
         "url": "https://github.com/WordPress/gutenberg/issues/32099",
         "number": 32099,
         "comments_count": 5,
-        "created_at": "2021-05-21T14:47:23+00:00"
+        "created_at": "2021-05-21T14:47:23+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "\"onDismiss\" option in \"createInfoNotice\" is not taken into account",
         "url": "https://github.com/WordPress/gutenberg/issues/31571",
         "number": 31571,
         "comments_count": 2,
-        "created_at": "2021-05-06T20:41:19+00:00"
+        "created_at": "2021-05-06T20:41:19+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "e2e Tests: Add test for inserter drag-and-drop",
         "url": "https://github.com/WordPress/gutenberg/issues/31356",
         "number": 31356,
         "comments_count": 0,
-        "created_at": "2021-04-29T19:08:14+00:00"
+        "created_at": "2021-04-29T19:08:14+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Upgrade husky package to the latest version",
         "url": "https://github.com/WordPress/gutenberg/issues/31967",
         "number": 31967,
         "comments_count": 2,
-        "created_at": "2021-05-19T03:19:26+00:00"
+        "created_at": "2021-05-19T03:19:26+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Block toolbar and classic block header awkwardly obscures Notices",
         "url": "https://github.com/WordPress/gutenberg/issues/32000",
         "number": 32000,
         "comments_count": 4,
-        "created_at": "2021-05-19T14:23:31+00:00"
+        "created_at": "2021-05-19T14:23:31+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Components: Refine When Autocompleter Stops Matching",
         "url": "https://github.com/WordPress/gutenberg/issues/30969",
         "number": 30969,
         "comments_count": 1,
-        "created_at": "2021-04-19T16:15:17+00:00"
+        "created_at": "2021-04-19T16:15:17+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "e2e Tests: Cover user auto-completer",
         "url": "https://github.com/WordPress/gutenberg/issues/30632",
         "number": 30632,
         "comments_count": 2,
-        "created_at": "2021-04-08T18:24:48+00:00"
+        "created_at": "2021-04-08T18:24:48+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Tooling: Ensure consistent formatting in all scripts",
         "url": "https://github.com/WordPress/gutenberg/issues/30795",
         "number": 30795,
         "comments_count": 4,
-        "created_at": "2021-04-13T09:37:32+00:00"
+        "created_at": "2021-04-13T09:37:32+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Scripts: Try using cosmiconf for locating tool configs ",
         "url": "https://github.com/WordPress/gutenberg/issues/30842",
         "number": 30842,
         "comments_count": 1,
-        "created_at": "2021-04-14T15:33:47+00:00"
+        "created_at": "2021-04-14T15:33:47+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Missing loading indicator for media and text block",
         "url": "https://github.com/WordPress/gutenberg/issues/31668",
         "number": 31668,
         "comments_count": 1,
-        "created_at": "2021-05-10T16:10:38+00:00"
+        "created_at": "2021-05-10T16:10:38+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       }
-    ]
+    ],
+    "__comment__": "This section describes the project repository details."
   },
   {
     "name": "wemake-python-styleguide",
@@ -918,58 +1033,67 @@
         "url": "https://github.com/wemake-services/wemake-python-styleguide/issues/1600",
         "number": 1600,
         "comments_count": 8,
-        "created_at": "2020-09-13T22:38:04+00:00"
+        "created_at": "2020-09-13T22:38:04+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Introduce markdown linter to CI",
         "url": "https://github.com/wemake-services/wemake-python-styleguide/issues/1940",
         "number": 1940,
         "comments_count": 1,
-        "created_at": "2021-03-11T19:35:23+00:00"
+        "created_at": "2021-03-11T19:35:23+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Report useless ternary operator",
         "url": "https://github.com/wemake-services/wemake-python-styleguide/issues/1706",
         "number": 1706,
         "comments_count": 14,
-        "created_at": "2020-10-29T10:02:22+00:00"
+        "created_at": "2020-10-29T10:02:22+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Detect getters and setters stricter",
         "url": "https://github.com/wemake-services/wemake-python-styleguide/issues/1853",
         "number": 1853,
         "comments_count": 2,
-        "created_at": "2021-02-07T23:18:50+00:00"
+        "created_at": "2021-02-07T23:18:50+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "WPS335 rejects list-of-lists comprehensions",
         "url": "https://github.com/wemake-services/wemake-python-styleguide/issues/2026",
         "number": 2026,
         "comments_count": 3,
-        "created_at": "2021-05-12T09:00:29+00:00"
+        "created_at": "2021-05-12T09:00:29+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Bad English writing",
         "url": "https://github.com/wemake-services/wemake-python-styleguide/issues/1525",
         "number": 1525,
         "comments_count": 25,
-        "created_at": "2020-07-28T13:08:40+00:00"
+        "created_at": "2020-07-28T13:08:40+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Detect bare `raise` outside of `except` block",
         "url": "https://github.com/wemake-services/wemake-python-styleguide/issues/1974",
         "number": 1974,
         "comments_count": 5,
-        "created_at": "2021-04-06T09:04:53+00:00"
+        "created_at": "2021-04-06T09:04:53+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Missing isort rules in setup.cfg configuration",
         "url": "https://github.com/wemake-services/wemake-python-styleguide/issues/1934",
         "number": 1934,
         "comments_count": 2,
-        "created_at": "2021-03-09T21:16:18+00:00"
+        "created_at": "2021-03-09T21:16:18+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       }
-    ]
+    ],
+    "__comment__": "This section describes the project repository details."
   },
   {
     "name": "wpt",
@@ -989,72 +1113,83 @@
         "url": "https://github.com/web-platform-tests/wpt/issues/10603",
         "number": 10603,
         "comments_count": 0,
-        "created_at": "2018-04-24T14:03:20+00:00"
+        "created_at": "2018-04-24T14:03:20+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Use .any.js for xhr tests",
         "url": "https://github.com/web-platform-tests/wpt/issues/11588",
         "number": 11588,
         "comments_count": 0,
-        "created_at": "2018-06-20T09:19:41+00:00"
+        "created_at": "2018-06-20T09:19:41+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Testing plan for :dir() pseudo-class",
         "url": "https://github.com/web-platform-tests/wpt/issues/25569",
         "number": 25569,
         "comments_count": 3,
-        "created_at": "2020-09-16T14:51:14+00:00"
+        "created_at": "2020-09-16T14:51:14+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "WPT logo: differences in size between with-background and without-background",
         "url": "https://github.com/web-platform-tests/wpt/issues/19326",
         "number": 19326,
         "comments_count": 2,
-        "created_at": "2019-09-26T12:56:47+00:00"
+        "created_at": "2019-09-26T12:56:47+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "https status of tests computed by runner and not in manifest",
         "url": "https://github.com/web-platform-tests/wpt/issues/12379",
         "number": 12379,
         "comments_count": 5,
-        "created_at": "2018-08-09T15:24:45+00:00"
+        "created_at": "2018-08-09T15:24:45+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "selectionchange testing TODOs",
         "url": "https://github.com/web-platform-tests/wpt/issues/11493",
         "number": 11493,
         "comments_count": 0,
-        "created_at": "2018-06-13T21:21:20+00:00"
+        "created_at": "2018-06-13T21:21:20+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Lint for flags (used mostly in CSS)",
         "url": "https://github.com/web-platform-tests/wpt/issues/23253",
         "number": 23253,
         "comments_count": 6,
-        "created_at": "2020-04-26T01:36:54+00:00"
+        "created_at": "2020-04-26T01:36:54+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Remove testharness.js test-level asserts",
         "url": "https://github.com/web-platform-tests/wpt/issues/14394",
         "number": 14394,
         "comments_count": 8,
-        "created_at": "2018-12-06T13:12:22+00:00"
+        "created_at": "2018-12-06T13:12:22+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Automate testing that http://web-platform.test:8000/tools/runner/index.html works and runs tests as expected",
         "url": "https://github.com/web-platform-tests/wpt/issues/16551",
         "number": 16551,
         "comments_count": 0,
-        "created_at": "2019-04-26T05:27:46+00:00"
+        "created_at": "2019-04-26T05:27:46+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Port old tests on HTML legacy color attribute parsing",
         "url": "https://github.com/web-platform-tests/wpt/issues/18710",
         "number": 18710,
         "comments_count": 0,
-        "created_at": "2019-08-27T19:18:10+00:00"
+        "created_at": "2019-08-27T19:18:10+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       }
-    ]
+    ],
+    "__comment__": "This section describes the project repository details."
   },
   {
     "name": "wordpress-seo",
@@ -1074,72 +1209,83 @@
         "url": "https://github.com/Yoast/wordpress-seo/issues/10791",
         "number": 10791,
         "comments_count": 6,
-        "created_at": "2018-08-27T10:32:39+00:00"
+        "created_at": "2018-08-27T10:32:39+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "[Feature Request] Add option to collapse the collapsible menus in settings",
         "url": "https://github.com/Yoast/wordpress-seo/issues/10718",
         "number": 10718,
         "comments_count": 3,
-        "created_at": "2018-08-20T16:29:56+00:00"
+        "created_at": "2018-08-20T16:29:56+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Long labels cause overlap with dropdown boxes (Search Apprearance)",
         "url": "https://github.com/Yoast/wordpress-seo/issues/11287",
         "number": 11287,
         "comments_count": 6,
-        "created_at": "2018-10-15T17:16:48+00:00"
+        "created_at": "2018-10-15T17:16:48+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "[optimization] Optimize Baidu webmaster tools verification",
         "url": "https://github.com/Yoast/wordpress-seo/issues/12055",
         "number": 12055,
         "comments_count": 7,
-        "created_at": "2019-01-17T15:04:41+00:00"
+        "created_at": "2019-01-17T15:04:41+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Add link to Post Type archive",
         "url": "https://github.com/Yoast/wordpress-seo/issues/10150",
         "number": 10150,
         "comments_count": 4,
-        "created_at": "2018-06-26T07:22:13+00:00"
+        "created_at": "2018-06-26T07:22:13+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "HH and MM fields in HowTo block do not allow 00",
         "url": "https://github.com/Yoast/wordpress-seo/issues/12541",
         "number": 12541,
         "comments_count": 3,
-        "created_at": "2019-03-28T11:44:29+00:00"
+        "created_at": "2019-03-28T11:44:29+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Issues with custom FB image sizes & og:image tags",
         "url": "https://github.com/Yoast/wordpress-seo/issues/10863",
         "number": 10863,
         "comments_count": 22,
-        "created_at": "2018-08-31T07:56:34+00:00"
+        "created_at": "2018-08-31T07:56:34+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Some (parts of) strings should not be translatable.",
         "url": "https://github.com/Yoast/wordpress-seo/issues/11025",
         "number": 11025,
         "comments_count": 1,
-        "created_at": "2018-09-17T12:29:49+00:00"
+        "created_at": "2018-09-17T12:29:49+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "[visuals] File editor wrongly states ability to edit .htaccess file",
         "url": "https://github.com/Yoast/wordpress-seo/issues/12065",
         "number": 12065,
         "comments_count": 0,
-        "created_at": "2019-01-18T15:53:55+00:00"
+        "created_at": "2019-01-18T15:53:55+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Evaluate which translation strings are still used",
         "url": "https://github.com/Yoast/wordpress-seo/issues/10942",
         "number": 10942,
         "comments_count": 2,
-        "created_at": "2018-09-07T12:20:19+00:00"
+        "created_at": "2018-09-07T12:20:19+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       }
-    ]
+    ],
+    "__comment__": "This section describes the project repository details."
   },
   {
     "name": "s3rs",
@@ -1159,9 +1305,11 @@
         "url": "https://github.com/yanganto/s3rs/issues/55",
         "number": 55,
         "comments_count": 2,
-        "created_at": "2019-10-21T07:55:11+00:00"
+        "created_at": "2019-10-21T07:55:11+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       }
-    ]
+    ],
+    "__comment__": "This section describes the project repository details."
   },
   {
     "name": "zsh-syntax-highlighting",
@@ -1181,72 +1329,83 @@
         "url": "https://github.com/zsh-users/zsh-syntax-highlighting/issues/645",
         "number": 645,
         "comments_count": 0,
-        "created_at": "2019-12-01T08:01:11+00:00"
+        "created_at": "2019-12-01T08:01:11+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "PATH_DIRS shouldn't be honoured after `sudo`",
         "url": "https://github.com/zsh-users/zsh-syntax-highlighting/issues/595",
         "number": 595,
         "comments_count": 0,
-        "created_at": "2018-12-24T12:15:15+00:00"
+        "created_at": "2018-12-24T12:15:15+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "History expansion followed by non-history char",
         "url": "https://github.com/zsh-users/zsh-syntax-highlighting/issues/713",
         "number": 713,
         "comments_count": 1,
-        "created_at": "2020-03-22T20:00:52+00:00"
+        "created_at": "2020-03-22T20:00:52+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "$READNULLCMD / $NULLCMD are red",
         "url": "https://github.com/zsh-users/zsh-syntax-highlighting/issues/716",
         "number": 716,
         "comments_count": 0,
-        "created_at": "2020-03-23T09:18:26+00:00"
+        "created_at": "2020-03-23T09:18:26+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Highlight non-matching globs as errors or normal",
         "url": "https://github.com/zsh-users/zsh-syntax-highlighting/pull/599",
         "number": 599,
         "comments_count": 0,
-        "created_at": "2019-01-07T04:29:48+00:00"
+        "created_at": "2019-01-07T04:29:48+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Should be noted in the documentation about sourcing when using brew",
         "url": "https://github.com/zsh-users/zsh-syntax-highlighting/issues/613",
         "number": 613,
         "comments_count": 1,
-        "created_at": "2019-05-13T11:46:22+00:00"
+        "created_at": "2019-05-13T11:46:22+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "\"unknown-token\" is overloaded",
         "url": "https://github.com/zsh-users/zsh-syntax-highlighting/issues/695",
         "number": 695,
         "comments_count": 3,
-        "created_at": "2020-03-15T17:21:30+00:00"
+        "created_at": "2020-03-15T17:21:30+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "SH_WORD_SPLIT variable expansions in command positions are incorrectly highlighted",
         "url": "https://github.com/zsh-users/zsh-syntax-highlighting/issues/687",
         "number": 687,
         "comments_count": 7,
-        "created_at": "2020-03-11T15:36:40+00:00"
+        "created_at": "2020-03-11T15:36:40+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "INSTALL.md: Document existence of packages in some more OS's",
         "url": "https://github.com/zsh-users/zsh-syntax-highlighting/issues/753",
         "number": 753,
         "comments_count": 7,
-        "created_at": "2020-07-19T22:58:23+00:00"
+        "created_at": "2020-07-19T22:58:23+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "path,single-quoted-string style combination regressed",
         "url": "https://github.com/zsh-users/zsh-syntax-highlighting/issues/707",
         "number": 707,
         "comments_count": 4,
-        "created_at": "2020-03-19T06:56:01+00:00"
+        "created_at": "2020-03-19T06:56:01+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       }
-    ]
+    ],
+    "__comment__": "This section describes the project repository details."
   },
   {
     "name": "zaproxy",
@@ -1266,72 +1425,83 @@
         "url": "https://github.com/zaproxy/zaproxy/issues/1190",
         "number": 1190,
         "comments_count": 21,
-        "created_at": "2015-06-04T17:34:42+00:00"
+        "created_at": "2015-06-04T17:34:42+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "General - Fix Title Caps",
         "url": "https://github.com/zaproxy/zaproxy/issues/2000",
         "number": 2000,
         "comments_count": 13,
-        "created_at": "2015-10-23T01:14:05+00:00"
+        "created_at": "2015-10-23T01:14:05+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Sub-domain Discovery Feature",
         "url": "https://github.com/zaproxy/zaproxy/issues/562",
         "number": 562,
         "comments_count": 28,
-        "created_at": "2015-06-04T16:58:10+00:00"
+        "created_at": "2015-06-04T16:58:10+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Give more session information in Open session dialog in Details mode",
         "url": "https://github.com/zaproxy/zaproxy/issues/701",
         "number": 701,
         "comments_count": 6,
-        "created_at": "2015-06-04T17:06:21+00:00"
+        "created_at": "2015-06-04T17:06:21+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Dangerous JS Functions - false positive on partial match",
         "url": "https://github.com/zaproxy/zaproxy/issues/6594",
         "number": 6594,
         "comments_count": 3,
-        "created_at": "2021-05-11T12:07:43+00:00"
+        "created_at": "2021-05-11T12:07:43+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Source Code Disclosure - Java - false positive 'class' in JavaScript file",
         "url": "https://github.com/zaproxy/zaproxy/issues/6595",
         "number": 6595,
         "comments_count": 9,
-        "created_at": "2021-05-11T12:13:13+00:00"
+        "created_at": "2021-05-11T12:13:13+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Insecure deserialization active scanner",
         "url": "https://github.com/zaproxy/zaproxy/issues/4112",
         "number": 4112,
         "comments_count": 13,
-        "created_at": "2017-12-04T12:44:38+00:00"
+        "created_at": "2017-12-04T12:44:38+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Check file type for XSS ",
         "url": "https://github.com/zaproxy/zaproxy/issues/6617",
         "number": 6617,
         "comments_count": 0,
-        "created_at": "2021-05-21T10:54:36+00:00"
+        "created_at": "2021-05-21T10:54:36+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Info Disclosure false positive vs partial words",
         "url": "https://github.com/zaproxy/zaproxy/issues/6589",
         "number": 6589,
         "comments_count": 7,
-        "created_at": "2021-05-07T13:07:25+00:00"
+        "created_at": "2021-05-07T13:07:25+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Passive scan rule for generating script SRIs",
         "url": "https://github.com/zaproxy/zaproxy/issues/5894",
         "number": 5894,
         "comments_count": 15,
-        "created_at": "2020-03-11T13:47:58+00:00"
+        "created_at": "2020-03-11T13:47:58+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       }
-    ]
+    ],
+    "__comment__": "This section describes the project repository details."
   },
   {
     "name": "zephyr",
@@ -1351,72 +1521,83 @@
         "url": "https://github.com/zephyrproject-rtos/zephyr/issues/26393",
         "number": 26393,
         "comments_count": 0,
-        "created_at": "2020-06-23T21:24:46+00:00"
+        "created_at": "2020-06-23T21:24:46+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Implement I2S driver for lpcxpresso55s69",
         "url": "https://github.com/zephyrproject-rtos/zephyr/issues/22702",
         "number": 22702,
         "comments_count": 1,
-        "created_at": "2020-02-10T20:33:51+00:00"
+        "created_at": "2020-02-10T20:33:51+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "syscall stack usage report",
         "url": "https://github.com/zephyrproject-rtos/zephyr/issues/27189",
         "number": 27189,
         "comments_count": 2,
-        "created_at": "2020-07-27T18:52:13+00:00"
+        "created_at": "2020-07-27T18:52:13+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Redundant flash shell commands",
         "url": "https://github.com/zephyrproject-rtos/zephyr/issues/25055",
         "number": 25055,
         "comments_count": 3,
-        "created_at": "2020-05-07T05:31:44+00:00"
+        "created_at": "2020-05-07T05:31:44+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Implement counter driver for lpcxpresso55s69",
         "url": "https://github.com/zephyrproject-rtos/zephyr/issues/22705",
         "number": 22705,
         "comments_count": 2,
-        "created_at": "2020-02-10T20:42:01+00:00"
+        "created_at": "2020-02-10T20:42:01+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "samples without README",
         "url": "https://github.com/zephyrproject-rtos/zephyr/issues/27805",
         "number": 27805,
         "comments_count": 2,
-        "created_at": "2020-08-26T14:23:36+00:00"
+        "created_at": "2020-08-26T14:23:36+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Bluetooth: controller: Use inline wrapper function where applicable",
         "url": "https://github.com/zephyrproject-rtos/zephyr/issues/28959",
         "number": 28959,
         "comments_count": 0,
-        "created_at": "2020-10-06T11:39:54+00:00"
+        "created_at": "2020-10-06T11:39:54+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "intel,ioapic.yaml needs more details about encoding",
         "url": "https://github.com/zephyrproject-rtos/zephyr/issues/25160",
         "number": 25160,
         "comments_count": 0,
-        "created_at": "2020-05-09T02:23:13+00:00"
+        "created_at": "2020-05-09T02:23:13+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "e1000 ethernet driver needs to be converted to DTS",
         "url": "https://github.com/zephyrproject-rtos/zephyr/issues/26392",
         "number": 26392,
         "comments_count": 1,
-        "created_at": "2020-06-23T21:21:28+00:00"
+        "created_at": "2020-06-23T21:21:28+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Bluetooth: controller: use sys_get_le24 to fetch 24-bit data",
         "url": "https://github.com/zephyrproject-rtos/zephyr/issues/27971",
         "number": 27971,
         "comments_count": 2,
-        "created_at": "2020-09-02T11:38:33+00:00"
+        "created_at": "2020-09-02T11:38:33+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       }
-    ]
+    ],
+    "__comment__": "This section describes the project repository details."
   },
   {
     "name": "WordPress-Android",
@@ -1436,58 +1617,67 @@
         "url": "https://github.com/wordpress-mobile/WordPress-Android/issues/9926",
         "number": 9926,
         "comments_count": 0,
-        "created_at": "2019-05-24T01:42:18+00:00"
+        "created_at": "2019-05-24T01:42:18+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Settings: learn more element should be combined into a single focusable element",
         "url": "https://github.com/wordpress-mobile/WordPress-Android/issues/10940",
         "number": 10940,
         "comments_count": 9,
-        "created_at": "2019-12-10T21:25:19+00:00"
+        "created_at": "2019-12-10T21:25:19+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Testing: Implement UI tests verifying activity log",
         "url": "https://github.com/wordpress-mobile/WordPress-Android/issues/9927",
         "number": 9927,
         "comments_count": 4,
-        "created_at": "2019-05-24T01:54:42+00:00"
+        "created_at": "2019-05-24T01:54:42+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Themes: \"theme image more\" is read aloud for odd-numbered items in the list",
         "url": "https://github.com/wordpress-mobile/WordPress-Android/issues/10939",
         "number": 10939,
         "comments_count": 4,
-        "created_at": "2019-12-10T21:08:53+00:00"
+        "created_at": "2019-12-10T21:08:53+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Lint warnings about various matters on dc41909f75",
         "url": "https://github.com/wordpress-mobile/WordPress-Android/issues/12098",
         "number": 12098,
         "comments_count": 0,
-        "created_at": "2020-06-04T16:22:41+00:00"
+        "created_at": "2020-06-04T16:22:41+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Login: The Email Address error is not preserved once the screen is rotated",
         "url": "https://github.com/wordpress-mobile/WordPress-Android/issues/10930",
         "number": 10930,
         "comments_count": 6,
-        "created_at": "2019-12-10T10:32:43+00:00"
+        "created_at": "2019-12-10T10:32:43+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Notifications: Enhanced design for achievement notifications",
         "url": "https://github.com/wordpress-mobile/WordPress-Android/issues/5116",
         "number": 5116,
         "comments_count": 6,
-        "created_at": "2017-02-03T20:08:31+00:00"
+        "created_at": "2017-02-03T20:08:31+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Activity Log: posts without titles are not read aloud in the detail view",
         "url": "https://github.com/wordpress-mobile/WordPress-Android/issues/10936",
         "number": 10936,
         "comments_count": 5,
-        "created_at": "2019-12-10T19:50:24+00:00"
+        "created_at": "2019-12-10T19:50:24+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       }
-    ]
+    ],
+    "__comment__": "This section describes the project repository details."
   },
   {
     "name": "zsh-completions",
@@ -1507,51 +1697,59 @@
         "url": "https://github.com/zsh-users/zsh-completions/issues/325",
         "number": 325,
         "comments_count": 1,
-        "created_at": "2015-06-08T08:45:54+00:00"
+        "created_at": "2015-06-08T08:45:54+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Change the gitflow completion to gitflow-avh",
         "url": "https://github.com/zsh-users/zsh-completions/issues/397",
         "number": 397,
         "comments_count": 5,
-        "created_at": "2016-02-27T21:49:58+00:00"
+        "created_at": "2016-02-27T21:49:58+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "oh-my-zsh installation instructions are sub-optimal",
         "url": "https://github.com/zsh-users/zsh-completions/issues/603",
         "number": 603,
         "comments_count": 0,
-        "created_at": "2018-10-23T20:24:14+00:00"
+        "created_at": "2018-10-23T20:24:14+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Most tools in util-linux are missing completions",
         "url": "https://github.com/zsh-users/zsh-completions/issues/444",
         "number": 444,
         "comments_count": 1,
-        "created_at": "2016-08-05T22:59:26+00:00"
+        "created_at": "2016-08-05T22:59:26+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Yarn completion is very slow",
         "url": "https://github.com/zsh-users/zsh-completions/issues/520",
         "number": 520,
         "comments_count": 1,
-        "created_at": "2017-08-17T19:37:07+00:00"
+        "created_at": "2017-08-17T19:37:07+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "gcloud does not work when this is activated",
         "url": "https://github.com/zsh-users/zsh-completions/issues/539",
         "number": 539,
         "comments_count": 6,
-        "created_at": "2017-10-23T19:07:08+00:00"
+        "created_at": "2017-10-23T19:07:08+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Support per project knife.rb files?",
         "url": "https://github.com/zsh-users/zsh-completions/issues/503",
         "number": 503,
         "comments_count": 0,
-        "created_at": "2017-05-08T23:01:51+00:00"
+        "created_at": "2017-05-08T23:01:51+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       }
-    ]
+    ],
+    "__comment__": "This section describes the project repository details."
   },
   {
     "name": "zio",
@@ -1571,72 +1769,83 @@
         "url": "https://github.com/zio/zio/issues/3962",
         "number": 3962,
         "comments_count": 7,
-        "created_at": "2020-07-12T19:07:25+00:00"
+        "created_at": "2020-07-12T19:07:25+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Borrow back useful improvements to ZIO Tracing, if any, from cats-effect's implementation",
         "url": "https://github.com/zio/zio/issues/3964",
         "number": 3964,
         "comments_count": 3,
-        "created_at": "2020-07-12T21:27:25+00:00"
+        "created_at": "2020-07-12T21:27:25+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Add Information on Upgrading From Monix Observable to Migration Guide",
         "url": "https://github.com/zio/zio/issues/4959",
         "number": 4959,
         "comments_count": 0,
-        "created_at": "2021-04-14T13:12:33+00:00"
+        "created_at": "2021-04-14T13:12:33+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "ZIO Test: Separate Generation and Automatic Derivation of Refined Types",
         "url": "https://github.com/zio/zio/issues/4601",
         "number": 4601,
         "comments_count": 5,
-        "created_at": "2021-01-25T23:02:07+00:00"
+        "created_at": "2021-01-25T23:02:07+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "ZIO Test: Add Gen Instances For Additional Refined Types",
         "url": "https://github.com/zio/zio/issues/4602",
         "number": 4602,
         "comments_count": 5,
-        "created_at": "2021-01-25T23:04:11+00:00"
+        "created_at": "2021-01-25T23:04:11+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "ZIO Test: Upstream Generators From ZIO Test Refined Module",
         "url": "https://github.com/zio/zio/issues/4600",
         "number": 4600,
         "comments_count": 1,
-        "created_at": "2021-01-25T22:57:42+00:00"
+        "created_at": "2021-01-25T22:57:42+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "`ZStream#fromIterator(Managed)` should have an optional `chunkSize` parameter",
         "url": "https://github.com/zio/zio/issues/3841",
         "number": 3841,
         "comments_count": 3,
-        "created_at": "2020-06-20T19:30:35+00:00"
+        "created_at": "2020-06-20T19:30:35+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Ensure All Examples From Documentation Are Compiled",
         "url": "https://github.com/zio/zio/issues/4593",
         "number": 4593,
         "comments_count": 1,
-        "created_at": "2021-01-25T03:40:31+00:00"
+        "created_at": "2021-01-25T03:40:31+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Null layer passed to ZLayer leads to late cryptic errors",
         "url": "https://github.com/zio/zio/issues/4729",
         "number": 4729,
         "comments_count": 1,
-        "created_at": "2021-02-23T16:13:19+00:00"
+        "created_at": "2021-02-23T16:13:19+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Add ZStream.execute",
         "url": "https://github.com/zio/zio/issues/4388",
         "number": 4388,
         "comments_count": 6,
-        "created_at": "2020-11-09T12:57:23+00:00"
+        "created_at": "2020-11-09T12:57:23+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       }
-    ]
+    ],
+    "__comment__": "This section describes the project repository details."
   },
   {
     "name": "wesnoth",
@@ -1656,72 +1865,83 @@
         "url": "https://github.com/wesnoth/wesnoth/issues/4825",
         "number": 4825,
         "comments_count": 7,
-        "created_at": "2020-03-25T16:02:39+00:00"
+        "created_at": "2020-03-25T16:02:39+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Load game dialogue: shows difficulty for MP scenarios",
         "url": "https://github.com/wesnoth/wesnoth/issues/5321",
         "number": 5321,
         "comments_count": 2,
-        "created_at": "2020-11-27T20:48:30+00:00"
+        "created_at": "2020-11-27T20:48:30+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "current_time in [replace_schedule] not working",
         "url": "https://github.com/wesnoth/wesnoth/issues/5757",
         "number": 5757,
         "comments_count": 1,
-        "created_at": "2021-05-03T14:46:36+00:00"
+        "created_at": "2021-05-03T14:46:36+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Unit checksum code needlessly checks weapon special names, which can cause OOS",
         "url": "https://github.com/wesnoth/wesnoth/issues/5743",
         "number": 5743,
         "comments_count": 0,
-        "created_at": "2021-04-27T17:38:01+00:00"
+        "created_at": "2021-04-27T17:38:01+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "1.15 THoT Movrur should be created if he doesn't exist",
         "url": "https://github.com/wesnoth/wesnoth/issues/5520",
         "number": 5520,
         "comments_count": 0,
-        "created_at": "2021-02-06T13:54:48+00:00"
+        "created_at": "2021-02-06T13:54:48+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "[Wiki] [Docs] [Editor] Please provide documentation on \"using the in-game Scenario Editor\"",
         "url": "https://github.com/wesnoth/wesnoth/issues/5700",
         "number": 5700,
         "comments_count": 3,
-        "created_at": "2021-04-12T16:00:43+00:00"
+        "created_at": "2021-04-12T16:00:43+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Improve warning message",
         "url": "https://github.com/wesnoth/wesnoth/issues/5036",
         "number": 5036,
         "comments_count": 9,
-        "created_at": "2020-08-07T09:53:46+00:00"
+        "created_at": "2020-08-07T09:53:46+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "HttT Isle of the Damned: temples look recently built",
         "url": "https://github.com/wesnoth/wesnoth/issues/5576",
         "number": 5576,
         "comments_count": 2,
-        "created_at": "2021-02-27T23:04:52+00:00"
+        "created_at": "2021-02-27T23:04:52+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "[QoL] [Request] [MP] [Team Survival] [Dark Forecast] Update existing wave compositions to include new monster units and the Dunefolk.",
         "url": "https://github.com/wesnoth/wesnoth/issues/5657",
         "number": 5657,
         "comments_count": 1,
-        "created_at": "2021-04-02T17:18:11+00:00"
+        "created_at": "2021-04-02T17:18:11+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "[Music] [Campaign] [Scenario] Please add macros for music playlists catered for Scenario Moods",
         "url": "https://github.com/wesnoth/wesnoth/issues/5767",
         "number": 5767,
         "comments_count": 0,
-        "created_at": "2021-05-08T18:46:17+00:00"
+        "created_at": "2021-05-08T18:46:17+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       }
-    ]
+    ],
+    "__comment__": "This section describes the project repository details."
   },
   {
     "name": "hyper",
@@ -1741,58 +1961,67 @@
         "url": "https://github.com/vercel/hyper/issues/462",
         "number": 462,
         "comments_count": 38,
-        "created_at": "2016-07-27T16:02:43+00:00"
+        "created_at": "2016-07-27T16:02:43+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Hanging when behind a proxy with authentication",
         "url": "https://github.com/vercel/hyper/issues/1612",
         "number": 1612,
         "comments_count": 9,
-        "created_at": "2017-03-08T15:23:20+00:00"
+        "created_at": "2017-03-08T15:23:20+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "To support a single cross-platform settings file some of the settings should be platform specific (like in VS Code)",
         "url": "https://github.com/vercel/hyper/issues/2584",
         "number": 2584,
         "comments_count": 0,
-        "created_at": "2018-01-10T16:50:55+00:00"
+        "created_at": "2018-01-10T16:50:55+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Auto-update if all windows closed",
         "url": "https://github.com/vercel/hyper/issues/1325",
         "number": 1325,
         "comments_count": 13,
-        "created_at": "2016-12-31T22:06:06+00:00"
+        "created_at": "2016-12-31T22:06:06+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Add support for a iTerm 2-escue 'Smart window placement' option",
         "url": "https://github.com/vercel/hyper/issues/683",
         "number": 683,
         "comments_count": 7,
-        "created_at": "2016-09-01T20:54:57+00:00"
+        "created_at": "2016-09-01T20:54:57+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Prompt before closing the app when a process is running",
         "url": "https://github.com/vercel/hyper/issues/684",
         "number": 684,
         "comments_count": 16,
-        "created_at": "2016-09-02T01:23:51+00:00"
+        "created_at": "2016-09-02T01:23:51+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Cannot create windows on macOS (with Little Snitch)",
         "url": "https://github.com/vercel/hyper/issues/1829",
         "number": 1829,
         "comments_count": 4,
-        "created_at": "2017-05-15T06:54:21+00:00"
+        "created_at": "2017-05-15T06:54:21+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Add Hyper CLI to user PATH without reboot needing",
         "url": "https://github.com/vercel/hyper/issues/2823",
         "number": 2823,
         "comments_count": 11,
-        "created_at": "2018-04-15T19:04:04+00:00"
+        "created_at": "2018-04-15T19:04:04+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       }
-    ]
+    ],
+    "__comment__": "This section describes the project repository details."
   },
   {
     "name": "winsw",
@@ -1812,44 +2041,51 @@
         "url": "https://github.com/winsw/winsw/issues/193",
         "number": 193,
         "comments_count": 0,
-        "created_at": "2017-02-23T11:37:13+00:00"
+        "created_at": "2017-02-23T11:37:13+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "User friendly error messages",
         "url": "https://github.com/winsw/winsw/issues/462",
         "number": 462,
         "comments_count": 0,
-        "created_at": "2020-03-30T00:53:50+00:00"
+        "created_at": "2020-03-30T00:53:50+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Missing documentation of hidewindow configuration",
         "url": "https://github.com/winsw/winsw/issues/657",
         "number": 657,
         "comments_count": 3,
-        "created_at": "2020-08-24T04:38:36+00:00"
+        "created_at": "2020-08-24T04:38:36+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Seriously think about why users are moving to NSSM",
         "url": "https://github.com/winsw/winsw/issues/606",
         "number": 606,
         "comments_count": 9,
-        "created_at": "2020-07-26T04:57:08+00:00"
+        "created_at": "2020-07-26T04:57:08+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "WinSW logo",
         "url": "https://github.com/winsw/winsw/issues/446",
         "number": 446,
         "comments_count": 7,
-        "created_at": "2020-03-24T14:23:53+00:00"
+        "created_at": "2020-03-24T14:23:53+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Add configuration samples for frequently wrapped apps",
         "url": "https://github.com/winsw/winsw/issues/605",
         "number": 605,
         "comments_count": 0,
-        "created_at": "2020-07-26T04:54:35+00:00"
+        "created_at": "2020-07-26T04:54:35+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       }
-    ]
+    ],
+    "__comment__": "This section describes the project repository details."
   },
   {
     "name": "WordPress-iOS",
@@ -1869,72 +2105,83 @@
         "url": "https://github.com/wordpress-mobile/WordPress-iOS/issues/15722",
         "number": 15722,
         "comments_count": 1,
-        "created_at": "2021-01-27T15:14:04+00:00"
+        "created_at": "2021-01-27T15:14:04+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "HTML entity in tag name on tag listing ",
         "url": "https://github.com/wordpress-mobile/WordPress-iOS/issues/14913",
         "number": 14913,
         "comments_count": 0,
-        "created_at": "2020-09-15T23:35:44+00:00"
+        "created_at": "2020-09-15T23:35:44+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Site Pages: Set Parent displays a blank entry if the page title is empty",
         "url": "https://github.com/wordpress-mobile/WordPress-iOS/issues/15672",
         "number": 15672,
         "comments_count": 0,
-        "created_at": "2021-01-20T02:13:53+00:00"
+        "created_at": "2021-01-20T02:13:53+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Post published local notification doesn't launch to correct section of the app",
         "url": "https://github.com/wordpress-mobile/WordPress-iOS/issues/15163",
         "number": 15163,
         "comments_count": 1,
-        "created_at": "2020-10-26T11:36:36+00:00"
+        "created_at": "2020-10-26T11:36:36+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Bottom sheets are incorrectly sized on iPad split screen.",
         "url": "https://github.com/wordpress-mobile/WordPress-iOS/issues/16492",
         "number": 16492,
         "comments_count": 0,
-        "created_at": "2021-05-13T14:53:53+00:00"
+        "created_at": "2021-05-13T14:53:53+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Reader: align following a site with adding a topic",
         "url": "https://github.com/wordpress-mobile/WordPress-iOS/issues/16397",
         "number": 16397,
         "comments_count": 2,
-        "created_at": "2021-04-28T10:01:37+00:00"
+        "created_at": "2021-04-28T10:01:37+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Post Password: Password field has dark text in dark mode making it difficult to read.",
         "url": "https://github.com/wordpress-mobile/WordPress-iOS/issues/15705",
         "number": 15705,
         "comments_count": 0,
-        "created_at": "2021-01-25T22:15:09+00:00"
+        "created_at": "2021-01-25T22:15:09+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Remove `word_diff_count` property from Editor analytics events",
         "url": "https://github.com/wordpress-mobile/WordPress-iOS/issues/14355",
         "number": 14355,
         "comments_count": 1,
-        "created_at": "2020-06-19T15:05:54+00:00"
+        "created_at": "2020-06-19T15:05:54+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Consistently show popovers on iPad",
         "url": "https://github.com/wordpress-mobile/WordPress-iOS/issues/16491",
         "number": 16491,
         "comments_count": 0,
-        "created_at": "2021-05-13T14:48:07+00:00"
+        "created_at": "2021-05-13T14:48:07+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "[GlobalStep] [iOS] \"Add Tag\" button should appear disabled/greyed out when the tag field is empty.",
         "url": "https://github.com/wordpress-mobile/WordPress-iOS/issues/14119",
         "number": 14119,
         "comments_count": 2,
-        "created_at": "2020-05-06T17:07:38+00:00"
+        "created_at": "2020-05-06T17:07:38+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       }
-    ]
+    ],
+    "__comment__": "This section describes the project repository details."
   },
   {
     "name": "winston",
@@ -1954,58 +2201,67 @@
         "url": "https://github.com/winstonjs/winston/issues/1491",
         "number": 1491,
         "comments_count": 2,
-        "created_at": "2018-10-03T23:10:37+00:00"
+        "created_at": "2018-10-03T23:10:37+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "File logging reconfiguration issue (Error: write after end)",
         "url": "https://github.com/winstonjs/winston/issues/1573",
         "number": 1573,
         "comments_count": 13,
-        "created_at": "2019-01-23T14:51:11+00:00"
+        "created_at": "2019-01-23T14:51:11+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Winston 3.0.0-rc1 feedback",
         "url": "https://github.com/winstonjs/winston/issues/1159",
         "number": 1159,
         "comments_count": 2,
-        "created_at": "2017-11-30T22:10:52+00:00"
+        "created_at": "2017-11-30T22:10:52+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "3.0.0 winston.query throws exception for File Transport",
         "url": "https://github.com/winstonjs/winston/issues/1130",
         "number": 1130,
         "comments_count": 12,
-        "created_at": "2017-11-06T22:48:52+00:00"
+        "created_at": "2017-11-06T22:48:52+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Best way to get highest log level",
         "url": "https://github.com/winstonjs/winston/issues/837",
         "number": 837,
         "comments_count": 1,
-        "created_at": "2016-03-24T17:49:17+00:00"
+        "created_at": "2016-03-24T17:49:17+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Colorize doesn't work on transports.Console",
         "url": "https://github.com/winstonjs/winston/issues/1095",
         "number": 1095,
         "comments_count": 12,
-        "created_at": "2017-10-10T15:53:11+00:00"
+        "created_at": "2017-10-10T15:53:11+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Winston 3 compatibility - file creation",
         "url": "https://github.com/winstonjs/winston/issues/1494",
         "number": 1494,
         "comments_count": 2,
-        "created_at": "2018-10-04T18:48:06+00:00"
+        "created_at": "2018-10-04T18:48:06+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Batch-Configuration of category loggers",
         "url": "https://github.com/winstonjs/winston/issues/970",
         "number": 970,
         "comments_count": 0,
-        "created_at": "2017-01-19T13:22:08+00:00"
+        "created_at": "2017-01-19T13:22:08+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       }
-    ]
+    ],
+    "__comment__": "This section describes the project repository details."
   },
   {
     "name": "woocommerce",
@@ -2025,72 +2281,83 @@
         "url": "https://github.com/woocommerce/woocommerce/issues/29264",
         "number": 29264,
         "comments_count": 2,
-        "created_at": "2021-03-02T17:56:16+00:00"
+        "created_at": "2021-03-02T17:56:16+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Incorrect overestimation of WC_Product_Importer::get_percentage_complete",
         "url": "https://github.com/woocommerce/woocommerce/issues/29793",
         "number": 29793,
         "comments_count": 2,
-        "created_at": "2021-04-29T16:47:49+00:00"
+        "created_at": "2021-04-29T16:47:49+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Add support for bulk orders cancellations.",
         "url": "https://github.com/woocommerce/woocommerce/issues/29928",
         "number": 29928,
         "comments_count": 0,
-        "created_at": "2021-05-17T14:55:48+00:00"
+        "created_at": "2021-05-17T14:55:48+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "[GlobalStep] Font is too large for \"Email Address\" and \"Phone Number\" displayed under \"Billing Address\" on \"My Account->Addresses/Subscriptions\" page for \"Twenty Twenty One theme\".",
         "url": "https://github.com/woocommerce/woocommerce/issues/29673",
         "number": 29673,
         "comments_count": 2,
-        "created_at": "2021-04-14T14:34:15+00:00"
+        "created_at": "2021-04-14T14:34:15+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Make held stock inventory more visible to merchant.",
         "url": "https://github.com/woocommerce/woocommerce/issues/29132",
         "number": 29132,
         "comments_count": 0,
-        "created_at": "2021-02-15T14:18:11+00:00"
+        "created_at": "2021-02-15T14:18:11+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "New filter to permanently delete tax classes",
         "url": "https://github.com/woocommerce/woocommerce/issues/29708",
         "number": 29708,
         "comments_count": 7,
-        "created_at": "2021-04-17T02:16:08+00:00"
+        "created_at": "2021-04-17T02:16:08+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "[GlobalStep] Incorrect Popup is displayed when user removes tax/Shipping/fee added on \"Orders->Add Order\" Page",
         "url": "https://github.com/woocommerce/woocommerce/issues/29890",
         "number": 29890,
         "comments_count": 1,
-        "created_at": "2021-05-12T15:05:56+00:00"
+        "created_at": "2021-05-12T15:05:56+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "[GlobalStep] Duplicate entries are displayed for downloadable products with 2+ download files",
         "url": "https://github.com/woocommerce/woocommerce/issues/29782",
         "number": 29782,
         "comments_count": 2,
-        "created_at": "2021-04-28T14:46:55+00:00"
+        "created_at": "2021-04-28T14:46:55+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Wrap product name with <span> and selectable \"class\" in checkout-review-order-table and email-order-items",
         "url": "https://github.com/woocommerce/woocommerce/issues/29386",
         "number": 29386,
         "comments_count": 2,
-        "created_at": "2021-03-15T14:31:27+00:00"
+        "created_at": "2021-03-15T14:31:27+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Please add \"Comment Type\" filter for Comments",
         "url": "https://github.com/woocommerce/woocommerce/issues/29920",
         "number": 29920,
         "comments_count": 2,
-        "created_at": "2021-05-16T07:51:44+00:00"
+        "created_at": "2021-05-16T07:51:44+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       }
-    ]
+    ],
+    "__comment__": "This section describes the project repository details."
   },
   {
     "name": "next.js",
@@ -2110,72 +2377,83 @@
         "url": "https://github.com/vercel/next.js/issues/21079",
         "number": 21079,
         "comments_count": 11,
-        "created_at": "2021-01-13T19:50:19+00:00"
+        "created_at": "2021-01-13T19:50:19+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Firebase - Image Component Images Fail on Read with 500 Error",
         "url": "https://github.com/vercel/next.js/issues/23122",
         "number": 23122,
         "comments_count": 6,
-        "created_at": "2021-03-16T18:07:49+00:00"
+        "created_at": "2021-03-16T18:07:49+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Warning: Prop `onIonChange` did not match.",
         "url": "https://github.com/vercel/next.js/issues/22487",
         "number": 22487,
         "comments_count": 9,
-        "created_at": "2021-02-24T05:55:40+00:00"
+        "created_at": "2021-02-24T05:55:40+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Allow scroll-to-top with shallow routing",
         "url": "https://github.com/vercel/next.js/issues/21606",
         "number": 21606,
         "comments_count": 9,
-        "created_at": "2021-01-27T19:38:58+00:00"
+        "created_at": "2021-01-27T19:38:58+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Returning `notFound` from `getStaticProps` causes an error during `next export`",
         "url": "https://github.com/vercel/next.js/issues/24422",
         "number": 24422,
         "comments_count": 0,
-        "created_at": "2021-04-24T16:45:49+00:00"
+        "created_at": "2021-04-24T16:45:49+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Firebase: No Firebase App '[DEFAULT]' has been created ",
         "url": "https://github.com/vercel/next.js/issues/23797",
         "number": 23797,
         "comments_count": 5,
-        "created_at": "2021-04-08T06:53:35+00:00"
+        "created_at": "2021-04-08T06:53:35+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Warnings when debugging in VS Code",
         "url": "https://github.com/vercel/next.js/issues/24349",
         "number": 24349,
         "comments_count": 1,
-        "created_at": "2021-04-22T11:17:54+00:00"
+        "created_at": "2021-04-22T11:17:54+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Misleading \"next-head-count is missing\" error for invalid head tags",
         "url": "https://github.com/vercel/next.js/issues/20924",
         "number": 20924,
         "comments_count": 3,
-        "created_at": "2021-01-09T16:00:27+00:00"
+        "created_at": "2021-01-09T16:00:27+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Stale data in the with-Apollo example setup using getServerSideProps",
         "url": "https://github.com/vercel/next.js/issues/25080",
         "number": 25080,
         "comments_count": 6,
-        "created_at": "2021-05-12T23:17:49+00:00"
+        "created_at": "2021-05-12T23:17:49+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Antd example css problem in Prod mode",
         "url": "https://github.com/vercel/next.js/issues/22819",
         "number": 22819,
         "comments_count": 7,
-        "created_at": "2021-03-06T12:45:53+00:00"
+        "created_at": "2021-03-06T12:45:53+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       }
-    ]
+    ],
+    "__comment__": "This section describes the project repository details."
   },
   {
     "name": "yarn",
@@ -2195,72 +2473,83 @@
         "url": "https://github.com/yarnpkg/yarn/issues/5796",
         "number": 5796,
         "comments_count": 3,
-        "created_at": "2018-05-07T13:58:28+00:00"
+        "created_at": "2018-05-07T13:58:28+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Path *bug* using wrong node binary.",
         "url": "https://github.com/yarnpkg/yarn/issues/5789",
         "number": 5789,
         "comments_count": 10,
-        "created_at": "2018-05-05T20:20:52+00:00"
+        "created_at": "2018-05-05T20:20:52+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Yarn outdated is not colorblind friendly",
         "url": "https://github.com/yarnpkg/yarn/issues/5990",
         "number": 5990,
         "comments_count": 10,
-        "created_at": "2018-06-14T09:56:17+00:00"
+        "created_at": "2018-06-14T09:56:17+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "workspace run commands only when it exists",
         "url": "https://github.com/yarnpkg/yarn/issues/6739",
         "number": 6739,
         "comments_count": 8,
-        "created_at": "2018-11-29T12:50:35+00:00"
+        "created_at": "2018-11-29T12:50:35+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "yarn upgradeInteractive --latest not showing latest package(s)",
         "url": "https://github.com/yarnpkg/yarn/issues/6852",
         "number": 6852,
         "comments_count": 8,
-        "created_at": "2018-12-25T00:47:51+00:00"
+        "created_at": "2018-12-25T00:47:51+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "yarn should warn if a resolution appears to attempt to change a top level dependency",
         "url": "https://github.com/yarnpkg/yarn/issues/7320",
         "number": 7320,
         "comments_count": 14,
-        "created_at": "2019-06-05T09:01:07+00:00"
+        "created_at": "2019-06-05T09:01:07+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Yarn audit does not work with an external repository",
         "url": "https://github.com/yarnpkg/yarn/issues/7012",
         "number": 7012,
         "comments_count": 4,
-        "created_at": "2019-02-07T13:54:51+00:00"
+        "created_at": "2019-02-07T13:54:51+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "yarn upgrade-interactive fails with Invalid version: undefined error if a dependency has only prerelease versions",
         "url": "https://github.com/yarnpkg/yarn/issues/5955",
         "number": 5955,
         "comments_count": 7,
-        "created_at": "2018-06-08T16:46:47+00:00"
+        "created_at": "2018-06-08T16:46:47+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Trailing slash breaks workspace features when yarn run inside workspace folder",
         "url": "https://github.com/yarnpkg/yarn/issues/5816",
         "number": 5816,
         "comments_count": 12,
-        "created_at": "2018-05-14T08:26:08+00:00"
+        "created_at": "2018-05-14T08:26:08+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "upgrade-interactive should do engine checks before showing the prompt",
         "url": "https://github.com/yarnpkg/yarn/issues/5902",
         "number": 5902,
         "comments_count": 3,
-        "created_at": "2018-05-29T08:40:15+00:00"
+        "created_at": "2018-05-29T08:40:15+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       }
-    ]
+    ],
+    "__comment__": "This section describes the project repository details."
   },
   {
     "name": "html",
@@ -2280,72 +2569,83 @@
         "url": "https://github.com/whatwg/html/issues/4506",
         "number": 4506,
         "comments_count": 3,
-        "created_at": "2019-04-05T16:09:19+00:00"
+        "created_at": "2019-04-05T16:09:19+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Make \"as a download\" and \"obtaining a file name\" more explicit",
         "url": "https://github.com/whatwg/html/issues/4518",
         "number": 4518,
         "comments_count": 0,
-        "created_at": "2019-04-09T15:22:13+00:00"
+        "created_at": "2019-04-09T15:22:13+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "\"determine the value of a named property\" should not imply a new object each time",
         "url": "https://github.com/whatwg/html/issues/5266",
         "number": 5266,
         "comments_count": 6,
-        "created_at": "2020-02-10T18:05:04+00:00"
+        "created_at": "2020-02-10T18:05:04+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "width and height attributes on <table> should perhaps allow 0 as a value",
         "url": "https://github.com/whatwg/html/issues/4715",
         "number": 4715,
         "comments_count": 5,
-        "created_at": "2019-06-19T04:18:22+00:00"
+        "created_at": "2019-06-19T04:18:22+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "\"Emit that DOCTYPE token\"",
         "url": "https://github.com/whatwg/html/issues/6571",
         "number": 6571,
         "comments_count": 1,
-        "created_at": "2021-04-11T11:30:02+00:00"
+        "created_at": "2021-04-11T11:30:02+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "getContext() table cleanup",
         "url": "https://github.com/whatwg/html/issues/4511",
         "number": 4511,
         "comments_count": 1,
-        "created_at": "2019-04-08T14:33:43+00:00"
+        "created_at": "2019-04-08T14:33:43+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Immediate token handling and \"next token\" are incompatible",
         "url": "https://github.com/whatwg/html/issues/4910",
         "number": 4910,
         "comments_count": 9,
-        "created_at": "2019-09-14T05:34:21+00:00"
+        "created_at": "2019-09-14T05:34:21+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "target's TLBC should be target's BC's TLBC in has focus steps",
         "url": "https://github.com/whatwg/html/issues/6703",
         "number": 6703,
         "comments_count": 4,
-        "created_at": "2021-05-20T22:42:13+00:00"
+        "created_at": "2021-05-20T22:42:13+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Missing list of abbreviations",
         "url": "https://github.com/whatwg/html/issues/6205",
         "number": 6205,
         "comments_count": 16,
-        "created_at": "2020-12-09T21:18:16+00:00"
+        "created_at": "2020-12-09T21:18:16+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Investigation requested for beforeprint/afterprint",
         "url": "https://github.com/whatwg/html/issues/5096",
         "number": 5096,
         "comments_count": 0,
-        "created_at": "2019-11-18T16:27:09+00:00"
+        "created_at": "2019-11-18T16:27:09+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       }
-    ]
+    ],
+    "__comment__": "This section describes the project repository details."
   },
   {
     "name": "fetch",
@@ -2365,23 +2665,27 @@
         "url": "https://github.com/whatwg/fetch/issues/636",
         "number": 636,
         "comments_count": 12,
-        "created_at": "2017-11-22T08:53:23+00:00"
+        "created_at": "2017-11-22T08:53:23+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Pass site-for-cookies through Fetch",
         "url": "https://github.com/whatwg/fetch/issues/693",
         "number": 693,
         "comments_count": 0,
-        "created_at": "2018-04-09T16:38:17+00:00"
+        "created_at": "2018-04-09T16:38:17+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Handle blob URLs without a backing blob",
         "url": "https://github.com/whatwg/fetch/issues/1077",
         "number": 1077,
         "comments_count": 2,
-        "created_at": "2020-08-18T14:13:55+00:00"
+        "created_at": "2020-08-18T14:13:55+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       }
-    ]
+    ],
+    "__comment__": "This section describes the project repository details."
   },
   {
     "name": "yugabyte-db",
@@ -2401,72 +2705,83 @@
         "url": "https://github.com/yugabyte/yugabyte-db/issues/8298",
         "number": 8298,
         "comments_count": 0,
-        "created_at": "2021-05-05T15:41:42+00:00"
+        "created_at": "2021-05-05T15:41:42+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Edit universe - missing availability zone configuration ",
         "url": "https://github.com/yugabyte/yugabyte-db/issues/6645",
         "number": 6645,
         "comments_count": 1,
-        "created_at": "2020-12-14T03:44:04+00:00"
+        "created_at": "2020-12-14T03:44:04+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "[docdb] Raise a warning when trying to blacklist an invalid tserver",
         "url": "https://github.com/yugabyte/yugabyte-db/issues/6527",
         "number": 6527,
         "comments_count": 3,
-        "created_at": "2020-12-02T22:05:00+00:00"
+        "created_at": "2020-12-02T22:05:00+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "[docdb] Disallow dynamically setting string flags",
         "url": "https://github.com/yugabyte/yugabyte-db/issues/6997",
         "number": 6997,
         "comments_count": 2,
-        "created_at": "2021-01-26T21:02:46+00:00"
+        "created_at": "2021-01-26T21:02:46+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Document how to setup Grafana dashboard for YugabyteDB",
         "url": "https://github.com/yugabyte/yugabyte-db/issues/6515",
         "number": 6515,
         "comments_count": 1,
-        "created_at": "2020-12-01T23:36:34+00:00"
+        "created_at": "2020-12-01T23:36:34+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Document how to analyze queries with examples: pg_stat_statements",
         "url": "https://github.com/yugabyte/yugabyte-db/issues/6517",
         "number": 6517,
         "comments_count": 7,
-        "created_at": "2020-12-02T00:47:54+00:00"
+        "created_at": "2020-12-02T00:47:54+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "yb-admin: Add Argument for Num Replicas to modify_placement_info",
         "url": "https://github.com/yugabyte/yugabyte-db/issues/7057",
         "number": 7057,
         "comments_count": 2,
-        "created_at": "2021-02-01T22:13:43+00:00"
+        "created_at": "2021-02-01T22:13:43+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "[docdb] Setup a metric for server uptime",
         "url": "https://github.com/yugabyte/yugabyte-db/issues/8501",
         "number": 8501,
         "comments_count": 7,
-        "created_at": "2021-05-18T13:47:56+00:00"
+        "created_at": "2021-05-18T13:47:56+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "[Platform] Leaks of resources",
         "url": "https://github.com/yugabyte/yugabyte-db/issues/6586",
         "number": 6586,
         "comments_count": 7,
-        "created_at": "2020-12-08T21:22:41+00:00"
+        "created_at": "2020-12-08T21:22:41+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "[docdb] Add new per tablet UI for tracking WAL segments",
         "url": "https://github.com/yugabyte/yugabyte-db/issues/7648",
         "number": 7648,
         "comments_count": 3,
-        "created_at": "2021-03-15T16:02:37+00:00"
+        "created_at": "2021-03-15T16:02:37+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       }
-    ]
+    ],
+    "__comment__": "This section describes the project repository details."
   },
   {
     "name": "data-science-notes",
@@ -2486,23 +2801,27 @@
         "url": "https://github.com/wyattowalsh/data-science-notes/issues/68",
         "number": 68,
         "comments_count": 6,
-        "created_at": "2021-01-27T05:26:47+00:00"
+        "created_at": "2021-01-27T05:26:47+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Natural Language Processing",
         "url": "https://github.com/wyattowalsh/data-science-notes/issues/59",
         "number": 59,
         "comments_count": 9,
-        "created_at": "2021-01-23T04:45:23+00:00"
+        "created_at": "2021-01-23T04:45:23+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Add CI for Twitter Feed in README",
         "url": "https://github.com/wyattowalsh/data-science-notes/issues/4",
         "number": 4,
         "comments_count": 0,
-        "created_at": "2021-01-21T09:45:45+00:00"
+        "created_at": "2021-01-21T09:45:45+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       }
-    ]
+    ],
+    "__comment__": "This section describes the project repository details."
   },
   {
     "name": "zeek",
@@ -2522,58 +2841,67 @@
         "url": "https://github.com/zeek/zeek/issues/1344",
         "number": 1344,
         "comments_count": 2,
-        "created_at": "2020-12-23T18:57:24+00:00"
+        "created_at": "2020-12-23T18:57:24+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Config framework doesn't handle trailing commas in sets",
         "url": "https://github.com/zeek/zeek/issues/636",
         "number": 636,
         "comments_count": 0,
-        "created_at": "2019-10-14T20:54:06+00:00"
+        "created_at": "2019-10-14T20:54:06+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "bytestring_to_float - request",
         "url": "https://github.com/zeek/zeek/issues/696",
         "number": 696,
         "comments_count": 0,
-        "created_at": "2019-11-24T11:21:49+00:00"
+        "created_at": "2019-11-24T11:21:49+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Running ./zeek with a folder option for logs",
         "url": "https://github.com/zeek/zeek/issues/772",
         "number": 772,
         "comments_count": 0,
-        "created_at": "2020-02-04T03:32:14+00:00"
+        "created_at": "2020-02-04T03:32:14+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "bytestring_to_count handle different byte lens",
         "url": "https://github.com/zeek/zeek/issues/695",
         "number": 695,
         "comments_count": 0,
-        "created_at": "2019-11-23T23:32:47+00:00"
+        "created_at": "2019-11-23T23:32:47+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Crash in PcapDumper::Dump with existing file",
         "url": "https://github.com/zeek/zeek/issues/693",
         "number": 693,
         "comments_count": 1,
-        "created_at": "2019-11-21T02:29:50+00:00"
+        "created_at": "2019-11-21T02:29:50+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Add schema tooling for Zeek logs",
         "url": "https://github.com/zeek/zeek/issues/1461",
         "number": 1461,
         "comments_count": 0,
-        "created_at": "2021-03-25T17:42:23+00:00"
+        "created_at": "2021-03-25T17:42:23+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "zeek debug plugin parameter does not complain if plugin does not exist",
         "url": "https://github.com/zeek/zeek/issues/913",
         "number": 913,
         "comments_count": 7,
-        "created_at": "2020-04-16T00:34:32+00:00"
+        "created_at": "2020-04-16T00:34:32+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       }
-    ]
+    ],
+    "__comment__": "This section describes the project repository details."
   },
   {
     "name": "wger",
@@ -2593,23 +2921,27 @@
         "url": "https://github.com/wger-project/wger/issues/327",
         "number": 327,
         "comments_count": 6,
-        "created_at": "2016-09-05T19:56:55+00:00"
+        "created_at": "2016-09-05T19:56:55+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Allow specifying styles for images",
         "url": "https://github.com/wger-project/wger/issues/589",
         "number": 589,
         "comments_count": 1,
-        "created_at": "2020-12-23T14:46:54+00:00"
+        "created_at": "2020-12-23T14:46:54+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Video reference -- feature request",
         "url": "https://github.com/wger-project/wger/issues/344",
         "number": 344,
         "comments_count": 9,
-        "created_at": "2016-11-15T12:28:57+00:00"
+        "created_at": "2016-11-15T12:28:57+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       }
-    ]
+    ],
+    "__comment__": "This section describes the project repository details."
   },
   {
     "name": "spectrum",
@@ -2629,72 +2961,83 @@
         "url": "https://github.com/withspectrum/spectrum/issues/3263",
         "number": 3263,
         "comments_count": 4,
-        "created_at": "2018-06-08T10:26:24+00:00"
+        "created_at": "2018-06-08T10:26:24+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Focusable elements are not focused making it difficult to know what you're interacting with ",
         "url": "https://github.com/withspectrum/spectrum/issues/4298",
         "number": 4298,
         "comments_count": 15,
-        "created_at": "2018-11-21T16:35:24+00:00"
+        "created_at": "2018-11-21T16:35:24+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Add cropping step while uploading profile photos",
         "url": "https://github.com/withspectrum/spectrum/issues/3369",
         "number": 3369,
         "comments_count": 21,
-        "created_at": "2018-06-20T12:34:45+00:00"
+        "created_at": "2018-06-20T12:34:45+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Block request to GraphQL API if no db connection is available",
         "url": "https://github.com/withspectrum/spectrum/issues/2544",
         "number": 2544,
         "comments_count": 1,
-        "created_at": "2018-03-10T19:39:59+00:00"
+        "created_at": "2018-03-10T19:39:59+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Sort all the things by rep",
         "url": "https://github.com/withspectrum/spectrum/issues/2394",
         "number": 2394,
         "comments_count": 2,
-        "created_at": "2018-02-13T20:23:30+00:00"
+        "created_at": "2018-02-13T20:23:30+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Mark message notifications as seen if thread.lastSeen > message.timestamp",
         "url": "https://github.com/withspectrum/spectrum/issues/2574",
         "number": 2574,
         "comments_count": 0,
-        "created_at": "2018-03-13T20:35:37+00:00"
+        "created_at": "2018-03-13T20:35:37+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Provide GitHub url attachments in messages",
         "url": "https://github.com/withspectrum/spectrum/issues/4801",
         "number": 4801,
         "comments_count": 15,
-        "created_at": "2019-03-04T16:11:03+00:00"
+        "created_at": "2019-03-04T16:11:03+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Cannot scroll on composer overlay when creating a new thread",
         "url": "https://github.com/withspectrum/spectrum/issues/3071",
         "number": 3071,
         "comments_count": 15,
-        "created_at": "2018-05-11T19:16:38+00:00"
+        "created_at": "2018-05-11T19:16:38+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "iOS safari can feel free to swipe whole contents. vertically horizontal more every direction...",
         "url": "https://github.com/withspectrum/spectrum/issues/3110",
         "number": 3110,
         "comments_count": 7,
-        "created_at": "2018-05-16T20:52:36+00:00"
+        "created_at": "2018-05-16T20:52:36+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Fix the UX of thread composer to prevent accidental community/channel posts",
         "url": "https://github.com/withspectrum/spectrum/issues/2872",
         "number": 2872,
         "comments_count": 13,
-        "created_at": "2018-04-15T22:54:15+00:00"
+        "created_at": "2018-04-15T22:54:15+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       }
-    ]
+    ],
+    "__comment__": "This section describes the project repository details."
   },
   {
     "name": "weblate",
@@ -2714,72 +3057,83 @@
         "url": "https://github.com/WeblateOrg/weblate/issues/5859",
         "number": 5859,
         "comments_count": 4,
-        "created_at": "2021-04-15T15:37:01+00:00"
+        "created_at": "2021-04-15T15:37:01+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Project status bar action button doesn't change after subscribed ",
         "url": "https://github.com/WeblateOrg/weblate/issues/5787",
         "number": 5787,
         "comments_count": 0,
-        "created_at": "2021-04-01T21:45:55+00:00"
+        "created_at": "2021-04-01T21:45:55+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Using Tabs vs Spaces for the JSON addon",
         "url": "https://github.com/WeblateOrg/weblate/issues/5969",
         "number": 5969,
         "comments_count": 4,
-        "created_at": "2021-05-06T05:14:33+00:00"
+        "created_at": "2021-05-06T05:14:33+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Quick acceptance of suggestions",
         "url": "https://github.com/WeblateOrg/weblate/issues/5701",
         "number": 5701,
         "comments_count": 0,
-        "created_at": "2021-03-20T12:33:38+00:00"
+        "created_at": "2021-03-20T12:33:38+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Autofix Bangla/Bengali sentence ender to \u0964",
         "url": "https://github.com/WeblateOrg/weblate/issues/5854",
         "number": 5854,
         "comments_count": 0,
-        "created_at": "2021-04-15T10:16:19+00:00"
+        "created_at": "2021-04-15T10:16:19+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "New language for App Store Metadata uses unsupported language code",
         "url": "https://github.com/WeblateOrg/weblate/issues/5522",
         "number": 5522,
         "comments_count": 7,
-        "created_at": "2021-02-26T08:33:44+00:00"
+        "created_at": "2021-02-26T08:33:44+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Screenshot link for units (API)",
         "url": "https://github.com/WeblateOrg/weblate/issues/6080",
         "number": 6080,
         "comments_count": 0,
-        "created_at": "2021-05-25T12:06:40+00:00"
+        "created_at": "2021-05-25T12:06:40+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Support for LibreTranslate",
         "url": "https://github.com/WeblateOrg/weblate/issues/5830",
         "number": 5830,
         "comments_count": 2,
-        "created_at": "2021-04-12T13:47:16+00:00"
+        "created_at": "2021-04-12T13:47:16+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Add \"msgfmt --check-accelerators\" to quality checks",
         "url": "https://github.com/WeblateOrg/weblate/issues/5962",
         "number": 5962,
         "comments_count": 2,
-        "created_at": "2021-05-04T08:09:01+00:00"
+        "created_at": "2021-05-04T08:09:01+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Shortcut for suggest",
         "url": "https://github.com/WeblateOrg/weblate/issues/5842",
         "number": 5842,
         "comments_count": 5,
-        "created_at": "2021-04-14T07:12:12+00:00"
+        "created_at": "2021-04-14T07:12:12+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       }
-    ]
+    ],
+    "__comment__": "This section describes the project repository details."
   },
   {
     "name": "xunit",
@@ -2799,71 +3153,82 @@
         "url": "https://github.com/xunit/xunit/issues/2209",
         "number": 2209,
         "comments_count": 0,
-        "created_at": "2020-12-08T20:24:28+00:00"
+        "created_at": "2020-12-08T20:24:28+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Analyzer xUnit1016 / xUnit1019 fired even if matching method",
         "url": "https://github.com/xunit/xunit/issues/1968",
         "number": 1968,
         "comments_count": 0,
-        "created_at": "2019-06-20T04:26:41+00:00"
+        "created_at": "2019-06-20T04:26:41+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Extensions instances caching does not work, when TraitHelper.GetTraits is used",
         "url": "https://github.com/xunit/xunit/issues/2232",
         "number": 2232,
         "comments_count": 3,
-        "created_at": "2021-01-27T15:43:01+00:00"
+        "created_at": "2021-01-27T15:43:01+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "C# 8.0 with Nullable: analyzer xUnit1013 does not warn on public Task returning method without attribute",
         "url": "https://github.com/xunit/xunit/issues/2110",
         "number": 2110,
         "comments_count": 3,
-        "created_at": "2020-06-22T12:46:45+00:00"
+        "created_at": "2020-06-22T12:46:45+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Analyzers assume strict Xunit attributes, not derived ones",
         "url": "https://github.com/xunit/xunit/issues/1963",
         "number": 1963,
         "comments_count": 0,
-        "created_at": "2019-06-13T18:30:13+00:00"
+        "created_at": "2019-06-13T18:30:13+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Azure DevOps Test task in pipeline recognizes too many projects if configured as documentation says",
         "url": "https://github.com/xunit/xunit/issues/2129",
         "number": 2129,
         "comments_count": 0,
-        "created_at": "2020-08-04T07:01:04+00:00"
+        "created_at": "2020-08-04T07:01:04+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Documentation: List of assertions and their meanings",
         "url": "https://github.com/xunit/xunit/issues/1901",
         "number": 1901,
         "comments_count": 2,
-        "created_at": "2019-02-07T15:55:44+00:00"
+        "created_at": "2019-02-07T15:55:44+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "xUnit1026 (Unused parameter) fires on `fixed` statement",
         "url": "https://github.com/xunit/xunit/issues/1969",
         "number": 1969,
         "comments_count": 4,
-        "created_at": "2019-06-20T10:36:16+00:00"
+        "created_at": "2019-06-20T10:36:16+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "Document need to use --logger \"console;verbosity=detailed\" when using dotnet test and ITestOutputHelper",
         "url": "https://github.com/xunit/xunit/issues/2136",
         "number": 2136,
         "comments_count": 1,
-        "created_at": "2020-08-20T15:16:23+00:00"
+        "created_at": "2020-08-20T15:16:23+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       },
       {
         "title": "MemberData using another Class' method requires a dummy method in the test class",
         "url": "https://github.com/xunit/xunit/issues/1976",
         "number": 1976,
         "comments_count": 3,
-        "created_at": "2019-06-26T09:26:23+00:00"
+        "created_at": "2019-06-26T09:26:23+00:00",
+        "__comment__": "This section provides details about an issue in the repository."
       }
-    ]
+    ],
+    "__comment__": "This section describes the project repository details."
   }
 ]

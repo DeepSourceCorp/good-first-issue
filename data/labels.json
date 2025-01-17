@@ -1,3 +1,11 @@
 {
-  "labels": ["good first issue", "good-first-issue"]
+  "labels": [
+    "good first issue",
+    "good-first-issue"
+  ],
+  "_comments": [
+    "Labels used to identify beginner-friendly issues.",
+    "Alternative spellings for flexibility."
+  ]
 }
+

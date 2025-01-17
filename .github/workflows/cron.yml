@@ -1,41 +1,41 @@
-name: Cron
+name: Cron # Nombre del flujo de trabajo, en este caso, "Cron".
 
 on:
   schedule:
-    - cron: '0 8 * * *'
-  workflow_dispatch:
+    - cron: '0 8 * * *' # Configuración de cron para ejecutar el flujo de trabajo todos los días a las 8:00 AM (UTC).
+  workflow_dispatch: # Permite disparar manualmente el flujo de trabajo desde la interfaz de GitHub.
 
 jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
+  deploy: # Define un trabajo llamado "deploy".
+    runs-on: ubuntu-latest # Especifica que el trabajo se ejecutará en la última versión de Ubuntu.
+    steps: # Lista de pasos que se ejecutarán en secuencia.
+      - name: Checkout repo # Paso para clonar el repositorio.
+        uses: actions/checkout@v4 # Acción de GitHub para clonar el repositorio.
 
-      - name: Set up Python 3.12
-        uses: actions/setup-python@v5
+      - name: Set up Python 3.12 # Paso para configurar el entorno de Python.
+        uses: actions/setup-python@v5 # Acción de GitHub para configurar Python.
         with:
-          python-version: '3.12'
+          python-version: '3.12' # Especifica la versión de Python a usar.
 
-      - name: Set up bun
-        uses: oven-sh/setup-bun@v1
+      - name: Set up bun # Paso para configurar Bun, un gestor de paquetes y ejecutor de JavaScript.
+        uses: oven-sh/setup-bun@v1 # Acción de GitHub para instalar y configurar Bun.
 
-      - name: Install dependencies
+      - name: Install dependencies # Paso para instalar las dependencias necesarias.
         run: |
-          make pre-build
-          bun install
+          make pre-build # Comando para ejecutar el script `make pre-build`, generalmente usado para preparar dependencias.
+          bun install # Comando para instalar dependencias usando Bun.
 
-      - name: Populate the latest data
-        run: make generate
+      - name: Populate the latest data # Paso para generar o actualizar los datos más recientes.
+        run: make generate # Comando para ejecutar el script `make generate`, que probablemente genera o actualiza datos.
         env:
-          GH_ACCESS_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
+          GH_ACCESS_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }} # Token de acceso a GitHub utilizado como variable de entorno para autenticación.
 
-      - name: Sync data to the blob store
-        run: bun sync up
+      - name: Sync data to the blob store # Paso para sincronizar los datos con un almacenamiento blob.
+        run: bun sync up # Comando para subir datos al almacenamiento usando Bun.
         env:
-          BLOB_READ_WRITE_TOKEN: ${{ secrets.BLOB_READ_WRITE_TOKEN }}
+          BLOB_READ_WRITE_TOKEN: ${{ secrets.BLOB_READ_WRITE_TOKEN }} # Token de acceso al almacenamiento blob utilizado como variable de entorno.
 
-      - name: Trigger deployment
-        uses: joelwmale/webhook-action@master
+      - name: Trigger deployment # Paso para activar la implementación mediante un webhook.
+        uses: joelwmale/webhook-action@master # Acción de GitHub para realizar una solicitud HTTP al webhook.
         with:
-          url: ${{ secrets.DEPLOY_HOOK_URL }}
+          url: ${{ secrets.DEPLOY_HOOK_URL }} # URL del webhook para activar la implementación.

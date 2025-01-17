@@ -1,31 +1,37 @@
-# Nuxt dev/build outputs
-.output
-.data
-.nuxt
-.nitro
-.cache
-dist
+# Nuxt.js development and build outputs
+.output/            # Nuxt's output directory for builds
+.data/              # Temporary data files
+.nuxt/              # Nuxt's runtime files
+.nitro/             # Nitro engine files for server rendering
+.cache/             # Cache directory for Nuxt
+dist/               # Distribution folder for built files
 
-# Node dependencies
-node_modules
+# Node.js dependencies
+node_modules/       # Folder for Node.js packages, managed by package.json
 
-# Logs
-logs
-*.log
+# Log files
+logs/               # Application log directory
+*.log               # Log files (any name ending with .log)
 
-# Misc
-.DS_Store
-.fleet
-.idea
+# Editor and system-specific files
+.DS_Store           # macOS file
+.fleet/             # JetBrains Fleet IDE
+.idea/              # IntelliJ IDEA project files
 
-# Local env files
-.env
-.env.*
-!.env.example
+# Local environment files
+.env                # Environment configuration
+.env.*              # Variants of .env files (e.g., .env.development)
+!.env.example       # Include the template file for environment variables
 
-__pycache__
+# Python cache files
+__pycache__/        # Python-generated cache files
 
-# Generated data files
-data/generated.json
-data/tags.json
-content/language/*.md
+# Automatically generated data files
+data/generated.json # JSON file for pre-generated data
+data/tags.json      # Tags data file
+content/language/*.md # Markdown files for language content
+
+# Temporary files
+*.tmp               # Temporary files
+*.swp               # Swap files (e.g., for Vim)
+*.bak               # Backup files

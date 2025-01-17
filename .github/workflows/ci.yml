@@ -1,21 +1,21 @@
-name: CI
+name: CI # Name of the workflow, in this case, Continuous Integration (CI).
 
-on: [push]
+on: [push] # Trigger the workflow whenever there is a push event to the repository.
 
 jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
+  test: # Defines a job named "test".
+    runs-on: ubuntu-latest # Specifies that the job will run on the latest Ubuntu virtual machine.
+    steps: # List of sequential steps to be executed as part of the job.
+      - name: Checkout repo # Step to checkout the repository code.
+        uses: actions/checkout@v4 # GitHub Action to clone the repository.
 
-      - name: Set up Python 3.12
-        uses: actions/setup-python@v5
+      - name: Set up Python 3.12 # Step to configure the Python environment.
+        uses: actions/setup-python@v5 # GitHub Action to set up a specific Python version.
         with:
-          python-version: '3.12'
+          python-version: '3.12' # Specifies the Python version to use.
 
-      - name: Install dependencies
-        run: make pre-build
+      - name: Install dependencies # Step to install required dependencies for the project.
+        run: make pre-build # Command to execute the `make pre-build` script, typically for installing dependencies.
 
-      - name: Run tests for data sanity
-        run: make test
+      - name: Run tests for data sanity # Step to run tests and ensure data integrity.
+        run: make test # Command to execute the `make test` script for running tests.
