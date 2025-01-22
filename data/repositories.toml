@@ -67,6 +67,7 @@ repositories = [
   'github.com/awslabs/serverless-application-model',
   'github.com/axel-download-accelerator/axel',
   'github.com/Azure/mmlspark',
+  'github.com/Azure/PyRIT',
   'github.com/babel/babel',
   'github.com/badges/shields',
   'github.com/ballercat/walt',
