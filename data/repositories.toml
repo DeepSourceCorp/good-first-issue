@@ -404,6 +404,7 @@ repositories = [
   'github.com/lerna/lerna',
   'github.com/less/less.js',
   'github.com/lhsazevedo/vuetify-material-auth',
+  'github.com/liam-hq/liam',
   'github.com/lifting-bits/mcsema',
   'github.com/lightdash/lightdash',
   'github.com/lightningnetwork/lnd',
