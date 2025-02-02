@@ -803,6 +803,7 @@ repositories = [
   'github.com/wger-project/wger',
   'github.com/whatwg/fetch',
   'github.com/whatwg/html',
+  'github.com/wheslleyrimar/BuildCLI',
   'github.com/whitesmith/rubycritic',
   'github.com/winstonjs/winston',
   'github.com/winsw/winsw',
