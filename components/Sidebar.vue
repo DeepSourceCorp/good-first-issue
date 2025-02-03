@@ -63,17 +63,34 @@
 <script setup>
 import Tags from '~/data/tags.json'
 import { PlusCircleIcon } from '@heroicons/vue/24/outline'
-import {HeartIcon} from '@heroicons/vue/24/solid'
+import { HeartIcon } from '@heroicons/vue/24/solid'
 </script>
-<style>
+
+<style scoped>
 .section-heading {
   @apply text-sm font-bold uppercase tracking-wider mb-2 text-slate;
 }
+
 .active-pill {
   @apply text-juniper font-semibold border-juniper;
 }
 
 .active-pill > span {
   @apply text-juniper;
+}
+
+/* Adjust sidebar padding and text size for small screens */
+@media (max-width: 768px) {
+  .masthead {
+    padding-left: 4rem; /* Adjust left padding on smaller screens */
+  }
+
+  .section-heading {
+    font-size: 1rem; /* Adjust heading size */
+  }
+
+  .text-sm {
+    font-size: 0.875rem; /* Adjust paragraph text size */
+  }
 }
 </style>

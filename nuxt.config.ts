@@ -2,12 +2,16 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['@nuxtjs/tailwindcss', 'nuxt-gtag', 'nuxt-simple-sitemap'],
+
   nitro: {
     prerender: {
       crawlLinks: true
     }
   },
+
   site: {
     url: 'https://goodfirstissue.dev'
-  }
+  },
+
+  compatibilityDate: '2025-02-03'
 })

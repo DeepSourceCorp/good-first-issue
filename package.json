@@ -8,12 +8,14 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "sync": "bun sync.js"
+    "sync": "bun sync.js",
+    "test": "your-test-command",
+    "lint": "your-lint-command"
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
     "@nuxtjs/tailwindcss": "latest",
-    "nuxt": "^3.8.2",
+    "nuxt": "^3.15.4",
     "nuxt-gtag": "^0.5.9",
     "nuxt-simple-sitemap": "^3.4.0",
     "prettier": "^3.1.1"
@@ -22,5 +24,11 @@
     "@heroicons/vue": "^2.0.18",
     "@vercel/blob": "^0.16.1",
     "dayjs": "^1.11.10"
-  }
+  },
+  "version": "1.0.0",
+  "description": "<p align=\"center\">\r   <a href=\"https://goodfirstissue.dev\" target=\"_blank\">\r     <img src=\"public/readme-logo.svg\">\r   </a>\r </p>\r <hr>",
+  "main": "sync.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
