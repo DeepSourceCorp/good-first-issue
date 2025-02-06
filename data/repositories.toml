@@ -547,6 +547,7 @@ repositories = [
   'github.com/owncloud/client',
   'github.com/oxyplot/oxyplot',
   'github.com/p4lang/behavioral-model',
+  'github.com/PalisadoesFoundation/talawa-admin',
   'github.com/panda3d/panda3d',
   'github.com/pandas-dev/pandas',
   'github.com/pantsbuild/pants',
