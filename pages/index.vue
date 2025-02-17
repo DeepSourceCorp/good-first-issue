@@ -1,4 +1,6 @@
 <!-- Marco Fernandez -->
+<!-- https://github.com/fernandezmarco/good-first-issue.git -->
+<!-- https://github.com/DeepSourceCorp/good-first-issue/pull/2294 -->
 
 <template>
   <div class="p-4 w-full">
