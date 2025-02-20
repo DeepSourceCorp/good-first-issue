@@ -5,15 +5,33 @@
 </p>
 <hr>
 
-Welcome! 👋🏼
+![Contributors](https://img.shields.io/github/contributors/DeepSourceCorp/good-first-issue)
+![Forks](https://img.shields.io/github/forks/DeepSourceCorp/good-first-issue?style=social)
+![Stars](https://img.shields.io/github/stars/DeepSourceCorp/good-first-issue?style=social)
+![License](https://img.shields.io/github/license/DeepSourceCorp/good-first-issue)
+
+## Welcome! 👋🏼
 
 **Good First Issue** is an initiative to curate easy pickings from popular projects, so developers who've never contributed to open-source can get started quickly.
 
 Open-source maintainers are always looking to get more people involved, but new developers generally think it's challenging to become a contributor. We believe getting developers to fix super-easy issues removes the barrier for future contributions. This is why Good First Issue exists.
 
-## Adding a new project
+## Preview
+Here’s what Good First Issue looks like:
 
-You're welcome to add a new project in Good First Issue, and we encourage all projects &mdash; old and new, big and small.
+![Preview](public/screenshot.png)
+
+## Prerequisites
+Before setting up this project, make sure you have:
+- **Python 3.x** installed. [Download here](https://www.python.org/downloads/)
+- **Node.js (latest LTS version)** installed. [Download here](https://nodejs.org/)
+- **Bun** package manager installed (if not already). Install it with:
+  ```bash
+  curl -fsSL https://bun.sh/install | bash
+  ```
+
+## Adding a new project
+You're welcome to add a new project in Good First Issue, and we encourage all projects — old and new, big and small.
 
 Follow these simple steps:
 
@@ -31,8 +49,22 @@ Follow these simple steps:
 
 - Create a new pull-request. Please add the link to the issues page of the repository in the PR description. Once the pull request is merged, the changes will be live on [goodfirstissue.dev](https://goodfirstissue.dev/).
 
-## Setting up the project locally
+## Example Pull Request Format
+When creating a Pull Request (PR), use the following format in the description:
 
+```
+### Added New Project: [Project Name]
+
+- Repository: [GitHub URL]
+- Issues Label: `good first issue`
+- Contributors: [Number]
+- README & CONTRIBUTING.md present: ✅ / ❌
+- Actively maintained: ✅ / ❌
+
+Fixes #<Issue Number> (if applicable)
+```
+
+## Setting up the project locally
 Good First Issue has two components — the front-end app built with Nuxt.js and a data population script written in Python.
 
 To contribute new features and changes to the website, you would want to run the app locally. Please follow these steps:
@@ -54,3 +86,7 @@ $ bun dev # start the development server
 ```
 
 The app should open in your browser.
+
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+s
