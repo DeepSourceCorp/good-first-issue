@@ -49,6 +49,7 @@ repositories = [
   'github.com/Arsenic-ATG/Qt-calculator',
   'github.com/artalar/reatom',
   'github.com/arxiv-vanity/engrafo',
+  'github.com/arjad/chrome-notes',
   'github.com/AssemblyScript/assemblyscript',
   'github.com/assertj/assertj-core',
   'github.com/astropy/astropy',
