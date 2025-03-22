@@ -55,3 +55,5 @@ $ bun dev # start the development server
 ```
 
 The app should open in your browser.
+
+> ⚠️ If you encounter an EPERM error when running `bun install`, try using `--force` or check your system permissions.

@@ -65,6 +65,7 @@ import Tags from '~/data/tags.json'
 import { PlusCircleIcon } from '@heroicons/vue/24/outline'
 import {HeartIcon} from '@heroicons/vue/24/solid'
 </script>
+
 <style>
 .section-heading {
   @apply text-sm font-bold uppercase tracking-wider mb-2 text-slate;
@@ -72,7 +73,6 @@ import {HeartIcon} from '@heroicons/vue/24/solid'
 .active-pill {
   @apply text-juniper font-semibold border-juniper;
 }
-
 .active-pill > span {
   @apply text-juniper;
 }
