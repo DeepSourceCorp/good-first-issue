@@ -6,6 +6,7 @@
 <hr>
 
 Welcome! 👋🏼
+My first open source contribution! 🚀
 
 **Good First Issue** is an initiative to curate easy pickings from popular projects, so developers who've never contributed to open-source can get started quickly.
 
