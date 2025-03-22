@@ -7,39 +7,42 @@
         contribution to open-source.
       </p>
     </div>
+
     <div class="pt-6">
       <h3 class="section-heading">Browse by language</h3>
       <div>
-        <nuxt-link
+        <button
           v-for="tag in Tags"
           :key="tag.slug"
-          :to="'/language/' + tag.slug"
+          @click="toggleTag(tag.slug)"
           :class="{
-            'active-pill': $route.params.slug === tag.slug,
-            'border-slate hover:text-juniper hover:border-juniper': $route.params.slug !== tag.slug
+            'active-pill': selectedTagsValue.includes(tag.slug),
+            'border-slate hover:text-juniper hover:border-juniper': !selectedTagsValue.includes(tag.slug)
           }"
           class="group mx-1 border px-2 py-1 inline-block rounded-sm my-1 text-sm"
-          >{{ tag.language }}
+        >
+          {{ tag.language }}
           <span
             :class="{
-              'text-vanilla-400 group-hover:text-juniper': $route.params.slug !== tag.slug
+              'text-vanilla-400 group-hover:text-juniper': !selectedTagsValue.includes(tag.slug)
             }"
-            >&times; {{ tag.count }}</span
-          ></nuxt-link
-        >
+          >
+            &times; {{ tag.count }}
+          </span>
+        </button>
       </div>
     </div>
+
     <div class="pt-6">
       <a
         class="bg-juniper hover:bg-light_juniper text-ink-400 uppercase rounded-md font-bold text-center px-1 py-3 flex flex-row items-center justify-center space-x-1"
         href="https://github.com/deepsourcelabs/good-first-issue#adding-a-new-project"
         target="_blank"
         rel="noopener noreferrer"
-        >
-          <PlusCircleIcon class="h-5 w-5 stroke-2" />
-          <span>Add your project</span>
-        </a
       >
+        <PlusCircleIcon class="h-5 w-5 stroke-2" />
+        <span>Add your project</span>
+      </a>
     </div>
 
     <div class="text-sm pt-6">
@@ -50,11 +53,10 @@
         href="https://deepsource.com?ref=gfi"
       >
         <HeartIcon class="w-4 h-4 text-cherry" />
-        <span class="ml-2"
-          >A
-          <span class="inline hover:underline text-juniper" title="Visit DeepSource website">DeepSource</span>
-          initative</span
-        >
+        <span class="ml-2">
+          A <span class="inline hover:underline text-juniper" title="Visit DeepSource website">DeepSource</span>
+          initiative
+        </span>
       </a>
     </div>
   </section>
@@ -63,16 +65,30 @@
 <script setup>
 import Tags from '~/data/tags.json'
 import { PlusCircleIcon } from '@heroicons/vue/24/outline'
-import {HeartIcon} from '@heroicons/vue/24/solid'
+import { HeartIcon } from '@heroicons/vue/24/solid'
+import { useSelectedTags } from '~/composables/states'
+
+const { value: selectedTagsValue } = useSelectedTags()
+
+function toggleTag(slug) {
+  const index = selectedTagsValue.indexOf(slug)
+  if (index > -1) {
+    selectedTagsValue.splice(index, 1)
+  } else {
+    selectedTagsValue.push(slug)
+  }
+}
 </script>
 
-<style>
+<style lang="postcss">
 .section-heading {
   @apply text-sm font-bold uppercase tracking-wider mb-2 text-slate;
 }
+
 .active-pill {
   @apply text-juniper font-semibold border-juniper;
 }
+
 .active-pill > span {
   @apply text-juniper;
 }

@@ -13,13 +13,16 @@
   "devDependencies": {
     "@nuxt/devtools": "latest",
     "@nuxtjs/tailwindcss": "latest",
+    "autoprefixer": "^10.4.21",
     "nuxt": "^3.8.2",
     "nuxt-gtag": "^0.5.9",
-    "nuxt-simple-sitemap": "^3.4.0",
-    "prettier": "^3.1.1"
+    "postcss": "^8.5.3",
+    "prettier": "^3.1.1",
+    "tailwindcss": "^3.4.17"
   },
   "dependencies": {
     "@heroicons/vue": "^2.0.18",
+    "@nuxtjs/sitemap": "^7.2.9",
     "@vercel/blob": "^0.16.1",
     "dayjs": "^1.11.10"
   }
