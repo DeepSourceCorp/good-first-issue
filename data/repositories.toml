@@ -14,6 +14,7 @@ repositories = [
   'github.com/alibaba/nacos',
   'github.com/alibaba/Sentinel',
   'github.com/allure-framework/allure2',
+  'github.com/amelioro/ameliorate',
   'github.com/ampproject/amphtml',
   'github.com/AMU-Code-Squad/food-up',
   'github.com/angular-ui/ui-grid',
