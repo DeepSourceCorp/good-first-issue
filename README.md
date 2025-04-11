@@ -45,6 +45,14 @@ To contribute new features and changes to the website, you would want to run the
 $ cp data/generated.sample.json data/generated.json
 $ cp data/tags.sample.json data/tags.json
 ```
+### Installing Bun
+
+This project uses [Bun](https://bun.sh), a modern JavaScript runtime.
+
+If you don’t have Bun installed already, follow the official installation guide here:  
+👉 [https://bun.sh/docs/installation](https://bun.sh/docs/installation)
+
+Once installed, you can use `bun install` and `bun dev` commands to get started.
 
 3. Build the front-end app and start the development server.
 
