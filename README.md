@@ -35,6 +35,14 @@ Follow these simple steps:
 
 Good First Issue has two components — the front-end app built with Nuxt.js and a data population script written in Python.
 
+### Installing Bun
+
+This project uses [Bun](https://bun.sh/), a fast JavaScript runtime like Node.js.
+
+If you don’t have Bun installed yet, follow the official installation guide:  
+👉 [https://bun.sh/docs/installation](https://bun.sh/docs/installation)
+
+
 To contribute new features and changes to the website, you would want to run the app locally. Please follow these steps:
 
 1. Clone the project locally. Make sure you have Python 3 and a recent version of Node.js installed on your computer.
