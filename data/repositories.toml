@@ -629,6 +629,7 @@ repositories = [
   'github.com/rigetti/pyquil',
   'github.com/ripple/rippled',
   'github.com/rjsf-team/react-jsonschema-form',
+  'github.com/RobotecAI/rai'
   'github.com/rodrigo-arenas/Sklearn-genetic-opt',
   'github.com/rstudio/keras',
   'github.com/rubberduck-vba/Rubberduck',
