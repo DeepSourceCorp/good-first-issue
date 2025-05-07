@@ -123,6 +123,7 @@ repositories = [
   'github.com/cloudflare/wrangler',
   'github.com/cobrateam/splinter',
   'github.com/cockroachdb/cockroach',
+  'github.com/cocoindex-io/cocoindex',
   'github.com/codenameone/CodenameOne',
   'github.com/coder/coder',
   'github.com/coder/code-server',
