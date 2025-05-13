@@ -782,6 +782,7 @@ repositories = [
   'github.com/vmware/versatile-data-kit',
   'github.com/volta-cli/volta',
   'github.com/VSCodeVim/Vim',
+  'github.com/vailabel/vailabel-studio',
   'github.com/vuejs/vue-router',
   'github.com/vuejs/vue',
   'github.com/vuejs/vuepress',
