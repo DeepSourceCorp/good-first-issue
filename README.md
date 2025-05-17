@@ -54,3 +54,6 @@ $ bun dev # start the development server
 ```
 
 The app should open in your browser.
+The app should now automatically open in your default browser. If it doesn't, you can manually visit [http://localhost:3000](http://localhost:3000) to view it.
+---=>First open-source contribution by Inthiyaz 🚀
+
