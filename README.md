@@ -45,8 +45,53 @@ To contribute new features and changes to the website, you would want to run the
 $ cp data/generated.sample.json data/generated.json
 $ cp data/tags.sample.json data/tags.json
 ```
+3. Installation of Bun
 
-3. Build the front-end app and start the development server.
+#### Step 1: Open your terminal
+
+You’ll need a terminal with:
+
+- macOS, Linux, or WSL (for Windows)
+    
+- `curl` and `bash` (most systems have them by default)
+    
+
+#### Step 2: Run the official install script
+
+Copy and paste this into your terminal:
+
+```
+curl -fsSL https://bun.sh/install | bash
+```
+
+#### Step 3: Add Bun to your shell configuration
+
+After the script runs, it will tell you to **add Bun to your shell profile** (`.bashrc`(Most Linux distros), `.zshrc`(macOS) , or `.profile`), like this:
+
+```
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+```
+
+You can copy and paste this into your shell config file:
+
+```echo 'export BUN_INSTALL="$HOME/.bun"' >> ~/.bashrc
+echo 'export PATH="$BUN_INSTALL/bin:$PATH"' >> ~/.bashrc
+source ~/.bashrc
+```
+Replace `.bashrc` with `.zshrc` or `.profile` depending on your shell.
+
+#### Step 4: Verify the installation
+
+After restarting your terminal, run:
+
+```
+bun --version
+```
+If you see a version number like `1.1.5`, Bun is installed successfully!
+
+
+4. Build the front-end app and start the development server.
 
 ```bash
 $ bun install # install the dependencies
