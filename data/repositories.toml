@@ -24,6 +24,7 @@ repositories = [
   'github.com/apache/age',
   'github.com/apache/apisix',
   'github.com/apache/dubbo',
+  'github.com/apache/gravitino',
   'github.com/apache/incubator-doris',
   'github.com/apache/incubator-mxnet',
   'github.com/apache/incubator-superset',
