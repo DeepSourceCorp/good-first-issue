@@ -233,6 +233,7 @@ repositories = [
   'github.com/facebook/flow',
   'github.com/facebook/fresco',
   'github.com/facebook/jest',
+  'github.com/facebook/pyrefly',
   'github.com/facebook/react-native-website',
   'github.com/facebook/react-native',
   'github.com/facebookincubator/Bowler',
