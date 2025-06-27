@@ -403,6 +403,7 @@ repositories = [
   'github.com/learn-awesome/learn',
   'github.com/lerna/lerna',
   'github.com/less/less.js',
+  "github.com/LexDevM/VelocityOS",
   'github.com/lhsazevedo/vuetify-material-auth',
   'github.com/lifting-bits/mcsema',
   'github.com/lightdash/lightdash',
