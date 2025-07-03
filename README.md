@@ -32,6 +32,8 @@ Follow these simple steps:
 - Create a new pull-request. Please add the link to the issues page of the repository in the PR description. Once the pull request is merged, the changes will be live on [goodfirstissue.dev](https://goodfirstissue.dev/).
 
 ## Setting up the project locally
+# Contributor 
+- Anjali jha -first open source contibutuion
 
 Good First Issue has two components — the front-end app built with Nuxt.js and a data population script written in Python.
 
@@ -54,3 +56,7 @@ $ bun dev # start the development server
 ```
 
 The app should open in your browser.
+# Contributor 
+- Anjali jha -first open source contibutuion
+
+
