@@ -37,7 +37,7 @@ Good First Issue has two components — the front-end app built with Nuxt.js and
 
 To contribute new features and changes to the website, you would want to run the app locally. Please follow these steps:
 
-1. Clone the project locally. Make sure you have Python 3 and a recent version of Node.js installed on your computer.
+1. Clone the project locally. Make sure you have Python 3.8+ and a recent LTS version of Node.js (e.g., 18.x or 20.x) installed on your computer.
 
 2. Make a copy of the sample data files for your local app to use and rename them to the filename that the app expects. **This step is important, as the front-end app won't work without these data files.**
 
@@ -47,6 +47,8 @@ $ cp data/tags.sample.json data/tags.json
 ```
 
 3. Build the front-end app and start the development server.
+
+If you don't have Bun installed, you can find installation instructions on their official website: Bun Installation Guide [<sup>3</sup>](https://bun.sh/docs/installation).
 
 ```bash
 $ bun install # install the dependencies
