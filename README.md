@@ -48,6 +48,14 @@ $ cp data/tags.sample.json data/tags.json
 
 3. Build the front-end app and start the development server.
 
+### Installing Bun
+
+This project uses [Bun](https://bun.sh), a fast all-in-one JavaScript runtime. If you don’t already have it installed, please follow the official installation instructions:
+
+👉 [https://bun.sh/docs/installation](https://bun.sh/docs/installation)
+
+Once Bun is installed, you can proceed with the following commands:
+
 ```bash
 $ bun install # install the dependencies
 $ bun dev # start the development server
