@@ -54,3 +54,9 @@ $ bun dev # start the development server
 ```
 
 The app should open in your browser.
+
+### Installing Bun
+
+This project uses [Bun](https://bun.sh), a fast all-in-one JavaScript runtime.
+
+> If you don't have Bun installed, follow the official installation guide: [https://bun.sh/docs/installation](https://bun.sh/docs/installation)
