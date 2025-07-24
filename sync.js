@@ -1,93 +1,101 @@
-import fs from 'fs'
+import fs from 'fs/promises'
 import path from 'path'
 import https from 'https'
-
+import { pipeline } from 'stream/promises'
+import { createWriteStream } from 'fs'
 import { put, list } from '@vercel/blob'
+import dotenv from 'dotenv'
+
+dotenv.config() // Load .env
 
 const dirToSync = './data'
 const filesToSync = ['generated.json', 'tags.json']
 
+// Validate required env variable
+if (!process.env.BLOB_READ_WRITE_TOKEN) {
+  console.error('❌ BLOB_READ_WRITE_TOKEN not set in .env or env variables.')
+  process.exit(1)
+}
+
 /**
- * Downloads a file from a given url to a specified destination.
- *
- * @param {string} url - The URL of the file to download.
- * @param {string} dest - The destination where the file should be saved.
- * @return {Promise} A Promise that resolves when the file has been downloaded.
+ * Download a file from a given URL and save it locally
  */
-function downloadFile(url, dest) {
+async function downloadFile(url, destPath) {
+  const fileStream = createWriteStream(destPath)
+
   return new Promise((resolve, reject) => {
-    // Check if the file already exists
-    const fileExists = fs.existsSync(dest)
+    https.get(url, (response) => {
+      if (response.statusCode !== 200) {
+        reject(new Error(`Failed download: status code ${response.statusCode}`))
+        return
+      }
 
-    const file = fs.createWriteStream(dest, { flags: 'w' }) // 'w' flag for write mode
-
-    https
-      .get(url, (response) => {
-        if (response.statusCode !== 200) {
-          reject(new Error(`failed to download file: status code ${response.statusCode}`))
-          return
-        }
-
-        response.pipe(file)
-
-        if (fileExists) {
-          console.log(`file ${dest} already exists. overwriting.`)
-        }
-      })
-      .on('error', (err) => {
-        reject(err)
-      })
-
-    file.on('finish', () => {
-      resolve()
-    })
-
-    file.on('error', (err) => {
-      fs.unlink(dest) // delete the file on error
-      reject(err)
-    })
+      pipeline(response, fileStream)
+        .then(resolve)
+        .catch((err) => {
+          fs.unlink(destPath)
+          reject(err)
+        })
+    }).on('error', reject)
   })
 }
 
 /**
- * Sync files from local to Vercel Blob
+ * Upload local files to Vercel Blob Storage
  */
 async function syncFilesUp() {
-  for (const fileName of filesToSync) {
-    const filePath = path.resolve(path.join(dirToSync, fileName))
-    const stat = await fs.statSync(filePath)
+  console.info('🔼 Starting sync up...')
 
-    if (stat.isFile()) {
-      const fileContent = await fs.readFileSync(filePath)
-      await put(fileName, fileContent, { access: 'public', addRandomSuffix: false })
-    }
-  }
+  await Promise.all(
+    filesToSync.map(async (fileName) => {
+      const filePath = path.join(dirToSync, fileName)
+      try {
+        const content = await fs.readFile(filePath)
+        await put(fileName, content, { access: 'public', addRandomSuffix: false })
+        console.log(`✅ Uploaded: ${fileName}`)
+      } catch (err) {
+        console.error(`❌ Failed to upload ${fileName}:`, err.message)
+      }
+    })
+  )
 }
 
 /**
- * Sync files from Vercel Blob to local
+ * Download files from Vercel Blob to local directory
  */
 async function syncFilesDown() {
-  const response = await list()
-  for (const blob of response.blobs) {
-    await downloadFile(blob.url, path.resolve(path.join(dirToSync, blob.pathname)))
+  console.info('🔽 Starting sync down...')
+
+  try {
+    const response = await list()
+
+    await Promise.all(
+      response.blobs.map(async (blob) => {
+        const destPath = path.join(dirToSync, blob.pathname)
+        try {
+          await downloadFile(blob.url, destPath)
+          console.log(`✅ Downloaded: ${blob.pathname}`)
+        } catch (err) {
+          console.error(`❌ Failed to download ${blob.pathname}:`, err.message)
+        }
+      })
+    )
+  } catch (err) {
+    console.error('❌ Failed to fetch blob list:', err.message)
   }
 }
 
-if (!("BLOB_READ_WRITE_TOKEN" in process.env)) {
-  console.error('`BLOB_READ_WRITE_TOKEN` not set in env. exiting.')
-  process.exit(1)  // skicq: JS-0263
-}
+// Entrypoint
+const command = process.argv[2]
 
-switch (process.argv[2]) {
+switch (command) {
   case 'up':
     await syncFilesUp()
-    console.info('syncing up successful.')
     break
   case 'down':
     await syncFilesDown()
-    console.info('syncing down successful.')
     break
   default:
-    console.error('must provide a valid sync direction. exiting.')
+    console.error('❗ Please specify "up" or "down" as argument.')
+    process.exit(1)
 }
