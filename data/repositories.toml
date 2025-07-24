@@ -414,6 +414,7 @@ repositories = [
   'github.com/linq2db/linq2db',
   'github.com/LMMS/lmms',
   'github.com/loadimpact/k6',
+  'github.com/LOAMRI/asltk',
   'github.com/lobsters/lobsters',
   'github.com/ludwig-ai/ludwig',
   'github.com/ludwig-ai/ludwig-docs',
