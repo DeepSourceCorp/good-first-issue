@@ -360,7 +360,7 @@ repositories = [
   'github.com/jupyterlab/jupyterlab',
   'github.com/justadudewhohacks/opencv4nodejs',
   'github.com/juspay/hyperswitch',
-  'github.com/karanlvm/PyWard'
+  'github.com/karanlvm/PyWard',
   'github.com/kariustobias/acme-rs',
   'github.com/KaTeX/KaTeX',
   'github.com/kedro-org/kedro',
