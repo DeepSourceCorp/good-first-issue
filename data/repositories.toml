@@ -66,6 +66,7 @@ repositories = [
   'github.com/awslabs/s2n',
   'github.com/awslabs/serverless-application-model',
   'github.com/axel-download-accelerator/axel',
+  'github.com/aymericzip/intlayer'
   'github.com/Azure/mmlspark',
   'github.com/babel/babel',
   'github.com/badges/shields',
@@ -840,5 +841,5 @@ repositories = [
   'github.com/zulip/zulip',
   'github.com/ZupIT/charlescd',
   'github.com/ZupIT/ritchie-cli',
-  'github.com/ZupIT/ritchie-formulas'
+  'github.com/ZupIT/ritchie-formulas',
  ]
