@@ -53,4 +53,4 @@ $ bun install # install the dependencies
 $ bun dev # start the development server
 ```
 
-The app should open in your browser.
+The app should open in your browser
