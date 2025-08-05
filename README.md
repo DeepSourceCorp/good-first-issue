@@ -54,3 +54,52 @@ $ bun dev # start the development server
 ```
 
 The app should open in your browser.
+
+## Quick Start
+
+If you're looking to get the app running quickly, follow these steps:
+
+```bash
+# Clone the repo
+git clone https://github.com/YOUR-USERNAME/good-first-issue.git
+cd good-first-issue
+
+# Install Bun if you haven't already
+curl -fsSL https://bun.sh/install | bash
+
+# Copy sample data files
+cp data/generated.sample.json data/generated.json
+cp data/tags.sample.json data/tags.json
+
+# Install dependencies and start the dev server
+bun install
+bun dev
+
+```
+
+## About Sample Data Files
+
+The app needs some local data to run. These files contain repo info and tags used by the site. Make sure to copy them:
+
+``` bash
+
+cp data/generated.sample.json data/generated.json
+cp data/tags.sample.json data/tags.json
+
+```
+
+## About Bun
+
+This project uses Bun, a fast JavaScript runtime like Node.js.
+
+To install Bun:
+
+``` bash
+curl -fsSL https://bun.sh/install | bash
+
+```
+
+## 🤝 Contributing
+
+Please read our [CONTRIBUTING.md](./CONTRIBUTING.md) for guidelines on how to contribute.
+
