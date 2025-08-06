@@ -378,6 +378,7 @@ repositories = [
   'github.com/Kong/insomnia',
   'github.com/Kong/kong',
   'github.com/krassowski/jupyterlab-lsp',
+  'github.com/kriasoft/react-starter-kit'
   'github.com/krishdevdb/reseter.css',
   'github.com/kshashikumar/mysql-gui',
   'github.com/ktorio/ktor',
