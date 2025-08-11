@@ -306,6 +306,7 @@ repositories = [
   'github.com/hamaluik/timecop',
   'github.com/haproxy/haproxy',
   'github.com/hardkoded/puppeteer-sharp',
+  'https://github.com/Harish5232/spotify-client',
   'github.com/Harvey-OS/harvey',
   'github.com/hashicorp/packer',
   'github.com/hasura/gitkube',
