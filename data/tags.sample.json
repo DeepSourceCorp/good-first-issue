@@ -3,5 +3,12 @@
   { "language": "Python", "count": 5, "slug": "python" },
   { "language": "HTML", "count": 4, "slug": "html" },
   { "language": "TypeScript", "count": 3, "slug": "typescript" },
-  { "language": "C", "count": 3, "slug": "c" }
+  { "language": "C", "count": 3, "slug": "c" },
+  { "language": "Vue", "count": 2, "slug": "vue" },
+  { "language": "MATLAB", "count": 4, "slug": "matlab" },
+  { "language": "SQL", "count": 6, "slug": "sql" },
+  { "language": "R", "count": 5, "slug": "r" },
+  { "language": "CSS", "count": 8, "slug": "css" },
+  { "language": "Assembly", "count": 3, "slug": "assembly" },
+  { "language": "Visual Basic", "count": 3, "slug": "visual-basic" }
 ]
