@@ -30,6 +30,27 @@
       </div>
     </div>
     <div class="pt-6">
+      <h3 class="section-heading">Filter options</h3>
+      <div class="space-y-4">
+        <div>
+          <label class="text-sm block mb-1">Sort by stars:</label>
+          <select v-model="starsSortOrder" class="bg-ink-400 text-vanilla-300 border border-ink-200 rounded-sm px-2 py-1 w-full text-sm">
+            <option value="none">No sorting</option>
+            <option value="desc">Most stars first</option>
+            <option value="asc">Least stars first</option>
+          </select>
+        </div>
+        <div>
+          <label class="text-sm block mb-1">Sort by activity:</label>
+          <select v-model="activitySortOrder" class="bg-ink-400 text-vanilla-300 border border-ink-200 rounded-sm px-2 py-1 w-full text-sm">
+            <option value="none">No sorting</option>
+            <option value="desc">Most recent first</option>
+            <option value="asc">Oldest first</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="pt-6">
       <a
         class="bg-juniper hover:bg-light_juniper text-ink-400 uppercase rounded-md font-bold text-center px-1 py-3 flex flex-row items-center justify-center space-x-1"
         href="https://github.com/deepsourcelabs/good-first-issue#adding-a-new-project"
@@ -64,6 +85,10 @@
 import Tags from '~/data/tags.json'
 import { PlusCircleIcon } from '@heroicons/vue/24/outline'
 import {HeartIcon} from '@heroicons/vue/24/solid'
+
+// Create reactive state for filter options
+const starsSortOrder = useState('starsSortOrder', () => 'none')
+const activitySortOrder = useState('activitySortOrder', () => 'none')
 </script>
 <style>
 .section-heading {

@@ -16,7 +16,10 @@
     "nuxt": "^3.8.2",
     "nuxt-gtag": "^0.5.9",
     "nuxt-simple-sitemap": "^3.4.0",
-    "prettier": "^3.1.1"
+    "prettier": "^3.1.1",
+    "typescript": "^5.0.0",
+    "@nuxt/types": "^2.16.0",
+    "@types/node": "^18.0.0"
   },
   "dependencies": {
     "@heroicons/vue": "^2.0.18",
