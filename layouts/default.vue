@@ -1,18 +1,33 @@
 <template>
-  <div class="bg-ink-400 flex flex-col min-h-screen antialiased text-vanilla-300">
-    <Navbar />
-    <main class="flex flex-1">
-      <section class="container max-w-6xl mx-auto flex flex-col md:flex-row">
-        <Sidebar />
-        <slot />
-      </section>
-    </main>
+  <div :class="[theme === 'dark' ? 'dark' : '', 'flex flex-col min-h-screen antialiased']">
+    <div class="bg-vanilla-200 dark:bg-ink-400 text-ink-400 dark:text-vanilla-300 flex flex-col min-h-screen">
+      <Navbar />
+      <main class="flex flex-1">
+        <section class="container max-w-6xl mx-auto flex flex-col md:flex-row">
+          <Sidebar />
+          <slot />
+        </section>
+      </main>
+    </div>
   </div>
 </template>
 
 <script setup>
 import Tags from '~/data/tags.json'
+import { useTheme } from '~/composables/states'
+
 const route = useRoute()
+const theme = useTheme()
+
+// Initialize theme from localStorage on client-side
+onMounted(() => {
+  if (process.client) {
+    const savedTheme = localStorage.getItem('theme')
+    if (savedTheme) {
+      theme.value = savedTheme
+    }
+  }
+})
 
 const tag = ref({})
 

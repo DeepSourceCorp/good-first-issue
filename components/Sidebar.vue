@@ -1,5 +1,5 @@
 <template>
-  <section class="masthead font-sans pt-6 border-r border-ink-200 px-6 text-vanilla-300 flex-none w-full md:max-w-sm">
+  <section class="masthead font-sans pt-6 border-r border-ink-200 dark:border-ink-200 px-6 text-ink-400 dark:text-vanilla-300 flex-none w-full md:max-w-sm">
     <div>
       <h3 class="section-heading">About</h3>
       <p class="text-sm">
@@ -16,13 +16,13 @@
           :to="'/language/' + tag.slug"
           :class="{
             'active-pill': $route.params.slug === tag.slug,
-            'border-slate hover:text-juniper hover:border-juniper': $route.params.slug !== tag.slug
+            'border-slate dark:border-slate hover:text-juniper hover:border-juniper dark:hover:text-juniper dark:hover:border-juniper': $route.params.slug !== tag.slug
           }"
           class="group mx-1 border px-2 py-1 inline-block rounded-sm my-1 text-sm"
           >{{ tag.language }}
           <span
             :class="{
-              'text-vanilla-400 group-hover:text-juniper': $route.params.slug !== tag.slug
+              'text-slate dark:text-vanilla-400 group-hover:text-juniper dark:group-hover:text-juniper': $route.params.slug !== tag.slug
             }"
             >&times; {{ tag.count }}</span
           ></nuxt-link
@@ -67,13 +67,13 @@ import {HeartIcon} from '@heroicons/vue/24/solid'
 </script>
 <style>
 .section-heading {
-  @apply text-sm font-bold uppercase tracking-wider mb-2 text-slate;
+  @apply text-sm font-bold uppercase tracking-wider mb-2 text-slate dark:text-slate;
 }
 .active-pill {
-  @apply text-juniper font-semibold border-juniper;
+  @apply text-juniper font-semibold border-juniper dark:text-juniper dark:border-juniper;
 }
 
 .active-pill > span {
-  @apply text-juniper;
+  @apply text-juniper dark:text-juniper;
 }
 </style>
