@@ -54,3 +54,6 @@ $ bun dev # start the development server
 ```
 
 The app should open in your browser.
+
+## Fecha
+25.08.2025
