@@ -571,6 +571,7 @@ repositories = [
   'github.com/PrismJS/prism',
   'github.com/projectcontour/contour',
   'github.com/Provenance-Emu/Provenance',
+  'github.com/prowler-cloud/prowler',
   'github.com/prysmaticlabs/prysm',
   'github.com/pterodactyl/panel',
   'github.com/pugjs/pug',
