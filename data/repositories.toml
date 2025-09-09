@@ -840,5 +840,14 @@ repositories = [
   'github.com/zulip/zulip',
   'github.com/ZupIT/charlescd',
   'github.com/ZupIT/ritchie-cli',
-  'github.com/ZupIT/ritchie-formulas'
+  'github.com/ZupIT/ritchie-formulas',
+  'github.com/abhishekanil551/JS',
+  'github.com/abhishekanil551/FitBoyhost',
+  'github.com/abhishekanil551/Node',
+  'github.com/abhishekanil551/Git',
+  'github.com/abhishekanil551/FitBoy',
+  'github.com/abhishekanil551/portfoilo',
+  'https://github.com/abhishekanil551/resume',
+  'https://github.com/abhishekanil551/DSA',
+  'https://github.com/abhishekanil551/SayNoToDrugs'
  ]
