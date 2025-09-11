@@ -33,7 +33,7 @@ Follow these simple steps:
 
 ## Setting up the project locally
 
-Good First Issue has two components — the front-end app built with Nuxt.js and a data population script written in Python.
+Good First Issue has two components — the front-end app built with Next.js and a data population script written in Python.
 
 To contribute new features and changes to the website, you would want to run the app locally. Please follow these steps:
 
@@ -45,6 +45,7 @@ To contribute new features and changes to the website, you would want to run the
 $ cp data/generated.sample.json data/generated.json
 $ cp data/tags.sample.json data/tags.json
 ```
+> 💡 Tip: If you’re on Windows, use `copy` instead of `cp` in Command Prompt, or use `cp` in Git Bash / WSL.
 
 3. Build the front-end app and start the development server.
 
