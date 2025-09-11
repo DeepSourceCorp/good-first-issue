@@ -154,6 +154,7 @@ repositories = [
   'github.com/crossplaneio/crossplane',
   'github.com/cupy/cupy',
   'github.com/cython/cython',
+  https://github.com/cypress-io/cypress
   'github.com/cztomczak/cefpython',
   'github.com/dabl/dabl',
   'github.com/dabreegster/abstreet',
