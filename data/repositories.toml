@@ -821,6 +821,7 @@ repositories = [
   'github.com/xenia-project/xenia',
   'github.com/xtermjs/xterm.js',
   'github.com/xunit/xunit',
+  'github.com/yugabyte/yugabyte-db',
   'github.com/yarnpkg/yarn',
   'github.com/yashaka/selene',
   'github.com/yewstack/yew',
