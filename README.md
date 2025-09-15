@@ -50,6 +50,7 @@ $ cp data/tags.sample.json data/tags.json
 
 ```bash
 $ bun install # install the dependencies
+$ bun --version  # Verify Bun is installed
 $ bun dev # start the development server
 ```
 

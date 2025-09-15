@@ -1,3 +1,5 @@
 {
-  "python.formatting.provider": "black"
+  "python.formatting.provider": "black",
+  "python-envs.defaultEnvManager": "ms-python.python:system",
+  "python-envs.pythonProjects": []
 }
