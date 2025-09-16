@@ -21,7 +21,7 @@
         >
         <span class="flex-1"></span>
         <span
-          class="hidden md:inline text-sm border px-3 py-1 ml-2 rounded-full font-semibold"
+          class="inline text-xs px-2 py-1 ml-2 md:text-sm md:px-3 rounded-full font-semibold"
           :class="{
             'text-ink-400 bg-juniper border-transparent': isCardOpen,
             'text-vanilla-200': !isCardOpen
@@ -33,15 +33,15 @@
         {{ repo.description }}
       </div>
       <div
-        class="flex-row flex text-sm py-1 font-mono"
+        class="flex flex-col sm:flex-row text-sm py-1 font-mono gap-2 sm:gap-4"
         :class="{ 'text-honey': isCardOpen, 'text-vanilla-400': !isCardOpen }"
-      >
-        <div class="mr-4"><span class="text-vanilla-400">lang: </span>{{ repo.language }}</div>
-        <div class="mr-4"><span class="text-vanilla-400">stars: </span>{{ repo.stars_display }}</div>
-        <div class="mr-4">
-          <span class="text-vanilla-400">last activity: </span><span>{{ lastModifiedDisplay }}</span>
-        </div>
-      </div>
+        >
+     <div><span class="text-vanilla-400">lang: </span>{{ repo.language }}</div>
+     <div><span class="text-vanilla-400">stars: </span>{{ repo.stars_display }}</div>
+     <div>
+    <span class="text-vanilla-400">last activity: </span><span>{{ lastModifiedDisplay }}</span>
+     </div>
+   </div>
     </div>
     <ol v-if="isCardOpen" class="px-5 py-3 text-base leading-loose border-t border-ink-200">
       <li v-for="issue in repo.issues" :key="issue.url" class="flex flex-row items-start justify-start py-1">

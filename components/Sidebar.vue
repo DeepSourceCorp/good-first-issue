@@ -29,19 +29,18 @@
         >
       </div>
     </div>
-    <div class="pt-6">
-      <a
-        class="bg-juniper hover:bg-light_juniper text-ink-400 uppercase rounded-md font-bold text-center px-1 py-3 flex flex-row items-center justify-center space-x-1"
-        href="https://github.com/deepsourcelabs/good-first-issue#adding-a-new-project"
-        target="_blank"
-        rel="noopener noreferrer"
-        >
-          <PlusCircleIcon class="h-5 w-5 stroke-2" />
-          <span>Add your project</span>
-        </a
-      >
-    </div>
+<div class="pt-6">
+  <button
+    @click="showModal = true"
+    class="bg-juniper hover:bg-light_juniper text-ink-400 uppercase rounded-md font-bold text-center px-1 py-3 flex flex-row items-center justify-center space-x-1 w-full"
+    >
+      <PlusCircleIcon class="h-5 w-5 stroke-2" />
+      <span>Add your project</span>
+    </button>
+</div>
 
+<!-- Add the modal -->
+<AddProjectModal :is-open="showModal" @close="showModal = false" />
     <div class="text-sm pt-6">
       <a
         class="flex flex-row justify-center items-center"
@@ -61,9 +60,13 @@
 </template>
 
 <script setup>
+import { ref } from 'vue'
 import Tags from '~/data/tags.json'
 import { PlusCircleIcon } from '@heroicons/vue/24/outline'
-import {HeartIcon} from '@heroicons/vue/24/solid'
+import { HeartIcon } from '@heroicons/vue/24/solid'
+import AddProjectModal from './AddProjectModal.vue'
+
+const showModal = ref(false)
 </script>
 <style>
 .section-heading {
