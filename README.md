@@ -45,8 +45,13 @@ To contribute new features and changes to the website, you would want to run the
 $ cp data/generated.sample.json data/generated.json
 $ cp data/tags.sample.json data/tags.json
 ```
+3. Verify that Bun is installed correctly by running:
 
-3. Build the front-end app and start the development server.
+```bash
+$ bun --version
+```
+
+4. Build the front-end app and start the development server.
 
 ```bash
 $ bun install # install the dependencies
