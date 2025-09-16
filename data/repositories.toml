@@ -752,6 +752,7 @@ repositories = [
   'github.com/timothycrosley/isort',
   'github.com/tinacms/tinacms',
   'github.com/tizonia/tizonia-openmax-il',
+  'github.com/tofuutils/tenv',
   'github.com/tomkp/react-split-pane',
   'github.com/tongueroo/jets',
   'github.com/ToolJet/ToolJet',
@@ -841,4 +842,4 @@ repositories = [
   'github.com/ZupIT/charlescd',
   'github.com/ZupIT/ritchie-cli',
   'github.com/ZupIT/ritchie-formulas'
- ]
+]
