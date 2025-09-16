@@ -456,6 +456,7 @@ repositories = [
   'github.com/microsoft/TypeScript',
   'github.com/microsoft/vcpkg',
   'github.com/Microsoft/vscode',
+  'github.com/Michele0303/tiktok-live-recorder'
   'github.com/mike42/escpos-php',
   'github.com/milvus-io/bootcamp',
   'github.com/milvus-io/milvus',
