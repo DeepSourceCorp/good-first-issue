@@ -54,3 +54,9 @@ $ bun dev # start the development server
 ```
 
 The app should open in your browser.
+
+
+## Contributors
+
+- **Diya Nagar** - Beginner open-source contributor, learning Git & GitHub.
+
