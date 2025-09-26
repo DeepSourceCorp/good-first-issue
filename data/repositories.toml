@@ -553,6 +553,7 @@ repositories = [
   'github.com/parse-community/parse-server',
   'github.com/pester/Pester',
   'github.com/PetrochukM/PyTorch-NLP',
+  'github.com/physicshub/physicshub.github.io',
   'github.com/PHP-FFMpeg/PHP-FFMpeg',
   'github.com/phpmd/phpmd',
   'github.com/phpmyadmin/phpmyadmin',
