@@ -53,4 +53,32 @@ $ bun install # install the dependencies
 $ bun dev # start the development server
 ```
 
+> **Note**
+> If you don't have `bun` installed, you can use `npm` or `yarn` as an alternative.
+>
+> **Using `npm`:**
+> ```bash
+> $ npm install # install the dependencies
+> $ npm run dev # start the development server
+> ```
+>
+> **Using `yarn`:**
+> ```bash
+> $ yarn install # install the dependencies
+> $ yarn dev # start the development server
+> ```
+
 The app should open in your browser.
+
+## Troubleshooting
+
+### `RollupError` on startup
+
+When running the development server for the first time with `npm run dev`, you might encounter a `RollupError` related to the `nuxt-simple-sitemap` module. This is a known issue that can prevent the application from starting correctly.
+
+To resolve this, you can temporarily disable the `nuxt-simple-sitemap` module.
+
+1. Open the `nuxt.config.ts` file.
+2. In the `modules` array, remove or comment out `'nuxt-simple-sitemap'`.
+3. In the same file, remove the `site` configuration block if it exists.
+4. Restart the development server (`npm run dev`).
