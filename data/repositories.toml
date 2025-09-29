@@ -575,6 +575,7 @@ repositories = [
   'github.com/pterodactyl/panel',
   'github.com/pugjs/pug',
   'github.com/purpleidea/mgmt',
+  'github.com/public-apis/public-apis'
   'github.com/pwndbg/pwndbg',
   'github.com/pydata/xarray',
   'github.com/pygame/pygame',
