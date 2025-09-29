@@ -54,3 +54,4 @@ $ bun dev # start the development server
 ```
 
 The app should open in your browser.
+Added Andrew to the list of contributors 🚀
