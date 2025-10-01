@@ -340,6 +340,7 @@ repositories = [
   'github.com/JabRef/jabref',
   'github.com/jaegertracing/jaeger',
   'github.com/janko/vim-test',
+  'github.com/JanssenProject/jans',
   'github.com/jbush001/NyuziProcessor',
   'github.com/JdeRobot/RoboticsAcademy',
   'github.com/jendrikseipp/vulture',
