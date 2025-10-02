@@ -603,6 +603,7 @@ repositories = [
   'github.com/quarkusio/quarkus',
   'github.com/questdb/questdb',
   'github.com/quicktype/quicktype',
+  'github.com/QuoteVote/quotevote-monorepo',
   'github.com/radareorg/cutter',
   'github.com/radareorg/radare2',
   'github.com/rakudo/rakudo',
