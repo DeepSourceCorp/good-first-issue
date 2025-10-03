@@ -342,6 +342,7 @@ repositories = [
   'github.com/janko/vim-test',
   'github.com/jbush001/NyuziProcessor',
   'github.com/JdeRobot/RoboticsAcademy',
+  'github.com/jeertmans/manim-slides',
   'github.com/jendrikseipp/vulture',
   'github.com/jenkins-x/jx',
   'github.com/JetBrains/Exposed',
