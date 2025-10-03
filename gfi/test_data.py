@@ -42,7 +42,7 @@ class TestDataSanity(unittest.TestCase):
 
     @staticmethod
     def test_labels_file_sane():
-        """Verify that the labels file is a valid JSON"""
+        """Verify that the labels file is a valid JSON."""
         data = _get_data_from_json(LABELS_FILE_PATH)
         assert "labels" in data
 

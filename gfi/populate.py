@@ -66,12 +66,12 @@ def get_repository_info(identifier: RepositoryIdentifier) -> Optional[Repository
 
     logger.info("Getting info for {}/{}", owner, name)
 
-    # create a logged in GitHub client
+    # create a logged in GitHub client.
     client = login(token=getenv("GH_ACCESS_TOKEN"))
 
     info: RepositoryInfo = {}
 
-    # get the repository; if the repo is not found, log a warning
+    # get the repository; if the repo is not found, log a warning.
     try:
         repository = client.repository(owner, name)
         # Don't find issues inside archived repos.
@@ -91,9 +91,9 @@ def get_repository_info(identifier: RepositoryIdentifier) -> Optional[Repository
             )
         )
         logger.info("\t found {} good first issues", len(good_first_issues))
-        # check if repo has at least one good first issue
+        # check if repo has at least one good first issue.
         if good_first_issues and repository.language:
-            # store the repo info
+            # store the repo info.
             info["name"] = name
             info["owner"] = owner
             info["description"] = emojize(repository.description or "")
@@ -105,7 +105,7 @@ def get_repository_info(identifier: RepositoryIdentifier) -> Optional[Repository
             info["last_modified"] = repository.pushed_at.isoformat()
             info["id"] = str(repository.id)
 
-            # get the latest issues with the tag
+            # get the latest issues with the tag.
             issues = []
             for issue in good_first_issues:
                 issues.append(
@@ -132,13 +132,13 @@ def get_repository_info(identifier: RepositoryIdentifier) -> Optional[Repository
 
 
 if __name__ == "__main__":
-    # parse the repositories data file and get the list of repos
+    # parse the repositories data file and get the list of repos.
     # for generating pages for.
 
     if not path.exists(REPO_DATA_FILE):
         raise RuntimeError("No config data file found. Exiting.")
 
-    # if the GitHub Access Token isn't found, raise an error
+    # if the GitHub Access Token isn't found, raise an error.
     if not getenv("GH_ACCESS_TOKEN"):
         raise RuntimeError("Access token not present in the env variable `GH_ACCESS_TOKEN`")
 
@@ -153,28 +153,28 @@ if __name__ == "__main__":
             REPO_DATA_FILE,
         )
 
-        # pre-process the URLs and only continue with the list of valid GitHub URLs
+        # pre-process the URLs and only continue with the list of valid GitHub URLs.
         repositories = list(filter(bool, [parse_github_url(url) for url in DATA["repositories"]]))
 
-        # shuffle the order of the repositories
+        # shuffle the order of the repositories.
         random.shuffle(repositories)
 
         with ThreadPoolExecutor(max_workers=MAX_CONCURRENCY) as executor:
             results = executor.map(get_repository_info, repositories[:MAX_REPOSITORIES])
 
-        # filter out repositories with valid data and increment tag counts
+        # filter out repositories with valid data and increment tag counts.
         for result in results:
             if result:
                 REPOSITORIES.append(result)
                 TAGS[result["language"]] += 1
 
-    # write to generated JSON files
+    # write to generated JSON files.
 
     with open(REPO_GENERATED_DATA_FILE, "w") as file_desc:
         json.dump(REPOSITORIES, file_desc)
     logger.info("Wrote data for {} repos to {}", len(REPOSITORIES), REPO_GENERATED_DATA_FILE)
 
-    # use only those tags that have at least three occurrences
+    # use only those tags that have at least three occurrences.
     tags = [
         {
             "language": key,
