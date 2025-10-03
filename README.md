@@ -33,6 +33,19 @@ Follow these simple steps:
 
 ## Setting up the project locally
 
+### Quick Start
+
+1. Make sure you have Python 3 and Node.js installed.
+2. Copy the sample data files:
+   $ cp data/generated.sample.json data/generated.json
+   $ cp data/tags.sample.json data/tags.json
+3. Install dependencies and start the dev server:
+   $ bun install
+   $ bun dev
+
+This helps new contributors quickly run the app locally.
+
+
 Good First Issue has two components — the front-end app built with Nuxt.js and a data population script written in Python.
 
 To contribute new features and changes to the website, you would want to run the app locally. Please follow these steps:
