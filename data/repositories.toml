@@ -825,6 +825,7 @@ repositories = [
   'github.com/yewstack/yew',
   'github.com/Yoast/wordpress-seo',
   'github.com/yugabyte/yugabyte-db',
+  'github.com/zairza-cetb/HackWithZairza',
   'github.com/zaproxy/zaproxy',
   'github.com/zcash/zcash',
   'github.com/zeebe-io/zeebe',
