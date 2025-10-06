@@ -762,6 +762,7 @@ repositories = [
   'github.com/typescript-eslint/typescript-eslint',
   'github.com/tzapu/WiFiManager',
   'github.com/ubuntu/microk8s',
+  'github.com/updatecli/updatecli',
   'github.com/Udayraj123/OMRChecker',
   'github.com/unisonweb/unison',
   'github.com/UniversalMediaServer/UniversalMediaServer',
