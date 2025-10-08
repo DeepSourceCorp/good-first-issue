@@ -5,11 +5,22 @@
 </p>
 <hr>
 
+## Project Overview
+Good First Issue helps beginners contribute to open-source by curating projects with easy-to-fix issues labeled `good first issue`. 
+The project has two main components:
+- **Frontend:** Built with Vue.js using the Nuxt.js framework
+- **Backend/Data script:** Written in Python
+
 Welcome! 👋🏼
 
 **Good First Issue** is an initiative to curate easy pickings from popular projects, so developers who've never contributed to open-source can get started quickly.
 
 Open-source maintainers are always looking to get more people involved, but new developers generally think it's challenging to become a contributor. We believe getting developers to fix super-easy issues removes the barrier for future contributions. This is why Good First Issue exists.
+
+## Table of Contents
+1. [Project Overview](#project-overview)
+2. [Adding a New Project](#adding-a-new-project)
+3. [Setting Up the Project Locally](#setting-up-the-project-locally)
 
 ## Adding a new project
 
@@ -35,10 +46,17 @@ Follow these simple steps:
 
 Good First Issue has two components — the front-end app built with Nuxt.js and a data population script written in Python.
 
+### Prerequisites
+- Python 3
+- Node.js (latest version)
+
 To contribute new features and changes to the website, you would want to run the app locally. Please follow these steps:
 
 1. Clone the project locally. Make sure you have Python 3 and a recent version of Node.js installed on your computer.
-
+```bash
+git clone https://github.com/AyushMaurya3114/good-first-issue.git
+cd good-first-issue
+```
 2. Make a copy of the sample data files for your local app to use and rename them to the filename that the app expects. **This step is important, as the front-end app won't work without these data files.**
 
 ```bash
