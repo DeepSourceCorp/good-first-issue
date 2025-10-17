@@ -136,6 +136,7 @@ repositories = [
   'github.com/conan-io/conan',
   'github.com/concourse/concourse',
   'github.com/containers/libpod',
+  'github.com/containers/ramalama',
   'github.com/containers/skopeo',
   'github.com/continuedev/continue',
   'github.com/conversejs/converse.js',
