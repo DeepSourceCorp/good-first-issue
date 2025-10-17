@@ -17,8 +17,7 @@
           rel="noopener noreferrer"
           class="text-lg font-semibold group-hover:text-juniper"
           :class="{ 'text-juniper': isCardOpen }"
-          >{{ repo.owner }} / {{ repo.name }}</a
-        >
+    >{{ repo.owner }} / {{ repo.name }}</a>
         <span class="flex-1"></span>
         <span
           class="hidden md:inline text-sm border px-3 py-1 ml-2 rounded-full font-semibold"
@@ -26,8 +25,7 @@
             'text-ink-400 bg-juniper border-transparent': isCardOpen,
             'text-vanilla-200': !isCardOpen
           }"
-          >{{ issuesDisplay }}</span
-        >
+          >{{ issuesDisplay }}</span>
       </div>
       <div class="flex-row flex text-sm py-1 overflow-auto">
         {{ repo.description }}
@@ -53,8 +51,7 @@
             target="_blank"
             rel="noopener noreferrer"
             class="leading-snug font-medium hover:text-juniper text-vanilla-300 block flex-auto"
-            >{{ issue.title }}</a
-          >
+            >{{ issue.title }}</a>
           <div
             v-if="issue.comments_count > 0"
             class="flex flex-row items-center justify-end mt-1 w-10"
@@ -73,6 +70,7 @@
 import dayjs from 'dayjs'
 import relativeTime from 'dayjs/plugin/relativeTime'
 import { ChatBubbleLeftRightIcon } from '@heroicons/vue/24/outline'
+import { useOpenRepoId } from '~/composables/states'
 
 dayjs.extend(relativeTime)
 
@@ -86,8 +84,8 @@ const props = defineProps({
 const openRepoId = useOpenRepoId()
 
 const issuesDisplay = computed(() => {
-  const numIssues = props.repo.issues.length
-  return numIssues > 1 ? `${numIssues} issues` : `${numIssues} issue`
+  const numIssues = props.repo.issues?.length || 0
+  return numIssues !== 1 ? `${numIssues} issues` : `${numIssues} issue`
 })
 
 const lastModifiedDisplay = computed(() => {

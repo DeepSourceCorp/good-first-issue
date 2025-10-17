@@ -11,6 +11,7 @@ from os import getenv, path
 from typing import TypedDict, Dict, Union, Sequence, Optional, Mapping
 
 import toml
+from functools import partial
 
 from github3 import exceptions, login
 from numerize import numerize
@@ -23,7 +24,7 @@ MAX_REPOSITORIES = 500  # max number of repositories populated in one session
 REPO_DATA_FILE = "data/repositories.toml"
 REPO_GENERATED_DATA_FILE = "data/generated.json"
 TAGS_GENERATED_DATA_FILE = "data/tags.json"
-GH_URL_PATTERN = re.compile(r"[http://|https://]?github.com/(?P<owner>[\w\.-]+)/(?P<name>[\w\.-]+)/?")
+GH_URL_PATTERN = re.compile(r"^(?:https?://)?(?:www\.)?github\.com/(?P<owner>[\w\.-]+)/(?P<name>[\w\.-]+)/?$")
 LABELS_DATA_FILE = "data/labels.json"
 ISSUE_STATE = "open"
 ISSUE_SORT = "created"
@@ -57,17 +58,18 @@ class RepositoryIdentifier(TypedDict):
     name: str
 
 
-RepositoryInfo = Dict["str", Union[str, int, Sequence]]
+RepositoryInfo = Dict[str, Union[str, int, Sequence]]
 
 
-def get_repository_info(identifier: RepositoryIdentifier) -> Optional[RepositoryInfo]:
+def get_repository_info(identifier: RepositoryIdentifier, client=None) -> Optional[RepositoryInfo]:
     """Get the relevant information needed for the repository from its owner login and name."""
     owner, name = identifier["owner"], identifier["name"]
 
-    logger.info("Getting info for {}/{}", owner, name)
+    logger.info(f"Getting info for {owner}/{name}")
 
-    # create a logged in GitHub client
-    client = login(token=getenv("GH_ACCESS_TOKEN"))
+    # create a logged in GitHub client if not provided
+    if client is None:
+        client = login(token=getenv("GH_ACCESS_TOKEN"))
 
     info: RepositoryInfo = {}
 
@@ -78,19 +80,20 @@ def get_repository_info(identifier: RepositoryIdentifier) -> Optional[Repository
         if repository.archived:
             return None
 
-        good_first_issues = set(
-            itertools.chain.from_iterable(
-                repository.issues(
-                    labels=label,
-                    state=ISSUE_STATE,
-                    number=ISSUE_LIMIT,
-                    sort=ISSUE_SORT,
-                    direction=ISSUE_SORT_DIRECTION,
-                )
-                for label in ISSUE_LABELS
-            )
-        )
-        logger.info("\t found {} good first issues", len(good_first_issues))
+        # collect issues across labels and deduplicate by url
+        issues_list = []
+        seen_issue_urls = set()
+        for label in ISSUE_LABELS:
+            for issue in repository.issues(labels=label, state=ISSUE_STATE, sort=ISSUE_SORT, direction=ISSUE_SORT_DIRECTION):
+                if len(issues_list) >= ISSUE_LIMIT:
+                    break
+                url = getattr(issue, 'html_url', None)
+                if url and url not in seen_issue_urls:
+                    seen_issue_urls.add(url)
+                    issues_list.append(issue)
+
+        good_first_issues = issues_list
+        logger.info(f"\t found {len(good_first_issues)} good first issues")
         # check if repo has at least one good first issue
         if good_first_issues and repository.language:
             # store the repo info
@@ -122,13 +125,18 @@ def get_repository_info(identifier: RepositoryIdentifier) -> Optional[Repository
         else:
             logger.info("\t skipping due to insufficient issues or info")
     except exceptions.NotFoundError:
-        logger.warning("Not Found: {}/{}", owner, name)
+        logger.warning(f"Not Found: {owner}/{name}")
     except exceptions.ForbiddenError:
-        logger.warning("Skipped due to rate-limits: {}/{}", owner, name)
+        logger.warning(f"Skipped due to rate-limits: {owner}/{name}")
     except exceptions.ConnectionError:
-        logger.warning("Skipped due to connection errors: {}/{}", owner, name)
+        logger.warning(f"Skipped due to connection errors: {owner}/{name}")
 
     return info
+
+
+def load_repositories_file(file_path: str) -> dict:
+    with open(file_path, "r") as data_file:
+        return toml.load(data_file)
 
 
 if __name__ == "__main__":
@@ -144,35 +152,35 @@ if __name__ == "__main__":
 
     REPOSITORIES = []
     TAGS: Counter = Counter()
-    with open(REPO_DATA_FILE, "r") as data_file:
-        DATA = toml.load(REPO_DATA_FILE)
+    DATA = load_repositories_file(REPO_DATA_FILE)
 
-        logger.info(
-            "Found {} repository entries in {}",
-            len(DATA["repositories"]),
-            REPO_DATA_FILE,
-        )
+    logger.info(f"Found {len(DATA.get('repositories', []))} repository entries in {REPO_DATA_FILE}")
 
-        # pre-process the URLs and only continue with the list of valid GitHub URLs
-        repositories = list(filter(bool, [parse_github_url(url) for url in DATA["repositories"]]))
+    # pre-process the URLs and only continue with the list of valid GitHub URLs
+    repositories = list(filter(bool, [parse_github_url(url) for url in DATA.get("repositories", [])]))
 
-        # shuffle the order of the repositories
-        random.shuffle(repositories)
+    # shuffle the order of the repositories
+    random.shuffle(repositories)
 
-        with ThreadPoolExecutor(max_workers=MAX_CONCURRENCY) as executor:
-            results = executor.map(get_repository_info, repositories[:MAX_REPOSITORIES])
+    # create a shared GitHub client for all workers
+    shared_client = login(token=getenv("GH_ACCESS_TOKEN"))
 
-        # filter out repositories with valid data and increment tag counts
-        for result in results:
-            if result:
-                REPOSITORIES.append(result)
-                TAGS[result["language"]] += 1
+    with ThreadPoolExecutor(max_workers=MAX_CONCURRENCY) as executor:
+        results = executor.map(partial(get_repository_info, client=shared_client), repositories[:MAX_REPOSITORIES])
+
+    # filter out repositories with valid data and increment tag counts
+    for result in results:
+        if result:
+            REPOSITORIES.append(result)
+            lang = result.get("language")
+            if lang:
+                TAGS[lang] += 1
 
     # write to generated JSON files
 
     with open(REPO_GENERATED_DATA_FILE, "w") as file_desc:
         json.dump(REPOSITORIES, file_desc)
-    logger.info("Wrote data for {} repos to {}", len(REPOSITORIES), REPO_GENERATED_DATA_FILE)
+    logger.info(f"Wrote data for {len(REPOSITORIES)} repos to {REPO_GENERATED_DATA_FILE}")
 
     # use only those tags that have at least three occurrences
     tags = [
@@ -187,4 +195,4 @@ if __name__ == "__main__":
     tags_sorted = sorted(tags, key=itemgetter("count"), reverse=True)
     with open(TAGS_GENERATED_DATA_FILE, "w") as file_desc:
         json.dump(tags_sorted, file_desc)
-    logger.info("Wrote {} tags to {}", len(tags), TAGS_GENERATED_DATA_FILE)
+    logger.info(f"Wrote {len(tags)} tags to {TAGS_GENERATED_DATA_FILE}")

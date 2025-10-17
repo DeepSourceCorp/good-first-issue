@@ -24,9 +24,8 @@
             :class="{
               'text-vanilla-400 group-hover:text-juniper': $route.params.slug !== tag.slug
             }"
-            >&times; {{ tag.count }}</span
-          ></nuxt-link
-        >
+            >&times; {{ tag.count }}</span>
+          </nuxt-link>
       </div>
     </div>
     <div class="pt-6">
@@ -38,8 +37,7 @@
         >
           <PlusCircleIcon class="h-5 w-5 stroke-2" />
           <span>Add your project</span>
-        </a
-      >
+        </a>
     </div>
 
     <div class="text-sm pt-6">
@@ -53,17 +51,33 @@
         <span class="ml-2"
           >A
           <span class="inline hover:underline text-juniper" title="Visit DeepSource website">DeepSource</span>
-          initative</span
-        >
+          initative</span>
       </a>
     </div>
   </section>
 </template>
 
 <script setup>
-import Tags from '~/data/tags.json'
+import { ref } from 'vue'
 import { PlusCircleIcon } from '@heroicons/vue/24/outline'
-import {HeartIcon} from '@heroicons/vue/24/solid'
+import { HeartIcon } from '@heroicons/vue/24/solid'
+
+const Tags = ref([])
+try {
+  // prefer generated tags when available
+  // static import would break the dev server if file missing, so use dynamic import
+  const mod = await import('~/data/tags.json')
+  Tags.value = mod.default || mod
+} catch (err) {
+  // fallback to sample file
+  try {
+    const sample = await import('~/data/tags.sample.json')
+    Tags.value = sample.default || sample
+  } catch (e) {
+    Tags.value = []
+    console.warn('No tags data found; Sidebar will be empty.')
+  }
+}
 </script>
 <style>
 .section-heading {

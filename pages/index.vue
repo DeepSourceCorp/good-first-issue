@@ -5,7 +5,22 @@
 </template>
 
 <script setup>
-import Repositories from '~/data/generated.json'
+import { ref } from 'vue'
+
+const Repositories = ref([])
+try {
+  const mod = await import('~/data/generated.json')
+  Repositories.value = mod.default || mod
+} catch (err) {
+  // fallback to sample data to avoid build errors
+  try {
+    const sample = await import('~/data/generated.sample.json')
+    Repositories.value = sample.default || sample
+  } catch (e) {
+    Repositories.value = []
+    console.warn('No generated data found; page will be empty.')
+  }
+}
 
 useHead({
   title: 'Good First Issue: Make your first open-source contribution',

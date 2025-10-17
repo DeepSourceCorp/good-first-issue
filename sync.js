@@ -7,87 +7,99 @@ import { put, list } from '@vercel/blob'
 const dirToSync = './data'
 const filesToSync = ['generated.json', 'tags.json']
 
-/**
- * Downloads a file from a given url to a specified destination.
- *
- * @param {string} url - The URL of the file to download.
- * @param {string} dest - The destination where the file should be saved.
- * @return {Promise} A Promise that resolves when the file has been downloaded.
- */
+function ensureDirExists(filePath) {
+  const dir = path.dirname(filePath)
+  if (!fs.existsSync(dir)) {
+    fs.mkdirSync(dir, { recursive: true })
+  }
+}
+
 function downloadFile(url, dest) {
   return new Promise((resolve, reject) => {
-    // Check if the file already exists
-    const fileExists = fs.existsSync(dest)
+    ensureDirExists(dest)
+    const tempDest = `${dest}.tmp`
+    const file = fs.createWriteStream(tempDest)
 
-    const file = fs.createWriteStream(dest, { flags: 'w' }) // 'w' flag for write mode
+    https.get(url, (response) => {
+      if (response.statusCode !== 200) {
+        file.close()
+        fs.existsSync(tempDest) && fs.unlinkSync(tempDest)
+        return reject(new Error(`failed to download file: status code ${response.statusCode}`))
+      }
 
-    https
-      .get(url, (response) => {
-        if (response.statusCode !== 200) {
-          reject(new Error(`failed to download file: status code ${response.statusCode}`))
-          return
-        }
+      response.pipe(file)
 
-        response.pipe(file)
-
-        if (fileExists) {
-          console.log(`file ${dest} already exists. overwriting.`)
+      file.on('finish', () => {
+        file.close()
+        try {
+          // replace atomically
+          if (fs.existsSync(dest)) fs.unlinkSync(dest)
+          fs.renameSync(tempDest, dest)
+          resolve()
+        } catch (err) {
+          fs.existsSync(tempDest) && fs.unlinkSync(tempDest)
+          reject(err)
         }
       })
-      .on('error', (err) => {
-        reject(err)
-      })
-
-    file.on('finish', () => {
-      resolve()
-    })
-
-    file.on('error', (err) => {
-      fs.unlink(dest) // delete the file on error
+    }).on('error', (err) => {
+      file.close()
+      fs.existsSync(tempDest) && fs.unlinkSync(tempDest)
       reject(err)
     })
   })
 }
 
-/**
- * Sync files from local to Vercel Blob
- */
 async function syncFilesUp() {
   for (const fileName of filesToSync) {
     const filePath = path.resolve(path.join(dirToSync, fileName))
-    const stat = await fs.statSync(filePath)
-
-    if (stat.isFile()) {
-      const fileContent = await fs.readFileSync(filePath)
-      await put(fileName, fileContent, { access: 'public', addRandomSuffix: false })
+    try {
+      const stat = await fs.promises.stat(filePath)
+      if (stat.isFile()) {
+        const fileContent = await fs.promises.readFile(filePath)
+        await put(fileName, fileContent, { access: 'public', addRandomSuffix: false })
+      }
+    } catch (err) {
+      // skip missing files but log for visibility
+      console.warn(`Skipping upload for ${fileName}: ${err.message}`)
     }
   }
 }
 
-/**
- * Sync files from Vercel Blob to local
- */
 async function syncFilesDown() {
   const response = await list()
   for (const blob of response.blobs) {
-    await downloadFile(blob.url, path.resolve(path.join(dirToSync, blob.pathname)))
+    const dest = path.resolve(path.join(dirToSync, blob.pathname))
+    try {
+      await downloadFile(blob.url, dest)
+    } catch (err) {
+      console.error(`Failed to download ${blob.pathname}: ${err.message}`)
+    }
   }
 }
 
-if (!("BLOB_READ_WRITE_TOKEN" in process.env)) {
+if (!process.env.BLOB_READ_WRITE_TOKEN) {
   console.error('`BLOB_READ_WRITE_TOKEN` not set in env. exiting.')
-  process.exit(1)  // skicq: JS-0263
+  process.exit(1)
 }
 
-switch (process.argv[2]) {
-  case 'up':
-    await syncFilesUp()
-    console.info('syncing up successful.')
-    break
-  case 'down':
-    await syncFilesDown()
-    console.info('syncing down successful.')
-    break
-  default:
-    console.error('must provide a valid sync direction. exiting.')
-}
+const cmd = process.argv[2]
+;(async () => {
+  try {
+    switch (cmd) {
+      case 'up':
+        await syncFilesUp()
+        console.info('syncing up successful.')
+        break
+      case 'down':
+        await syncFilesDown()
+        console.info('syncing down successful.')
+        break
+      default:
+        console.error('must provide a valid sync direction (up|down). exiting.')
+        process.exit(1)
+    }
+  } catch (err) {
+    console.error('sync failed:', err)
+    process.exit(1)
+  }
+})()
