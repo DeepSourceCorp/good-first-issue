@@ -19,7 +19,7 @@ Follow these simple steps:
 
 - Our goal is to narrow down projects for new open-source contributors. To maintain the quality of projects in Good First Issue, please make sure your GitHub repository meets the following criteria:
 
-  - It has at least three issues with the `good first issue` label. This label is already present on all repositories by default. If not, you can follow the steps [here](https://help.github.com/en/github/managing-your-work-on-github/applying-labels-to-issues-and-pull-requests).
+  - It has at least three issues with the `good first issue` label. This label is already present on all repositories by default. If not, you can follow the steps [here](https://help.github.com/en/github/managing-your-work-on-github/applying-labels-to-issues-and-pull requests).
 
   - It has at least 10 contributors.
 
@@ -27,9 +27,9 @@ Follow these simple steps:
 
   - It is actively maintained.
 
-- Add your repository's path (in lexicographic order) in [data/repositories.toml](data/repositories.toml).
+- Add your repository's path (in alphabetical order) in [data/repositories.toml](data/repositories.toml).
 
-- Create a new pull-request. Please add the link to the issues page of the repository in the PR description. Once the pull request is merged, the changes will be live on [goodfirstissue.dev](https://goodfirstissue.dev/).
+- Create a new pull request. Please add the link to the issues page of the repository in the PR description. Once the pull request is merged, the changes will be live on [goodfirstissue.dev](https://goodfirstissue.dev/).
 
 ## Setting up the project locally
 
