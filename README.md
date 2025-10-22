@@ -13,7 +13,8 @@ Open-source maintainers are always looking to get more people involved, but new 
 
 ## Adding a new project
 
-You're welcome to add a new project in Good First Issue, and we encourage all projects &mdash; old and new, big and small.
+You're welcome to add a new project in Good First Issue, and we encourage all projects — old and new, big and small.
+
 
 Follow these simple steps:
 
@@ -35,7 +36,7 @@ Follow these simple steps:
 
 Good First Issue has two components — the front-end app built with Nuxt.js and a data population script written in Python.
 
-To contribute new features and changes to the website, you would want to run the app locally. Please follow these steps:
+To contribute new features or make changes to the website, you’ll need to run the app locally. Please follow these steps:
 
 1. Clone the project locally. Make sure you have Python 3 and a recent version of Node.js installed on your computer.
 
