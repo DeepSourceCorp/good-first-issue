@@ -130,6 +130,7 @@ repositories = [
   'github.com/coder/modules',
   'github.com/coder/terraform-provider-coder',
   'github.com/collectd/collectd',
+  'github.com/collective/icalendar',
   'github.com/commandlineparser/commandline',
   'github.com/compas-dev/compas_fab',
   'github.com/composer/composer',
