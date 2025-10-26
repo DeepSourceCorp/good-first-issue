@@ -630,6 +630,7 @@ repositories = [
   'github.com/ripple/rippled',
   'github.com/rjsf-team/react-jsonschema-form',
   'github.com/rodrigo-arenas/Sklearn-genetic-opt',
+  'github.com/rregalado1/good-first-issue',
   'github.com/rstudio/keras',
   'github.com/rubberduck-vba/Rubberduck',
   'github.com/rubocop-hq/rubocop',
