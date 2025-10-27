@@ -54,3 +54,7 @@ $ bun dev # start the development server
 ```
 
 The app should open in your browser.
+
+## Contributor Note
+This repository was explored by **Abhinav Danthuri** as part of his first GitHub contribution. 🚀
+
