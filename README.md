@@ -1,6 +1,6 @@
-<p align="center">
-  <a href="https://goodfirstissue.dev" target="_blank">
-    <img src="public/readme-logo.svg">
+<p style=text-align:center>
+  <a href="https://cloud.google.com/learn/what-is-artificial-intelligence" target="_blank">
+    <img src="https://media.istockphoto.com/id/2058507417/vector/artificial-intelligence-icon-sign-logo-in-the-circuit-line-style-ai-processor-vector-icon.jpg?s=612x612&w=0&k=20&c=0kb5zgMcapsLizKDzLP-Y72UyyVACOy2cEZC8hNIboE=">
   </a>
 </p>
 <hr>
