@@ -7,7 +7,7 @@
 
 Welcome! 👋🏼
 
-**Good First Issue** is an initiative to curate easy pickings from popular projects, so developers who've never contributed to open-source can get started quickly.
+**Good First Issue** is an initiative to curate easy pickings from popular projects, so developers new to open source can get started quickly.
 
 Open-source maintainers are always looking to get more people involved, but new developers generally think it's challenging to become a contributor. We believe getting developers to fix super-easy issues removes the barrier for future contributions. This is why Good First Issue exists.
 
@@ -29,15 +29,15 @@ Follow these simple steps:
 
 - Add your repository's path (in lexicographic order) in [data/repositories.toml](data/repositories.toml).
 
-- Create a new pull-request. Please add the link to the issues page of the repository in the PR description. Once the pull request is merged, the changes will be live on [goodfirstissue.dev](https://goodfirstissue.dev/).
+- Create a new pull request. Please add the link to the issues page of the repository in the PR description. Once the pull request is merged, the changes will be live on [goodfirstissue.dev](https://goodfirstissue.dev/).
 
 ## Setting up the project locally
 
-Good First Issue has two components — the front-end app built with Nuxt.js and a data population script written in Python.
+Good First Issue consists of two components: a Nuxt.js front-end app and a Python data population script.
 
 To contribute new features and changes to the website, you would want to run the app locally. Please follow these steps:
 
-1. Clone the project locally. Make sure you have Python 3 and a recent version of Node.js installed on your computer.
+1. Clone the project locally. Ensure Python 3 and a recent version of Node.js (or Bun) are installed.
 
 2. Make a copy of the sample data files for your local app to use and rename them to the filename that the app expects. **This step is important, as the front-end app won't work without these data files.**
 
