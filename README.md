@@ -27,7 +27,7 @@ Follow these simple steps:
 
   - It is actively maintained.
 
-- Add your repository's path (in lexicographic order) in [data/repositories.toml](data/repositories.toml).
+- Add your repository's path (in lexicographic order) in [data/repositories.toml](data/repositories.toml).This file is used by the project as a repository directory to centrally manage all related repository information. Once you add it, some of the project's automated processes will incorporate your repository into the management.
 
 - Create a new pull-request. Please add the link to the issues page of the repository in the PR description. Once the pull request is merged, the changes will be live on [goodfirstissue.dev](https://goodfirstissue.dev/).
 
