@@ -54,6 +54,14 @@ class TestDataSanity(unittest.TestCase):
         print([item for item, count in Counter(repos).items() if count > 1])
         assert len(repos) == len(set(repos))
 
+    @staticmethod
+    def test_repositories_are_sorted():
+        """Verify that the repository entries are alphabetically sorted."""
+        data = _get_data_from_toml(DATA_FILE_PATH)
+        repos = data.get("repositories", [])
+        sorted_repos = sorted(repos, key=str.lower)
+        assert repos == sorted_repos, "Repositories are not alphabetically sorted."
+
 
 if __name__ == "__main__":
     unittest.main()
