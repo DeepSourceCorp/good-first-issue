@@ -13,7 +13,8 @@ insert_final_newline = true
 insert_final_newline = ignore
 
 # Minified JavaScript files shouldn't be changed
-[**.min.js]
+# Ignore minified JS files because formatting them can break them
+[**/*.min.js]
 indent_style = ignore
 insert_final_newline = ignore
 
