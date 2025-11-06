@@ -196,6 +196,7 @@ repositories = [
   'github.com/dylan-power/dinosaur-exploder',
   'github.com/DynamoRIO/drmemory',
   'github.com/DynamoRIO/dynamorio',
+  'github.com/Devansh-567/Evosorter',
   'github.com/ealush/vest',
   'github.com/EasyEngine/easyengine',
   'github.com/eclipse/che',
