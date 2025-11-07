@@ -53,5 +53,8 @@ $ cp data/tags.sample.json data/tags.json
 $ bun install # install the dependencies
 $ bun dev # start the development server
 ```
-
+### Example 
+```bash 
+npx good-first-issue react
+```
 The app should open in your browser.
