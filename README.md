@@ -5,7 +5,8 @@
 </p>
 <hr>
 
-Welcome! 👋🏼
+Welcome all ! 👋🏼This line was added by Karthik as a test contribution.
+ 
 
 **Good First Issue** is an initiative to curate easy pickings from popular projects, so developers who've never contributed to open-source can get started quickly.
 
@@ -31,7 +32,7 @@ Follow these simple steps:
 
 - Create a new pull-request. Please add the link to the issues page of the repository in the PR description. Once the pull request is merged, the changes will be live on [goodfirstissue.dev](https://goodfirstissue.dev/).
 
-## Setting up the project locally
+## Setting up the project locally.
 
 Good First Issue has two components — the front-end app built with Nuxt.js and a data population script written in Python.
 
