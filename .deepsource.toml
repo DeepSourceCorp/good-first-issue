@@ -34,3 +34,11 @@ enabled = true
 [[analyzers]]
 name = "secrets"
 enabled = true
+
+# Python code analyzer (checks linting, style, and syntax)
+[[analyzers]]
+name = "python"
+enabled = true
+
+
+
