@@ -19,7 +19,12 @@ Follow these simple steps:
 
 - Our goal is to narrow down projects for new open-source contributors. To maintain the quality of projects in Good First Issue, please make sure your GitHub repository meets the following criteria:
 
-  - It has at least three issues with the `good first issue` label. This label is already present on all repositories by default. If not, you can follow the steps [here](https://help.github.com/en/github/managing-your-work-on-github/applying-labels-to-issues-and-pull-requests).
+  - It has at least three issues with the `good first issue` label. This label is already present on all repositories by default. If not, you can follow the steps 
+ - [Eleventy](https://github.com/11ty/eleventy)
+  A simple static-site generator in JavaScript (HTML/CSS/JS friendly).
+  **Good first issues:** https://github.com/11ty/eleventy/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22
+
+
 
   - It has at least 10 contributors.
 
