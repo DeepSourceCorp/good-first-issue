@@ -46,7 +46,9 @@ $ cp data/generated.sample.json data/generated.json
 $ cp data/tags.sample.json data/tags.json
 ```
 
-3. Build the front-end app and start the development server.
+3. Install Bun if you haven't already. You can find installation instructions at [bun.sh](https://bun.sh/docs/installation).
+
+4. Build the front-end app and start the development server.
 
 ```bash
 $ bun install # install the dependencies
