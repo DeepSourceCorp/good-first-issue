@@ -54,4 +54,6 @@ $ bun dev # start the development server
 ```
 
 The app should open in your browser.
-stop acting fool ok
+stop acting fool okgit add .
+
+
