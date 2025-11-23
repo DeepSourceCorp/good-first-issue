@@ -55,5 +55,5 @@ $ bun dev # start the development server
 
 The app should open in your browser.
 stop acting fool okgit add .
-
+Second practice line for hackathon 🚀
 
