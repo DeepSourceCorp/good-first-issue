@@ -13,23 +13,49 @@ Open-source maintainers are always looking to get more people involved, but new 
 
 ## Adding a new project
 
-You're welcome to add a new project in Good First Issue, and we encourage all projects &mdash; old and new, big and small.
+## Adding a new project
 
-Follow these simple steps:
+You are welcome to add a new project to **Good First Issue**, and we encourage all projects—old or new, large or small—to participate. This section provides a clear guide to help you prepare and submit your project correctly.
 
-- Our goal is to narrow down projects for new open-source contributors. To maintain the quality of projects in Good First Issue, please make sure your GitHub repository meets the following criteria:
+### 1. Verify project eligibility
 
-  - It has at least three issues with the `good first issue` label. This label is already present on all repositories by default. If not, you can follow the steps [here](https://help.github.com/en/github/managing-your-work-on-github/applying-labels-to-issues-and-pull-requests).
+Before adding your project, ensure that it meets the minimum quality standards. These checks help maintain consistency and make it easier for beginners to contribute.
 
-  - It has at least 10 contributors.
+#### Requirements:
 
-  - It contains a README.md with detailed setup instructions for the project, and a CONTRIBUTING.md with guidelines for new contributors.
+- **At least three issues labeled `good first issue`**  
+  The label `good first issue` helps identify beginner-friendly issues.  
+  To create one:
+  1. Navigate to your repository on GitHub and select the **Issues** tab.  
+  2. Click **New issue**.  
+  3. Write a clear title and description for a simple, well-defined task.  
+  4. Click the **Labels** option and select `good first issue`.  
+  5. Save the issue.  
+  If this label does not already exist, you can create it manually or refer to [GitHub’s label documentation](https://help.github.com/en/github/managing-your-work-on-github/applying-labels-to-issues-and-pull-requests).
 
-  - It is actively maintained.
+- **At least ten contributors**  
+  You can check your contributors by navigating to **Insights → Contributors** in your repository.
 
-- Add your repository's path (in lexicographic order) in [data/repositories.toml](data/repositories.toml).
+- **Required documentation**  
+  Your project should include both:
+  - `README.md`: Explains the purpose, setup process, and basic usage of the project.  
+  - `CONTRIBUTING.md`: Outlines contribution rules, coding standards, and best practices for new contributors.
 
-- Create a new pull-request. Please add the link to the issues page of the repository in the PR description. Once the pull request is merged, the changes will be live on [goodfirstissue.dev](https://goodfirstissue.dev/).
+- **Active maintenance**  
+  Projects should show signs of recent activity—new commits, issue responses, or pull request reviews—to ensure that contributors receive timely support.
+
+---
+
+### 2. Add your repository entry
+
+Once your project meets the above requirements, add it to the project list by editing the file [`data/repositories.toml`](data/repositories.toml).  
+Insert your project details in **alphabetical order**.
+
+Example entry:
+```toml
+["github.com/abhiramch018/AquaBotanica"]
+issues = "https://github.com/abhiramch018/AquaBotanica/issues"
+
 
 ## Setting up the project locally
 
