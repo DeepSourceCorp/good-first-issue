@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom base styles */
+body {
+  font-family: Inter, sans-serif;
+}
+
+/* Custom component styles */
+.btn-primary {
+  @apply bg-juniper text-white px-4 py-2 rounded-md hover:bg-light_juniper transition-colors;
+}
+
+.card {
+  @apply bg-white border border-ink-200 rounded-md shadow-sm;
+}
+
+/* Dark theme support */
+@media (prefers-color-scheme: dark) {
+  body {
+    @apply bg-ink-400 text-vanilla-100;
+  }
+  
+  .card {
+    @apply bg-ink-300 border-ink-200 text-vanilla-100;
+  }
+}

@@ -1,5 +1,7 @@
 {
-  "name": "nuxt-app",
+  "name": "good-first-issue",
+  "description": "Making your first open-source contribution is easier than you think",
+  "version": "1.0.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -8,7 +10,14 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "sync": "bun sync.js"
+    "sync": "bun sync.js",
+    "sync:up": "bun sync.js up",
+    "sync:down": "bun sync.js down",
+    "populate": "poetry run python gfi/populate.py",
+    "test": "poetry run python gfi/test_data.py && poetry run mypy gfi/*.py",
+    "format": "poetry run ruff format . && bunx prettier --write .",
+    "lint": "poetry run ruff check . && bunx prettier --check .",
+    "setup": "cp data/generated.sample.json data/generated.json && cp data/tags.sample.json data/tags.json"
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
