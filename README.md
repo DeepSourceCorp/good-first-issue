@@ -5,52 +5,93 @@
 </p>
 <hr>
 
-Welcome! 👋🏼
 
-**Good First Issue** is an initiative to curate easy pickings from popular projects, so developers who've never contributed to open-source can get started quickly.
+# 🌟 Good First Issue — Beginner-Friendly Guide
 
-Open-source maintainers are always looking to get more people involved, but new developers generally think it's challenging to become a contributor. We believe getting developers to fix super-easy issues removes the barrier for future contributions. This is why Good First Issue exists.
 
-## Adding a new project
+## 👋 Welcome to Good First Issue!
 
-You're welcome to add a new project in Good First Issue, and we encourage all projects &mdash; old and new, big and small.
+**Good First Issue** helps new developers make their *first open-source contribution* by collecting beginner-friendly issues from popular GitHub projects.
 
-Follow these simple steps:
+Many developers want to contribute but feel open-source is too difficult.
+This platform removes that barrier by highlighting issues that are easy, clear, and perfect for first-time contributors.
 
-- Our goal is to narrow down projects for new open-source contributors. To maintain the quality of projects in Good First Issue, please make sure your GitHub repository meets the following criteria:
+---
 
-  - It has at least three issues with the `good first issue` label. This label is already present on all repositories by default. If not, you can follow the steps [here](https://help.github.com/en/github/managing-your-work-on-github/applying-labels-to-issues-and-pull-requests).
+# 📌 Add Your Project to Good First Issue
 
-  - It has at least 10 contributors.
+We welcome all kinds of projects — new or old, small or large.
+Before adding your repository, make sure it meets these requirements:
 
-  - It contains a README.md with detailed setup instructions for the project, and a CONTRIBUTING.md with guidelines for new contributors.
+### ✅ Requirements for Adding a Project
 
-  - It is actively maintained.
+* Your GitHub repository must have **at least 3 issues** with the label `good first issue`.
+* The repository should have **at least 10 contributors**.
+* A clear **README.md** explaining:
 
-- Add your repository's path (in lexicographic order) in [data/repositories.toml](data/repositories.toml).
+  * What the project does
+  * How to set it up
+* A **CONTRIBUTING.md** file with guidelines for new contributors.
+* The project should be **actively maintained**.
 
-- Create a new pull-request. Please add the link to the issues page of the repository in the PR description. Once the pull request is merged, the changes will be live on [goodfirstissue.dev](https://goodfirstissue.dev/).
+### 📥 Steps to Submit Your Project
 
-## Setting up the project locally
+1. Add your repository (in alphabetical order) inside
+   **`data/repositories.toml`**.
+2. Open a **Pull Request**.
+3. Include a link to your repository’s **issues page** in the PR description.
 
-Good First Issue has two components — the front-end app built with Nuxt.js and a data population script written in Python.
+Once your PR is merged, your project will appear on
+👉 [https://goodfirstissue.dev/](https://goodfirstissue.dev/)
 
-To contribute new features and changes to the website, you would want to run the app locally. Please follow these steps:
+---
 
-1. Clone the project locally. Make sure you have Python 3 and a recent version of Node.js installed on your computer.
+# 🛠️ Setting Up the Project Locally (Beginner-Friendly)
 
-2. Make a copy of the sample data files for your local app to use and rename them to the filename that the app expects. **This step is important, as the front-end app won't work without these data files.**
+The project has two main parts:
+
+1. **Frontend Website** – built using Nuxt.js
+2. **Data Generator Script** – written in Python
+
+Follow these steps to run the website on your computer:
+
+---
+
+## 1️⃣ Clone the Repository
+
+Make sure you have **Python 3** and **Node.js / Bun** installed.
 
 ```bash
-$ cp data/generated.sample.json data/generated.json
-$ cp data/tags.sample.json data/tags.json
+git clone <repository-url>
+cd good-first-issue
 ```
 
-3. Build the front-end app and start the development server.
+---
+
+## 2️⃣ Prepare the Required Data Files
+
+The app needs two data files to run.
+Copy the sample files and rename them:
 
 ```bash
-$ bun install # install the dependencies
-$ bun dev # start the development server
+cp data/generated.sample.json data/generated.json
+cp data/tags.sample.json data/tags.json
 ```
 
-The app should open in your browser.
+🔹 *This step is important — the app will not work without these files.*
+
+---
+
+## 3️⃣ Install Dependencies & Start the Development Server
+
+```bash
+bun install     # installs packages
+bun dev         # starts the local server
+```
+
+Your browser will automatically open the site.
+
+---
+
+
+
