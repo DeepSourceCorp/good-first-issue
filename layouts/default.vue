@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-ink-400 flex flex-col min-h-screen antialiased text-vanilla-300">
+  <div class="bg-vanilla-100 dark:bg-ink-400 flex flex-col min-h-screen antialiased text-ink-300 dark:text-vanilla-300 transition-colors duration-200">
     <Navbar />
     <main class="flex flex-1">
       <section class="container max-w-6xl mx-auto flex flex-col md:flex-row">

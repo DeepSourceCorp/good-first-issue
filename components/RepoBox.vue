@@ -2,10 +2,10 @@
   <div
     :id="`repo-${repo.id}`"
     :class="{
-      'border-juniper hover:bg-ink-400': isCardOpen,
-      'border-ink-200': !isCardOpen
+      'border-juniper hover:bg-vanilla-100 dark:hover:bg-ink-400': isCardOpen,
+      'border-vanilla-300 dark:border-ink-200': !isCardOpen
     }"
-    class="select-none border w-full rounded-md mb-4 cursor-pointer hover:bg-ink-300 group"
+    class="select-none border w-full rounded-md mb-4 cursor-pointer hover:bg-vanilla-200 dark:hover:bg-ink-300 group transition-colors duration-200"
     @click="toggle(repo.id)"
   >
     <div class="px-5 py-3">
@@ -24,7 +24,7 @@
           class="hidden md:inline text-sm border px-3 py-1 ml-2 rounded-full font-semibold"
           :class="{
             'text-ink-400 bg-juniper border-transparent': isCardOpen,
-            'text-vanilla-200': !isCardOpen
+            'text-ink-200 dark:text-vanilla-200': !isCardOpen
           }"
           >{{ issuesDisplay }}</span
         >
@@ -34,7 +34,7 @@
       </div>
       <div
         class="flex-row flex text-sm py-1 font-mono"
-        :class="{ 'text-honey': isCardOpen, 'text-vanilla-400': !isCardOpen }"
+        :class="{ 'text-honey': isCardOpen, 'text-slate dark:text-vanilla-400': !isCardOpen }"
       >
         <div class="mr-4"><span class="text-vanilla-400">lang: </span>{{ repo.language }}</div>
         <div class="mr-4"><span class="text-vanilla-400">stars: </span>{{ repo.stars_display }}</div>
@@ -43,7 +43,7 @@
         </div>
       </div>
     </div>
-    <ol v-if="isCardOpen" class="px-5 py-3 text-base leading-loose border-t border-ink-200">
+    <ol v-if="isCardOpen" class="px-5 py-3 text-base leading-loose border-t border-vanilla-300 dark:border-ink-200">
       <li v-for="issue in repo.issues" :key="issue.url" class="flex flex-row items-start justify-start py-1">
         <span class="text-slate text-right px-2 leading-snug font-mono" style="min-width: 70px">#{{ issue.number }}</span>
         <div class="flex items-start flex-row flex-auto">
@@ -52,7 +52,7 @@
             :href="issue.url"
             target="_blank"
             rel="noopener noreferrer"
-            class="leading-snug font-medium hover:text-juniper text-vanilla-300 block flex-auto"
+            class="leading-snug font-medium hover:text-juniper text-ink-200 dark:text-vanilla-300 block flex-auto"
             >{{ issue.title }}</a
           >
           <div

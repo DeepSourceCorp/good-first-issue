@@ -1,5 +1,5 @@
 <template>
-  <section class="masthead font-sans pt-6 border-r border-ink-200 px-6 text-vanilla-300 flex-none w-full md:max-w-sm">
+  <section class="masthead font-sans pt-6 border-r border-vanilla-300 dark:border-ink-200 px-6 text-ink-300 dark:text-vanilla-300 flex-none w-full md:max-w-sm transition-colors duration-200">
     <div>
       <h3 class="section-heading">About</h3>
       <p class="text-sm">
@@ -16,9 +16,9 @@
           :to="'/language/' + tag.slug"
           :class="{
             'active-pill': $route.params.slug === tag.slug,
-            'border-slate hover:text-juniper hover:border-juniper': $route.params.slug !== tag.slug
+            'border-vanilla-400 dark:border-slate hover:text-juniper hover:border-juniper': $route.params.slug !== tag.slug
           }"
-          class="group mx-1 border px-2 py-1 inline-block rounded-sm my-1 text-sm"
+          class="group mx-1 border px-2 py-1 inline-block rounded-sm my-1 text-sm transition-colors duration-200"
           >{{ tag.language }}
           <span
             :class="{
