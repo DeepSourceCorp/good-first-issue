@@ -6,7 +6,13 @@
       'border-ink-200': !isCardOpen
     }"
     class="select-none border w-full rounded-md mb-4 cursor-pointer hover:bg-ink-300 group"
+    role="button"
+    :aria-expanded="isCardOpen"
+    :aria-label="`${isCardOpen ? 'Collapse' : 'Expand'} repository ${repo.owner}/${repo.name}`"
+    tabindex="0"
     @click="toggle(repo.id)"
+    @keydown.enter="toggle(repo.id)"
+    @keydown.space.prevent="toggle(repo.id)"
   >
     <div class="px-5 py-3">
       <div class="flex flex-row">
@@ -43,8 +49,8 @@
         </div>
       </div>
     </div>
-    <ol v-if="isCardOpen" class="px-5 py-3 text-base leading-loose border-t border-ink-200">
-      <li v-for="issue in repo.issues" :key="issue.url" class="flex flex-row items-start justify-start py-1">
+    <ol v-if="isCardOpen" class="px-5 py-3 text-base leading-loose border-t border-ink-200" role="list">
+      <li v-for="issue in repo.issues" :key="issue.url" class="flex flex-row items-start justify-start py-1" role="listitem">
         <span class="text-slate text-right px-2 leading-snug font-mono" style="min-width: 70px">#{{ issue.number }}</span>
         <div class="flex items-start flex-row flex-auto">
           <a
@@ -69,19 +75,38 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import dayjs from 'dayjs'
 import relativeTime from 'dayjs/plugin/relativeTime'
 import { ChatBubbleLeftRightIcon } from '@heroicons/vue/24/outline'
 
 dayjs.extend(relativeTime)
 
-const props = defineProps({
-  repo: {
-    type: Object,
-    required: true
-  }
-})
+interface Issue {
+  title: string
+  url: string
+  number: number
+  comments_count: number
+  created_at: string
+}
+
+interface Repository {
+  id: string
+  name: string
+  owner: string
+  description: string
+  language: string
+  slug: string
+  url: string
+  stars: number
+  stars_display: string
+  last_modified: string
+  issues: Issue[]
+}
+
+const props = defineProps<{
+  repo: Repository
+}>()
 
 const openRepoId = useOpenRepoId()
 
@@ -98,7 +123,7 @@ const isCardOpen = computed(() => {
   return openRepoId.value === props.repo.id
 })
 
-function toggle(repoId) {
+function toggle(repoId: string) {
   if (isCardOpen.value) {
     openRepoId.value = null
   } else {
@@ -106,7 +131,7 @@ function toggle(repoId) {
   }
 }
 
-function getIssueCommentsCounterTooltip(issue) {
+function getIssueCommentsCounterTooltip(issue: Issue): string {
   const numComments = issue.comments_count
   if (numComments === 0) {
     return `There are no comments on this issue`

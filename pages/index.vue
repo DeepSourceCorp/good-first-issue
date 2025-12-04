@@ -4,7 +4,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import Repositories from '~/data/generated.json'
 
 useHead({

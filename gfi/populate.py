@@ -145,7 +145,7 @@ if __name__ == "__main__":
     REPOSITORIES = []
     TAGS: Counter = Counter()
     with open(REPO_DATA_FILE, "r") as data_file:
-        DATA = toml.load(REPO_DATA_FILE)
+        DATA = toml.load(data_file)
 
         logger.info(
             "Found {} repository entries in {}",

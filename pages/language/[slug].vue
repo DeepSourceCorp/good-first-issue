@@ -4,7 +4,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import Repositories from '~/data/generated.json'
 import Tags from '~/data/tags.json'
 
@@ -15,10 +15,10 @@ const repositories = Repositories.filter(repository => repository.slug === route
 const tag = Tags.find(t => t.slug === route.params.slug)
 
 useHead({
-  title: `${tag.language} | Good First Issue`,
+  title: tag ? `${tag.language} | Good First Issue` : 'Good First Issue',
   meta: [{
     name: 'description',
-    content: `Curated list of issues in ${tag.language} from popular open-source projects that you can easily fix.`
+    content: tag ? `Curated list of issues in ${tag.language} from popular open-source projects that you can easily fix.` : 'Curated list of issues from popular open-source projects that you can easily fix.'
   }]
 })
 </script>
