@@ -13,7 +13,7 @@ Open-source maintainers are always looking to get more people involved, but new 
 
 ## Adding a new project
 
-You're welcome to add a new project in Good First Issue, and we encourage all projects &mdash; old and new, big and small.
+You’re welcome to add a new project to Good First Issue, and we encourage all projects whether old or new, big or small.
 
 Follow these simple steps:
 
