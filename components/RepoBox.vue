@@ -5,7 +5,7 @@
       'border-juniper hover:bg-ink-400': isCardOpen,
       'border-ink-200': !isCardOpen
     }"
-    class="select-none border w-full rounded-md mb-4 cursor-pointer hover:bg-ink-300 group"
+    class="repo-box select-none border w-full rounded-md mb-4 cursor-pointer hover:bg-ink-300 group"
     @click="toggle(repo.id)"
   >
     <div class="px-5 py-3">
