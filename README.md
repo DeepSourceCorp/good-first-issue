@@ -5,9 +5,9 @@
 </p>
 <hr>
 
-Welcome! 👋🏼
+<p align="center">Welcome! 👋🏼 </p>
 
-**Good First Issue** is an initiative to curate easy pickings from popular projects, so developers who've never contributed to open-source can get started quickly.
+**Good First Issue** is an initiative to compile beginner friendly tasks from popular projects, so developers who've never contributed to open-source can get started quickly.
 
 Open-source maintainers are always looking to get more people involved, but new developers generally think it's challenging to become a contributor. We believe getting developers to fix super-easy issues removes the barrier for future contributions. This is why Good First Issue exists.
 
@@ -27,9 +27,9 @@ Follow these simple steps:
 
   - It is actively maintained.
 
-- Add your repository's path (in lexicographic order) in [data/repositories.toml](data/repositories.toml).
+- Add your repository's path (in alphabetical order) in [data/repositories.toml](data/repositories.toml).
 
-- Create a new pull-request. Please add the link to the issues page of the repository in the PR description. Once the pull request is merged, the changes will be live on [goodfirstissue.dev](https://goodfirstissue.dev/).
+- Create a new pull request. Please add the link to the issues page of the repository in the PR description. Once the pull request is merged, the changes will be live on [goodfirstissue.dev](https://goodfirstissue.dev/).
 
 ## Setting up the project locally
 
