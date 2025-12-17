@@ -688,6 +688,7 @@ repositories = [
   'github.com/solid/node-solid-server',
   'github.com/solidusio/solidus',
   'github.com/sorbet/sorbet',
+  'github.com/sorndotdev/fmp4j',
   'github.com/sourcegraph/sourcegraph',
   'github.com/spaceuptech/space-cloud',
   'github.com/spack/spack',
