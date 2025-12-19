@@ -1,26 +1,31 @@
 <template>
-  <AppView>
+  <!-- <AppView></AppView> -->
+  <AppLayout>
     <div class="flex-1">
-      <section class="container max-w-6xl mx-auto flex flex-col md:flex-row">
-        <Sidebar />
-        <slot />
-      </section>
+      <div class="flex flex-col md:flex-row gap-8">
+        <Sidebar class="w-full md:w-64 flex-shrink-0" />
+        <main class="flex-1">
+          <slot />
+        </main>
+      </div>
     </div>
-  </AppView>
+  </AppLayout>
 </template>
 
 <script setup>
-import Tags from '~/data/tags.json'
+import AppLayout from '~/layouts/AppLayout.vue'
+import Sidebar from '~/components/Sidebar.vue'
+
 const route = useRoute()
+const tags = useState('tags', () => [])
 
-const tag = ref({})
-
-if (route.params.slug) {
-  tag.value = Tags.find((t) => t.slug === route.params.slug)
+// Fetch tags if not already loaded
+if (process.client && tags.value.length === 0) {
+  const { data } = await useFetch('/api/tags')
+  if (data.value) {
+    tags.value = data.value
+  }
 }
-
-// Register the AppView component
-import AppView from '~/components/AppView.vue'
 
 useHead({
   charset: 'utf-8',
