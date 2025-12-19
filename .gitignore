@@ -6,6 +6,9 @@
 .cache
 dist
 
+
+**/*ignore*
+
 # Node dependencies
 node_modules
 

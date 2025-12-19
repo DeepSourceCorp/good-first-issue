@@ -3,10 +3,16 @@
     :id="`repo-${repo.id}`"
     :class="{
       'border-juniper hover:bg-ink-400': isCardOpen,
-      'border-ink-200': !isCardOpen
+      'border-ink-200': !isCardOpen,
+      'opacity-75': isLoading
     }"
-    class="select-none border w-full rounded-md mb-4 cursor-pointer hover:bg-ink-300 group"
-    @click="toggle(repo.id)"
+    class="select-none border w-full rounded-md mb-4 cursor-pointer hover:bg-ink-300 group transition-all duration-200 ease-in-out"
+    @click="handleCardClick"
+    role="button"
+    :aria-expanded="isCardOpen ? 'true' : 'false'"
+    :aria-label="`${repo.owner}/${repo.name} repository with ${repo.issues.length} issues`"
+    tabindex="0"
+    @keydown.enter.space.prevent="toggle(repo.id)"
   >
     <div class="px-5 py-3">
       <div class="flex flex-row">
@@ -45,7 +51,11 @@
     </div>
     <ol v-if="isCardOpen" class="px-5 py-3 text-base leading-loose border-t border-ink-200">
       <li v-for="issue in repo.issues" :key="issue.url" class="flex flex-row items-start justify-start py-1">
-        <span class="text-slate text-right px-2 leading-snug font-mono" style="min-width: 70px">#{{ issue.number }}</span>
+        <span 
+  class="text-slate text-right px-2 leading-snug font-mono" 
+  style="min-width: 70px"
+  :title="`Issue #${issue.number}`"">#{{ issue.number }}
+</span>
         <div class="flex items-start flex-row flex-auto">
           <a
             title="Open issue on GitHub"
@@ -84,11 +94,30 @@ const props = defineProps({
 })
 
 const openRepoId = useOpenRepoId()
+const isLoading = ref(false)
 
 const issuesDisplay = computed(() => {
   const numIssues = props.repo.issues.length
-  return numIssues > 1 ? `${numIssues} issues` : `${numIssues} issue`
+  if (isLoading.value) return 'Loading...'
+  return numIssues > 1 ? `${numIssues} issues` : numIssues === 1 ? '1 issue' : 'No issues'
 })
+
+const handleCardClick = async () => {
+  if (isLoading.value) return
+  
+  const wasOpen = isCardOpen.value
+  toggle(props.repo.id)
+  
+  if (!wasOpen) {
+    try {
+      isLoading.value = true
+      // Here you could add any async operations like fetching more details
+      await new Promise(resolve => setTimeout(resolve, 300)) // Simulate loading
+    } finally {
+      isLoading.value = false
+    }
+  }
+}
 
 const lastModifiedDisplay = computed(() => {
   return dayjs(props.repo.last_modified).fromNow()

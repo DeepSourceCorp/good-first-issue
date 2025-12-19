@@ -1,13 +1,12 @@
 <template>
-  <div class="bg-ink-400 flex flex-col min-h-screen antialiased text-vanilla-300">
-    <Navbar />
-    <main class="flex flex-1">
+  <AppView>
+    <div class="flex-1">
       <section class="container max-w-6xl mx-auto flex flex-col md:flex-row">
         <Sidebar />
         <slot />
       </section>
-    </main>
-  </div>
+    </div>
+  </AppView>
 </template>
 
 <script setup>
@@ -17,11 +16,14 @@ const route = useRoute()
 const tag = ref({})
 
 if (route.params.slug) {
-  tag.value = Tags.find(t => t.slug === route.params.slug)
+  tag.value = Tags.find((t) => t.slug === route.params.slug)
 }
 
+// Register the AppView component
+import AppView from '~/components/AppView.vue'
+
 useHead({
-  charset: "utf-8",
+  charset: 'utf-8',
   link: [
     {
       rel: 'apple-touch-icon',
