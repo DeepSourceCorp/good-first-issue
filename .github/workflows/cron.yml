@@ -26,9 +26,12 @@ jobs:
           bun install
 
       - name: Populate the latest data
-        run: make generate
+        run: |
+           set -e
+           make generate
         env:
           GH_ACCESS_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
+
 
       - name: Sync data to the blob store
         run: bun sync up
