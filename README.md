@@ -26,6 +26,8 @@ Follow these simple steps:
   - It contains a README.md with detailed setup instructions for the project, and a CONTRIBUTING.md with guidelines for new contributors.
 
   - It is actively maintained.
+    
+    **Note:** Repositories that do not meet these requirements may be removed during automated updates.
 
 - Add your repository's path (in lexicographic order) in [data/repositories.toml](data/repositories.toml).
 
