@@ -39,22 +39,22 @@ Follow the steps below to get the app running locally.
 
 # prerequistes
 
--node.js
+node.js
 
--python
+python
 
--bun
+bun
 
--git
+git
 
 # Verify installations 
--node -v
+node -v
 
--python3 --version
+python3 --version
 
--bun -v
+bun -v
 
--git --version
+git --version
 
 # Install frontend dependencies
 $ bun install
