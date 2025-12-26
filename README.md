@@ -37,14 +37,14 @@ Good First Issue has two components — the front-end app built with Nuxt.js and
 
 Follow the steps below to get the app running locally.
 
-#prerequistes
+# prerequistes
 
 node.js
 python
 bun
 git
 
-#Verify installations 
+# Verify installations 
 node -v
 python3 --version
 bun -v
