@@ -35,22 +35,42 @@ Follow these simple steps:
 
 Good First Issue has two components — the front-end app built with Nuxt.js and a data population script written in Python.
 
-To contribute new features and changes to the website, you would want to run the app locally. Please follow these steps:
+Follow the steps below to get the app running locally.
 
-1. Clone the project locally. Make sure you have Python 3 and a recent version of Node.js installed on your computer.
+#prerequistes
 
-2. Make a copy of the sample data files for your local app to use and rename them to the filename that the app expects. **This step is important, as the front-end app won't work without these data files.**
+node.js
+python
+bun
+git
 
-```bash
-$ cp data/generated.sample.json data/generated.json
-$ cp data/tags.sample.json data/tags.json
-```
+#Verify installations 
+node -v
+python3 --version
+bun -v
+git --version
 
-3. Build the front-end app and start the development server.
+# Install frontend dependencies
+$ bun install
 
-```bash
-$ bun install # install the dependencies
-$ bun dev # start the development server
-```
+# Start the Nuxt.js development server
+$ bun dev or bun dev --host
 
-The app should open in your browser.
+> Note: If you do not have Bun installed, install it from https://bun.sh/.
+The project currently uses Bun for dependency management and development.
+
+## Troubleshooting
+
+- If the app fails to start, ensure the data files are created correctly:
+  - data/generated.json
+  - data/tags.json
+
+## The frontend will not work without these files.
+
+cp data/generated.sample.json data/generated.json
+cp data/tags.sample.json data/tags.json
+
+- Make sure no other service is running on port 3000.
+
+- Run `bun install` again if dependencies fail.
+
