@@ -42,9 +42,15 @@ To contribute new features and changes to the website, you would want to run the
 2. Make a copy of the sample data files for your local app to use and rename them to the filename that the app expects. **This step is important, as the front-end app won't work without these data files.**
 
 ```bash
-$ cp data/generated.sample.json data/generated.json
-$ cp data/tags.sample.json data/tags.json
+# Mac / Linux
+cp data/generated.sample.json data/generated.json
+cp data/tags.sample.json data/tags.json
+
+# Windows (CMD / PowerShell)
+copy data\generated.sample.json data\generated.json
+copy data\tags.sample.json data\tags.json
 ```
+
 
 3. Build the front-end app and start the development server.
 
