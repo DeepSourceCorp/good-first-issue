@@ -54,3 +54,7 @@ $ bun dev # start the development server
 ```
 
 The app should open in your browser.
+## Contributing
+
+Please read the CONTRIBUTING.md file for detailed guidelines on how to contribute to this project.
+
