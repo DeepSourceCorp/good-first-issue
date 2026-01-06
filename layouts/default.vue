@@ -11,7 +11,7 @@
 </template>
 
 <script setup>
-import Tags from '~/data/tags.json'
+import Tags from '~/data/tags.sample.json'
 const route = useRoute()
 
 const tag = ref({})

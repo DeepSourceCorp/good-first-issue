@@ -10,23 +10,20 @@
     <div class="pt-6">
       <h3 class="section-heading">Browse by language</h3>
       <div>
-        <nuxt-link
+        <button
           v-for="tag in Tags"
           :key="tag.slug"
-          :to="'/language/' + tag.slug"
-          :class="{
-            'active-pill': $route.params.slug === tag.slug,
-            'border-slate hover:text-juniper hover:border-juniper': $route.params.slug !== tag.slug
-          }"
-          class="group mx-1 border px-2 py-1 inline-block rounded-sm my-1 text-sm"
-          >{{ tag.language }}
-          <span
-            :class="{
-              'text-vanilla-400 group-hover:text-juniper': $route.params.slug !== tag.slug
-            }"
-            >&times; {{ tag.count }}</span
-          ></nuxt-link
+          @click="toggleTag(tag.slug)"
+          :class="[
+            'group mx-1 border px-2 py-1 inline-block rounded-sm my-1 text-sm',
+            selectedTags.includes(tag.slug) ? 'active-pill' : 'border-slate hover:text-juniper hover:border-juniper'
+          ]"
         >
+          {{ tag.language }}
+          <span
+            :class="selectedTags.includes(tag.slug) ? 'text-juniper' : 'text-vanilla-400 group-hover:text-juniper'"
+          >&times; {{ tag.count }}</span>
+        </button>
       </div>
     </div>
     <div class="pt-6">
@@ -61,9 +58,59 @@
 </template>
 
 <script setup>
-import Tags from '~/data/tags.json'
+import Tags from '~/data/tags.sample.json'
 import { PlusCircleIcon } from '@heroicons/vue/24/outline'
-import {HeartIcon} from '@heroicons/vue/24/solid'
+import { HeartIcon } from '@heroicons/vue/24/solid'
+import { ref, watch } from 'vue'
+import { useRouter, useRoute } from 'vue-router'
+
+const selectedTags = ref([])
+const router = useRouter()
+const route = useRoute()
+
+// Keep selected tags in sync with the `tags` query parameter
+watch(
+  () => route.query.tags,
+  (tagsParam) => {
+    if (!tagsParam) {
+      selectedTags.value = []
+      return
+    }
+
+    if (Array.isArray(tagsParam)) {
+      selectedTags.value = tagsParam
+        .flatMap(t => t.split(','))
+        .filter(Boolean)
+    } else {
+      selectedTags.value = tagsParam.split(',').filter(Boolean)
+    }
+  },
+  { immediate: true }
+)
+
+function toggleTag(slug) {
+  const current = new Set(selectedTags.value)
+
+  if (current.has(slug)) {
+    current.delete(slug)
+  } else {
+    current.add(slug)
+  }
+
+  const nextTags = Array.from(current)
+
+  const nextQuery = { ...route.query }
+
+  if (nextTags.length) {
+    nextQuery.tags = nextTags.join(',')
+  } else {
+    delete nextQuery.tags
+  }
+
+  selectedTags.value = nextTags
+
+  router.push({ path: '/', query: nextQuery })
+}
 </script>
 <style>
 .section-heading {
