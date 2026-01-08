@@ -33,13 +33,26 @@ Follow these simple steps:
 
 ## Setting up the project locally
 
-Good First Issue has two components — the front-end app built with Nuxt.js and a data population script written in Python.
+Good First Issue has two components — the front-end app built with Next.js and a data population script written in Python.
 
 To contribute new features and changes to the website, you would want to run the app locally. Please follow these steps:
 
-1. Clone the project locally. Make sure you have Python 3 and a recent version of Node.js installed on your computer.
+### Setup Instructions
+1. Fork this repository to your own GitHub account.
 
-2. Make a copy of the sample data files for your local app to use and rename them to the filename that the app expects. **This step is important, as the front-end app won't work without these data files.**
+   ```bash 
+   Click on fork
+   Add Repository name
+   Create fork
+```
+ Clone your fork locally:
+   git clone https://github.com/YOUR_USERNAME/good-first-issue.git
+   cd good-first-issue
+```
+
+2. Make a copy of the sample data files for your local app to use and rename them to the filename that the app expects. 
+
+**This step is important, as the front-end app won't work without these data files.**
 
 ```bash
 $ cp data/generated.sample.json data/generated.json
@@ -53,4 +66,4 @@ $ bun install # install the dependencies
 $ bun dev # start the development server
 ```
 
-The app should open in your browser.
+Open your browser at http://localhost:3000 to see the app running.
