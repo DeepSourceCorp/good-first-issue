@@ -8,6 +8,7 @@ export default defineNuxtConfig({
     }
   },
   site: {
-    url: 'https://goodfirstissue.dev'
+    url: 'https://goodfirstissue.dev' ,
+    compatibilityDate: '2026-01-08'
   }
 })

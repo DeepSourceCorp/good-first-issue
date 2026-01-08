@@ -37,7 +37,18 @@ Good First Issue has two components — the front-end app built with Nuxt.js and
 
 To contribute new features and changes to the website, you would want to run the app locally. Please follow these steps:
 
-1. Clone the project locally. Make sure you have Python 3 and a recent version of Node.js installed on your computer.
+1. ### Setup Instructions
+1. Fork this repository to your own GitHub account.
+
+   ```bash 
+   Click on fork
+   Add Repository name
+   Create fork
+```
+ Clone your fork locally:
+   git clone https://github.com/YOUR_USERNAME/good-first-issue.git
+   cd good-first-issue
+```
 
 2. Make a copy of the sample data files for your local app to use and rename them to the filename that the app expects. **This step is important, as the front-end app won't work without these data files.**
 
