@@ -48,6 +48,8 @@ $ cp data/tags.sample.json data/tags.json
 
 3. Build the front-end app and start the development server.
 
+**Note:** Make sure you have Bun installed on your computer. If you haven't installed it yet, you can follow the installation instructions at [https://bun.sh](https://bun.sh).
+
 ```bash
 $ bun install # install the dependencies
 $ bun dev # start the development server
