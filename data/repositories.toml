@@ -434,6 +434,7 @@ repositories = [
   'github.com/marmelab/react-admin',
   'github.com/mars-project/mars',
   'github.com/masoniteframework/masonite',
+  'github.com/mljar/mljar-supervised',
   'github.com/masoniteframework/orm',
   'github.com/MaterialDesignInXAML/MaterialDesignInXamlToolkit',
   'github.com/mateuszz0000/imgprocalgs',
