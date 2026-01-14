@@ -19,7 +19,7 @@ repositories = [
   'github.com/angular-ui/ui-grid',
   'github.com/angular/components',
   'github.com/ankidroid/Anki-Android',
-  'github.com/ansible/awx',
+  ''github.com/automl/auto-sklearn',
   'github.com/AntennaPod/AntennaPod',
   'github.com/apache/age',
   'github.com/apache/apisix',
