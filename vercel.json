@@ -4,3 +4,4 @@
   "framework": "nuxtjs",
   "installCommand": "yum install -y python3-pip"
 }
+

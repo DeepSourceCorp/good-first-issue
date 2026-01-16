@@ -54,3 +54,24 @@ $ bun dev # start the development server
 ```
 
 The app should open in your browser.
+
+
+## Adding a New Project
+
+If you want to add a new open-source project to this list, please follow the
+step-by-step guide in the documentation below:
+
+👉 [How to Add a New Project](docs/adding-a-new-project.md)
+
+Make sure to validate your changes before submitting a Pull Request.
+
+## New Feature: Real-Time Search
+
+We have added a **real-time search** feature to make it easier to find projects:
+
+- Search by **project name**, **language**, or **labels**
+- Results update **instantly** as you type
+- Works with all projects in `data/projects.json`
+
+Try it out in the `website/index.html` page!
+

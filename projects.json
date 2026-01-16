@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Sample Project",
+    "description": "This is a sample project for testing search.",
+    "github_url": "https://github.com/example/sample-project",
+    "labels": ["good first issue"],
+    "language": "JavaScript"
+  },
+  {
+    "name": "Test Project",
+    "description": "Another example project for practice.",
+    "github_url": "https://github.com/example/test-project",
+    "labels": ["help wanted"],
+    "language": "Python"
+  },
+  {
+    "name": "Frontend Fun",
+    "description": "A fun project to test UI skills.",
+    "github_url": "https://github.com/example/frontend-fun",
+    "labels": ["good first issue", "UI"],
+    "language": "HTML"
+  },
+  {
+    "name": "Backend Buddy",
+    "description": "Example backend project for learning APIs.",
+    "github_url": "https://github.com/example/backend-buddy",
+    "labels": ["help wanted"],
+    "language": "Node.js"
+  }
+]

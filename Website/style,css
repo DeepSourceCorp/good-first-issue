@@ -1,0 +1,27 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+#search-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#repo-search {
+  width: 50%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+#project-list .project-item {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  transition: background 0.2s;
+}
+
+#project-list .project-item:hover {
+  background-color: #f9f9f9;
+}
