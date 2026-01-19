@@ -577,6 +577,7 @@ repositories = [
   'github.com/purpleidea/mgmt',
   'github.com/pwndbg/pwndbg',
   'github.com/pydata/xarray',
+  'github.com/pyfenn/fenn',
   'github.com/pygame/pygame',
   'github.com/pyinstaller/pyinstaller',
   'github.com/pypa/pip',
