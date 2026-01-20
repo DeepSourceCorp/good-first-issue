@@ -1,15 +1,15 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-import itertools
 import json
 import random
 import re
+import threading
 import time
 from collections import Counter
 from concurrent.futures import ThreadPoolExecutor
 from operator import itemgetter
 from os import getenv, path
-from typing import TypedDict, Dict, Union, Sequence, Optional, Mapping
+from typing import TypedDict, Dict, Union, Sequence, Optional
 
 import toml
 
@@ -19,7 +19,7 @@ from emoji import emojize
 from slugify import slugify
 from loguru import logger
 
-MAX_CONCURRENCY = 10  # max number of requests to make to GitHub in parallel (reduced to avoid rate limits)
+MAX_CONCURRENCY = 5  # max number of requests to make to GitHub in parallel
 REPO_DATA_FILE = "data/repositories.toml"
 REPO_GENERATED_DATA_FILE = "data/generated.json"
 TAGS_GENERATED_DATA_FILE = "data/tags.json"
@@ -44,6 +44,72 @@ class RepoNotFoundException(Exception):
     """Exception class for repo not found."""
 
 
+class GitHubRateLimiter:
+    """Thread-safe rate limiter for GitHub API requests."""
+
+    def __init__(self, client, requests_per_second=1.0):
+        self._client = client
+        self._lock = threading.Lock()
+        self._min_interval = 1.0 / requests_per_second
+        self._last_request_time = 0.0
+        self._remaining = None
+        self._reset_time = None
+        self._paused_until = 0.0
+
+    def acquire(self):
+        """Block until it's safe to make an API request."""
+        with self._lock:
+            # Check for coordinated pause
+            if time.time() < self._paused_until:
+                wait_time = self._paused_until - time.time()
+                logger.info("Waiting {:.0f}s for rate limit reset", wait_time)
+                time.sleep(wait_time)
+
+            # Refresh rate limit info periodically
+            if self._remaining is None or self._remaining % 100 == 0:
+                self._update_rate_limit()
+
+            # Proactive pause if quota low
+            if self._remaining is not None and self._remaining < 100:
+                if self._reset_time:
+                    wait_time = max(0, self._reset_time - time.time() + 5)
+                    if wait_time > 0:
+                        logger.warning("Low quota ({}). Pausing {:.0f}s", self._remaining, wait_time)
+                        self._paused_until = time.time() + wait_time
+                        time.sleep(wait_time)
+                        self._remaining = None
+
+            # Enforce minimum interval
+            elapsed = time.time() - self._last_request_time
+            if elapsed < self._min_interval:
+                time.sleep(self._min_interval - elapsed)
+
+            self._last_request_time = time.time()
+            if self._remaining:
+                self._remaining -= 1
+
+    def _update_rate_limit(self):
+        try:
+            info = self._client.rate_limit()['resources']['core']
+            self._remaining = info['remaining']
+            self._reset_time = info['reset']
+            logger.debug("Rate limit: {}/{}", self._remaining, info['limit'])
+        except Exception as e:
+            logger.warning("Failed to check rate limit: {}", e)
+
+    def report_rate_limit_hit(self):
+        """Call when ForbiddenError received - triggers coordinated pause."""
+        with self._lock:
+            self._update_rate_limit()
+            if self._reset_time:
+                wait_time = max(60, self._reset_time - time.time() + 5)
+            else:
+                wait_time = 60
+            self._paused_until = time.time() + wait_time
+            self._remaining = 0
+            logger.warning("Rate limit hit. All workers pause for {:.0f}s", wait_time)
+
+
 def parse_github_url(url: str) -> dict:
     """Take the GitHub repo URL and return a tuple with owner login and repo name."""
     match = GH_URL_PATTERN.search(url)
@@ -60,36 +126,37 @@ class RepositoryIdentifier(TypedDict):
 RepositoryInfo = Dict["str", Union[str, int, Sequence]]
 
 
-def get_repository_info(identifier: RepositoryIdentifier) -> Optional[RepositoryInfo]:
+def get_repository_info(
+    identifier: RepositoryIdentifier,
+    client,
+    rate_limiter: GitHubRateLimiter
+) -> Optional[RepositoryInfo]:
     """Get the relevant information needed for the repository from its owner login and name."""
     owner, name = identifier["owner"], identifier["name"]
 
     logger.info("Getting info for {}/{}", owner, name)
 
-    # create a logged in GitHub client
-    client = login(token=getenv("GH_ACCESS_TOKEN"))
-
     max_retries = 3
 
     for attempt in range(max_retries):
         try:
+            rate_limiter.acquire()
             repository = client.repository(owner, name)
             # Don't find issues inside archived repos.
             if repository.archived:
                 return None
 
-            good_first_issues = set(
-                itertools.chain.from_iterable(
-                    repository.issues(
-                        labels=label,
-                        state=ISSUE_STATE,
-                        number=ISSUE_LIMIT,
-                        sort=ISSUE_SORT,
-                        direction=ISSUE_SORT_DIRECTION,
-                    )
-                    for label in ISSUE_LABELS
+            good_first_issues = set()
+            for label in ISSUE_LABELS:
+                rate_limiter.acquire()
+                issues_for_label = repository.issues(
+                    labels=label,
+                    state=ISSUE_STATE,
+                    number=ISSUE_LIMIT,
+                    sort=ISSUE_SORT,
+                    direction=ISSUE_SORT_DIRECTION,
                 )
-            )
+                good_first_issues.update(issues_for_label)
             logger.info("\t found {} good first issues", len(good_first_issues))
             # check if repo has at least one good first issue
             if good_first_issues and repository.language:
@@ -126,11 +193,10 @@ def get_repository_info(identifier: RepositoryIdentifier) -> Optional[Repository
                 return None
 
         except exceptions.ForbiddenError:
+            rate_limiter.report_rate_limit_hit()
             if attempt < max_retries - 1:
-                wait_time = 60 * (attempt + 1)  # 60s, 120s, 180s
-                logger.warning("Rate limited on {}/{}. Waiting {}s before retry...",
-                             owner, name, wait_time)
-                time.sleep(wait_time)
+                logger.warning("Rate limited on {}/{}. Retrying after coordinated pause...",
+                             owner, name)
             else:
                 logger.error("Rate limit exceeded after {} retries: {}/{}",
                            max_retries, owner, name)
@@ -175,8 +241,16 @@ if __name__ == "__main__":
         # shuffle the order of the repositories
         random.shuffle(repositories)
 
+        # Create shared client and rate limiter
+        client = login(token=getenv("GH_ACCESS_TOKEN"))
+        rate_limiter = GitHubRateLimiter(client, requests_per_second=1.0)
+
+        # Wrapper to pass shared dependencies
+        def process_repo(identifier):
+            return get_repository_info(identifier, client, rate_limiter)
+
         with ThreadPoolExecutor(max_workers=MAX_CONCURRENCY) as executor:
-            results = executor.map(get_repository_info, repositories)
+            results = executor.map(process_repo, repositories)
 
         # filter out repositories with valid data and increment tag counts
         for result in results:
