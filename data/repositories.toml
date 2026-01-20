@@ -592,7 +592,7 @@ repositories = [
   'github.com/pytorch/ignite',
   'github.com/pytorch/pytorch',
   'github.com/PyTorchLightning/pytorch-lightning',
-  'https://github.com/pyupio/safety',
+  'github.com/pyupio/safety',
   'github.com/pywinauto/pywinauto',
   'github.com/Qiskit/qiskit-terra',
   'github.com/qmk/qmk_firmware',
