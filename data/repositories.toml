@@ -841,4 +841,6 @@ repositories = [
   'github.com/ZupIT/charlescd',
   'github.com/ZupIT/ritchie-cli',
   'github.com/ZupIT/ritchie-formulas'
+  'github.com/firstcontributions/first-contributions',
+
  ]
