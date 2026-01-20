@@ -1,11 +1,20 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [],
+  darkMode: 'class',
+
+  content: [
+    './components/**/*.{vue,js,ts}',
+    './layouts/**/*.vue',
+    './pages/**/*.vue',
+    './app.vue'
+  ],
+
   theme: {
     extend: {
       colors: {
         transparent: 'transparent',
         current: 'currentColor',
+
         juniper: '#33cb9a',
         light_juniper: '#2EB78B',
         robin: '#4568dc',
@@ -14,12 +23,14 @@ export default {
         honey: '#f6d87c',
         aqua: '#23c4f8',
         gitlab: '#6753B5',
+
         vanilla: {
           100: '#ffffff',
           200: '#f5f5f5',
           300: '#eeeeee',
           400: '#c0c1c3'
         },
+
         ink: {
           100: '#373c49',
           200: '#2c303a',
@@ -27,6 +38,7 @@ export default {
           400: '#16181d'
         }
       },
+
       fontFamily: {
         sans: [
           'Inter',
@@ -45,9 +57,17 @@ export default {
           '"Noto Color Emoji"'
         ],
         serif: ['Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
-        mono: ['Menlo', 'Monaco', 'Consolas', '"Liberation Mono"', '"Courier New"', 'monospace']
+        mono: [
+          'Menlo',
+          'Monaco',
+          'Consolas',
+          '"Liberation Mono"',
+          '"Courier New"',
+          'monospace'
+        ]
       }
     }
   },
+
   plugins: []
 }

@@ -1,6 +1,15 @@
 <template>
-  <div class="p-4 w-full">
-    <RepoBox v-for="repo in Repositories" :key="repo.id" :repo="repo" />
+  <div
+    class="p-4 w-full min-h-screen
+           bg-vanilla-100 dark:bg-ink-400
+           text-ink-100 dark:text-vanilla-100
+           transition-colors duration-200"
+  >
+    <RepoBox
+      v-for="repo in Repositories"
+      :key="repo.id"
+      :repo="repo"
+    />
   </div>
 </template>
 

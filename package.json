@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "@heroicons/vue": "^2.0.18",
+    "@nuxtjs/color-mode": "^4.0.0",
     "@vercel/blob": "^0.16.1",
     "dayjs": "^1.11.10"
   }
