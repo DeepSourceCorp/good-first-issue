@@ -30,26 +30,6 @@ To maintain the quality of projects in Good First Issue, please make sure your G
 
 Once your submission is reviewed and approved, it will be added to [goodfirstissue.dev](https://goodfirstissue.dev/).
 
-## Setting up the project locally
+## Contributing
 
-Good First Issue has two components — the front-end app built with Nuxt.js and a data population script written in Python.
-
-To contribute new features and changes to the website, you would want to run the app locally. Please follow these steps:
-
-1. Clone the project locally. Make sure you have Python 3 and a recent version of Node.js installed on your computer.
-
-2. Make a copy of the sample data files for your local app to use and rename them to the filename that the app expects. **This step is important, as the front-end app won't work without these data files.**
-
-```bash
-$ cp data/generated.sample.json data/generated.json
-$ cp data/tags.sample.json data/tags.json
-```
-
-3. Build the front-end app and start the development server.
-
-```bash
-$ bun install # install the dependencies
-$ bun dev # start the development server
-```
-
-The app should open in your browser.
+Want to contribute? See [CONTRIBUTING.md](CONTRIBUTING.md) for setup instructions and guidelines.
