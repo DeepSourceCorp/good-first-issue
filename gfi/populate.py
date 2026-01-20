@@ -4,6 +4,7 @@ import itertools
 import json
 import random
 import re
+import time
 from collections import Counter
 from concurrent.futures import ThreadPoolExecutor
 from operator import itemgetter
@@ -18,8 +19,7 @@ from emoji import emojize
 from slugify import slugify
 from loguru import logger
 
-MAX_CONCURRENCY = 25  # max number of requests to make to GitHub in parallel
-MAX_REPOSITORIES = 500  # max number of repositories populated in one session
+MAX_CONCURRENCY = 10  # max number of requests to make to GitHub in parallel (reduced to avoid rate limits)
 REPO_DATA_FILE = "data/repositories.toml"
 REPO_GENERATED_DATA_FILE = "data/generated.json"
 TAGS_GENERATED_DATA_FILE = "data/tags.json"
@@ -69,66 +69,82 @@ def get_repository_info(identifier: RepositoryIdentifier) -> Optional[Repository
     # create a logged in GitHub client
     client = login(token=getenv("GH_ACCESS_TOKEN"))
 
-    info: RepositoryInfo = {}
+    max_retries = 3
 
-    # get the repository; if the repo is not found, log a warning
-    try:
-        repository = client.repository(owner, name)
-        # Don't find issues inside archived repos.
-        if repository.archived:
+    for attempt in range(max_retries):
+        try:
+            repository = client.repository(owner, name)
+            # Don't find issues inside archived repos.
+            if repository.archived:
+                return None
+
+            good_first_issues = set(
+                itertools.chain.from_iterable(
+                    repository.issues(
+                        labels=label,
+                        state=ISSUE_STATE,
+                        number=ISSUE_LIMIT,
+                        sort=ISSUE_SORT,
+                        direction=ISSUE_SORT_DIRECTION,
+                    )
+                    for label in ISSUE_LABELS
+                )
+            )
+            logger.info("\t found {} good first issues", len(good_first_issues))
+            # check if repo has at least one good first issue
+            if good_first_issues and repository.language:
+                # store the repo info
+                info: RepositoryInfo = {}
+                info["name"] = name
+                info["owner"] = owner
+                info["description"] = emojize(repository.description or "")
+                info["language"] = repository.language
+                info["slug"] = slugify(repository.language, replacements=SLUGIFY_REPLACEMENTS)
+                info["url"] = repository.html_url
+                info["stars"] = repository.stargazers_count
+                info["stars_display"] = numerize.numerize(repository.stargazers_count)
+                info["last_modified"] = repository.pushed_at.isoformat()
+                info["id"] = str(repository.id)
+
+                # get the latest issues with the tag
+                issues = []
+                for issue in good_first_issues:
+                    issues.append(
+                        {
+                            "title": issue.title,
+                            "url": issue.html_url,
+                            "number": issue.number,
+                            "comments_count": issue.comments_count,
+                            "created_at": issue.created_at.isoformat(),
+                        }
+                    )
+
+                info["issues"] = issues
+                return info
+            else:
+                logger.info("\t skipping due to insufficient issues or info")
+                return None
+
+        except exceptions.ForbiddenError:
+            if attempt < max_retries - 1:
+                wait_time = 60 * (attempt + 1)  # 60s, 120s, 180s
+                logger.warning("Rate limited on {}/{}. Waiting {}s before retry...",
+                             owner, name, wait_time)
+                time.sleep(wait_time)
+            else:
+                logger.error("Rate limit exceeded after {} retries: {}/{}",
+                           max_retries, owner, name)
+                return None
+
+        except exceptions.NotFoundError:
+            logger.warning("Not Found: {}/{}", owner, name)
             return None
 
-        good_first_issues = set(
-            itertools.chain.from_iterable(
-                repository.issues(
-                    labels=label,
-                    state=ISSUE_STATE,
-                    number=ISSUE_LIMIT,
-                    sort=ISSUE_SORT,
-                    direction=ISSUE_SORT_DIRECTION,
-                )
-                for label in ISSUE_LABELS
-            )
-        )
-        logger.info("\t found {} good first issues", len(good_first_issues))
-        # check if repo has at least one good first issue
-        if good_first_issues and repository.language:
-            # store the repo info
-            info["name"] = name
-            info["owner"] = owner
-            info["description"] = emojize(repository.description or "")
-            info["language"] = repository.language
-            info["slug"] = slugify(repository.language, replacements=SLUGIFY_REPLACEMENTS)
-            info["url"] = repository.html_url
-            info["stars"] = repository.stargazers_count
-            info["stars_display"] = numerize.numerize(repository.stargazers_count)
-            info["last_modified"] = repository.pushed_at.isoformat()
-            info["id"] = str(repository.id)
+        except exceptions.ConnectionError:
+            logger.warning("Connection error: {}/{}", owner, name)
+            return None
 
-            # get the latest issues with the tag
-            issues = []
-            for issue in good_first_issues:
-                issues.append(
-                    {
-                        "title": issue.title,
-                        "url": issue.html_url,
-                        "number": issue.number,
-                        "comments_count": issue.comments_count,
-                        "created_at": issue.created_at.isoformat(),
-                    }
-                )
-
-            info["issues"] = issues
-        else:
-            logger.info("\t skipping due to insufficient issues or info")
-    except exceptions.NotFoundError:
-        logger.warning("Not Found: {}/{}", owner, name)
-    except exceptions.ForbiddenError:
-        logger.warning("Skipped due to rate-limits: {}/{}", owner, name)
-    except exceptions.ConnectionError:
-        logger.warning("Skipped due to connection errors: {}/{}", owner, name)
-
-    return info
+    return None
 
 
 if __name__ == "__main__":
@@ -160,7 +176,7 @@ if __name__ == "__main__":
         random.shuffle(repositories)
 
         with ThreadPoolExecutor(max_workers=MAX_CONCURRENCY) as executor:
-            results = executor.map(get_repository_info, repositories[:MAX_REPOSITORIES])
+            results = executor.map(get_repository_info, repositories)
 
         # filter out repositories with valid data and increment tag counts
         for result in results:

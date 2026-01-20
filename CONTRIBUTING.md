@@ -7,12 +7,16 @@ Thanks for your interest in contributing! This guide will help you get started.
 Before you begin, make sure you have the following installed:
 
 - **Node.js** (v18 or later) - [Download](https://nodejs.org/)
-- **Python 3** - [Download](https://www.python.org/downloads/)
 - **Bun** - A fast JavaScript runtime and package manager. Install it with:
   ```bash
   curl -fsSL https://bun.sh/install | bash
   ```
   Or see [bun.sh](https://bun.sh/) for other installation methods.
+- **uv** - A fast Python package manager. Install it with:
+  ```bash
+  curl -LsSf https://astral.sh/uv/install.sh | sh
+  ```
+  Or via Homebrew: `brew install uv`. See [docs.astral.sh/uv](https://docs.astral.sh/uv/) for details.
 
 ## Project Structure
 
@@ -30,7 +34,15 @@ Good First Issue has two main components:
    cd good-first-issue
    ```
 
-2. **Set up sample data files**
+2. **Set up Python environment**
+
+   ```bash
+   uv sync --all-extras
+   ```
+
+   This creates a virtual environment and installs all dependencies.
+
+3. **Set up sample data files**
 
    The front-end app needs data files to display repositories. Copy the sample files to get started:
 
@@ -43,13 +55,13 @@ Good First Issue has two main components:
    - `generated.json` - Repository metadata (stars, issues, languages, etc.)
    - `tags.json` - Language tags for filtering
 
-3. **Install dependencies**
+4. **Install frontend dependencies**
 
    ```bash
    bun install
    ```
 
-4. **Start the development server**
+5. **Start the development server**
 
    ```bash
    bun dev
@@ -62,13 +74,25 @@ Good First Issue has two main components:
 To run the data sanity tests:
 
 ```bash
-python -m pytest gfi/test_data.py
+uv run python gfi/test_data.py
 ```
 
-Or using unittest directly:
+To run type checking:
 
 ```bash
-python gfi/test_data.py
+uv run mypy gfi/*.py
+```
+
+Or run both with:
+
+```bash
+make test
+```
+
+## Formatting Code
+
+```bash
+make format
 ```
 
 ## Making Changes

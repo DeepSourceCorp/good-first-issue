@@ -1,14 +1,13 @@
 .ONESHELL:
 pre-build:
-	pip install --upgrade poetry
-	poetry install --no-root
+	uv sync --all-extras
 
 build:
 	bun install
 	bun generate
 
 generate:
-	poetry run python gfi/populate.py
+	uv run python gfi/populate.py
 
 generate-prod:
 	bun install
@@ -16,11 +15,11 @@ generate-prod:
 	bun generate
 
 test:
-	poetry run python gfi/test_data.py
-	poetry run mypy gfi/*.py
+	uv run python gfi/test_data.py
+	uv run mypy gfi/*.py
 
 format:
-	poetry run ruff format .
+	uv run ruff format .
 	bunx prettier --write .
 
 .DEFAULT_GOAL := build
