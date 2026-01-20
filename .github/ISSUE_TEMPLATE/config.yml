@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Add a Repository
+    url: https://forms.gle/dL6EyDcCwecGtdXH6
+    about: Want to add your repository? Submit via this form
+  - name: Questions or Discussions
+    url: https://github.com/DeepSourceCorp/good-first-issue/discussions
+    about: Ask questions or start a discussion

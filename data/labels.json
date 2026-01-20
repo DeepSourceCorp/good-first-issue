@@ -1,3 +1,13 @@
 {
-  "labels": ["good first issue", "good-first-issue"]
+  "labels": [
+    "good first issue",
+    "good-first-issue",
+    "beginner",
+    "beginner-friendly",
+    "easy",
+    "first-timers-only",
+    "starter",
+    "help wanted",
+    "low-hanging-fruit"
+  ]
 }
