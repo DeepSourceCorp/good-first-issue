@@ -1,6 +1,5 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "buildCommand": "make generate-prod",
-  "framework": "nuxtjs",
-  "installCommand": "yum install -y python3-pip"
+  "framework": "nuxtjs"
 }
