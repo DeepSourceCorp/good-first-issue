@@ -2,6 +2,20 @@
 
 Thanks for your interest in contributing! This guide will help you get started.
 
+## Code of Conduct
+
+This project is committed to providing a welcoming and inclusive environment for all contributors.
+
+All participants are expected to uphold respectful and professional behavior when contributing to this project, including in issues, pull requests, and other community interactions.
+
+This project follows the principles of the **Contributor Covenant Code of Conduct**. By participating, you agree to abide by its terms.
+
+If you experience or witness unacceptable behavior, please report it to the project maintainers by opening a GitHub issue or contacting the maintainers privately.
+
+For more details, see the Contributor Covenant:
+https://www.contributor-covenant.org/version/2/1/code_of_conduct/
+
+
 ## Prerequisites
 
 Before you begin, make sure you have the following installed:
@@ -100,3 +114,5 @@ make format
 1. Create a new branch for your changes
 2. Make your changes and test them locally
 3. Submit a pull request with a clear description of what you changed and why
+
+
