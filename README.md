@@ -21,7 +21,7 @@ To maintain the quality of projects in Good First Issue, please make sure your G
 
 | Requirement | Description |
 |-------------|-------------|
-| Good First Issues | At least 3 open issues with the `good first issue` label |
+| Good First Issues | At least 3 open issues with beginner-friendly labels (`good first issue`, `beginner`, `easy`, `help wanted`, etc.) |
 | Contributors | At least 10 contributors |
 | README.md | Detailed setup instructions |
 | CONTRIBUTING.md | Guidelines for new contributors |

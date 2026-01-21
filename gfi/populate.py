@@ -7,6 +7,7 @@ import threading
 import time
 from collections import Counter
 from concurrent.futures import ThreadPoolExecutor
+from datetime import datetime, timezone
 from operator import itemgetter
 from os import getenv, path
 from typing import TypedDict, Dict, Union, Sequence, Optional
@@ -30,6 +31,7 @@ ISSUE_SORT = "created"
 ISSUE_SORT_DIRECTION = "desc"
 ISSUE_LIMIT = 10
 SLUGIFY_REPLACEMENTS = [["#", "sharp"], ["+", "plus"]]
+MAX_INACTIVITY_DAYS = 90  # Skip repos inactive for more than 3 months
 
 if not path.exists(LABELS_DATA_FILE):
     raise RuntimeError("No labels data file found. Exiting.")
@@ -144,6 +146,12 @@ def get_repository_info(
             repository = client.repository(owner, name)
             # Don't find issues inside archived repos.
             if repository.archived:
+                return None
+
+            # Skip repos with no recent activity
+            days_since_push = (datetime.now(timezone.utc) - repository.pushed_at).days
+            if days_since_push > MAX_INACTIVITY_DAYS:
+                logger.info("\t skipping due to inactivity ({} days since last push)", days_since_push)
                 return None
 
             good_first_issues = set()
