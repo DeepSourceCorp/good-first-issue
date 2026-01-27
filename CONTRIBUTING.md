@@ -100,3 +100,15 @@ make format
 1. Create a new branch for your changes
 2. Make your changes and test them locally
 3. Submit a pull request with a clear description of what you changed and why
+
+## AI Usage Guidelines
+
+If you use AI tools (Claude, Copilot, ChatGPT, etc.) when contributing:
+
+- **Disclose AI usage** in your pull request description
+- **Review and test** all AI-generated code before submitting
+- **Ensure accuracy** - don't submit code you haven't verified works
+
+Low-quality AI-generated PRs or issues will be closed without review.
+
+_Inspired by [Ghostty's AI Policy](https://github.com/ghostty-org/ghostty/blob/main/AI_POLICY.md)._
