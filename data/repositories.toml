@@ -233,6 +233,7 @@ repositories = [
   'github.com/flarum/core',
   'github.com/flipt-io/flipt',
   'github.com/flutter/flutter',
+  'github.com/foobara/foobara',
   'github.com/fortio/fortio',
   'github.com/fossasia/open-event-server',
   'github.com/Foundry376/Mailspring',
