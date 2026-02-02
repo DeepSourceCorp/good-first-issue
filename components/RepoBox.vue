@@ -38,9 +38,18 @@
       >
         <div class="mr-4"><span class="text-vanilla-400">lang: </span>{{ repo.language }}</div>
         <div class="mr-4"><span class="text-vanilla-400">stars: </span>{{ repo.stars_display }}</div>
-        <div class="mr-4">
-          <span class="text-vanilla-400">last activity: </span><span>{{ lastModifiedDisplay }}</span>
-        </div>
+        <div class="mr-4 flex items-center gap-1">
+        <span class="text-vanilla-400">last activity: </span>
+       <span>{{ lastModifiedDisplay }}</span>
+
+      <span
+       v-if="isRecentlyUpdated"
+       class="ml-1 inline-flex items-center text-xs font-semibold text-juniper"
+        title="Recently updated">
+    • recent
+  </span>
+</div>
+
       </div>
     </div>
     <ol v-if="isCardOpen" class="px-5 py-3 text-base leading-loose border-t border-ink-200">
@@ -93,6 +102,12 @@ const issuesDisplay = computed(() => {
 const lastModifiedDisplay = computed(() => {
   return dayjs(props.repo.last_modified).fromNow()
 })
+
+const isRecentlyUpdated = computed(() => {
+  const lastModified = dayjs(props.repo.last_modified)
+  return dayjs().diff(lastModified, 'hour') <= 48
+})
+
 
 const isCardOpen = computed(() => {
   return openRepoId.value === props.repo.id
