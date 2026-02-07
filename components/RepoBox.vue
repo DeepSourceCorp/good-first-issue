@@ -10,6 +10,16 @@
   >
     <div class="px-5 py-3">
       <div class="flex flex-row">
+
+        <span
+          class="inline-block w-4 h-4 rounded-full ml-0.5 mr-4 mt-2 ring-1 ring-offset-1 ring-offset-black/30"
+          :class="{
+            'bg-emerald-400': isRecent === 1,
+            'bg-amber-500'  : isRecent === 2,
+            'bg-zinc-800'   : isRecent === 0
+          }"
+          title="Recently updated"
+        />
         <a
           :title="`Open ${repo.owner}/${repo.name} on GitHub`"
           :href="repo.url"
@@ -82,6 +92,19 @@ const props = defineProps({
     required: true
   }
 })
+
+// In computed or methods
+const isRecent = computed(() => {
+  const t = lastModifiedDisplay.value.toLowerCase() || ''
+  if( t.includes('hour') || t === 'a day ago' || t.includes('minute')) {
+    return 1
+  }
+  else if( t.includes('day') && ['2', '3', '4', '5', '6'].some(n => t.includes(n + ' day'))) {
+    return 2
+  }
+  return 0
+})
+
 
 const openRepoId = useOpenRepoId()
 
