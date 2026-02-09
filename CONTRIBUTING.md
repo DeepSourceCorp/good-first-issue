@@ -112,3 +112,32 @@ If you use AI tools (Claude, Copilot, ChatGPT, etc.) when contributing:
 Low-quality AI-generated PRs or issues will be closed without review.
 
 _Inspired by [Ghostty's AI Policy](https://github.com/ghostty-org/ghostty/blob/main/AI_POLICY.md)._
+AI Usage Guidelines
+
+We encourage the responsible use of AI tools (such as Claude, Copilot, ChatGPT, etc.) to enhance your contribution process. However, to maintain code quality and integrity, please adhere to the following guidelines:
+
+✅ Do
+
+Disclose AI Usage: Clearly state in your pull request description if and how you used AI assistance.
+
+Review Thoroughly: Carefully review, test, and understand all AI-generated code before submission.
+
+Ensure Accuracy: Verify that the code works as intended and aligns with project standards.
+
+Enhance, Don't Replace: Use AI to improve your work, not as a substitute for your own understanding.
+
+❌ Don't
+
+Submit Unverified Code: Do not submit code that you haven't personally reviewed and tested.
+
+Copy Without Attribution: Do not use AI to generate content that may infringe on licenses or copyrights.
+
+Bypass Learning: Avoid using AI in a way that prevents you from learning and understanding the contribution.
+
+Quality Standards
+
+All contributions, regardless of creation method, must meet the project's quality and testing requirements.
+
+Low-quality, unverified, or poorly explained AI-generated contributions will be closed without review.
+
+Note: These guidelines are inspired by Ghostty's AI Policy .
