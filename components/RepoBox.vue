@@ -15,10 +15,18 @@
           :href="repo.url"
           target="_blank"
           rel="noopener noreferrer"
-          class="text-lg font-semibold group-hover:text-juniper"
+          class="text-lg font-semibold group-hover:text-juniper flex items-center gap-2"
           :class="{ 'text-juniper': isCardOpen }"
-          >{{ repo.owner }} / {{ repo.name }}</a
         >
+          {{ repo.owner }} / {{ repo.name }}
+
+          <span 
+            v-if="isRecent" 
+            title="Recently updated" 
+            class="flex h-2 w-2 rounded-full bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.6)]"
+          ></span>
+        </a>
+
         <span class="flex-1"></span>
         <span
           class="hidden md:inline text-sm border px-3 py-1 ml-2 rounded-full font-semibold"
@@ -70,6 +78,7 @@
 </template>
 
 <script setup>
+import { computed } from 'vue' // Hakikisha computed imekuwa imported
 import dayjs from 'dayjs'
 import relativeTime from 'dayjs/plugin/relativeTime'
 import { ChatBubbleLeftRightIcon } from '@heroicons/vue/24/outline'
@@ -88,6 +97,14 @@ const openRepoId = useOpenRepoId()
 const issuesDisplay = computed(() => {
   const numIssues = props.repo.issues.length
   return numIssues > 1 ? `${numIssues} issues` : `${numIssues} issue`
+})
+
+// Hii inaangalia kama repo imeguswa ndani ya saa 24 zilizopita
+const isRecent = computed(() => {
+  if (!props.repo.last_modified) return false
+  const lastModified = dayjs(props.repo.last_modified)
+  const now = dayjs()
+  return now.diff(lastModified, 'hour') <= 24
 })
 
 const lastModifiedDisplay = computed(() => {
