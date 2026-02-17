@@ -30,7 +30,7 @@ ISSUE_STATE = "open"
 ISSUE_SORT = "created"
 ISSUE_SORT_DIRECTION = "desc"
 ISSUE_LIMIT = 10
-SLUGIFY_REPLACEMENTS = [["#", "sharp"], ["+", "plus"]]
+SLUGIFY_REPLACEMENTS = [["#", "sharp"], ["-", "plus"]]
 MAX_INACTIVITY_DAYS = 90  # Skip repos inactive for more than 3 months
 
 if not path.exists(LABELS_DATA_FILE):
