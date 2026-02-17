@@ -16,7 +16,8 @@
     "nuxt": "^3.20.2",
     "nuxt-gtag": "^4.1.0",
     "nuxt-simple-sitemap": "^4.4.1",
-    "prettier": "^3.8.0"
+    "prettier": "^3.8.0",
+    "vite-tsconfig-paths": "^6.1.1"
   },
   "dependencies": {
     "@heroicons/vue": "^2.2.0",

@@ -19,6 +19,15 @@
           :class="{ 'text-juniper': isCardOpen }"
           >{{ repo.owner }} / {{ repo.name }}</a
         >
+
+        <span
+          class="inline-block w-5 h-5 rounded-full"
+          :class="{
+            'bg-green-400': recencyCheck === 0,
+            'bg-yellow-400': recencyCheck === 1,
+            'bg-gray-400': recencyCheck === 2
+          }"
+        />
         <span class="flex-1"></span>
         <span
           class="hidden md:inline text-sm border px-3 py-1 ml-2 rounded-full font-semibold"
@@ -92,6 +101,18 @@ const issuesDisplay = computed(() => {
 
 const lastModifiedDisplay = computed(() => {
   return dayjs(props.repo.last_modified).fromNow()
+})
+
+//0 = recent, 1 = a few days ago, 2 = not recent
+const recencyCheck = computed(() => {
+  const check = lastModifiedDisplay.value.toUpperCase()
+  if (check.includes('MINUTE') || check.includes('HOUR') || check.includes('DAY AGO')){
+    return 0
+  }
+  if ((check.includes('2') || check.includes('3') ||check.includes('4') ||check.includes('5') ||check.includes('6'))&&(check.includes('day'))) {
+    return 1
+  }
+  return 2
 })
 
 const isCardOpen = computed(() => {
