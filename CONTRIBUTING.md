@@ -7,16 +7,34 @@ Thanks for your interest in contributing! This guide will help you get started.
 Before you begin, make sure you have the following installed:
 
 - **Node.js** (v18 or later) - [Download](https://nodejs.org/)
-- **Bun** - A fast JavaScript runtime and package manager. Install it with:
-  ```bash
-  curl -fsSL https://bun.sh/install | bash
-  ```
-  Or see [bun.sh](https://bun.sh/) for other installation methods.
-- **uv** - A fast Python package manager. Install it with:
-  ```bash
-  curl -LsSf https://astral.sh/uv/install.sh | sh
-  ```
-  Or via Homebrew: `brew install uv`. See [docs.astral.sh/uv](https://docs.astral.sh/uv/) for details.
+- **Bun** – A fast JavaScript runtime and package manager. Install it with:
+```bash
+curl -fsSL https://bun.sh/install | bash
+```
+
+Or see https://bun.sh for other installation methods.
+
+- **uv** – A fast Python package manager. Install it with:
+
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+On Arch Linux:
+
+```bash
+sudo pacman -S uv
+```
+
+On macOS:
+
+```bash
+brew install uv
+```
+
+
+  
+
 
 ## Project Structure
 
@@ -94,6 +112,16 @@ make test
 ```bash
 make format
 ```
+
+## Troubleshooting
+| Issue | Solution |
+| :--- | :--- |
+| `bun` **not found in PATH** | Add Bun manually: `export PATH="$HOME/.bun/bin:$PATH"` then run `source ~/.zshrc`. |
+| **Missing** `generated.json` **or** `tags.json` | Ensure you copied the `.sample.json` files in the `data/` directory. |
+| **uv not found** | Install it using `sudo pacman -S uv` (Arch) or the official installer. |
+| **Nuxt telemetry prompt or slow prepare** | This is normal; `bun install` triggers `nuxt prepare`. |
+| **Python errors** | Use `uv run` to ensure the correct virtual environment is used. |
+
 
 ## Making Changes
 
