@@ -3,13 +3,21 @@
     <img src="public/readme-logo.svg">
   </a>
 </p>
+# Good First Issue
+
+A curated list of open-source projects with beginner-friendly issues to help new contributors get started quickly.
+
 <hr>
 
-Welcome! 👋🏼
+## Welcome 👋🏼
 
 **Good First Issue** is an initiative to curate easy pickings from popular projects, so developers who've never contributed to open-source can get started quickly.
 
 Open-source maintainers are always looking to get more people involved, but new developers generally think it's challenging to become a contributor. We believe getting developers to fix super-easy issues removes the barrier for future contributions. This is why Good First Issue exists.
+## How It Works
+
+Good First Issue collects repositories that provide beginner-friendly issues.  
+These issues are labeled to help first-time contributors find tasks that are approachable and well-scoped.
 
 ## Adding a new project
 
@@ -32,4 +40,11 @@ Once your submission is reviewed and approved, it will be added to [goodfirstiss
 
 ## Contributing
 
-Want to contribute? See [CONTRIBUTING.md](CONTRIBUTING.md) for setup instructions and guidelines.
+Interested in contributing to this project?
+
+1. Read the setup instructions in [CONTRIBUTING.md](CONTRIBUTING.md).
+2. Fork the repository.
+3. Create a new branch for your changes.
+4. Submit a pull request.
+
+We welcome contributions of all sizes!
