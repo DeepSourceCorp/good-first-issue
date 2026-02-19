@@ -820,4 +820,8 @@ repositories = [
   'github.com/ZupIT/charlescd',
   'github.com/ZupIT/ritchie-cli',
   'github.com/ZupIT/ritchie-formulas'
-]
+][[repositories]]
+name = "PixelPort"
+url = "https://github.com/Saints023/PixelPortApp"
+description = "Gaming lounge management and booking system"
+
