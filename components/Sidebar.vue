@@ -32,7 +32,7 @@
     <div class="pt-6">
       <a
         class="bg-juniper hover:bg-light_juniper text-ink-400 uppercase rounded-md font-bold text-center px-1 py-3 flex flex-row items-center justify-center space-x-1"
-        href="https://github.com/deepsourcelabs/good-first-issue#adding-a-new-project"
+        href="https://github.com/deepsourcelabs/good-first-issue#-adding-a-new-project"
         target="_blank"
         rel="noopener noreferrer"
         >
@@ -53,7 +53,7 @@
         <span class="ml-2"
           >A
           <span class="inline hover:underline text-juniper" title="Visit DeepSource website">DeepSource</span>
-          initative</span
+          initiative</span
         >
       </a>
     </div>
