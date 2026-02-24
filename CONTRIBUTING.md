@@ -11,12 +11,12 @@ Before you begin, make sure you have the following installed:
   ```bash
   curl -fsSL https://bun.sh/install | bash
   ```
-  Or see [bun.sh](https://bun.sh/) for other installation methods.
+    Or see [bun.sh](https://bun.sh/) for other installation methods.
 - **uv** - A fast Python package manager. Install it with:
   ```bash
   curl -LsSf https://astral.sh/uv/install.sh | sh
   ```
-  Or via Homebrew: `brew install uv`. See [docs.astral.sh/uv](https://docs.astral.sh/uv/) for details.
+    Or via Homebrew: `brew install uv`. See [docs.astral.sh/uv](https://docs.astral.sh/uv/) for details.
 
 ## Project Structure
 
