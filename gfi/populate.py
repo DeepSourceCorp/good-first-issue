@@ -268,9 +268,13 @@ if __name__ == "__main__":
 
     # write to generated JSON files
 
-    with open(REPO_GENERATED_DATA_FILE, "w") as file_desc:
-        json.dump(REPOSITORIES, file_desc)
-    logger.info("Wrote data for {} repos to {}", len(REPOSITORIES), REPO_GENERATED_DATA_FILE)
+    try:
+        with open(REPO_GENERATED_DATA_FILE, "w") as file_desc:
+            json.dump(REPOSITORIES, file_desc, indent=2)
+        logger.info("Wrote data for {} repos to {}", len(REPOSITORIES), REPO_GENERATED_DATA_FILE)
+    except IOError as e:
+        logger.error("Failed to write repository data: {}", e)
+        raise
 
     # use only those tags that have at least three occurrences
     tags = [
@@ -283,6 +287,11 @@ if __name__ == "__main__":
         if value >= 3
     ]
     tags_sorted = sorted(tags, key=itemgetter("count"), reverse=True)
-    with open(TAGS_GENERATED_DATA_FILE, "w") as file_desc:
-        json.dump(tags_sorted, file_desc)
-    logger.info("Wrote {} tags to {}", len(tags), TAGS_GENERATED_DATA_FILE)
+    
+    try:
+        with open(TAGS_GENERATED_DATA_FILE, "w") as file_desc:
+            json.dump(tags_sorted, file_desc, indent=2)
+        logger.info("Wrote {} tags to {}", len(tags), TAGS_GENERATED_DATA_FILE)
+    except IOError as e:
+        logger.error("Failed to write tags data: {}", e)
+        raise
