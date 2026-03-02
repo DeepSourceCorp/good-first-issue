@@ -1,7 +1,7 @@
 <template>
   <header
     class="w-full py-4 px-6 border-b border-ink-200 transition-background duration-1000"
-    :class="[`${bannerActive ? 'bg-robin' : 'bg-ink-300'}`]"
+    :class="{ 'bg-robin': bannerActive, 'bg-ink-300': !bannerActive }"
   >
     <span class="flex items-center justify-center flex-wrap text-sm font-medium">
       <span class="md:flex items-center">
@@ -12,14 +12,20 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue';
 
-const BANNER_ACTIVE_TIME = 2000
-const bannerActive = ref(true)
+const BANNER_ACTIVE_TIME = 2000;
+const bannerActive = ref(true);
+let timeoutId;
 
 onMounted(() => {
-  setTimeout(() => {
-    bannerActive.value = false
-  }, BANNER_ACTIVE_TIME)
-})
+  timeoutId = setTimeout(() => {
+    bannerActive.value = false;
+  }, BANNER_ACTIVE_TIME);
+});
+
+onUnmounted(() => {
+  clearTimeout(timeoutId);
+});
 </script>
+
