@@ -16,14 +16,15 @@ const filesToSync = ['generated.json', 'tags.json']
  */
 function downloadFile(url, dest) {
   return new Promise((resolve, reject) => {
-    // Check if the file already exists
     const fileExists = fs.existsSync(dest)
 
-    const file = fs.createWriteStream(dest, { flags: 'w' }) // 'w' flag for write mode
+    const file = fs.createWriteStream(dest, { flags: 'w' })
 
     https
       .get(url, (response) => {
         if (response.statusCode !== 200) {
+          file.close()
+          fs.unlink(dest, () => {})
           reject(new Error(`failed to download file: status code ${response.statusCode}`))
           return
         }
@@ -35,15 +36,19 @@ function downloadFile(url, dest) {
         }
       })
       .on('error', (err) => {
+        file.close()
+        fs.unlink(dest, () => {})
         reject(err)
       })
 
     file.on('finish', () => {
+      file.close()
       resolve()
     })
 
     file.on('error', (err) => {
-      fs.unlink(dest) // delete the file on error
+      file.close()
+      fs.unlink(dest, () => {})
       reject(err)
     })
   })
