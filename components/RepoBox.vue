@@ -55,6 +55,11 @@
             class="leading-snug font-medium hover:text-juniper text-vanilla-300 block flex-auto"
             >{{ issue.title }}</a
           >
+          <span
+            v-if="issue.created_at"
+            class="text-vanilla-400 text-sm leading-snug font-mono whitespace-nowrap ml-2 mt-0.5"
+            :title="new Date(issue.created_at).toLocaleDateString()"
+          >{{ dayjs(issue.created_at).fromNow() }}</span>
           <div
             v-if="issue.comments_count > 0"
             class="flex flex-row items-center justify-end mt-1 w-10"
