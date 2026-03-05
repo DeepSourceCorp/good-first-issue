@@ -829,4 +829,9 @@ repositories = [
   'github.com/zsh-users/zsh-completions',
   'github.com/zsh-users/zsh-syntax-highlighting',
   'github.com/zulip/zulip',
+  [[repositories]]
+name = "awesome-cpp"
+url = "https://github.com/fffaraz/awesome-cpp"
+description = "A curated list of awesome C++ libraries"
+language = "C++"
 ]
