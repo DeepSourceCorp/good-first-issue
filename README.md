@@ -28,6 +28,18 @@ To maintain the quality of projects in Good First Issue, please make sure your G
 | Active Maintenance | Recent commits and activity |
 | License | Valid open source license |
 
+
+## FAQ
+
+**Q: Can I add any repository?**
+A: Yes, as long as it meets the criteria listed above.
+
+**Q: How long does it take to get approved?**
+A: Usually within a few days to a week.
+
+**Q: Can I add my own project?**
+A: Yes! As long as it meets the requirements.
+
 Once your submission is reviewed and approved, it will be added to [goodfirstissue.dev](https://goodfirstissue.dev/).
 
 ## Contributing
