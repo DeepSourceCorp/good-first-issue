@@ -219,6 +219,7 @@ repositories = [
   'github.com/external-secrets/external-secrets',
   'github.com/facebook/create-react-app',
   'github.com/facebook/docusaurus',
+  'github.com/expressjs/express',
   'github.com/facebook/flow',
   'github.com/facebook/fresco',
   'github.com/facebook/jest',
