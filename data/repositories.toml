@@ -774,6 +774,7 @@ repositories = [
   'github.com/volta-cli/volta',
   'github.com/VSCodeVim/Vim',
   'github.com/vuejs/vue',
+  'github.com/vitejs/vite',
   'github.com/vuejs/vue-router',
   'github.com/vuejs/vuepress',
   'github.com/vuetifyjs/vuetify',
