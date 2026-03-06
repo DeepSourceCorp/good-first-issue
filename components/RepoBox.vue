@@ -1,80 +1,50 @@
 <template>
-  <div
-    :id="`repo-${repo.id}`"
-    :class="{
-      'border-juniper hover:bg-ink-400': isCardOpen,
-      'border-ink-200': !isCardOpen
-    }"
-    class="select-none border w-full rounded-md mb-4 cursor-pointer hover:bg-ink-300 group"
-    @click="toggle(repo.id)"
-  >
-    <div class="px-5 py-3">
-      <div class="flex flex-row">
-        <a
-          :title="`Open ${repo.owner}/${repo.name} on GitHub`"
+  <div class="border border-ink-200 rounded-md p-4 mb-4">
+    <div class="flex items-start justify-between">
+      <div>
+        
           :href="repo.url"
           target="_blank"
           rel="noopener noreferrer"
-          class="text-lg font-semibold group-hover:text-juniper"
-          :class="{ 'text-juniper': isCardOpen }"
-          >{{ repo.owner }} / {{ repo.name }}</a
+          class="text-juniper font-semibold text-lg hover:underline"
         >
-        <span class="flex-1"></span>
-        <span
-          class="hidden md:inline text-sm border px-3 py-1 ml-2 rounded-full font-semibold"
-          :class="{
-            'text-ink-400 bg-juniper border-transparent': isCardOpen,
-            'text-vanilla-200': !isCardOpen
-          }"
-          >{{ issuesDisplay }}</span
-        >
+          {{ repo.owner }}/{{ repo.name }}
+        </a>
+        <p class="text-sm text-vanilla-300 mt-1">{{ repo.description }}</p>
       </div>
-      <div class="flex-row flex text-sm py-1 overflow-auto">
-        {{ repo.description }}
-      </div>
-      <div
-        class="flex-row flex text-sm py-1 font-mono"
-        :class="{ 'text-honey': isCardOpen, 'text-vanilla-400': !isCardOpen }"
-      >
-        <div class="mr-4"><span class="text-vanilla-400">lang: </span>{{ repo.language }}</div>
-        <div class="mr-4"><span class="text-vanilla-400">stars: </span>{{ repo.stars_display }}</div>
-        <div class="mr-4">
-          <span class="text-vanilla-400">last activity: </span><span>{{ lastModifiedDisplay }}</span>
-        </div>
-      </div>
+      <span class="text-sm text-vanilla-400 ml-4">⭐ {{ repo.stars_display }}</span>
     </div>
-    <ol v-if="isCardOpen" class="px-5 py-3 text-base leading-loose border-t border-ink-200">
-      <li v-for="issue in repo.issues" :key="issue.url" class="flex flex-row items-start justify-start py-1">
-        <span class="text-slate text-right px-2 leading-snug font-mono" style="min-width: 70px">#{{ issue.number }}</span>
-        <div class="flex items-start flex-row flex-auto">
-          <a
-            title="Open issue on GitHub"
-            :href="issue.url"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="leading-snug font-medium hover:text-juniper text-vanilla-300 block flex-auto"
-            >{{ issue.title }}</a
-          >
-          <div
-            v-if="issue.comments_count > 0"
-            class="flex flex-row items-center justify-end mt-1 w-10"
-            :title="getIssueCommentsCounterTooltip(issue)"
-          >
-            <ChatBubbleLeftRightIcon class="mt-px w-3.5 h-3.5" />
-            <span class="ml-1 text-sm leading-snug font-mono">{{ issue.comments_count }}</span>
-          </div>
-        </div>
-      </li>
-    </ol>
+
+    <!-- Top 3 languages fix for issue #2246 -->
+    <div class="mt-3 flex flex-wrap gap-1">
+      <nuxt-link
+        v-for="lang in topLanguages"
+        :key="lang.slug"
+        :to="'/language/' + lang.slug"
+        class="border border-slate px-2 py-1 rounded-sm text-xs text-vanilla-300 hover:text-juniper hover:border-juniper"
+      >
+        {{ lang.language }}
+      </nuxt-link>
+    </div>
+
+    <!-- Issues -->
+    <div class="mt-3 space-y-1">
+      
+        v-for="issue in repo.issues"
+        :key="issue.number"
+        :href="issue.url"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="block text-sm text-vanilla-300 hover:text-juniper hover:underline"
+      >
+        #{{ issue.number }} — {{ issue.title }}
+      </a>
+    </div>
   </div>
 </template>
 
 <script setup>
-import dayjs from 'dayjs'
-import relativeTime from 'dayjs/plugin/relativeTime'
-import { ChatBubbleLeftRightIcon } from '@heroicons/vue/24/outline'
-
-dayjs.extend(relativeTime)
+import Tags from '~/data/tags.json'
 
 const props = defineProps({
   repo: {
@@ -83,34 +53,6 @@ const props = defineProps({
   }
 })
 
-const openRepoId = useOpenRepoId()
-
-const issuesDisplay = computed(() => {
-  const numIssues = props.repo.issues.length
-  return numIssues > 1 ? `${numIssues} issues` : `${numIssues} issue`
-})
-
-const lastModifiedDisplay = computed(() => {
-  return dayjs(props.repo.last_modified).fromNow()
-})
-
-const isCardOpen = computed(() => {
-  return openRepoId.value === props.repo.id
-})
-
-function toggle(repoId) {
-  if (isCardOpen.value) {
-    openRepoId.value = null
-  } else {
-    openRepoId.value = repoId
-  }
-}
-
-function getIssueCommentsCounterTooltip(issue) {
-  const numComments = issue.comments_count
-  if (numComments === 0) {
-    return `There are no comments on this issue`
-  }
-  return numComments > 1 ? `There are ${numComments} comments on this issue` : `There is one comment on this issue`
-}
+// Issue #2246: show top 3 languages instead of just 1
+const topLanguages = Tags.filter(tag => tag.slug === props.repo.slug).slice(0, 3)
 </script>
