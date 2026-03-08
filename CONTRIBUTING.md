@@ -109,6 +109,20 @@ If you use AI tools (Claude, Copilot, ChatGPT, etc.) when contributing:
 - **Review and test** all AI-generated code before submitting
 - **Ensure accuracy** - don't submit code you haven't verified works
 
+
+## Code Review Process
+
+After submitting a pull request:
+
+1. A maintainer will review your changes within a few days
+2. You may receive feedback or requested changes
+3. Once approved, your PR will be merged into the main branch
+4. Your contribution will be live on goodfirstissue.dev
+```
+
+---
+
+
 Low-quality AI-generated PRs or issues will be closed without review.
 
 _Inspired by [Ghostty's AI Policy](https://github.com/ghostty-org/ghostty/blob/main/AI_POLICY.md)._
