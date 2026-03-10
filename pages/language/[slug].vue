@@ -15,10 +15,10 @@
             <option :value="500">500+</option>
             <option :value="1000">1k+</option>
             <option :value="5000">5k+</option>
-            <option :value="5000">10k+</option>
-            <option :value="5000">20k+</option>
-            <option :value="5000">50k+</option>
-            <option :value="5000">100k+</option>
+            <option :value="10000">10k+</option>
+            <option :value="20000">20k+</option>
+            <option :value="50000">50k+</option>
+            <option :value="100000">100k+</option>
           </select>
         </div>
 
