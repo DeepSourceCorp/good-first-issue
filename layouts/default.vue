@@ -17,11 +17,11 @@ const route = useRoute()
 const tag = ref({})
 
 if (route.params.slug) {
-  tag.value = Tags.find(t => t.slug === route.params.slug)
+  tag.value = Tags.find((t) => t.slug === route.params.slug)
 }
 
 useHead({
-  charset: "utf-8",
+  charset: 'utf-8',
   link: [
     {
       rel: 'apple-touch-icon',

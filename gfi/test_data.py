@@ -9,6 +9,7 @@ import toml
 
 DATA_FILE_PATH = "data/repositories.toml"
 LABELS_FILE_PATH = "data/labels.json"
+GENERATED_FILE_PATH = "data/generated.json"
 
 
 def _get_data_from_toml(file_path):
@@ -53,6 +54,19 @@ class TestDataSanity(unittest.TestCase):
         repos = data.get("repositories", [])
         print([item for item, count in Counter(repos).items() if count > 1])
         assert len(repos) == len(set(repos))
+
+    @staticmethod
+    def test_issues_count_field():
+        """Verify that each repo in generated.json has a valid issues_count field."""
+        if not os.path.exists(GENERATED_FILE_PATH):
+            return
+        data = _get_data_from_json(GENERATED_FILE_PATH)
+        for repo in data:
+            assert "issues_count" in repo, f"Missing issues_count in {repo.get('name')}"
+            assert isinstance(repo["issues_count"], int), f"issues_count is not int in {repo.get('name')}"
+            assert repo["issues_count"] >= len(repo["issues"]), (
+                f"issues_count < len(issues) in {repo.get('name')}"
+            )
 
 
 if __name__ == "__main__":

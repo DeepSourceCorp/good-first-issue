@@ -18,6 +18,6 @@ import Tags from '~/data/tags.json'
 const route = useRoute()
 
 const activeTag = computed(() => {
-  return Tags.find(tag => tag.slug === route.params.slug)
+  return Tags.find((tag) => tag.slug === route.params.slug)
 })
 </script>
