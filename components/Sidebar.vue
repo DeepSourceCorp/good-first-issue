@@ -35,11 +35,10 @@
         href="https://github.com/deepsourcelabs/good-first-issue#adding-a-new-project"
         target="_blank"
         rel="noopener noreferrer"
-        >
-          <PlusCircleIcon class="h-5 w-5 stroke-2" />
-          <span>Add your project</span>
-        </a
       >
+        <PlusCircleIcon class="h-5 w-5 stroke-2" />
+        <span>Add your project</span>
+      </a>
     </div>
 
     <div class="text-sm pt-6">
@@ -63,7 +62,7 @@
 <script setup>
 import Tags from '~/data/tags.json'
 import { PlusCircleIcon } from '@heroicons/vue/24/outline'
-import {HeartIcon} from '@heroicons/vue/24/solid'
+import { HeartIcon } from '@heroicons/vue/24/solid'
 </script>
 <style>
 .section-heading {

@@ -82,7 +82,8 @@
         "comments_count": 0,
         "created_at": "2020-10-21T20:47:50+00:00"
       }
-    ]
+    ],
+    "issues_count": 10
   },
   {
     "name": "zulip",
@@ -167,7 +168,8 @@
         "comments_count": 3,
         "created_at": "2021-04-29T23:58:19+00:00"
       }
-    ]
+    ],
+    "issues_count": 10
   },
   {
     "name": "rubycritic",
@@ -238,7 +240,8 @@
         "comments_count": 5,
         "created_at": "2016-06-27T06:15:58+00:00"
       }
-    ]
+    ],
+    "issues_count": 8
   },
   {
     "name": "xenia",
@@ -323,7 +326,8 @@
         "comments_count": 2,
         "created_at": "2020-03-28T19:49:46+00:00"
       }
-    ]
+    ],
+    "issues_count": 10
   },
   {
     "name": "selene",
@@ -359,7 +363,8 @@
         "comments_count": 5,
         "created_at": "2021-04-11T10:40:10+00:00"
       }
-    ]
+    ],
+    "issues_count": 3
   },
   {
     "name": "react-trello-clone",
@@ -444,7 +449,8 @@
         "comments_count": 2,
         "created_at": "2021-05-23T19:23:34+00:00"
       }
-    ]
+    ],
+    "issues_count": 10
   },
   {
     "name": "weave",
@@ -508,7 +514,8 @@
         "comments_count": 0,
         "created_at": "2017-03-09T14:09:19+00:00"
       }
-    ]
+    ],
+    "issues_count": 7
   },
   {
     "name": "xterm.js",
@@ -593,7 +600,8 @@
         "comments_count": 2,
         "created_at": "2019-10-10T18:46:12+00:00"
       }
-    ]
+    ],
+    "issues_count": 10
   },
   {
     "name": "zeebe",
@@ -678,7 +686,8 @@
         "comments_count": 2,
         "created_at": "2017-09-27T12:33:55+00:00"
       }
-    ]
+    ],
+    "issues_count": 10
   },
   {
     "name": "yew",
@@ -728,7 +737,8 @@
         "comments_count": 2,
         "created_at": "2020-07-19T14:35:36+00:00"
       }
-    ]
+    ],
+    "issues_count": 5
   },
   {
     "name": "hint",
@@ -813,7 +823,8 @@
         "comments_count": 4,
         "created_at": "2019-09-27T18:19:42+00:00"
       }
-    ]
+    ],
+    "issues_count": 10
   },
   {
     "name": "gutenberg",
@@ -898,7 +909,8 @@
         "comments_count": 1,
         "created_at": "2021-05-10T16:10:38+00:00"
       }
-    ]
+    ],
+    "issues_count": 10
   },
   {
     "name": "wemake-python-styleguide",
@@ -969,7 +981,8 @@
         "comments_count": 2,
         "created_at": "2021-03-09T21:16:18+00:00"
       }
-    ]
+    ],
+    "issues_count": 8
   },
   {
     "name": "wpt",
@@ -1054,7 +1067,8 @@
         "comments_count": 0,
         "created_at": "2019-08-27T19:18:10+00:00"
       }
-    ]
+    ],
+    "issues_count": 10
   },
   {
     "name": "wordpress-seo",
@@ -1139,7 +1153,8 @@
         "comments_count": 2,
         "created_at": "2018-09-07T12:20:19+00:00"
       }
-    ]
+    ],
+    "issues_count": 10
   },
   {
     "name": "s3rs",
@@ -1161,7 +1176,8 @@
         "comments_count": 2,
         "created_at": "2019-10-21T07:55:11+00:00"
       }
-    ]
+    ],
+    "issues_count": 1
   },
   {
     "name": "zsh-syntax-highlighting",
@@ -1246,7 +1262,8 @@
         "comments_count": 4,
         "created_at": "2020-03-19T06:56:01+00:00"
       }
-    ]
+    ],
+    "issues_count": 10
   },
   {
     "name": "zaproxy",
@@ -1331,7 +1348,8 @@
         "comments_count": 15,
         "created_at": "2020-03-11T13:47:58+00:00"
       }
-    ]
+    ],
+    "issues_count": 10
   },
   {
     "name": "zephyr",
@@ -1416,7 +1434,8 @@
         "comments_count": 2,
         "created_at": "2020-09-02T11:38:33+00:00"
       }
-    ]
+    ],
+    "issues_count": 10
   },
   {
     "name": "WordPress-Android",
@@ -1487,7 +1506,8 @@
         "comments_count": 5,
         "created_at": "2019-12-10T19:50:24+00:00"
       }
-    ]
+    ],
+    "issues_count": 8
   },
   {
     "name": "zsh-completions",
@@ -1551,7 +1571,8 @@
         "comments_count": 0,
         "created_at": "2017-05-08T23:01:51+00:00"
       }
-    ]
+    ],
+    "issues_count": 7
   },
   {
     "name": "zio",
@@ -1636,7 +1657,8 @@
         "comments_count": 6,
         "created_at": "2020-11-09T12:57:23+00:00"
       }
-    ]
+    ],
+    "issues_count": 10
   },
   {
     "name": "wesnoth",
@@ -1721,7 +1743,8 @@
         "comments_count": 0,
         "created_at": "2021-05-08T18:46:17+00:00"
       }
-    ]
+    ],
+    "issues_count": 10
   },
   {
     "name": "hyper",
@@ -1792,7 +1815,8 @@
         "comments_count": 11,
         "created_at": "2018-04-15T19:04:04+00:00"
       }
-    ]
+    ],
+    "issues_count": 8
   },
   {
     "name": "winsw",
@@ -1849,7 +1873,8 @@
         "comments_count": 0,
         "created_at": "2020-07-26T04:54:35+00:00"
       }
-    ]
+    ],
+    "issues_count": 6
   },
   {
     "name": "WordPress-iOS",
@@ -1934,7 +1959,8 @@
         "comments_count": 2,
         "created_at": "2020-05-06T17:07:38+00:00"
       }
-    ]
+    ],
+    "issues_count": 10
   },
   {
     "name": "winston",
@@ -2005,7 +2031,8 @@
         "comments_count": 0,
         "created_at": "2017-01-19T13:22:08+00:00"
       }
-    ]
+    ],
+    "issues_count": 8
   },
   {
     "name": "woocommerce",
@@ -2090,7 +2117,8 @@
         "comments_count": 2,
         "created_at": "2021-05-16T07:51:44+00:00"
       }
-    ]
+    ],
+    "issues_count": 10
   },
   {
     "name": "next.js",
@@ -2175,7 +2203,8 @@
         "comments_count": 7,
         "created_at": "2021-03-06T12:45:53+00:00"
       }
-    ]
+    ],
+    "issues_count": 10
   },
   {
     "name": "yarn",
@@ -2260,7 +2289,8 @@
         "comments_count": 3,
         "created_at": "2018-05-29T08:40:15+00:00"
       }
-    ]
+    ],
+    "issues_count": 10
   },
   {
     "name": "html",
@@ -2345,7 +2375,8 @@
         "comments_count": 0,
         "created_at": "2019-11-18T16:27:09+00:00"
       }
-    ]
+    ],
+    "issues_count": 10
   },
   {
     "name": "fetch",
@@ -2381,7 +2412,8 @@
         "comments_count": 2,
         "created_at": "2020-08-18T14:13:55+00:00"
       }
-    ]
+    ],
+    "issues_count": 3
   },
   {
     "name": "yugabyte-db",
@@ -2466,7 +2498,8 @@
         "comments_count": 3,
         "created_at": "2021-03-15T16:02:37+00:00"
       }
-    ]
+    ],
+    "issues_count": 10
   },
   {
     "name": "data-science-notes",
@@ -2502,7 +2535,8 @@
         "comments_count": 0,
         "created_at": "2021-01-21T09:45:45+00:00"
       }
-    ]
+    ],
+    "issues_count": 3
   },
   {
     "name": "zeek",
@@ -2573,7 +2607,8 @@
         "comments_count": 7,
         "created_at": "2020-04-16T00:34:32+00:00"
       }
-    ]
+    ],
+    "issues_count": 8
   },
   {
     "name": "wger",
@@ -2609,7 +2644,8 @@
         "comments_count": 9,
         "created_at": "2016-11-15T12:28:57+00:00"
       }
-    ]
+    ],
+    "issues_count": 3
   },
   {
     "name": "spectrum",
@@ -2694,7 +2730,8 @@
         "comments_count": 13,
         "created_at": "2018-04-15T22:54:15+00:00"
       }
-    ]
+    ],
+    "issues_count": 10
   },
   {
     "name": "weblate",
@@ -2779,7 +2816,8 @@
         "comments_count": 5,
         "created_at": "2021-04-14T07:12:12+00:00"
       }
-    ]
+    ],
+    "issues_count": 10
   },
   {
     "name": "xunit",
@@ -2864,6 +2902,7 @@
         "comments_count": 3,
         "created_at": "2019-06-26T09:26:23+00:00"
       }
-    ]
+    ],
+    "issues_count": 10
   }
 ]

@@ -1,7 +1,7 @@
 ---
 name: Bug Report
 about: Report a bug or issue with Good First Issue
-title: "[Bug] "
+title: '[Bug] '
 labels: bug
 assignees: ''
 ---
