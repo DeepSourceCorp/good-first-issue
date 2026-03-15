@@ -11,6 +11,10 @@ Welcome! 👋🏼
 
 Open-source maintainers are always looking to get more people involved, but new developers generally think it's challenging to become a contributor. We believe getting developers to fix super-easy issues removes the barrier for future contributions. This is why Good First Issue exists.
 
+## First-Time Contributors
+
+If this is your first time contributing to open source, welcome! This project is designed to help you get started. Feel free to make small improvements, fix typos, or ask questions in issues.
+
 ## Adding a new project
 
 You're welcome to add a new project to Good First Issue, and we encourage all projects &mdash; old and new, big and small.
