@@ -9,7 +9,7 @@ Welcome! 👋🏼
 
 **Good First Issue** is an initiative to curate easy pickings from popular projects, so developers who've never contributed to open-source can get started quickly.
 
-Open-source maintainers are always looking to get more people involved, but new developers generally think it's challenging to become a contributor. We believe getting developers to fix super-easy issues removes the barrier for future contributions. This is why Good First Issue exists.
+Open-source maintainers are always looking for more contributors, but many new developers find it challenging to get started. We believe getting developers to fix super-easy issues removes the barrier for future contributions. This is why Good First Issue exists.
 
 ## Adding a new project
 
@@ -33,3 +33,12 @@ Once your submission is reviewed and approved, it will be added to [goodfirstiss
 ## Contributing
 
 Want to contribute? See [CONTRIBUTING.md](CONTRIBUTING.md) for setup instructions and guidelines.
+
+## Why contribute to open source?
+
+Contributing to open source helps developers:
+
+- Improve real-world coding skills
+- Collaborate with other developers
+- Build a strong GitHub profile
+- Gain experience with real software projects
