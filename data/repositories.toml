@@ -455,6 +455,7 @@ repositories = [
   'github.com/modin-project/modin',
   'github.com/monicahq/monica',
   'github.com/mono/mono',
+  'github.com/mozilla/firefox',
   'github.com/MonoGame/MonoGame',
   'github.com/MontFerret/ferret',
   'github.com/mopidy/mopidy',
