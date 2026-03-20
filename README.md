@@ -30,6 +30,6 @@ To maintain the quality of projects in Good First Issue, please make sure your G
 
 Once your submission is reviewed and approved, it will be added to [goodfirstissue.dev](https://goodfirstissue.dev/).
 
-## Contributing
+## Contributing 1
 
 Want to contribute? See [CONTRIBUTING.md](CONTRIBUTING.md) for setup instructions and guidelines.
