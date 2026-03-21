@@ -5,7 +5,7 @@
       'border-juniper hover:bg-ink-400': isCardOpen,
       'border-ink-200': !isCardOpen
     }"
-    class="select-none border w-full rounded-md mb-4 cursor-pointer hover:bg-ink-300 group"
+    class="select-none border w-full rounded-md mb-4 cursor-pointer hover:bg-ink-300 group transition-colors duration-200 ease-in-out"
     @click="toggle(repo.id)"
   >
     <div class="px-5 py-3">
@@ -43,29 +43,38 @@
         </div>
       </div>
     </div>
-    <ol v-if="isCardOpen" class="px-5 py-3 text-base leading-loose border-t border-ink-200">
-      <li v-for="issue in repo.issues" :key="issue.url" class="flex flex-row items-start justify-start py-1">
-        <span class="text-slate text-right px-2 leading-snug font-mono" style="min-width: 70px">#{{ issue.number }}</span>
-        <div class="flex items-start flex-row flex-auto">
-          <a
-            title="Open issue on GitHub"
-            :href="issue.url"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="leading-snug font-medium hover:text-juniper text-vanilla-300 block flex-auto"
-            >{{ issue.title }}</a
-          >
-          <div
-            v-if="issue.comments_count > 0"
-            class="flex flex-row items-center justify-end mt-1 w-10"
-            :title="getIssueCommentsCounterTooltip(issue)"
-          >
-            <ChatBubbleLeftRightIcon class="mt-px w-3.5 h-3.5" />
-            <span class="ml-1 text-sm leading-snug font-mono">{{ issue.comments_count }}</span>
-          </div>
-        </div>
-      </li>
-    </ol>
+    <transition
+      name="expand"
+      @enter="enter"
+      @after-enter="afterEnter"
+      @leave="leave"
+    >
+      <div v-show="isCardOpen" class="overflow-hidden">
+        <ol class="px-5 py-3 text-base leading-loose border-t border-ink-200">
+          <li v-for="issue in repo.issues" :key="issue.url" class="flex flex-row items-start justify-start py-1">
+            <span class="text-slate text-right px-2 leading-snug font-mono" style="min-width: 70px">#{{ issue.number }}</span>
+            <div class="flex items-start flex-row flex-auto">
+              <a
+                title="Open issue on GitHub"
+                :href="issue.url"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="leading-snug font-medium hover:text-juniper text-vanilla-300 block flex-auto"
+                >{{ issue.title }}</a
+              >
+              <div
+                v-if="issue.comments_count > 0"
+                class="flex flex-row items-center justify-end mt-1 w-10"
+                :title="getIssueCommentsCounterTooltip(issue)"
+              >
+                <ChatBubbleLeftRightIcon class="mt-px w-3.5 h-3.5" />
+                <span class="ml-1 text-sm leading-snug font-mono">{{ issue.comments_count }}</span>
+              </div>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -113,4 +122,43 @@ function getIssueCommentsCounterTooltip(issue) {
   }
   return numComments > 1 ? `There are ${numComments} comments on this issue` : `There is one comment on this issue`
 }
+
+function enter(element) {
+  element.style.height = 'auto'
+  const height = getComputedStyle(element).height
+  element.style.height = '0px'
+
+  getComputedStyle(element).height // force reflow
+
+  requestAnimationFrame(() => {
+    element.style.height = height
+  })
+}
+
+function afterEnter(element) {
+  element.style.height = 'auto'
+}
+
+function leave(element) {
+  element.style.height = getComputedStyle(element).height
+
+  getComputedStyle(element).height // force reflow
+
+  requestAnimationFrame(() => {
+    element.style.height = '0px'
+  })
+}
 </script>
+
+<style scoped>
+.expand-enter-active,
+.expand-leave-active {
+  transition: height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.expand-enter-from,
+.expand-leave-to {
+  height: 0;
+  opacity: 0;
+}
+</style>
