@@ -4,6 +4,7 @@
     "owner": "wp-graphql",
     "description": "\ud83d\ude80 GraphQL API for WordPress",
     "language": "PHP",
+    "languages": ["PHP", "JavaScript"],
     "slug": "php",
     "url": "https://github.com/wp-graphql/wp-graphql",
     "stars": 2925,
