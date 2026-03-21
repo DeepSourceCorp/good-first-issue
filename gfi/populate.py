@@ -181,6 +181,16 @@ def get_repository_info(
                 info["last_modified"] = repository.pushed_at.isoformat()
                 info["id"] = str(repository.id)
 
+                # Fetch languages
+                rate_limiter.acquire()
+                languages_dict = repository.languages()
+                if languages_dict:
+                    sorted_languages = sorted(languages_dict.items(), key=lambda x: x[1], reverse=True)
+                    top_languages = [lang for lang, _ in sorted_languages[:3]]
+                    info["languages"] = top_languages
+                else:
+                    info["languages"] = [repository.language] if repository.language else []
+
                 # get the latest issues with the tag
                 issues = []
                 for issue in good_first_issues:
@@ -264,7 +274,8 @@ if __name__ == "__main__":
         for result in results:
             if result:
                 REPOSITORIES.append(result)
-                TAGS[result["language"]] += 1
+                for lang in result.get("languages", [result["language"]]):
+                    TAGS[lang] += 1
 
     # write to generated JSON files
 
