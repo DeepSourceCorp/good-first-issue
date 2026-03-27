@@ -1,16 +1,23 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+"""GitHub repository data fetcher for Good First Issue.
+
+This module fetches repository data from GitHub API, analyzes issues
+with beginner-friendly labels, and generates structured data for the website.
+"""
+
 import json
 import random
 import re
 import threading
 import time
 from collections import Counter
-from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
 from operator import itemgetter
 from os import getenv, path
-from typing import TypedDict, Dict, Union, Sequence, Optional
+from pathlib import Path
+from typing import TypedDict, Dict, List, Optional, Union, Any, Set
 
 import toml
 
@@ -20,50 +27,95 @@ from emoji import emojize
 from slugify import slugify
 from loguru import logger
 
+# Configuration constants
 MAX_CONCURRENCY = 5  # max number of requests to make to GitHub in parallel
+DEFAULT_REQUESTS_PER_SECOND = 1.0
+
+# File paths
 REPO_DATA_FILE = "data/repositories.toml"
 REPO_GENERATED_DATA_FILE = "data/generated.json"
 TAGS_GENERATED_DATA_FILE = "data/tags.json"
-GH_URL_PATTERN = re.compile(r"[http://|https://]?github.com/(?P<owner>[\w\.-]+)/(?P<name>[\w\.-]+)/?")
 LABELS_DATA_FILE = "data/labels.json"
+
+# GitHub API configuration
 ISSUE_STATE = "open"
 ISSUE_SORT = "created"
 ISSUE_SORT_DIRECTION = "desc"
 ISSUE_LIMIT = 10
-SLUGIFY_REPLACEMENTS = [["#", "sharp"], ["+", "plus"]]
+
+# Repository filtering
 MAX_INACTIVITY_DAYS = 90  # Skip repos inactive for more than 3 months
+MIN_TAG_OCCURRENCES = 3  # Minimum occurrences for a tag to be included
 
-if not path.exists(LABELS_DATA_FILE):
-    raise RuntimeError("No labels data file found. Exiting.")
+# Data processing
+SLUGIFY_REPLACEMENTS = [["#", "sharp"], ["+", "plus"]]
+GH_URL_PATTERN = re.compile(r"[http://|https://]?github.com/(?P<owner>[\w\.-]+)/(?P<name>[\w\.-]+)/?")
 
-with open(LABELS_DATA_FILE) as labels_file:
-    LABELS_DATA = json.load(labels_file)
+# Load labels data at module level
+def _load_labels_data() -> List[str]:
+    """Load labels data from file.
+    
+    Returns:
+        List of issue labels
+        
+    Raises:
+        RuntimeError: If labels file doesn't exist
+    """
+    labels_file = Path(LABELS_DATA_FILE)
+    if not labels_file.exists():
+        raise RuntimeError(f"No labels data file found at {LABELS_DATA_FILE}. Exiting.")
+    
+    try:
+        with open(labels_file, encoding="utf-8") as f:
+            data = json.load(f)
+            return data.get("labels", [])
+    except (json.JSONDecodeError, KeyError) as e:
+        raise RuntimeError(f"Invalid labels data format: {e}") from e
 
-    ISSUE_LABELS = LABELS_DATA["labels"]
+
+ISSUE_LABELS = _load_labels_data()
 
 
 class RepoNotFoundException(Exception):
-    """Exception class for repo not found."""
+    """Exception raised when a repository is not found on GitHub."""
+    pass
+
+
+class ConfigurationError(Exception):
+    """Exception raised for configuration-related errors."""
+    pass
 
 
 class GitHubRateLimiter:
-    """Thread-safe rate limiter for GitHub API requests."""
+    """Thread-safe rate limiter for GitHub API requests.
+    
+    This class manages GitHub API rate limits by coordinating requests
+    across multiple threads and implementing proactive pausing when
+    the remaining quota is low.
+    """
 
-    def __init__(self, client, requests_per_second=1.0):
+    def __init__(self, client, requests_per_second: float = DEFAULT_REQUESTS_PER_SECOND) -> None:
+        """Initialize the rate limiter.
+        
+        Args:
+            client: GitHub API client instance
+            requests_per_second: Maximum requests per second to allow
+        """
         self._client = client
         self._lock = threading.Lock()
         self._min_interval = 1.0 / requests_per_second
         self._last_request_time = 0.0
-        self._remaining = None
-        self._reset_time = None
+        self._remaining: Optional[int] = None
+        self._reset_time: Optional[float] = None
         self._paused_until = 0.0
 
-    def acquire(self):
+    def acquire(self) -> None:
         """Block until it's safe to make an API request."""
         with self._lock:
             # Check for coordinated pause
-            if time.time() < self._paused_until:
-                wait_time = self._paused_until - time.time()
+            current_time = time.time()
+            if current_time < self._paused_until:
+                wait_time = self._paused_until - current_time
                 logger.info("Waiting {:.0f}s for rate limit reset", wait_time)
                 time.sleep(wait_time)
 
@@ -90,7 +142,8 @@ class GitHubRateLimiter:
             if self._remaining:
                 self._remaining -= 1
 
-    def _update_rate_limit(self):
+    def _update_rate_limit(self) -> None:
+        """Update rate limit information from GitHub API."""
         try:
             info = self._client.rate_limit()['resources']['core']
             self._remaining = info['remaining']
@@ -99,7 +152,7 @@ class GitHubRateLimiter:
         except Exception as e:
             logger.warning("Failed to check rate limit: {}", e)
 
-    def report_rate_limit_hit(self):
+    def report_rate_limit_hit(self) -> None:
         """Call when ForbiddenError received - triggers coordinated pause."""
         with self._lock:
             self._update_rate_limit()
@@ -112,20 +165,54 @@ class GitHubRateLimiter:
             logger.warning("Rate limit hit. All workers pause for {:.0f}s", wait_time)
 
 
-def parse_github_url(url: str) -> dict:
-    """Take the GitHub repo URL and return a tuple with owner login and repo name."""
+def parse_github_url(url: str) -> Dict[str, str]:
+    """Parse GitHub repository URL and extract owner and name.
+    
+    Args:
+        url: GitHub repository URL
+        
+    Returns:
+        Dictionary with 'owner' and 'name' keys, or empty dict if invalid
+    """
     match = GH_URL_PATTERN.search(url)
-    if match:
-        return match.groupdict()
-    return {}
+    return match.groupdict() if match else {}
 
 
 class RepositoryIdentifier(TypedDict):
+    """Type definition for repository identifier."""
     owner: str
     name: str
 
 
-RepositoryInfo = Dict["str", Union[str, int, Sequence]]
+class IssueInfo(TypedDict):
+    """Type definition for issue information."""
+    title: str
+    url: str
+    number: int
+    comments_count: int
+    created_at: str
+
+
+class RepositoryInfo(TypedDict):
+    """Type definition for repository information."""
+    name: str
+    owner: str
+    description: str
+    language: str
+    slug: str
+    url: str
+    stars: int
+    stars_display: str
+    last_modified: str
+    id: str
+    issues: List[IssueInfo]
+
+
+class TagInfo(TypedDict):
+    """Type definition for tag information."""
+    language: str
+    count: int
+    slug: str
 
 
 def get_repository_info(
@@ -133,7 +220,16 @@ def get_repository_info(
     client,
     rate_limiter: GitHubRateLimiter
 ) -> Optional[RepositoryInfo]:
-    """Get the relevant information needed for the repository from its owner login and name."""
+    """Fetch and process repository information from GitHub API.
+    
+    Args:
+        identifier: Repository owner and name
+        client: GitHub API client
+        rate_limiter: Rate limiter instance
+        
+    Returns:
+        Repository information dict or None if repository doesn't meet criteria
+    """
     owner, name = identifier["owner"], identifier["name"]
 
     logger.info("Getting info for {}/{}", owner, name)
@@ -144,145 +240,287 @@ def get_repository_info(
         try:
             rate_limiter.acquire()
             repository = client.repository(owner, name)
-            # Don't find issues inside archived repos.
+            
+            # Skip archived repositories
             if repository.archived:
+                logger.info("\t skipping archived repository")
                 return None
 
-            # Skip repos with no recent activity
+            # Skip repositories with no recent activity
             days_since_push = (datetime.now(timezone.utc) - repository.pushed_at).days
             if days_since_push > MAX_INACTIVITY_DAYS:
                 logger.info("\t skipping due to inactivity ({} days since last push)", days_since_push)
                 return None
 
-            good_first_issues = set()
+            # Fetch issues with beginner-friendly labels
+            good_first_issues: Set = set()
             for label in ISSUE_LABELS:
                 rate_limiter.acquire()
-                issues_for_label = repository.issues(
-                    labels=label,
-                    state=ISSUE_STATE,
-                    number=ISSUE_LIMIT,
-                    sort=ISSUE_SORT,
-                    direction=ISSUE_SORT_DIRECTION,
-                )
-                good_first_issues.update(issues_for_label)
-            logger.info("\t found {} good first issues", len(good_first_issues))
-            # check if repo has at least one good first issue
-            if good_first_issues and repository.language:
-                # store the repo info
-                info: RepositoryInfo = {}
-                info["name"] = name
-                info["owner"] = owner
-                info["description"] = emojize(repository.description or "")
-                info["language"] = repository.language
-                info["slug"] = slugify(repository.language, replacements=SLUGIFY_REPLACEMENTS)
-                info["url"] = repository.html_url
-                info["stars"] = repository.stargazers_count
-                info["stars_display"] = numerize.numerize(repository.stargazers_count)
-                info["last_modified"] = repository.pushed_at.isoformat()
-                info["id"] = str(repository.id)
-
-                # get the latest issues with the tag
-                issues = []
-                for issue in good_first_issues:
-                    issues.append(
-                        {
-                            "title": issue.title,
-                            "url": issue.html_url,
-                            "number": issue.number,
-                            "comments_count": issue.comments_count,
-                            "created_at": issue.created_at.isoformat(),
-                        }
+                try:
+                    issues_for_label = repository.issues(
+                        labels=label,
+                        state=ISSUE_STATE,
+                        number=ISSUE_LIMIT,
+                        sort=ISSUE_SORT,
+                        direction=ISSUE_SORT_DIRECTION,
                     )
-
-                info["issues"] = issues
-                return info
-            else:
+                    good_first_issues.update(issues_for_label)
+                except Exception as e:
+                    logger.warning("Failed to fetch issues for label '{}': {}", label, e)
+                    continue
+                    
+            logger.info("\t found {} good first issues", len(good_first_issues))
+            
+            # Check if repository meets criteria
+            if not good_first_issues or not repository.language:
                 logger.info("\t skipping due to insufficient issues or info")
                 return None
+
+            # Build repository information
+            info: RepositoryInfo = {
+                "name": name,
+                "owner": owner,
+                "description": emojize(repository.description or ""),
+                "language": repository.language,
+                "slug": slugify(repository.language, replacements=SLUGIFY_REPLACEMENTS),
+                "url": repository.html_url,
+                "stars": repository.stargazers_count,
+                "stars_display": numerize.numerize(repository.stargazers_count),
+                "last_modified": repository.pushed_at.isoformat(),
+                "id": str(repository.id),
+                "issues": []
+            }
+
+            # Process issues
+            issues: List[IssueInfo] = []
+            for issue in good_first_issues:
+                issue_info: IssueInfo = {
+                    "title": issue.title,
+                    "url": issue.html_url,
+                    "number": issue.number,
+                    "comments_count": issue.comments_count,
+                    "created_at": issue.created_at.isoformat(),
+                }
+                issues.append(issue_info)
+
+            info["issues"] = issues
+            return info
 
         except exceptions.ForbiddenError:
             rate_limiter.report_rate_limit_hit()
             if attempt < max_retries - 1:
-                logger.warning("Rate limited on {}/{}. Retrying after coordinated pause...",
-                             owner, name)
+                logger.warning("Rate limited on {}/{}. Retrying after coordinated pause...", owner, name)
+                continue
             else:
-                logger.error("Rate limit exceeded after {} retries: {}/{}",
-                           max_retries, owner, name)
+                logger.error("Rate limit exceeded after {} retries: {}/{}", max_retries, owner, name)
                 return None
 
         except exceptions.NotFoundError:
             logger.warning("Not Found: {}/{}", owner, name)
             return None
 
-        except exceptions.ConnectionError:
-            logger.warning("Connection error: {}/{}", owner, name)
+        except exceptions.ConnectionError as e:
+            logger.warning("Connection error: {}/{} - {}", owner, name, e)
+            return None
+        except Exception as e:
+            logger.error("Unexpected error processing {}/{}: {}", owner, name, e)
+            if attempt < max_retries - 1:
+                continue
             return None
 
     return None
 
 
-if __name__ == "__main__":
-    # parse the repositories data file and get the list of repos
-    # for generating pages for.
-
+def _validate_configuration() -> None:
+    """Validate required configuration and environment variables.
+    
+    Raises:
+        ConfigurationError: If required files or environment variables are missing
+    """
     if not path.exists(REPO_DATA_FILE):
-        raise RuntimeError("No config data file found. Exiting.")
-
-    # if the GitHub Access Token isn't found, raise an error
+        raise ConfigurationError(f"Repository data file not found: {REPO_DATA_FILE}")
+    
     if not getenv("GH_ACCESS_TOKEN"):
-        raise RuntimeError("Access token not present in the env variable `GH_ACCESS_TOKEN`")
-
-    REPOSITORIES = []
-    TAGS: Counter = Counter()
-    with open(REPO_DATA_FILE, "r") as data_file:
-        DATA = toml.load(REPO_DATA_FILE)
-
-        logger.info(
-            "Found {} repository entries in {}",
-            len(DATA["repositories"]),
-            REPO_DATA_FILE,
+        raise ConfigurationError(
+            "GitHub access token not found in environment variable 'GH_ACCESS_TOKEN'. "
+            "Please set this variable and try again."
         )
 
-        # pre-process the URLs and only continue with the list of valid GitHub URLs
-        repositories = list(filter(bool, [parse_github_url(url) for url in DATA["repositories"]]))
 
-        # shuffle the order of the repositories
+def _load_repositories_data() -> List[RepositoryIdentifier]:
+    """Load and validate repositories data from TOML file.
+    
+    Returns:
+        List of repository identifiers
+        
+    Raises:
+        ConfigurationError: If data file is invalid
+    """
+    try:
+        with open(REPO_DATA_FILE, "r", encoding="utf-8") as data_file:
+            data = toml.load(data_file)
+            
+        if "repositories" not in data:
+            raise ConfigurationError("Missing 'repositories' key in data file")
+            
+        repository_urls = data["repositories"]
+        if not isinstance(repository_urls, list):
+            raise ConfigurationError("'repositories' should be a list")
+            
+        logger.info("Found {} repository entries in {}", len(repository_urls), REPO_DATA_FILE)
+        
+        # Parse and validate URLs
+        repositories = []
+        invalid_urls = []
+        
+        for url in repository_urls:
+            parsed = parse_github_url(url)
+            if parsed:
+                repositories.append(parsed)
+            else:
+                invalid_urls.append(url)
+        
+        if invalid_urls:
+            logger.warning("Found {} invalid repository URLs, skipping them", len(invalid_urls))
+            
+        if not repositories:
+            raise ConfigurationError("No valid repository URLs found")
+            
+        # Shuffle for random processing order
         random.shuffle(repositories)
+        return repositories
+        
+    except toml.TomlDecodeError as e:
+        raise ConfigurationError(f"Invalid TOML format in {REPO_DATA_FILE}: {e}") from e
+    except Exception as e:
+        raise ConfigurationError(f"Error loading repositories data: {e}") from e
 
-        # Create shared client and rate limiter
-        client = login(token=getenv("GH_ACCESS_TOKEN"))
-        rate_limiter = GitHubRateLimiter(client, requests_per_second=1.0)
 
-        # Wrapper to pass shared dependencies
-        def process_repo(identifier):
-            return get_repository_info(identifier, client, rate_limiter)
+def _process_repositories(
+    repositories: List[RepositoryIdentifier],
+    client,
+    rate_limiter: GitHubRateLimiter
+) -> List[RepositoryInfo]:
+    """Process repositories using thread pool.
+    
+    Args:
+        repositories: List of repository identifiers
+        client: GitHub API client
+        rate_limiter: Rate limiter instance
+        
+    Returns:
+        List of successfully processed repository information
+    """
+    processed_repos: List[RepositoryInfo] = []
+    
+    def process_repo(identifier: RepositoryIdentifier) -> Optional[RepositoryInfo]:
+        """Wrapper function for thread pool processing."""
+        return get_repository_info(identifier, client, rate_limiter)
+    
+    with ThreadPoolExecutor(max_workers=MAX_CONCURRENCY) as executor:
+        # Use as_completed for better error handling and progress tracking
+        future_to_repo = {
+            executor.submit(process_repo, repo): repo for repo in repositories
+        }
+        
+        for future in as_completed(future_to_repo):
+            repo_identifier = future_to_repo[future]
+            try:
+                result = future.result()
+                if result:
+                    processed_repos.append(result)
+                    logger.info("Successfully processed {}/{}", 
+                               result["owner"], result["name"])
+            except Exception as e:
+                logger.error("Error processing repository {}/{}: {}",
+                           repo_identifier["owner"], repo_identifier["name"], e)
+    
+    return processed_repos
 
-        with ThreadPoolExecutor(max_workers=MAX_CONCURRENCY) as executor:
-            results = executor.map(process_repo, repositories)
 
-        # filter out repositories with valid data and increment tag counts
-        for result in results:
-            if result:
-                REPOSITORIES.append(result)
-                TAGS[result["language"]] += 1
-
-    # write to generated JSON files
-
-    with open(REPO_GENERATED_DATA_FILE, "w") as file_desc:
-        json.dump(REPOSITORIES, file_desc)
-    logger.info("Wrote data for {} repos to {}", len(REPOSITORIES), REPO_GENERATED_DATA_FILE)
-
-    # use only those tags that have at least three occurrences
+def _generate_tags_data(repositories: List[RepositoryInfo]) -> List[TagInfo]:
+    """Generate tags data from processed repositories.
+    
+    Args:
+        repositories: List of processed repository information
+        
+    Returns:
+        List of tag information sorted by count
+    """
+    tags_counter = Counter(repo["language"] for repo in repositories)
+    
     tags = [
         {
-            "language": key,
-            "count": value,
-            "slug": slugify(key, replacements=SLUGIFY_REPLACEMENTS),
+            "language": language,
+            "count": count,
+            "slug": slugify(language, replacements=SLUGIFY_REPLACEMENTS),
         }
-        for (key, value) in TAGS.items()
-        if value >= 3
+        for language, count in tags_counter.items()
+        if count >= MIN_TAG_OCCURRENCES
     ]
-    tags_sorted = sorted(tags, key=itemgetter("count"), reverse=True)
-    with open(TAGS_GENERATED_DATA_FILE, "w") as file_desc:
-        json.dump(tags_sorted, file_desc)
-    logger.info("Wrote {} tags to {}", len(tags), TAGS_GENERATED_DATA_FILE)
+    
+    return sorted(tags, key=itemgetter("count"), reverse=True)
+
+
+def _write_output_files(repositories: List[RepositoryInfo], tags: List[TagInfo]) -> None:
+    """Write processed data to JSON output files.
+    
+    Args:
+        repositories: List of repository information
+        tags: List of tag information
+    """
+    try:
+        # Write repositories data
+        with open(REPO_GENERATED_DATA_FILE, "w", encoding="utf-8") as f:
+            json.dump(repositories, f, indent=2, ensure_ascii=False)
+        logger.info("Wrote data for {} repos to {}", len(repositories), REPO_GENERATED_DATA_FILE)
+        
+        # Write tags data
+        with open(TAGS_GENERATED_DATA_FILE, "w", encoding="utf-8") as f:
+            json.dump(tags, f, indent=2, ensure_ascii=False)
+        logger.info("Wrote {} tags to {}", len(tags), TAGS_GENERATED_DATA_FILE)
+        
+    except Exception as e:
+        logger.error("Failed to write output files: {}", e)
+        raise
+
+
+def main() -> None:
+    """Main entry point for the repository data fetcher."""
+    try:
+        logger.info("Starting Good First Issue data fetcher")
+        
+        # Validate configuration
+        _validate_configuration()
+        
+        # Load repositories data
+        repositories = _load_repositories_data()
+        
+        # Initialize GitHub client and rate limiter
+        client = login(token=getenv("GH_ACCESS_TOKEN"))
+        rate_limiter = GitHubRateLimiter(client, requests_per_second=DEFAULT_REQUESTS_PER_SECOND)
+        
+        # Process repositories
+        logger.info("Processing {} repositories with {} workers", 
+                   len(repositories), MAX_CONCURRENCY)
+        processed_repos = _process_repositories(repositories, client, rate_limiter)
+        
+        # Generate tags
+        tags = _generate_tags_data(processed_repos)
+        
+        # Write output files
+        _write_output_files(processed_repos, tags)
+        
+        logger.success("Successfully processed {} repositories and {} tags", 
+                      len(processed_repos), len(tags))
+        
+    except (ConfigurationError, KeyboardInterrupt) as e:
+        logger.error("Application error: {}", e)
+        raise
+    except Exception as e:
+        logger.error("Unexpected error: {}", e)
+        raise
+
+
+if __name__ == "__main__":
+    main()
