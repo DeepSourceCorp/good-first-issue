@@ -1,0 +1,120 @@
+name: CI
+
+# todo
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.9', '3.10', '3.11', '3.12']
+    
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+
+      - name: Install dependencies
+        run: |
+          uv pip install --dev -e .
+          uv pip install pytest pytest-cov
+
+      - name: Run linting
+        run: |
+          uv run ruff check gfi/
+          uv run ruff format --check gfi/
+
+      - name: Run type checking
+        run: |
+          uv run mypy gfi/
+
+      - name: Run tests with coverage
+        run: |
+          uv run pytest gfi/ --cov=gfi --cov-report=xml --cov-report=html
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v3
+        with:
+          file: ./coverage.xml
+          flags: unittests
+          name: codecov-umbrella
+
+  security:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+
+      - name: Install dependencies
+        run: |
+          uv pip install --dev -e .
+          uv pip install bandit safety
+
+      - name: Run security checks
+        run: |
+          uv run bandit -r gfi/
+          uv run safety check
+
+  data-validation:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+
+      - name: Install dependencies
+        run: |
+          uv pip install --dev -e .
+
+      - name: Run data validation tests
+        run: |
+          uv run python -m gfi.test_data
+
+      - name: Validate data files
+        run: |
+          python -c "
+          import json
+          import toml
+          from pathlib import Path
+          
+          # Validate TOML
+          with open('data/repositories.toml') as f:
+              data = toml.load(f)
+              assert 'repositories' in data
+              assert isinstance(data['repositories'], list)
+              print(f'TOML validation passed: {len(data[\"repositories\"])} repos')
+          
+          # Validate JSON
+          with open('data/labels.json') as f:
+              data = json.load(f)
+              assert 'labels' in data
+              assert isinstance(data['labels'], list)
+              print(f'JSON validation passed: {len(data[\"labels\"])} labels')
+          "
