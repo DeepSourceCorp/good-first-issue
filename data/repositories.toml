@@ -572,6 +572,7 @@ repositories = [
   'github.com/pygame/pygame',
   'github.com/pyinstaller/pyinstaller',
   'github.com/pypa/pip',
+  'github.com/encode/django-rest-framework',
   'github.com/pypa/pipenv',
   'github.com/pypa/warehouse',
   'github.com/pyqtgraph/pyqtgraph',
