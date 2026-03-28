@@ -112,3 +112,4 @@ If you use AI tools (Claude, Copilot, ChatGPT, etc.) when contributing:
 Low-quality AI-generated PRs or issues will be closed without review.
 
 _Inspired by [Ghostty's AI Policy](https://github.com/ghostty-org/ghostty/blob/main/AI_POLICY.md)._
+- [Sahil](https://github.com/Saip950)
