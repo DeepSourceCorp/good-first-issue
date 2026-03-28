@@ -196,6 +196,7 @@ repositories = [
   'github.com/eclipse/openj9',
   'github.com/eclipsesource/J2V8',
   'github.com/einsteinpy/einsteinpy',
+  'github.com/Elabsurdo984/luzlang',
   'github.com/elastic/beats',
   'github.com/elastic/elasticsearch',
   'github.com/elastic/eui',
