@@ -86,7 +86,7 @@ const props = defineProps({
 const openRepoId = useOpenRepoId()
 
 const issuesDisplay = computed(() => {
-  const numIssues = props.repo.issues.length
+  const numIssues = props.repo.issues.filter(issue => issue.state === "open").length
   return numIssues > 1 ? `${numIssues} issues` : `${numIssues} issue`
 })
 
