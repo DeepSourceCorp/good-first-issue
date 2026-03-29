@@ -830,3 +830,7 @@ repositories = [
   'github.com/zsh-users/zsh-syntax-highlighting',
   'github.com/zulip/zulip',
 ]
+[[repositories]]
+name = "facebook/react"
+url = "https://github.com/facebook/react"
+description = "A JavaScript library for building user interfaces"
