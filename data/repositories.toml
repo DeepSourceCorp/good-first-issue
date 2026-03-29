@@ -682,6 +682,7 @@ repositories = [
   'github.com/spotify/backstage',
   'github.com/spotify/scio',
   'github.com/square/retrofit',
+  'github.com/supabase/supabase-py',
   'github.com/SSENSE/vue-carousel',
   'github.com/StackStorm/st2',
   'github.com/stan-dev/stan',
