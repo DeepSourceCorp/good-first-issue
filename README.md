@@ -33,3 +33,6 @@ Once your submission is reviewed and approved, it will be added to [goodfirstiss
 ## Contributing
 
 Want to contribute? See [CONTRIBUTING.md](CONTRIBUTING.md) for setup instructions and guidelines.
+
+## Minor Improvement
+Improved readability of documentation.
