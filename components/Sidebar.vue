@@ -30,6 +30,44 @@
       </div>
     </div>
     <div class="pt-6">
+      <h3 class="section-heading">Filter</h3>
+      <div class="space-y-3">
+        <div>
+          <label class="text-xs text-slate uppercase tracking-wider block mb-1">Min Stars</label>
+          <select
+            v-model.number="minStars"
+            class="w-full bg-ink-300 border border-ink-200 text-vanilla-300 text-sm rounded-sm px-2 py-1 focus:outline-none focus:border-juniper"
+          >
+            <option :value="0">Any</option>
+            <option :value="100">100+</option>
+            <option :value="1000">1,000+</option>
+            <option :value="5000">5,000+</option>
+            <option :value="10000">10,000+</option>
+          </select>
+        </div>
+        <div>
+          <label class="text-xs text-slate uppercase tracking-wider block mb-1">Last Activity</label>
+          <select
+            v-model.number="maxAgeDays"
+            class="w-full bg-ink-300 border border-ink-200 text-vanilla-300 text-sm rounded-sm px-2 py-1 focus:outline-none focus:border-juniper"
+          >
+            <option :value="0">Any time</option>
+            <option :value="30">Last 30 days</option>
+            <option :value="90">Last 3 months</option>
+            <option :value="180">Last 6 months</option>
+            <option :value="365">Last year</option>
+          </select>
+        </div>
+        <button
+          v-if="minStars > 0 || maxAgeDays > 0"
+          class="text-xs text-slate hover:text-juniper"
+          @click="minStars = 0; maxAgeDays = 0"
+        >
+          Reset filters
+        </button>
+      </div>
+    </div>
+    <div class="pt-6">
       <a
         class="bg-juniper hover:bg-light_juniper text-ink-400 uppercase rounded-md font-bold text-center px-1 py-3 flex flex-row items-center justify-center space-x-1"
         href="https://github.com/deepsourcelabs/good-first-issue#adding-a-new-project"
@@ -63,7 +101,10 @@
 <script setup>
 import Tags from '~/data/tags.json'
 import { PlusCircleIcon } from '@heroicons/vue/24/outline'
-import {HeartIcon} from '@heroicons/vue/24/solid'
+import { HeartIcon } from '@heroicons/vue/24/solid'
+
+const minStars = useMinStars()
+const maxAgeDays = useMaxAgeDays()
 </script>
 <style>
 .section-heading {
