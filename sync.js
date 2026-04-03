@@ -55,10 +55,10 @@ function downloadFile(url, dest) {
 async function syncFilesUp() {
   for (const fileName of filesToSync) {
     const filePath = path.resolve(path.join(dirToSync, fileName))
-    const stat = await fs.statSync(filePath)
+    const stat = fs.statSync(filePath)
 
     if (stat.isFile()) {
-      const fileContent = await fs.readFileSync(filePath)
+      const fileContent = fs.readFileSync(filePath)
       await put(fileName, fileContent, { access: 'public', addRandomSuffix: false })
     }
   }
