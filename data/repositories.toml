@@ -829,6 +829,7 @@ repositories = [
   'github.com/zsh-users/zsh-completions',
   'github.com/zsh-users/zsh-syntax-highlighting',
   'github.com/zulip/zulip',
-  github.com/Om Singh-Dev,
-  github.com/Singh Om-Dev,
+  'github.com/Singh-OmDev/thief-detection', 
+  
+
 ]
