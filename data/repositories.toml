@@ -830,4 +830,5 @@ repositories = [
   'github.com/zsh-users/zsh-syntax-highlighting',
   'github.com/zulip/zulip',
   github.com/Om Singh-Dev,
+  github.com/Singh Om-Dev,
 ]
