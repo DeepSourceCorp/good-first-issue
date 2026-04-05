@@ -829,10 +829,5 @@ repositories = [
   'github.com/zsh-users/zsh-completions',
   'github.com/zsh-users/zsh-syntax-highlighting',
   'github.com/zulip/zulip',
-  [[repositories]]
-name = "Study Buddy"
-description = "AI-powered study assistant for students"
-url = "https://github.com/Singh-OmDev/thief-detection"
-language = "JavaScript"
-labels = ["good first issue"]
+  github.com/Om Singh-Dev,
 ]
