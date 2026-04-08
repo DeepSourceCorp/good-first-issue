@@ -11,48 +11,56 @@ DATA_FILE_PATH = "data/repositories.toml"
 LABELS_FILE_PATH = "data/labels.json"
 
 
-def _get_data_from_toml(file_path):
-    with open(file_path, "r") as file_desc:
-        return toml.load(file_desc)
+def _get_data_from_file(file_path):
+    """Reads and parses data from a TOML or JSON file with error handling."""
+    if not os.path.exists(file_path):
+        raise FileNotFoundError(f"Missing required data file: {file_path}")
 
-
-def _get_data_from_json(file_path):
-    with open(file_path, "r") as file_desc:
-        return json.load(file_desc)
+    try:
+        with open(file_path, "r", encoding="utf-8") as file_desc:
+            if file_path.endswith(".toml"):
+                return toml.load(file_desc)
+            elif file_path.endswith(".json"):
+                return json.load(file_desc)
+            else:
+                raise ValueError(f"Unsupported file extension for: {file_path}")
+    except (json.JSONDecodeError, toml.TomlDecodeError) as e:
+        raise ValueError(f"Syntax error while parsing {file_path}: {e}")
 
 
 class TestDataSanity(unittest.TestCase):
     """Test for sanity of the data file."""
 
-    @staticmethod
-    def test_data_file_exists():
+    def test_data_file_exists(self):
         """Verify that the data file exists."""
-        assert os.path.exists(DATA_FILE_PATH)
+        self.assertTrue(os.path.exists(DATA_FILE_PATH), "Data file is missing.")
 
-    @staticmethod
-    def test_labels_file_exists():
+    def test_labels_file_exists(self):
         """Verify that the labels file exists."""
-        assert os.path.exists(LABELS_FILE_PATH)
+        self.assertTrue(os.path.exists(LABELS_FILE_PATH), "Labels file is missing.")
 
-    @staticmethod
-    def test_data_file_sane():
+    def test_data_file_sane(self):
         """Verify that the file is a valid TOML with required data."""
-        data = _get_data_from_toml(DATA_FILE_PATH)
-        assert "repositories" in data
+        data = _get_data_from_file(DATA_FILE_PATH)
+        self.assertIn("repositories", data)
 
-    @staticmethod
-    def test_labels_file_sane():
-        """Verify that the labels file is a valid JSON"""
-        data = _get_data_from_json(LABELS_FILE_PATH)
-        assert "labels" in data
+    def test_labels_file_sane(self):
+        """Verify that the labels file is a valid JSON."""
+        data = _get_data_from_file(LABELS_FILE_PATH)
+        self.assertIn("labels", data)
 
-    @staticmethod
-    def test_no_duplicates():
+    def test_no_duplicates(self):
         """Verify that all entries are unique."""
-        data = _get_data_from_toml(DATA_FILE_PATH)
+        data = _get_data_from_file(DATA_FILE_PATH)
         repos = data.get("repositories", [])
-        print([item for item, count in Counter(repos).items() if count > 1])
-        assert len(repos) == len(set(repos))
+        
+        # Capture duplicates to provide a helpful error message if the test fails
+        duplicates = [item for item, count in Counter(repos).items() if count > 1]
+        self.assertEqual(
+            len(repos), 
+            len(set(repos)), 
+            f"Duplicate repositories found: {duplicates}"
+        )
 
 
 if __name__ == "__main__":
