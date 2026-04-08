@@ -29,6 +29,38 @@
         >
       </div>
     </div>
+    <div v-if="$route.params.slug" class="pt-6">
+      <h3 class="section-heading">Filter repositories</h3>
+      <div class="mb-4">
+        <label class="text-xs font-semibold text-slate uppercase mb-2 block">Minimum stars</label>
+        <select
+          v-model.number="starsFilter"
+          class="w-full px-3 py-2 rounded-md bg-ink-400 text-vanilla-300 border border-ink-200 hover:border-juniper focus:outline-none focus:border-juniper"
+        >
+          <option :value="0">Any</option>
+          <option :value="10">10+</option>
+          <option :value="50">50+</option>
+          <option :value="100">100+</option>
+          <option :value="500">500+</option>
+          <option :value="1000">1K+</option>
+          <option :value="5000">5K+</option>
+          <option :value="10000">10K+</option>
+        </select>
+      </div>
+      <div>
+        <label class="text-xs font-semibold text-slate uppercase mb-2 block">Last activity (months ago)</label>
+        <select
+          v-model.number="activityFilter"
+          class="w-full px-3 py-2 rounded-md bg-ink-400 text-vanilla-300 border border-ink-200 hover:border-juniper focus:outline-none focus:border-juniper"
+        >
+          <option :value="null">Any</option>
+          <option :value="1">Last month</option>
+          <option :value="3">Last 3 months</option>
+          <option :value="6">Last 6 months</option>
+          <option :value="12">Last year</option>
+        </select>
+      </div>
+    </div>
     <div class="pt-6">
       <a
         class="bg-juniper hover:bg-light_juniper text-ink-400 uppercase rounded-md font-bold text-center px-1 py-3 flex flex-row items-center justify-center space-x-1"
@@ -64,6 +96,9 @@
 import Tags from '~/data/tags.json'
 import { PlusCircleIcon } from '@heroicons/vue/24/outline'
 import {HeartIcon} from '@heroicons/vue/24/solid'
+
+const starsFilter = useStarsFilter()
+const activityFilter = useActivityFilter()
 </script>
 <style>
 .section-heading {
