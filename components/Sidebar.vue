@@ -29,7 +29,7 @@
         >
       </div>
     </div>
-    <div v-if="$route.params.slug" class="pt-6">
+    <div class="pt-6">
       <h3 class="section-heading">Filter repositories</h3>
       <div class="mb-4">
         <label class="text-xs font-semibold text-slate uppercase mb-2 block">Minimum stars</label>
@@ -47,19 +47,41 @@
           <option :value="10000">10K+</option>
         </select>
       </div>
-      <div>
-        <label class="text-xs font-semibold text-slate uppercase mb-2 block">Last activity (months ago)</label>
+      <div class="mb-4">
+        <label class="text-xs font-semibold text-slate uppercase mb-2 block">Last activity</label>
         <select
           v-model.number="activityFilter"
           class="w-full px-3 py-2 rounded-md bg-ink-400 text-vanilla-300 border border-ink-200 hover:border-juniper focus:outline-none focus:border-juniper"
         >
-          <option :value="null">Any</option>
-          <option :value="1">Last month</option>
-          <option :value="3">Last 3 months</option>
-          <option :value="6">Last 6 months</option>
-          <option :value="12">Last year</option>
+          <option :value="null">Any time</option>
+          <option :value="1">Last day</option>
+          <option :value="7">Last week</option>
+          <option :value="30">Last month</option>
+          <option :value="90">Last 3 months</option>
+          <option :value="180">Last 6 months</option>
+          <option :value="365">Last year</option>
         </select>
       </div>
+      <div class="mb-4">
+        <label class="text-xs font-semibold text-slate uppercase mb-2 block">Good first issues</label>
+        <select
+          v-model="issueCountFilter"
+          class="w-full px-3 py-2 rounded-md bg-ink-400 text-vanilla-300 border border-ink-200 hover:border-juniper focus:outline-none focus:border-juniper"
+        >
+          <option :value="null">All issues</option>
+          <option value="1-3">1-3 issues</option>
+          <option value="4-10">4-10 issues</option>
+          <option value="11-20">11-20 issues</option>
+          <option value="20+">20+ issues</option>
+        </select>
+      </div>
+      <button
+        v-if="starsFilter > 0 || activityFilter || issueCountFilter"
+        class="text-xs text-slate hover:text-juniper transition-colors"
+        @click="resetFilters"
+      >
+        ✕ Reset filters
+      </button>
     </div>
     <div class="pt-6">
       <a
@@ -99,6 +121,13 @@ import {HeartIcon} from '@heroicons/vue/24/solid'
 
 const starsFilter = useStarsFilter()
 const activityFilter = useActivityFilter()
+const issueCountFilter = useIssueCountFilter()
+
+const resetFilters = () => {
+  starsFilter.value = 0
+  activityFilter.value = null
+  issueCountFilter.value = null
+}
 </script>
 <style>
 .section-heading {

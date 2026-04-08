@@ -44,7 +44,7 @@
       </div>
     </div>
     <ol v-if="isCardOpen" class="px-5 py-3 text-base leading-loose border-t border-ink-200">
-      <li v-for="issue in repo.issues" :key="issue.url" class="flex flex-row items-start justify-start py-1">
+      <li v-for="issue in sortedIssues" :key="issue.url" class="flex flex-row items-start justify-start py-1">
         <span class="text-slate text-right px-2 leading-snug font-mono" style="min-width: 70px">#{{ issue.number }}</span>
         <div class="flex items-start flex-row flex-auto">
           <a
@@ -86,7 +86,7 @@ const props = defineProps({
 const openRepoId = useOpenRepoId()
 
 const issuesDisplay = computed(() => {
-  const numIssues = props.repo.issues.length
+  const numIssues = sortedIssues.value.length
   return numIssues > 1 ? `${numIssues} issues` : `${numIssues} issue`
 })
 
@@ -96,6 +96,12 @@ const lastModifiedDisplay = computed(() => {
 
 const isCardOpen = computed(() => {
   return openRepoId.value === props.repo.id
+})
+
+const sortedIssues = computed(() => {
+  return [...props.repo.issues].sort((a, b) =>
+    new Date(b.created_at) - new Date(a.created_at)
+  )
 })
 
 function toggle(repoId) {

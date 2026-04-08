@@ -15,6 +15,7 @@ import dayjs from 'dayjs'
 const route = useRoute()
 const starsFilter = useStarsFilter()
 const activityFilter = useActivityFilter()
+const issueCountFilter = useIssueCountFilter()
 
 const repositories = computed(() => {
   let filtered = Repositories.filter(repository => repository.slug === route.params.slug)
@@ -24,14 +25,55 @@ const repositories = computed(() => {
     filtered = filtered.filter(repo => repo.stars >= starsFilter.value)
   }
 
-  // Filter by last activity (in months)
+  // Filter by last activity (in days)
   if (activityFilter.value !== null && activityFilter.value !== undefined) {
-    const cutoffDate = dayjs().subtract(activityFilter.value, 'months')
+    const cutoffDate = dayjs().subtract(activityFilter.value, 'days')
     filtered = filtered.filter(repo => dayjs(repo.last_modified).isAfter(cutoffDate))
   }
 
-  // Sort by stars (descending) as secondary sort
-  return filtered.sort((a, b) => b.stars - a.stars)
+  // Filter by issue count
+  if (issueCountFilter.value) {
+    filtered = filtered.filter(repo => {
+      const count = repo.issues.length
+      switch (issueCountFilter.value) {
+        case '1-3':
+          return count >= 1 && count <= 3
+        case '4-10':
+          return count >= 4 && count <= 10
+        case '11-20':
+          return count >= 11 && count <= 20
+        case '20+':
+          return count >= 20
+        default:
+          return true
+      }
+    })
+  }
+
+  // Implicit smart sorting
+  // Prioritize sorting by whichever filter user selected
+  if (issueCountFilter.value) {
+    // User filtered by issues → show most opportunities first
+    return filtered.sort((a, b) => b.issues.length - a.issues.length)
+  } else if (starsFilter.value > 0) {
+    // User filtered by stars → show most popular first
+    return filtered.sort((a, b) => b.stars - a.stars)
+  } else if (activityFilter.value !== null && activityFilter.value !== undefined) {
+    // User filtered by activity → show most recent first
+    return filtered.sort((a, b) => new Date(b.last_modified) - new Date(a.last_modified))
+  } else {
+    // Default: balance all factors - stars → recency → issues
+    const sorted = filtered.sort((a, b) => {
+      const starDiff = b.stars - a.stars
+      if (starDiff !== 0) return starDiff
+      
+      const recencyDiff = new Date(b.last_modified) - new Date(a.last_modified)
+      if (recencyDiff !== 0) return recencyDiff
+      
+      return b.issues.length - a.issues.length
+    })
+    return sorted
+  }
 })
 
 const tag = Tags.find(t => t.slug === route.params.slug)
