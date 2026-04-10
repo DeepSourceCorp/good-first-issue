@@ -598,6 +598,7 @@ repositories = [
   'github.com/rakudo/rakudo',
   'github.com/randombit/botan',
   'github.com/rapidsai/cuml',
+  'github.com/RajjjAryan/career-copilot',
   'github.com/RaRe-Technologies/gensim',
   'github.com/ray-project/ray',
   'github.com/rclone/rclone',
