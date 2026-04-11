@@ -1,35 +1,50 @@
 <p align="center">
   <a href="https://goodfirstissue.dev" target="_blank">
-    <img src="public/readme-logo.svg">
+    <img src="public/readme-logo.svg" alt="Good First Issue Logo">
   </a>
 </p>
+
 <hr>
 
-Welcome! 👋🏼
+## 👋 Welcome
 
-**Good First Issue** is an initiative to curate easy pickings from popular projects, so developers who've never contributed to open-source can get started quickly.
+**Good First Issue** helps beginners get started with open source by curating easy issues from popular projects.
 
-Open-source maintainers are always looking to get more people involved, but new developers generally think it's challenging to become a contributor. We believe getting developers to fix super-easy issues removes the barrier for future contributions. This is why Good First Issue exists.
+Many developers want to contribute but feel it's difficult to begin. This platform makes it easier by highlighting beginner-friendly issues so you can start contributing with confidence.
 
-## Adding a new project
+---
 
-You're welcome to add a new project to Good First Issue, and we encourage all projects &mdash; old and new, big and small.
+## 🚀 Why this project?
 
-**[Submit your repository via this form](https://docs.google.com/forms/d/e/1FAIpQLSfHSt8UHvACokWv8uwiImidTIhuSCAUXnvSGs-TULshdLl9Qw/viewform?usp=header)**
+- Helps beginners find easy issues  
+- Reduces the barrier to open source  
+- Encourages first-time contributors  
 
-To maintain the quality of projects in Good First Issue, please make sure your GitHub repository meets the following criteria:
+---
+
+## ➕ Adding a New Project
+
+You're welcome to add your project — big or small!
+
+👉 **[Submit your repository here](https://docs.google.com/forms/d/e/1FAIpQLSfHSt8UHvACokWv8uwiImidTIhuSCAUXnvSGs-TULshdLl9Qw/viewform?usp=header)**
+
+### ✅ Requirements
 
 | Requirement | Description |
 |-------------|-------------|
-| Good First Issues | At least 3 open issues with beginner-friendly labels (`good first issue`, `beginner`, `easy`, `help wanted`, etc.) |
-| Contributors | At least 10 contributors |
-| README.md | Detailed setup instructions |
-| CONTRIBUTING.md | Guidelines for new contributors |
-| Active Maintenance | Recent commits and activity |
-| License | Valid open source license |
+| Good First Issues | At least 3 beginner-friendly issues (`good first issue`, `beginner`, etc.) |
+| Contributors | Minimum 10 contributors |
+| README.md | Clear setup instructions |
+| CONTRIBUTING.md | Contribution guidelines |
+| Active Maintenance | Recent activity |
+| License | Valid open-source license |
 
-Once your submission is reviewed and approved, it will be added to [goodfirstissue.dev](https://goodfirstissue.dev/).
+Once approved, your project will be listed on [goodfirstissue.dev](https://goodfirstissue.dev/).
 
-## Contributing
+---
 
-Want to contribute? See [CONTRIBUTING.md](CONTRIBUTING.md) for setup instructions and guidelines.
+## 🤝 Contributing
+
+Want to contribute?
+
+Check 👉 [CONTRIBUTING.md](CONTRIBUTING.md) for setup instructions and guidelines.
