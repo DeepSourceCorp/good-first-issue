@@ -832,5 +832,5 @@ repositories = [
   [[repositories]]
 name = "mozilla/firefox"
 url = "https://github.com/mozilla/firefox"
-
+"github.com/freeCodeCamp/freeCodeCamp",
 ]
