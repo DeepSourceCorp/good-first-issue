@@ -1,6 +1,9 @@
 <template>
   <div class="p-4 w-full">
-    <RepoBox v-for="repo in repositories" :key="repo.id" :repo="repo" />
+    <template v-if="repositories.length">
+      <RepoBox v-for="repo in repositories" :key="repo.id" :repo="repo" />
+    </template>
+    <p v-else class="text-vanilla-400 text-center py-8">No repositories found for this language.</p>
   </div>
 </template>
 
@@ -14,11 +17,13 @@ const repositories = Repositories.filter(repository => repository.slug === route
 
 const tag = Tags.find(t => t.slug === route.params.slug)
 
-useHead({
-  title: `${tag.language} | Good First Issue`,
-  meta: [{
-    name: 'description',
-    content: `Curated list of issues in ${tag.language} from popular open-source projects that you can easily fix.`
-  }]
-})
+if (tag) {
+  useHead({
+    title: ${tag.language} | Good First Issue,
+    meta: [{
+      name: 'description',
+      content: Curated list of issues in ${tag.language} from popular open-source projects that you can easily fix.
+    }]
+  })
+}
 </script>
