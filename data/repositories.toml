@@ -829,4 +829,8 @@ repositories = [
   'github.com/zsh-users/zsh-completions',
   'github.com/zsh-users/zsh-syntax-highlighting',
   'github.com/zulip/zulip',
+  [[repositories]]
+name = "mozilla/firefox"
+url = "https://github.com/mozilla/firefox"
+"github.com/freeCodeCamp/freeCodeCamp",
 ]
