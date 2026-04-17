@@ -7,13 +7,13 @@
 
 Welcome! 👋🏼
 
-**Good First Issue** is an initiative to curate easy pickings from popular projects, so developers who've never contributed to open-source can get started quickly.
+**Good First Issue** is an initiative to curate easy picks from popular projects, helping developers who have never contributed to open source get started quickly.
 
-Open-source maintainers are always looking to get more people involved, but new developers generally think it's challenging to become a contributor. We believe getting developers to fix super-easy issues removes the barrier for future contributions. This is why Good First Issue exists.
+Open-source maintainers are always looking to involve more people, but new developers often find it challenging to become contributors. We believe helping developers solve beginner-friendly issues lowers the barrier to future contributions. This is why Good First Issue exists.
 
-## Adding a new project
+## Adding a New Project
 
-You're welcome to add a new project to Good First Issue, and we encourage all projects &mdash; old and new, big and small.
+You're welcome to add a new project to Good First Issue, and we encourage all projects, old and new, big and small.
 
 **[Submit your repository via this form](https://docs.google.com/forms/d/e/1FAIpQLSfHSt8UHvACokWv8uwiImidTIhuSCAUXnvSGs-TULshdLl9Qw/viewform?usp=header)**
 
@@ -26,10 +26,10 @@ To maintain the quality of projects in Good First Issue, please make sure your G
 | README.md | Detailed setup instructions |
 | CONTRIBUTING.md | Guidelines for new contributors |
 | Active Maintenance | Recent commits and activity |
-| License | Valid open source license |
+| License | A valid open-source license |
 
 Once your submission is reviewed and approved, it will be added to [goodfirstissue.dev](https://goodfirstissue.dev/).
 
 ## Contributing
 
-Want to contribute? See [CONTRIBUTING.md](CONTRIBUTING.md) for setup instructions and guidelines.
+Want to contribute? See [CONTRIBUTING.md](CONTRIBUTING.md) for setup instructions and contribution guidelines.
