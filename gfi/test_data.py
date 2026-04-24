@@ -4,6 +4,7 @@ import json
 import os
 import unittest
 from collections import Counter
+from pathlib import Path
 
 import toml
 
@@ -11,48 +12,80 @@ DATA_FILE_PATH = "data/repositories.toml"
 LABELS_FILE_PATH = "data/labels.json"
 
 
-def _get_data_from_toml(file_path):
-    with open(file_path, "r") as file_desc:
-        return toml.load(file_desc)
-
-
-def _get_data_from_json(file_path):
-    with open(file_path, "r") as file_desc:
-        return json.load(file_desc)
+class DataFileLoader:
+    """Utility class for loading data files with caching."""
+    
+    _cache = {}
+    
+    @classmethod
+    def load_toml(cls, file_path):
+        """Load and cache TOML file data."""
+        if file_path not in cls._cache:
+            with open(file_path, "r") as file_desc:
+                cls._cache[file_path] = toml.load(file_desc)
+        return cls._cache[file_path]
+    
+    @classmethod
+    def load_json(cls, file_path):
+        """Load and cache JSON file data."""
+        if file_path not in cls._cache:
+            with open(file_path, "r") as file_desc:
+                cls._cache[file_path] = json.load(file_desc)
+        return cls._cache[file_path]
 
 
 class TestDataSanity(unittest.TestCase):
-    """Test for sanity of the data file."""
+    """Test for sanity of the data files with optimized performance."""
 
-    @staticmethod
-    def test_data_file_exists():
+    def setUp(self):
+        """Set up test fixtures."""
+        self.data_path = Path(DATA_FILE_PATH)
+        self.labels_path = Path(LABELS_FILE_PATH)
+
+    def test_data_file_exists(self):
         """Verify that the data file exists."""
-        assert os.path.exists(DATA_FILE_PATH)
+        self.assertTrue(self.data_path.exists(), f"Data file not found: {DATA_FILE_PATH}")
 
-    @staticmethod
-    def test_labels_file_exists():
+    def test_labels_file_exists(self):
         """Verify that the labels file exists."""
-        assert os.path.exists(LABELS_FILE_PATH)
+        self.assertTrue(self.labels_path.exists(), f"Labels file not found: {LABELS_FILE_PATH}")
 
-    @staticmethod
-    def test_data_file_sane():
+    def test_data_file_sane(self):
         """Verify that the file is a valid TOML with required data."""
-        data = _get_data_from_toml(DATA_FILE_PATH)
-        assert "repositories" in data
+        data = DataFileLoader.load_toml(DATA_FILE_PATH)
+        self.assertIn("repositories", data, "Missing 'repositories' key in data file")
 
-    @staticmethod
-    def test_labels_file_sane():
+    def test_labels_file_sane(self):
         """Verify that the labels file is a valid JSON"""
-        data = _get_data_from_json(LABELS_FILE_PATH)
-        assert "labels" in data
+        data = DataFileLoader.load_json(LABELS_FILE_PATH)
+        self.assertIn("labels", data, "Missing 'labels' key in labels file")
 
-    @staticmethod
-    def test_no_duplicates():
-        """Verify that all entries are unique."""
-        data = _get_data_from_toml(DATA_FILE_PATH)
+    def test_no_duplicates(self):
+        """Verify that all repository entries are unique."""
+        data = DataFileLoader.load_toml(DATA_FILE_PATH)
         repos = data.get("repositories", [])
-        print([item for item, count in Counter(repos).items() if count > 1])
-        assert len(repos) == len(set(repos))
+        
+        # Find duplicates efficiently
+        seen = set()
+        duplicates = set()
+        for repo in repos:
+            if repo in seen:
+                duplicates.add(repo)
+            else:
+                seen.add(repo)
+        
+        if duplicates:
+            print(f"Duplicate repositories found: {list(duplicates)}")
+        
+        self.assertEqual(len(repos), len(set(repos)), 
+                        f"Found {len(duplicates)} duplicate repositories")
+
+    def test_file_permissions(self):
+        """Verify that files are readable."""
+        self.assertTrue(os.access(DATA_FILE_PATH, os.R_OK), 
+                       f"Data file is not readable: {DATA_FILE_PATH}")
+        self.assertTrue(os.access(LABELS_FILE_PATH, os.R_OK), 
+                       f"Labels file is not readable: {LABELS_FILE_PATH}")
 
 
 if __name__ == "__main__":
