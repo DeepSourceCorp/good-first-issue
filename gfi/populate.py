@@ -155,6 +155,8 @@ def get_repository_info(
                 return None
 
             good_first_issues = set()
+            issue_label_mapping = {}  # Track which labels each issue has
+            
             for label in ISSUE_LABELS:
                 rate_limiter.acquire()
                 issues_for_label = repository.issues(
@@ -164,8 +166,15 @@ def get_repository_info(
                     sort=ISSUE_SORT,
                     direction=ISSUE_SORT_DIRECTION,
                 )
+                # Track each issue and the labels it qualifies under
+                for issue in issues_for_label:
+                    if issue.number not in issue_label_mapping:
+                        issue_label_mapping[issue.number] = []
+                    issue_label_mapping[issue.number].append(label)
                 good_first_issues.update(issues_for_label)
-            logger.info("\t found {} good first issues", len(good_first_issues))
+            
+            logger.info("\t found {} unique good first issues", len(good_first_issues))
+            logger.debug("\t issue label mapping: {}", {issue_num: labels for issue_num, labels in issue_label_mapping.items()})
             # check if repo has at least one good first issue
             if good_first_issues and repository.language:
                 # store the repo info
