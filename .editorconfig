@@ -8,9 +8,10 @@ charset = utf-8
 trim_trailing_whitespace = true
 insert_final_newline = true
 
-# The JSON files contain newlines inconsistently
+# Consistent newline handling for JSON files
 [*.json]
-insert_final_newline = ignore
+indent_style = space
+indent_size = 2
 
 # Minified JavaScript files shouldn't be changed
 [**.min.js]
