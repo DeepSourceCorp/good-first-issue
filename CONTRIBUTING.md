@@ -22,7 +22,7 @@ Before you begin, make sure you have the following installed:
 
 Good First Issue has two main components:
 
-- **Front-end app** - Built with Nuxt.js, displays the curated list of repositories
+- **Front-end app** - Built with Next.js, displays the curated list of repositories
 - **Data population script** - Written in Python, fetches repository data from GitHub
 
 ## Setting Up Locally
@@ -112,3 +112,4 @@ If you use AI tools (Claude, Copilot, ChatGPT, etc.) when contributing:
 Low-quality AI-generated PRs or issues will be closed without review.
 
 _Inspired by [Ghostty's AI Policy](https://github.com/ghostty-org/ghostty/blob/main/AI_POLICY.md)._
+
