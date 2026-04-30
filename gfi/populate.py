@@ -165,7 +165,7 @@ def get_repository_info(
                     direction=ISSUE_SORT_DIRECTION,
                 )
                 good_first_issues.update(issues_for_label)
-            logger.info("\t found {} good first issues", len(good_first_issues))
+            logger.info("\t processing {} potential issues/pull requests", len(good_first_issues))
             # check if repo has at least one good first issue
             if good_first_issues and repository.language:
                 # store the repo info
@@ -184,6 +184,8 @@ def get_repository_info(
                 # get the latest issues with the tag
                 issues = []
                 for issue in good_first_issues:
+                    if issue.pull_request_urls:
+                        continue
                     issues.append(
                         {
                             "title": issue.title,
