@@ -1,14 +1,21 @@
 {
   "name": "nuxt-app",
+  "version": "1.0.0",
   "private": true,
   "type": "module",
+  "description": "Nuxt 3 application",
   "scripts": {
-    "build": "nuxt build",
     "dev": "nuxt dev",
+    "build": "nuxt build",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "sync": "bun sync.js"
+  },
+  "dependencies": {
+    "@heroicons/vue": "^2.2.0",
+    "@vercel/blob": "^0.16.2",
+    "dayjs": "^1.11.19"
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
@@ -18,9 +25,7 @@
     "nuxt-simple-sitemap": "^4.4.1",
     "prettier": "^3.8.0"
   },
-  "dependencies": {
-    "@heroicons/vue": "^2.2.0",
-    "@vercel/blob": "^0.16.2",
-    "dayjs": "^1.11.19"
+  "engines": {
+    "node": ">=18.0.0"
   }
 }
