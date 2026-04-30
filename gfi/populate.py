@@ -170,11 +170,16 @@ def get_repository_info(
             if good_first_issues and repository.language:
                 # store the repo info
                 info: RepositoryInfo = {}
+                languages = [language for language, _ in repository.languages(3)]
+                primary_language = languages[0] if languages else repository.language
+
                 info["name"] = name
                 info["owner"] = owner
                 info["description"] = emojize(repository.description or "")
-                info["language"] = repository.language
-                info["slug"] = slugify(repository.language, replacements=SLUGIFY_REPLACEMENTS)
+                info["language"] = primary_language
+                info["languages"] = languages
+                info["slug"] = slugify(primary_language, replacements=SLUGIFY_REPLACEMENTS)
+
                 info["url"] = repository.html_url
                 info["stars"] = repository.stargazers_count
                 info["stars_display"] = numerize.numerize(repository.stargazers_count)
