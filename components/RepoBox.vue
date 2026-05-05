@@ -1,5 +1,8 @@
 <template>
   <div
+    role="button"
+    tabindex="0"
+    @keydown.enter="toggle(repo.id)"
     :id="`repo-${repo.id}`"
     :class="{
       'border-juniper hover:bg-ink-400': isCardOpen,

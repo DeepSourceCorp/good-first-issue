@@ -1,6 +1,6 @@
 <template>
   <header class="w-full py-4 border-b border-ink-200 bg-ink-400">
-    <nav class="flex items-center justify-center flex-wrap">
+    <nav aria-label="Main navigation" class="flex items-center justify-center flex-wrap">
       <NuxtLink to="/" class="flex items-center text-gray-700 font-bold">
         <img src="~/assets/gfi-logo-white.svg" alt="Good First Issue" class="h-12" />
       </NuxtLink>
