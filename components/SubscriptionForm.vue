@@ -3,7 +3,7 @@
     <div class="flex flex-row space-x-2 w-full">
       <input
         class="bg-ink-300 text-vanilla-100 flex flex-grow h-10 text-sm py-2 px-3 rounded-sm w-full outline-none"
-        type="text"
+        type="email"
         name="email"
         placeholder="Enter your email"
         required
