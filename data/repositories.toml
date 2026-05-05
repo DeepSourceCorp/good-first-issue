@@ -757,6 +757,7 @@ repositories = [
   'github.com/unoplatform/uno',
   'github.com/UPC/ravada',
   'github.com/updatecli/updatecli',
+  'github.com/usemoss/moss',
   'github.com/uutils/coreutils',
   'github.com/valhalla/valhalla',
   'github.com/validatorjs/validator.js',
