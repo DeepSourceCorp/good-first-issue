@@ -1,5 +1,5 @@
 <template>
-  <section class="masthead font-sans pt-6 border-r border-ink-200 px-6 text-vanilla-300 flex-none w-full md:max-w-sm">
+  <section aria-label="Sidebar" class="masthead font-sans pt-6 border-r border-ink-200 px-6 text-vanilla-300 flex-none w-full md:max-w-sm">
     <div>
       <h3 class="section-heading">About</h3>
       <p class="text-sm">
@@ -8,12 +8,13 @@
       </p>
     </div>
     <div class="pt-6">
-      <h3 class="section-heading">Browse by language</h3>
-      <div>
+      <h3 class="section-heading" id="browse-by-language-heading">Browse by language</h3>
+      <nav aria-labelledby="browse-by-language-heading">
         <nuxt-link
           v-for="tag in Tags"
           :key="tag.slug"
           :to="'/language/' + tag.slug"
+          :aria-current="$route.params.slug === tag.slug ? 'page' : undefined"
           :class="{
             'active-pill': $route.params.slug === tag.slug,
             'border-slate hover:text-juniper hover:border-juniper': $route.params.slug !== tag.slug
@@ -24,42 +25,42 @@
             :class="{
               'text-vanilla-400 group-hover:text-juniper': $route.params.slug !== tag.slug
             }"
+            aria-hidden="true"
             >&times; {{ tag.count }}</span
           ></nuxt-link
         >
-      </div>
+      </nav>
     </div>
     <div class="pt-6">
       <a
+        aria-label="Add your project to Good First Issue (opens in new tab)"
         class="bg-juniper hover:bg-light_juniper text-ink-400 uppercase rounded-md font-bold text-center px-1 py-3 flex flex-row items-center justify-center space-x-1"
         href="https://github.com/deepsourcelabs/good-first-issue#adding-a-new-project"
         target="_blank"
         rel="noopener noreferrer"
         >
-          <PlusCircleIcon class="h-5 w-5 stroke-2" />
+          <PlusCircleIcon class="h-5 w-5 stroke-2" aria-hidden="true" />
           <span>Add your project</span>
-        </a
-      >
+        </a>
     </div>
-
     <div class="text-sm pt-6">
       <a
         class="flex flex-row justify-center items-center"
         target="_blank"
         rel="noopener noreferrer"
         href="https://deepsource.com?ref=gfi"
+        aria-label="Visit DeepSource website (opens in new tab)"
       >
-        <HeartIcon class="w-4 h-4 text-cherry" />
+        <HeartIcon class="w-4 h-4 text-cherry" aria-hidden="true" />
         <span class="ml-2"
           >A
-          <span class="inline hover:underline text-juniper" title="Visit DeepSource website">DeepSource</span>
-          initative</span
+          <span class="inline hover:underline text-juniper">DeepSource</span>
+          initiative</span
         >
       </a>
     </div>
   </section>
 </template>
-
 <script setup>
 import Tags from '~/data/tags.json'
 import { PlusCircleIcon } from '@heroicons/vue/24/outline'
@@ -72,7 +73,6 @@ import {HeartIcon} from '@heroicons/vue/24/solid'
 .active-pill {
   @apply text-juniper font-semibold border-juniper;
 }
-
 .active-pill > span {
   @apply text-juniper;
 }
