@@ -10,21 +10,23 @@ from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
 from operator import itemgetter
 from os import getenv, path
-from typing import TypedDict, Dict, Union, Sequence, Optional
+from typing import Dict, Optional, Sequence, TypedDict, Union, cast
 
 import toml
-
-from github3 import exceptions, login
-from numerize import numerize
 from emoji import emojize
-from slugify import slugify
+from github3 import exceptions, login
 from loguru import logger
+from numerize import numerize
+from slugify import slugify
 
 MAX_CONCURRENCY = 5  # max number of requests to make to GitHub in parallel
 REPO_DATA_FILE = "data/repositories.toml"
 REPO_GENERATED_DATA_FILE = "data/generated.json"
 TAGS_GENERATED_DATA_FILE = "data/tags.json"
-GH_URL_PATTERN = re.compile(r"[http://|https://]?github.com/(?P<owner>[\w\.-]+)/(?P<name>[\w\.-]+)/?")
+GH_URL_PATTERN = re.compile(
+    r"(?:https?://)?(?:www\.)?github\.com/(?P<owner>[\w.-]+)/(?P<name>[\w.-]+)/?",
+    re.IGNORECASE,
+)
 LABELS_DATA_FILE = "data/labels.json"
 ISSUE_STATE = "open"
 ISSUE_SORT = "created"
@@ -76,7 +78,11 @@ class GitHubRateLimiter:
                 if self._reset_time:
                     wait_time = max(0, self._reset_time - time.time() + 5)
                     if wait_time > 0:
-                        logger.warning("Low quota ({}). Pausing {:.0f}s", self._remaining, wait_time)
+                        logger.warning(
+                            "Low quota ({}). Pausing {:.0f}s",
+                            self._remaining,
+                            wait_time,
+                        )
                         self._paused_until = time.time() + wait_time
                         time.sleep(wait_time)
                         self._remaining = None
@@ -92,10 +98,10 @@ class GitHubRateLimiter:
 
     def _update_rate_limit(self):
         try:
-            info = self._client.rate_limit()['resources']['core']
-            self._remaining = info['remaining']
-            self._reset_time = info['reset']
-            logger.debug("Rate limit: {}/{}", self._remaining, info['limit'])
+            info = self._client.rate_limit()["resources"]["core"]
+            self._remaining = info["remaining"]
+            self._reset_time = info["reset"]
+            logger.debug("Rate limit: {}/{}", self._remaining, info["limit"])
         except Exception as e:
             logger.warning("Failed to check rate limit: {}", e)
 
@@ -125,13 +131,19 @@ class RepositoryIdentifier(TypedDict):
     name: str
 
 
-RepositoryInfo = Dict["str", Union[str, int, Sequence]]
+class IssueRecord(TypedDict):
+    title: str
+    url: str
+    number: int
+    comments_count: int
+    created_at: str
+
+
+RepositoryInfo = Dict[str, Union[str, int, list[IssueRecord]]]
 
 
 def get_repository_info(
-    identifier: RepositoryIdentifier,
-    client,
-    rate_limiter: GitHubRateLimiter
+    identifier: RepositoryIdentifier, client, rate_limiter: GitHubRateLimiter
 ) -> Optional[RepositoryInfo]:
     """Get the relevant information needed for the repository from its owner login and name."""
     owner, name = identifier["owner"], identifier["name"]
@@ -151,7 +163,10 @@ def get_repository_info(
             # Skip repos with no recent activity
             days_since_push = (datetime.now(timezone.utc) - repository.pushed_at).days
             if days_since_push > MAX_INACTIVITY_DAYS:
-                logger.info("\t skipping due to inactivity ({} days since last push)", days_since_push)
+                logger.info(
+                    "\t skipping due to inactivity ({} days since last push)",
+                    days_since_push,
+                )
                 return None
 
             good_first_issues = set()
@@ -174,7 +189,9 @@ def get_repository_info(
                 info["owner"] = owner
                 info["description"] = emojize(repository.description or "")
                 info["language"] = repository.language
-                info["slug"] = slugify(repository.language, replacements=SLUGIFY_REPLACEMENTS)
+                info["slug"] = slugify(
+                    repository.language, replacements=SLUGIFY_REPLACEMENTS
+                )
                 info["url"] = repository.html_url
                 info["stars"] = repository.stargazers_count
                 info["stars_display"] = numerize.numerize(repository.stargazers_count)
@@ -194,7 +211,7 @@ def get_repository_info(
                         }
                     )
 
-                info["issues"] = issues
+                info["issues"] = cast(list[IssueRecord], issues)
                 return info
             else:
                 logger.info("\t skipping due to insufficient issues or info")
@@ -203,11 +220,18 @@ def get_repository_info(
         except exceptions.ForbiddenError:
             rate_limiter.report_rate_limit_hit()
             if attempt < max_retries - 1:
-                logger.warning("Rate limited on {}/{}. Retrying after coordinated pause...",
-                             owner, name)
+                logger.warning(
+                    "Rate limited on {}/{}. Retrying after coordinated pause...",
+                    owner,
+                    name,
+                )
             else:
-                logger.error("Rate limit exceeded after {} retries: {}/{}",
-                           max_retries, owner, name)
+                logger.error(
+                    "Rate limit exceeded after {} retries: {}/{}",
+                    max_retries,
+                    owner,
+                    name,
+                )
                 return None
 
         except exceptions.NotFoundError:
@@ -230,10 +254,12 @@ if __name__ == "__main__":
 
     # if the GitHub Access Token isn't found, raise an error
     if not getenv("GH_ACCESS_TOKEN"):
-        raise RuntimeError("Access token not present in the env variable `GH_ACCESS_TOKEN`")
+        raise RuntimeError(
+            "Access token not present in the env variable `GH_ACCESS_TOKEN`"
+        )
 
-    REPOSITORIES = []
-    TAGS: Counter = Counter()
+    REPOSITORIES: list[RepositoryInfo] = []
+    TAGS: Counter[str] = Counter()
     with open(REPO_DATA_FILE, "r") as data_file:
         DATA = toml.load(REPO_DATA_FILE)
 
@@ -244,7 +270,9 @@ if __name__ == "__main__":
         )
 
         # pre-process the URLs and only continue with the list of valid GitHub URLs
-        repositories = list(filter(bool, [parse_github_url(url) for url in DATA["repositories"]]))
+        repositories = list(
+            filter(bool, [parse_github_url(url) for url in DATA["repositories"]])
+        )
 
         # shuffle the order of the repositories
         random.shuffle(repositories)
@@ -270,7 +298,9 @@ if __name__ == "__main__":
 
     with open(REPO_GENERATED_DATA_FILE, "w") as file_desc:
         json.dump(REPOSITORIES, file_desc)
-    logger.info("Wrote data for {} repos to {}", len(REPOSITORIES), REPO_GENERATED_DATA_FILE)
+    logger.info(
+        "Wrote data for {} repos to {}", len(REPOSITORIES), REPO_GENERATED_DATA_FILE
+    )
 
     # use only those tags that have at least three occurrences
     tags = [

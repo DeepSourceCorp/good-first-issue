@@ -9,6 +9,13 @@
     </div>
     <div class="pt-6">
       <h3 class="section-heading">Browse by language</h3>
+      <div class="mb-3">
+        <nuxt-link
+          to="/"
+          class="inline-flex items-center text-sm font-medium text-juniper hover:text-light_juniper hover:underline"
+          >&larr; All repositories</nuxt-link
+        >
+      </div>
       <div>
         <nuxt-link
           v-for="tag in Tags"
