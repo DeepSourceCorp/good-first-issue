@@ -51,6 +51,13 @@ Good First Issue has two main components:
    cp data/tags.sample.json data/tags.json
    ```
 
+   On Windows PowerShell, you can also use:
+
+   ```powershell
+   Copy-Item data/generated.sample.json data/generated.json
+   Copy-Item data/tags.sample.json data/tags.json
+   ```
+
    These files contain:
    - `generated.json` - Repository metadata (stars, issues, languages, etc.)
    - `tags.json` - Language tags for filtering
