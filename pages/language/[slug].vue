@@ -1,6 +1,9 @@
 <template>
   <div class="p-4 w-full">
-    <RepoBox v-for="repo in repositories" :key="repo.id" :repo="repo" />
+    <p v-if="filteredRepos.length === 0" class="text-vanilla-400 text-center py-12 text-lg">
+      No repositories match the current filters. Try adjusting the minimum stars or activity window.
+    </p>
+    <RepoBox v-for="repo in filteredRepos" :key="repo.id" :repo="repo" />
   </div>
 </template>
 
@@ -10,7 +13,8 @@ import Tags from '~/data/tags.json'
 
 const route = useRoute()
 
-const repositories = Repositories.filter(repository => repository.slug === route.params.slug)
+const languageRepos = Repositories.filter(repository => repository.slug === route.params.slug)
+const filteredRepos = useFilteredRepos(languageRepos)
 
 const tag = Tags.find(t => t.slug === route.params.slug)
 
