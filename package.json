@@ -8,7 +8,8 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "sync": "bun sync.js"
+    "sync": "bun sync.js",
+    "test:unit": "node --test tests/repoFilters.test.js"
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
