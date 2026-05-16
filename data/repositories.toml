@@ -533,6 +533,7 @@ repositories = [
   'github.com/oven-sh/bun',
   'github.com/owncloud/client',
   'github.com/oxyplot/oxyplot',
+  'github.com/P-r-e-m-i-u-m/open-source-starter-lab',
   'github.com/p4lang/behavioral-model',
   'github.com/PalisadoesFoundation/talawa-admin',
   'github.com/panda3d/panda3d',
