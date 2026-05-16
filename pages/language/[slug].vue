@@ -53,6 +53,13 @@ const activityMonths = ref(0)
 
 const tag = computed(() => Tags.find(t => t.slug === route.params.slug))
 
+if (!tag.value) {
+  throw createError({
+    statusCode: 404,
+    statusMessage: 'Language not found'
+  })
+}
+
 const totalRepositories = computed(() => {
   return Repositories.filter(repository => repository.slug === route.params.slug).length
 })
@@ -67,7 +74,7 @@ const filteredRepositories = computed(() => {
 })
 
 useHead(() => {
-  const language = tag.value?.language || 'Language'
+  const language = tag.value.language
 
   return {
     title: `${language} | Good First Issue`,
