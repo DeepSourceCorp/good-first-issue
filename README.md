@@ -33,3 +33,12 @@ Once your submission is reviewed and approved, it will be added to [goodfirstiss
 ## Contributing
 
 Want to contribute? See [CONTRIBUTING.md](CONTRIBUTING.md) for setup instructions and guidelines.
+
+## Language page filters
+
+On `/language/:slug`, you can refine repositories with:
+
+- Minimum stars (`0`, `50`, `100`, `500`, `1000`, `5000`)
+- Recent activity (`Any`, `1 month`, `3 months`, `6 months`, `12 months`)
+
+Results are sorted by stars (descending), then by last activity (descending).
