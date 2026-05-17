@@ -1,11 +1,13 @@
 <template>
   <div class="p-4 w-full">
-    <RepoBox v-for="repo in Repositories" :key="repo.id" :repo="repo" />
+    <RepoBox v-for="repo in filteredRepositories" :key="repo.id" :repo="repo" />
   </div>
 </template>
 
 <script setup>
 import Repositories from '~/data/generated.json'
+
+const filteredRepositories = useFilteredRepositories(Repositories)
 
 useHead({
   title: 'Good First Issue: Make your first open-source contribution',

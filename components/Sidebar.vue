@@ -30,6 +30,25 @@
       </div>
     </div>
     <div class="pt-6">
+      <h3 class="section-heading">Filter</h3>
+      <div class="flex flex-col space-y-4">
+        <div>
+          <label class="text-sm flex justify-between mb-1">
+            <span>Minimum Stars</span>
+            <span>{{ minStars === 0 ? 'Any' : minStars }}</span>
+          </label>
+          <input type="range" min="0" max="70000" step="1000" v-model.number="minStars" class="w-full accent-juniper" />
+        </div>
+        <div>
+          <label class="text-sm flex justify-between mb-1">
+            <span>Recent Activity</span>
+            <span>{{ lastActivity === 0 ? 'Any' : `< ${lastActivity} months` }}</span>
+          </label>
+          <input type="range" min="0" max="120" step="1" v-model.number="lastActivity" class="w-full accent-juniper" />
+        </div>
+      </div>
+    </div>
+    <div class="pt-6">
       <a
         class="bg-juniper hover:bg-light_juniper text-ink-400 uppercase rounded-md font-bold text-center px-1 py-3 flex flex-row items-center justify-center space-x-1"
         href="https://github.com/deepsourcelabs/good-first-issue#adding-a-new-project"
@@ -64,6 +83,9 @@
 import Tags from '~/data/tags.json'
 import { PlusCircleIcon } from '@heroicons/vue/24/outline'
 import {HeartIcon} from '@heroicons/vue/24/solid'
+
+const minStars = useMinStars()
+const lastActivity = useLastActivity()
 </script>
 <style>
 .section-heading {

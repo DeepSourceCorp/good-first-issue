@@ -1,6 +1,6 @@
 <template>
   <div class="p-4 w-full">
-    <RepoBox v-for="repo in repositories" :key="repo.id" :repo="repo" />
+    <RepoBox v-for="repo in filteredRepositories" :key="repo.id" :repo="repo" />
   </div>
 </template>
 
@@ -10,7 +10,8 @@ import Tags from '~/data/tags.json'
 
 const route = useRoute()
 
-const repositories = Repositories.filter(repository => repository.slug === route.params.slug)
+const repositories = computed(() => Repositories.filter(repository => repository.slug === route.params.slug))
+const filteredRepositories = useFilteredRepositories(repositories)
 
 const tag = Tags.find(t => t.slug === route.params.slug)
 
