@@ -10,6 +10,7 @@
 
 <script setup>
 import Repositories from '~/data/generated.json'
+import { filterAndSortRepositories } from '~/utils/repoFilters'
 
 const filters = ref({
   minStars: 0,
@@ -17,41 +18,7 @@ const filters = ref({
 })
 
 const repositories = computed(() => {
-  const minStars = Number(filters.value.minStars) || 0
-  const activityCutoff = filters.value.activityMonths === 'all' ? null : new Date()
-
-  if (activityCutoff) {
-    activityCutoff.setMonth(activityCutoff.getMonth() - Number(filters.value.activityMonths))
-  }
-
-  const filteredRepositories = Repositories.filter((repository) => {
-    const hasEnoughStars = (Number(repository.stars) || 0) >= minStars
-    const isRecentEnough = activityCutoff
-      ? new Date(repository.last_modified).getTime() >= activityCutoff.getTime()
-      : true
-
-    return hasEnoughStars && isRecentEnough
-  })
-
-  if (minStars === 0 && !activityCutoff) {
-    return filteredRepositories
-  }
-
-  return filteredRepositories.sort((firstRepository, secondRepository) => {
-    if (minStars > 0) {
-      const starsDifference = (Number(secondRepository.stars) || 0) - (Number(firstRepository.stars) || 0)
-
-      if (starsDifference !== 0) {
-        return starsDifference
-      }
-    }
-
-    if (activityCutoff) {
-      return new Date(secondRepository.last_modified).getTime() - new Date(firstRepository.last_modified).getTime()
-    }
-
-    return 0
-  })
+  return filterAndSortRepositories(Repositories, filters.value)
 })
 
 useHead({
