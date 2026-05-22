@@ -32,6 +32,7 @@ ISSUE_SORT_DIRECTION = "desc"
 ISSUE_LIMIT = 10
 SLUGIFY_REPLACEMENTS = [["#", "sharp"], ["+", "plus"]]
 MAX_INACTIVITY_DAYS = 90  # Skip repos inactive for more than 3 months
+MIN_GOOD_FIRST_ISSUES = 3
 
 if not path.exists(LABELS_DATA_FILE):
     raise RuntimeError("No labels data file found. Exiting.")
@@ -166,8 +167,8 @@ def get_repository_info(
                 )
                 good_first_issues.update(issues_for_label)
             logger.info("\t found {} good first issues", len(good_first_issues))
-            # check if repo has at least one good first issue
-            if good_first_issues and repository.language:
+# check if repo has at least three good first issues
+            if len(good_first_issues) >= MIN_GOOD_FIRST_ISSUES and repository.language:
                 # store the repo info
                 info: RepositoryInfo = {}
                 info["name"] = name
