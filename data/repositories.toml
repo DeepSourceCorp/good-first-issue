@@ -828,5 +828,9 @@ repositories = [
   'github.com/zitadel/zitadel',
   'github.com/zsh-users/zsh-completions',
   'github.com/zsh-users/zsh-syntax-highlighting',
-  'github.com/zulip/zulip',
-]
+  'github.com/zulip/zulip'
+  [[repositories]]
+name = "requests"
+url = "https://github.com/psf/requests"
+languages = ["Python"]
+labels = ["good first issue"]
