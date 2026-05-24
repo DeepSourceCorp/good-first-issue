@@ -36,7 +36,13 @@
         class="flex-row flex text-sm py-1 font-mono"
         :class="{ 'text-honey': isCardOpen, 'text-vanilla-400': !isCardOpen }"
       >
-        <div class="mr-4"><span class="text-vanilla-400">lang: </span>{{ repo.language }}</div>
+        <div class="mr-4">
+        <span class="text-vanilla-400">lang: </span>
+        {{
+           repo.languages?.length 
+          ? repo.languages.slice(0, 3).join(', ') 
+          : repo.language
+          }}</div>
         <div class="mr-4"><span class="text-vanilla-400">stars: </span>{{ repo.stars_display }}</div>
         <div class="mr-4">
           <span class="text-vanilla-400">last activity: </span><span>{{ lastModifiedDisplay }}</span>
