@@ -830,3 +830,17 @@ repositories = [
   'github.com/zsh-users/zsh-syntax-highlighting',
   'github.com/zulip/zulip',
 ]
+[[repository]]
+name = "vuejs/core"
+url = "https://github.com/vuejs/core"
+description = "Vue.js is a progressive, incrementally-adoptable JavaScript framework for building UI on the web."
+
+[[repository]]
+name = "tensorflow/tensorflow"
+url = "https://github.com/tensorflow/tensorflow"
+description = "An Open Source Machine Learning Framework for Everyone."
+
+[[repository]]
+name = "microsoft/terminal"
+url = "https://github.com/microsoft/terminal"
+description = "The new Windows Terminal, a tabbed command line experience."
