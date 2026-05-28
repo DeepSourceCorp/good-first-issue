@@ -3,11 +3,15 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "ensure-data": "node ensure-data.js",
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
+    "prebuild": "node ensure-data.js",
+    "predev": "node ensure-data.js",
+    "pregenerate": "node ensure-data.js",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare",
+    "postinstall": "node ensure-data.js && nuxt prepare",
     "sync": "bun sync.js"
   },
   "devDependencies": {
