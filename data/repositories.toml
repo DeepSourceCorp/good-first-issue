@@ -169,6 +169,7 @@ repositories = [
   'github.com/DiFronzo/blockchair',
   'github.com/dis-moi/extension',
   'github.com/django-import-export/django-import-export',
+  'github.com/django/django',
   'github.com/djc/quinn',
   'github.com/dmlc/xgboost',
   'github.com/doccano/doccano',
