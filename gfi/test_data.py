@@ -24,30 +24,25 @@ def _get_data_from_json(file_path):
 class TestDataSanity(unittest.TestCase):
     """Test for sanity of the data file."""
 
-    @staticmethod
-    def test_data_file_exists():
+    def test_data_file_exists(self):
         """Verify that the data file exists."""
         assert os.path.exists(DATA_FILE_PATH)
 
-    @staticmethod
-    def test_labels_file_exists():
+    def test_labels_file_exists(self):
         """Verify that the labels file exists."""
         assert os.path.exists(LABELS_FILE_PATH)
 
-    @staticmethod
-    def test_data_file_sane():
+    def test_data_file_sane(self):
         """Verify that the file is a valid TOML with required data."""
         data = _get_data_from_toml(DATA_FILE_PATH)
         assert "repositories" in data
 
-    @staticmethod
-    def test_labels_file_sane():
+    def test_labels_file_sane(self):
         """Verify that the labels file is a valid JSON"""
         data = _get_data_from_json(LABELS_FILE_PATH)
         assert "labels" in data
 
-    @staticmethod
-    def test_no_duplicates():
+    def test_no_duplicates(self):
         """Verify that all entries are unique."""
         data = _get_data_from_toml(DATA_FILE_PATH)
         repos = data.get("repositories", [])

@@ -10,7 +10,7 @@ from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
 from operator import itemgetter
 from os import getenv, path
-from typing import TypedDict, Dict, Union, Sequence, Optional
+from typing import TypedDict, Optional
 
 import toml
 
@@ -125,7 +125,27 @@ class RepositoryIdentifier(TypedDict):
     name: str
 
 
-RepositoryInfo = Dict["str", Union[str, int, Sequence]]
+class IssueInfo(TypedDict):
+    title: str
+    url: str
+    number: int
+    comments_count: int
+    created_at: str
+
+
+RepositoryInfo = TypedDict("RepositoryInfo", {
+    "name": str,
+    "owner": str,
+    "description": str,
+    "language": str,
+    "slug": str,
+    "url": str,
+    "stars": int,
+    "stars_display": str,
+    "last_modified": str,
+    "id": str,
+    "issues": list[IssueInfo],
+})
 
 
 def get_repository_info(
