@@ -128,6 +128,67 @@ class RepositoryIdentifier(TypedDict):
 RepositoryInfo = Dict["str", Union[str, int, Sequence]]
 
 
+def _is_valid_repository(repository) -> bool:
+    """Check if the repository is active and has not been archived."""
+    if repository.archived:
+        return False
+    days_since_push = (datetime.now(timezone.utc) - repository.pushed_at).days
+    if days_since_push > MAX_INACTIVITY_DAYS:
+        logger.info("\t skipping due to inactivity ({} days since last push)", days_since_push)
+        return False
+    return True
+
+
+def _fetch_labeled_issues(repository, rate_limiter: GitHubRateLimiter) -> set:
+    """Fetch issues matching the configured beginner-friendly labels."""
+    good_first_issues = set()
+    for label in ISSUE_LABELS:
+        rate_limiter.acquire()
+        issues_for_label = repository.issues(
+            labels=label,
+            state=ISSUE_STATE,
+            number=ISSUE_LIMIT,
+            sort=ISSUE_SORT,
+            direction=ISSUE_SORT_DIRECTION,
+        )
+        good_first_issues.update(issues_for_label)
+    logger.info("\t found {} good first issues", len(good_first_issues))
+    return good_first_issues
+
+
+def _format_issues(good_first_issues: set) -> list[dict]:
+    """Convert issue objects to serializable dictionaries."""
+    issues = []
+    for issue in good_first_issues:
+        issues.append({
+            "title": issue.title,
+            "url": issue.html_url,
+            "number": issue.number,
+            "comments_count": issue.comments_count,
+            "created_at": issue.created_at.isoformat(),
+        })
+    return issues
+
+
+def _build_repo_info(
+    repository, owner: str, name: str, issues: list[dict]
+) -> RepositoryInfo:
+    """Build the repository information dictionary."""
+    info: RepositoryInfo = {}
+    info["name"] = name
+    info["owner"] = owner
+    info["description"] = emojize(repository.description or "")
+    info["language"] = repository.language
+    info["slug"] = slugify(repository.language, replacements=SLUGIFY_REPLACEMENTS)
+    info["url"] = repository.html_url
+    info["stars"] = repository.stargazers_count
+    info["stars_display"] = numerize.numerize(repository.stargazers_count)
+    info["last_modified"] = repository.pushed_at.isoformat()
+    info["id"] = str(repository.id)
+    info["issues"] = issues
+    return info
+
+
 def get_repository_info(
     identifier: RepositoryIdentifier,
     client,
@@ -144,61 +205,17 @@ def get_repository_info(
         try:
             rate_limiter.acquire()
             repository = client.repository(owner, name)
-            # Don't find issues inside archived repos.
-            if repository.archived:
+
+            if not _is_valid_repository(repository):
                 return None
 
-            # Skip repos with no recent activity
-            days_since_push = (datetime.now(timezone.utc) - repository.pushed_at).days
-            if days_since_push > MAX_INACTIVITY_DAYS:
-                logger.info("\t skipping due to inactivity ({} days since last push)", days_since_push)
-                return None
-
-            good_first_issues = set()
-            for label in ISSUE_LABELS:
-                rate_limiter.acquire()
-                issues_for_label = repository.issues(
-                    labels=label,
-                    state=ISSUE_STATE,
-                    number=ISSUE_LIMIT,
-                    sort=ISSUE_SORT,
-                    direction=ISSUE_SORT_DIRECTION,
-                )
-                good_first_issues.update(issues_for_label)
-            logger.info("\t found {} good first issues", len(good_first_issues))
-            # check if repo has at least one good first issue
-            if good_first_issues and repository.language:
-                # store the repo info
-                info: RepositoryInfo = {}
-                info["name"] = name
-                info["owner"] = owner
-                info["description"] = emojize(repository.description or "")
-                info["language"] = repository.language
-                info["slug"] = slugify(repository.language, replacements=SLUGIFY_REPLACEMENTS)
-                info["url"] = repository.html_url
-                info["stars"] = repository.stargazers_count
-                info["stars_display"] = numerize.numerize(repository.stargazers_count)
-                info["last_modified"] = repository.pushed_at.isoformat()
-                info["id"] = str(repository.id)
-
-                # get the latest issues with the tag
-                issues = []
-                for issue in good_first_issues:
-                    issues.append(
-                        {
-                            "title": issue.title,
-                            "url": issue.html_url,
-                            "number": issue.number,
-                            "comments_count": issue.comments_count,
-                            "created_at": issue.created_at.isoformat(),
-                        }
-                    )
-
-                info["issues"] = issues
-                return info
-            else:
+            good_first_issues = _fetch_labeled_issues(repository, rate_limiter)
+            if not good_first_issues or not repository.language:
                 logger.info("\t skipping due to insufficient issues or info")
                 return None
+
+            issues = _format_issues(good_first_issues)
+            return _build_repo_info(repository, owner, name, issues)
 
         except exceptions.ForbiddenError:
             rate_limiter.report_rate_limit_hit()
