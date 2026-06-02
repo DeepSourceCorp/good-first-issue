@@ -65,7 +65,7 @@ import Tags from '~/data/tags.json'
 import { PlusCircleIcon } from '@heroicons/vue/24/outline'
 import {HeartIcon} from '@heroicons/vue/24/solid'
 </script>
-<style>
+<style scoped>
 .section-heading {
   @apply text-sm font-bold uppercase tracking-wider mb-2 text-slate;
 }

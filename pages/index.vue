@@ -1,5 +1,9 @@
 <template>
   <div class="p-4 w-full">
+    <div v-if="Repositories.length === 0" class="text-center py-16 text-vanilla-400">
+      <p class="text-lg">No repositories available at the moment.</p>
+      <p class="text-sm mt-2">Check back later for updates.</p>
+    </div>
     <RepoBox v-for="repo in Repositories" :key="repo.id" :repo="repo" />
   </div>
 </template>
