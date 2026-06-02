@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 import json
 import os
+import re
 import unittest
 from collections import Counter
 
@@ -53,6 +54,59 @@ class TestDataSanity(unittest.TestCase):
         repos = data.get("repositories", [])
         print([item for item, count in Counter(repos).items() if count > 1])
         assert len(repos) == len(set(repos))
+
+
+class TestGitHubUrlPattern(unittest.TestCase):
+    """Test for the GitHub URL regex pattern used in populate.py."""
+
+    PATTERN = re.compile(r"(?:https?://)?github\.com/(?P<owner>[\w.-]+)/(?P<name>[\w.-]+)/?")
+
+    @staticmethod
+    def _parse(url: str) -> dict:
+        match = TestGitHubUrlPattern.PATTERN.search(url)
+        return match.groupdict() if match else {}
+
+    @staticmethod
+    def test_standard_https_url():
+        """Parse a standard https://github.com URL."""
+        result = TestGitHubUrlPattern._parse("https://github.com/DeepSourceCorp/good-first-issue")
+        assert result == {"owner": "DeepSourceCorp", "name": "good-first-issue"}, result
+
+    @staticmethod
+    def test_http_url():
+        """Parse an http://github.com URL."""
+        result = TestGitHubUrlPattern._parse("http://github.com/DeepSourceCorp/good-first-issue")
+        assert result == {"owner": "DeepSourceCorp", "name": "good-first-issue"}, result
+
+    @staticmethod
+    def test_url_without_protocol():
+        """Parse a github.com URL without protocol."""
+        result = TestGitHubUrlPattern._parse("github.com/DeepSourceCorp/good-first-issue")
+        assert result == {"owner": "DeepSourceCorp", "name": "good-first-issue"}, result
+
+    @staticmethod
+    def test_url_with_trailing_slash():
+        """Parse a URL with a trailing slash."""
+        result = TestGitHubUrlPattern._parse("https://github.com/nodejs/node/")
+        assert result == {"owner": "nodejs", "name": "node"}, result
+
+    @staticmethod
+    def test_owner_with_dots():
+        """Parse a URL where owner contains dots."""
+        result = TestGitHubUrlPattern._parse("https://github.com/terraform-providers/terraform-provider-aws")
+        assert result == {"owner": "terraform-providers", "name": "terraform-provider-aws"}, result
+
+    @staticmethod
+    def test_non_github_url():
+        """Return empty dict for non-GitHub URLs."""
+        result = TestGitHubUrlPattern._parse("https://gitlab.com/owner/repo")
+        assert result == {}, result
+
+    @staticmethod
+    def test_invalid_url():
+        """Return empty dict for completely unrelated strings."""
+        result = TestGitHubUrlPattern._parse("this is not a url")
+        assert result == {}, result
 
 
 if __name__ == "__main__":
