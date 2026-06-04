@@ -5,7 +5,7 @@
 </template>
 
 <script setup>
-import Repositories from '~/data/generated.json'
+import Repositories from '~/data/generated.sample.json'
 import Tags from '~/data/tags.json'
 
 const route = useRoute()

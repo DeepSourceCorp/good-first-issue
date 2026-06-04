@@ -87,7 +87,9 @@ const openRepoId = useOpenRepoId()
 
 const issuesDisplay = computed(() => {
   const numIssues = props.repo.issues.length
-  return numIssues > 1 ? `${numIssues} issues` : `${numIssues} issue`
+  return numIssues > 1
+    ? `${numIssues} good first issues`
+    : `${numIssues} good first issue`
 })
 
 const lastModifiedDisplay = computed(() => {
