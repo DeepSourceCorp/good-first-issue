@@ -230,6 +230,7 @@ repositories = [
   'github.com/falconry/falcon',
   'github.com/fastify/fastify',
   'github.com/FeatureLabs/featuretools',
+  'github.com/files-community/Files',
   'github.com/find-sec-bugs/find-sec-bugs',
   'github.com/firstcontributions/first-contributions',
   'github.com/fish-shell/fish-shell',
