@@ -18,6 +18,28 @@ Before you begin, make sure you have the following installed:
   ```
   Or via Homebrew: `brew install uv`. See [docs.astral.sh/uv](https://docs.astral.sh/uv/) for details.
 
+## Windows User
+
+The install commands only works for Linux and macOS Windows is not included, use these alternatives:
+
+- **Install Bun (PowerShell):**
+``` powershell
+powershell -c "irm bun.sh/install.ps1 | iex"
+```
+- ** Install uv (PowerShell):**
+```powershell
+powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
+```
+
+After installing both, add them to your PATH in the same terminal session before moving foward
+
+```powershell
+$env:Path = "C:\Users\<YourUsername>\.bun\bin;$env:Path"
+$env:Path = "C:\Users\<YourUsername>\.local\bin;$env:Path"
+```
+
+**Note:** Replace `<YourUserName>` wiht your actual Windows username, There PATH changes apply to the current terminal session only. To makr them permanent, add them to your system enviroment variables.
+
 ## Project Structure
 
 Good First Issue has two main components:
