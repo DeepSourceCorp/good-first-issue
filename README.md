@@ -3,7 +3,7 @@
     <img src="public/readme-logo.svg">
   </a>
 </p>
-<hr>
+
 
 Welcome! 👋🏼
 
