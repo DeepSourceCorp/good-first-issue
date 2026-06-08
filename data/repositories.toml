@@ -688,6 +688,7 @@ repositories = [
   'github.com/statsmodels/statsmodels',
   'github.com/Stellarium/stellarium',
   'github.com/storybookjs/storybook',
+  'github.com/streamlit/streamlit',
   'github.com/strapi/strapi',
   'github.com/streamich/react-use',
   'github.com/streamlit/streamlit',
