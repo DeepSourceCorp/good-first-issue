@@ -37,7 +37,7 @@
         rel="noopener noreferrer"
         >
           <PlusCircleIcon class="h-5 w-5 stroke-2" />
-          <span>Add your project</span>
+          <span>Submit your project </span>
         </a
       >
     </div>
