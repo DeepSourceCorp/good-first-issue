@@ -369,6 +369,7 @@ repositories = [
   'github.com/kstonekuan/tambourine-voice',
   'github.com/krishdevdb/reseter.css',
   'github.com/kshashikumar/mysql-gui',
+  'github.com/KTS-o7/better_bing_image_downloader',
   'github.com/ktorio/ktor',
   'github.com/kubearmor/kubearmor',
   'github.com/kubernetes-sigs/krew',
