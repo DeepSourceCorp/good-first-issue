@@ -72,7 +72,7 @@ export function filterAndSortRepositories(repositories, { slug, minStars = 0, ac
   return filteredRepositories
     .sort((firstRepository, secondRepository) => {
       if (activeMinimumStars > 0) {
-        const starsDifference = secondRepository.stars - firstRepository.stars
+        const starsDifference = firstRepository.stars - secondRepository.stars
 
         if (starsDifference !== 0) {
           return starsDifference

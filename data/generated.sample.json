@@ -8,7 +8,7 @@
     "url": "https://github.com/wp-graphql/wp-graphql",
     "stars": 2925,
     "stars_display": "2.92K",
-    "last_modified": "Wed, 26 May 2021 16:00:28 GMT",
+    "last_modified": "Wed, 10 Jun 2026 12:00:00 GMT",
     "id": "72453516",
     "objectID": "72453516",
     "issues": [
@@ -93,7 +93,7 @@
     "url": "https://github.com/zulip/zulip",
     "stars": 13741,
     "stars_display": "13.74K",
-    "last_modified": "Wed, 26 May 2021 12:00:39 GMT",
+    "last_modified": "Wed, 10 Jun 2026 12:01:00 GMT",
     "id": "43160685",
     "objectID": "43160685",
     "issues": [
@@ -178,7 +178,7 @@
     "url": "https://github.com/whitesmith/rubycritic",
     "stars": 2739,
     "stars_display": "2.74K",
-    "last_modified": "Tue, 25 May 2021 06:13:38 GMT",
+    "last_modified": "Wed, 10 Jun 2026 12:02:00 GMT",
     "id": "13445293",
     "objectID": "13445293",
     "issues": [
@@ -249,7 +249,7 @@
     "url": "https://github.com/xenia-project/xenia",
     "stars": 4929,
     "stars_display": "4.93K",
-    "last_modified": "Wed, 26 May 2021 15:05:09 GMT",
+    "last_modified": "Wed, 10 Jun 2026 12:03:00 GMT",
     "id": "7550637",
     "objectID": "7550637",
     "issues": [
@@ -334,7 +334,7 @@
     "url": "https://github.com/yashaka/selene",
     "stars": 456,
     "stars_display": "456",
-    "last_modified": "Mon, 24 May 2021 10:13:41 GMT",
+    "last_modified": "Wed, 10 Jun 2026 12:04:00 GMT",
     "id": "34106396",
     "objectID": "34106396",
     "issues": [
@@ -370,7 +370,7 @@
     "url": "https://github.com/bmarvinb/react-trello-clone",
     "stars": 13,
     "stars_display": "13",
-    "last_modified": "Mon, 24 May 2021 13:29:06 GMT",
+    "last_modified": "Wed, 10 Jun 2026 12:05:00 GMT",
     "id": "155052204",
     "objectID": "155052204",
     "issues": [
@@ -455,7 +455,7 @@
     "url": "https://github.com/weaveworks/weave",
     "stars": 6089,
     "stars_display": "6.09K",
-    "last_modified": "Wed, 26 May 2021 09:13:46 GMT",
+    "last_modified": "Wed, 10 Jun 2026 12:06:00 GMT",
     "id": "23059575",
     "objectID": "23059575",
     "issues": [
@@ -519,7 +519,7 @@
     "url": "https://github.com/xtermjs/xterm.js",
     "stars": 10415,
     "stars_display": "10.42K",
-    "last_modified": "Wed, 26 May 2021 15:49:32 GMT",
+    "last_modified": "Wed, 10 Jun 2026 12:07:00 GMT",
     "id": "18068542",
     "objectID": "18068542",
     "issues": [
@@ -604,7 +604,7 @@
     "url": "https://github.com/camunda-cloud/zeebe",
     "stars": 1901,
     "stars_display": "1.9K",
-    "last_modified": "Wed, 26 May 2021 14:14:26 GMT",
+    "last_modified": "Wed, 10 Jun 2026 12:08:00 GMT",
     "id": "54298946",
     "objectID": "54298946",
     "issues": [
@@ -689,7 +689,7 @@
     "url": "https://github.com/yewstack/yew",
     "stars": 15878,
     "stars_display": "15.88K",
-    "last_modified": "Wed, 26 May 2021 16:27:57 GMT",
+    "last_modified": "Wed, 10 Jun 2026 12:09:00 GMT",
     "id": "114466145",
     "objectID": "114466145",
     "issues": [
@@ -739,7 +739,7 @@
     "url": "https://github.com/webhintio/hint",
     "stars": 3130,
     "stars_display": "3.13K",
-    "last_modified": "Wed, 26 May 2021 10:33:35 GMT",
+    "last_modified": "Mon, 20 Apr 2026 12:10:00 GMT",
     "id": "82211360",
     "objectID": "82211360",
     "issues": [
@@ -824,7 +824,7 @@
     "url": "https://github.com/WordPress/gutenberg",
     "stars": 6841,
     "stars_display": "6.84K",
-    "last_modified": "Wed, 26 May 2021 15:48:34 GMT",
+    "last_modified": "Mon, 20 Apr 2026 12:11:00 GMT",
     "id": "80862584",
     "objectID": "80862584",
     "issues": [
@@ -909,7 +909,7 @@
     "url": "https://github.com/wemake-services/wemake-python-styleguide",
     "stars": 1481,
     "stars_display": "1.48K",
-    "last_modified": "Tue, 25 May 2021 21:26:37 GMT",
+    "last_modified": "Mon, 20 Apr 2026 12:12:00 GMT",
     "id": "124593057",
     "objectID": "124593057",
     "issues": [
@@ -980,7 +980,7 @@
     "url": "https://github.com/web-platform-tests/wpt",
     "stars": 3256,
     "stars_display": "3.26K",
-    "last_modified": "Wed, 26 May 2021 16:00:43 GMT",
+    "last_modified": "Mon, 20 Apr 2026 12:13:00 GMT",
     "id": "3618133",
     "objectID": "3618133",
     "issues": [
@@ -1065,7 +1065,7 @@
     "url": "https://github.com/Yoast/wordpress-seo",
     "stars": 1331,
     "stars_display": "1.33K",
-    "last_modified": "Wed, 26 May 2021 12:26:56 GMT",
+    "last_modified": "Mon, 20 Apr 2026 12:14:00 GMT",
     "id": "6723399",
     "objectID": "6723399",
     "issues": [
@@ -1150,7 +1150,7 @@
     "url": "https://github.com/yanganto/s3rs",
     "stars": 34,
     "stars_display": "34",
-    "last_modified": "Wed, 12 May 2021 13:09:45 GMT",
+    "last_modified": "Mon, 20 Apr 2026 12:15:00 GMT",
     "id": "131223541",
     "objectID": "131223541",
     "issues": [
@@ -1172,7 +1172,7 @@
     "url": "https://github.com/zsh-users/zsh-syntax-highlighting",
     "stars": 11889,
     "stars_display": "11.89K",
-    "last_modified": "Wed, 26 May 2021 07:39:58 GMT",
+    "last_modified": "Mon, 20 Apr 2026 12:16:00 GMT",
     "id": "1197428",
     "objectID": "1197428",
     "issues": [
@@ -1257,7 +1257,7 @@
     "url": "https://github.com/zaproxy/zaproxy",
     "stars": 8529,
     "stars_display": "8.53K",
-    "last_modified": "Wed, 26 May 2021 15:23:28 GMT",
+    "last_modified": "Mon, 20 Apr 2026 12:17:00 GMT",
     "id": "36817565",
     "objectID": "36817565",
     "issues": [
@@ -1342,7 +1342,7 @@
     "url": "https://github.com/zephyrproject-rtos/zephyr",
     "stars": 4540,
     "stars_display": "4.54K",
-    "last_modified": "Wed, 26 May 2021 16:17:50 GMT",
+    "last_modified": "Mon, 20 Apr 2026 12:18:00 GMT",
     "id": "59771425",
     "objectID": "59771425",
     "issues": [
@@ -1427,7 +1427,7 @@
     "url": "https://github.com/wordpress-mobile/WordPress-Android",
     "stars": 2476,
     "stars_display": "2.48K",
-    "last_modified": "Wed, 26 May 2021 12:09:03 GMT",
+    "last_modified": "Mon, 20 Apr 2026 12:19:00 GMT",
     "id": "9306568",
     "objectID": "9306568",
     "issues": [
@@ -1498,7 +1498,7 @@
     "url": "https://github.com/zsh-users/zsh-completions",
     "stars": 4404,
     "stars_display": "4.4K",
-    "last_modified": "Wed, 26 May 2021 13:56:55 GMT",
+    "last_modified": "Sun, 15 Feb 2026 12:20:00 GMT",
     "id": "2077847",
     "objectID": "2077847",
     "issues": [
@@ -1562,7 +1562,7 @@
     "url": "https://github.com/zio/zio",
     "stars": 2870,
     "stars_display": "2.87K",
-    "last_modified": "Wed, 26 May 2021 15:09:26 GMT",
+    "last_modified": "Sun, 15 Feb 2026 12:21:00 GMT",
     "id": "134079884",
     "objectID": "134079884",
     "issues": [
@@ -1647,7 +1647,7 @@
     "url": "https://github.com/wesnoth/wesnoth",
     "stars": 3201,
     "stars_display": "3.2K",
-    "last_modified": "Tue, 25 May 2021 17:55:10 GMT",
+    "last_modified": "Sun, 15 Feb 2026 12:22:00 GMT",
     "id": "9432220",
     "objectID": "9432220",
     "issues": [
@@ -1732,7 +1732,7 @@
     "url": "https://github.com/vercel/hyper",
     "stars": 35911,
     "stars_display": "35.91K",
-    "last_modified": "Wed, 26 May 2021 15:42:40 GMT",
+    "last_modified": "Sun, 15 Feb 2026 12:23:00 GMT",
     "id": "62367558",
     "objectID": "62367558",
     "issues": [
@@ -1803,7 +1803,7 @@
     "url": "https://github.com/winsw/winsw",
     "stars": 5683,
     "stars_display": "5.68K",
-    "last_modified": "Wed, 26 May 2021 12:26:40 GMT",
+    "last_modified": "Sun, 15 Feb 2026 12:24:00 GMT",
     "id": "500093",
     "objectID": "500093",
     "issues": [
@@ -1860,7 +1860,7 @@
     "url": "https://github.com/wordpress-mobile/WordPress-iOS",
     "stars": 3142,
     "stars_display": "3.14K",
-    "last_modified": "Wed, 26 May 2021 09:47:11 GMT",
+    "last_modified": "Sun, 15 Feb 2026 12:25:00 GMT",
     "id": "8859285",
     "objectID": "8859285",
     "issues": [
@@ -1945,7 +1945,7 @@
     "url": "https://github.com/winstonjs/winston",
     "stars": 17311,
     "stars_display": "17.31K",
-    "last_modified": "Wed, 26 May 2021 13:02:17 GMT",
+    "last_modified": "Sun, 15 Feb 2026 12:26:00 GMT",
     "id": "1206546",
     "objectID": "1206546",
     "issues": [
@@ -2016,7 +2016,7 @@
     "url": "https://github.com/woocommerce/woocommerce",
     "stars": 7016,
     "stars_display": "7.02K",
-    "last_modified": "Wed, 26 May 2021 15:19:05 GMT",
+    "last_modified": "Sun, 15 Feb 2026 12:27:00 GMT",
     "id": "2179920",
     "objectID": "2179920",
     "issues": [
@@ -2101,7 +2101,7 @@
     "url": "https://github.com/vercel/next.js",
     "stars": 67926,
     "stars_display": "67.93K",
-    "last_modified": "Wed, 26 May 2021 16:28:10 GMT",
+    "last_modified": "Sun, 15 Feb 2026 12:28:00 GMT",
     "id": "70107786",
     "objectID": "70107786",
     "issues": [
@@ -2186,7 +2186,7 @@
     "url": "https://github.com/yarnpkg/yarn",
     "stars": 39806,
     "stars_display": "39.81K",
-    "last_modified": "Wed, 26 May 2021 11:36:16 GMT",
+    "last_modified": "Sun, 15 Feb 2026 12:29:00 GMT",
     "id": "49970642",
     "objectID": "49970642",
     "issues": [
@@ -2271,7 +2271,7 @@
     "url": "https://github.com/whatwg/html",
     "stars": 4592,
     "stars_display": "4.59K",
-    "last_modified": "Wed, 26 May 2021 16:19:23 GMT",
+    "last_modified": "Wed, 15 Oct 2025 12:30:00 GMT",
     "id": "11969507",
     "objectID": "11969507",
     "issues": [
@@ -2356,7 +2356,7 @@
     "url": "https://github.com/whatwg/fetch",
     "stars": 1703,
     "stars_display": "1.7K",
-    "last_modified": "Wed, 26 May 2021 06:07:54 GMT",
+    "last_modified": "Wed, 15 Oct 2025 12:31:00 GMT",
     "id": "5777189",
     "objectID": "5777189",
     "issues": [
@@ -2392,7 +2392,7 @@
     "url": "https://github.com/yugabyte/yugabyte-db",
     "stars": 5205,
     "stars_display": "5.2K",
-    "last_modified": "Wed, 26 May 2021 16:04:31 GMT",
+    "last_modified": "Wed, 15 Oct 2025 12:32:00 GMT",
     "id": "105944401",
     "objectID": "105944401",
     "issues": [
@@ -2477,7 +2477,7 @@
     "url": "https://github.com/wyattowalsh/data-science-notes",
     "stars": 22,
     "stars_display": "22",
-    "last_modified": "Tue, 18 May 2021 19:01:02 GMT",
+    "last_modified": "Wed, 15 Oct 2025 12:33:00 GMT",
     "id": "327221605",
     "objectID": "327221605",
     "issues": [
@@ -2513,7 +2513,7 @@
     "url": "https://github.com/zeek/zeek",
     "stars": 3851,
     "stars_display": "3.85K",
-    "last_modified": "Wed, 26 May 2021 13:44:02 GMT",
+    "last_modified": "Wed, 15 Oct 2025 12:34:00 GMT",
     "id": "4930716",
     "objectID": "4930716",
     "issues": [
@@ -2584,7 +2584,7 @@
     "url": "https://github.com/wger-project/wger",
     "stars": 1455,
     "stars_display": "1.46K",
-    "last_modified": "Tue, 25 May 2021 11:11:21 GMT",
+    "last_modified": "Wed, 15 Jan 2025 12:35:00 GMT",
     "id": "7705569",
     "objectID": "7705569",
     "issues": [
@@ -2620,7 +2620,7 @@
     "url": "https://github.com/withspectrum/spectrum",
     "stars": 9877,
     "stars_display": "9.88K",
-    "last_modified": "Wed, 26 May 2021 14:05:34 GMT",
+    "last_modified": "Wed, 15 Jan 2025 12:36:00 GMT",
     "id": "62260083",
     "objectID": "62260083",
     "issues": [
@@ -2705,7 +2705,7 @@
     "url": "https://github.com/WeblateOrg/weblate",
     "stars": 2416,
     "stars_display": "2.42K",
-    "last_modified": "Wed, 26 May 2021 15:42:17 GMT",
+    "last_modified": "Wed, 15 Jan 2025 12:37:00 GMT",
     "id": "3559019",
     "objectID": "3559019",
     "issues": [
@@ -2790,7 +2790,7 @@
     "url": "https://github.com/xunit/xunit",
     "stars": 2894,
     "stars_display": "2.89K",
-    "last_modified": "Tue, 25 May 2021 15:47:50 GMT",
+    "last_modified": "Wed, 15 Jan 2025 12:38:00 GMT",
     "id": "9891249",
     "objectID": "9891249",
     "issues": [
