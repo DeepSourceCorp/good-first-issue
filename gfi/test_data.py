@@ -55,5 +55,67 @@ class TestDataSanity(unittest.TestCase):
         assert len(repos) == len(set(repos))
 
 
+class TestPopulate(unittest.TestCase):
+    def test_get_repository_info_languages(self):
+        from unittest.mock import MagicMock
+        from datetime import datetime, timezone
+        from gfi.populate import get_repository_info, GitHubRateLimiter
+
+        # Mock repository object
+        mock_repo = MagicMock()
+        mock_repo.archived = False
+        mock_repo.pushed_at = datetime.now(timezone.utc)
+        mock_repo.language = "Python"
+        mock_repo.description = "Test repo"
+        mock_repo.html_url = "https://github.com/owner/name"
+        mock_repo.stargazers_count = 100
+        mock_repo.id = 12345
+        
+        # Mock issues returned
+        mock_issue = MagicMock()
+        mock_issue.title = "Good first issue"
+        mock_issue.html_url = "https://github.com/owner/name/issues/1"
+        mock_issue.number = 1
+        mock_issue.comments_count = 0
+        mock_issue.created_at = datetime.now(timezone.utc)
+        mock_repo.issues.return_value = [mock_issue]
+        
+        # Mock languages
+        mock_repo.languages.return_value = [
+            ("Python", 1000),
+            ("TypeScript", 500),
+            ("JavaScript", 300),
+            ("HTML", 100),
+        ]
+        
+        # Mock client
+        mock_client = MagicMock()
+        mock_client.repository.return_value = mock_repo
+        mock_client.rate_limit.return_value = {
+            'resources': {
+                'core': {
+                    'remaining': 1000,
+                    'limit': 5000,
+                    'reset': 0
+                }
+            }
+        }
+        
+        rate_limiter = GitHubRateLimiter(mock_client, requests_per_second=100.0)
+        
+        info = get_repository_info(
+            {"owner": "owner", "name": "name"},
+            mock_client,
+            rate_limiter
+        )
+        
+        self.assertIsNotNone(info)
+        assert info is not None
+        self.assertEqual(info["language"], "Python")
+        self.assertEqual(info["languages"], ["Python", "TypeScript", "JavaScript"])
+        self.assertEqual(info["slug"], "python")
+        self.assertEqual(info["slugs"], ["python", "typescript", "javascript"])
+
+
 if __name__ == "__main__":
     unittest.main()

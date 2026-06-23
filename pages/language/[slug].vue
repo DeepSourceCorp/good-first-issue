@@ -10,7 +10,12 @@ import Tags from '~/data/tags.json'
 
 const route = useRoute()
 
-const repositories = Repositories.filter(repository => repository.slug === route.params.slug)
+const repositories = Repositories.filter(repository => {
+  if (repository.slugs) {
+    return repository.slugs.includes(route.params.slug)
+  }
+  return repository.slug === route.params.slug
+})
 
 const tag = Tags.find(t => t.slug === route.params.slug)
 

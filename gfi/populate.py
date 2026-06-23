@@ -173,8 +173,24 @@ def get_repository_info(
                 info["name"] = name
                 info["owner"] = owner
                 info["description"] = emojize(repository.description or "")
-                info["language"] = repository.language
-                info["slug"] = slugify(repository.language, replacements=SLUGIFY_REPLACEMENTS)
+
+                # Fetch top 3 languages
+                rate_limiter.acquire()
+                try:
+                    langs = list(repository.languages())
+                    langs_sorted = sorted(langs, key=itemgetter(1), reverse=True)
+                    top_langs = [l[0] for l in langs_sorted[:3]]
+                except Exception as e:
+                    logger.warning("Failed to fetch languages for {}/{}: {}", owner, name, e)
+                    top_langs = []
+
+                if not top_langs:
+                    top_langs = [repository.language]
+
+                info["language"] = top_langs[0]
+                info["languages"] = top_langs
+                info["slug"] = slugify(top_langs[0], replacements=SLUGIFY_REPLACEMENTS)
+                info["slugs"] = [slugify(lang, replacements=SLUGIFY_REPLACEMENTS) for lang in top_langs]
                 info["url"] = repository.html_url
                 info["stars"] = repository.stargazers_count
                 info["stars_display"] = numerize.numerize(repository.stargazers_count)
@@ -264,7 +280,8 @@ if __name__ == "__main__":
         for result in results:
             if result:
                 REPOSITORIES.append(result)
-                TAGS[result["language"]] += 1
+                for lang in result.get("languages", [result["language"]]):
+                    TAGS[lang] += 1
 
     # write to generated JSON files
 
