@@ -21,6 +21,12 @@
         >
         <span class="flex-1"></span>
         <span
+          v-if="isRecentlyActive"
+          class="hidden md:inline text-sm border px-3 py-1 ml-2 rounded-full font-semibold bg-green-600 text-white border-transparent"
+          title="Updated within the last 30 days"
+          >Active</span
+        >
+        <span
           class="hidden md:inline text-sm border px-3 py-1 ml-2 rounded-full font-semibold"
           :class="{
             'text-ink-400 bg-juniper border-transparent': isCardOpen,
@@ -92,6 +98,10 @@ const issuesDisplay = computed(() => {
 
 const lastModifiedDisplay = computed(() => {
   return dayjs(props.repo.last_modified).fromNow()
+})
+
+const isRecentlyActive = computed(() => {
+  return dayjs().diff(dayjs(props.repo.last_modified), 'day') <= 30
 })
 
 const isCardOpen = computed(() => {
