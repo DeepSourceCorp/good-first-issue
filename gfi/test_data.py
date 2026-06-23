@@ -11,48 +11,72 @@ DATA_FILE_PATH = "data/repositories.toml"
 LABELS_FILE_PATH = "data/labels.json"
 
 
-def _get_data_from_toml(file_path):
-    with open(file_path, "r") as file_desc:
-        return toml.load(file_desc)
+def _load_file(file_path):
+    """Load and parse a JSON or TOML file with error handling."""
+    if not os.path.exists(file_path):
+        raise FileNotFoundError(f"File not found: {file_path}")
 
-
-def _get_data_from_json(file_path):
-    with open(file_path, "r") as file_desc:
-        return json.load(file_desc)
+    _, ext = os.path.splitext(file_path)
+    try:
+        with open(file_path, "r", encoding="utf-8") as file_desc:
+            if ext.lower() == ".toml":
+                return toml.load(file_desc)
+            elif ext.lower() == ".json":
+                return json.load(file_desc)
+            else:
+                raise ValueError(f"Unsupported file format: {ext}")
+    except (json.JSONDecodeError, toml.TomlDecodeError) as err:
+        raise ValueError(f"Failed to parse {file_path}: {err}") from err
+    except Exception as err:
+        raise RuntimeError(f"Error reading file {file_path}: {err}") from err
 
 
 class TestDataSanity(unittest.TestCase):
-    """Test for sanity of the data file."""
+    """Tests for sanity and structural correctness of the data and label files."""
 
-    @staticmethod
-    def test_data_file_exists():
-        """Verify that the data file exists."""
-        assert os.path.exists(DATA_FILE_PATH)
+    def test_data_file_exists(self):
+        """Verify that the repository data file exists at the expected path."""
+        self.assertTrue(
+            os.path.exists(DATA_FILE_PATH),
+            f"Repository TOML file does not exist at {DATA_FILE_PATH}"
+        )
 
-    @staticmethod
-    def test_labels_file_exists():
-        """Verify that the labels file exists."""
-        assert os.path.exists(LABELS_FILE_PATH)
+    def test_labels_file_exists(self):
+        """Verify that the labels JSON file exists at the expected path."""
+        self.assertTrue(
+            os.path.exists(LABELS_FILE_PATH),
+            f"Labels JSON file does not exist at {LABELS_FILE_PATH}"
+        )
 
-    @staticmethod
-    def test_data_file_sane():
-        """Verify that the file is a valid TOML with required data."""
-        data = _get_data_from_toml(DATA_FILE_PATH)
-        assert "repositories" in data
+    def test_data_file_sane(self):
+        """Verify that the repository data file is a valid TOML and has the 'repositories' key."""
+        try:
+            data = _load_file(DATA_FILE_PATH)
+        except Exception as err:
+            self.fail(f"Failed to load or parse repository TOML: {err}")
+        self.assertIn("repositories", data, "Repository TOML is missing 'repositories' key")
 
-    @staticmethod
-    def test_labels_file_sane():
-        """Verify that the labels file is a valid JSON"""
-        data = _get_data_from_json(LABELS_FILE_PATH)
-        assert "labels" in data
+    def test_labels_file_sane(self):
+        """Verify that the labels file is a valid JSON and has the 'labels' key."""
+        try:
+            data = _load_file(LABELS_FILE_PATH)
+        except Exception as err:
+            self.fail(f"Failed to load or parse labels JSON: {err}")
+        self.assertIn("labels", data, "Labels JSON is missing 'labels' key")
 
-    @staticmethod
-    def test_no_duplicates():
-        """Verify that all entries are unique."""
-        data = _get_data_from_toml(DATA_FILE_PATH)
+    def test_no_duplicates(self):
+        """Verify that all repository entries in repositories.toml are unique."""
+        try:
+            data = _load_file(DATA_FILE_PATH)
+        except Exception as err:
+            self.fail(f"Failed to load or parse repository TOML: {err}")
         repos = data.get("repositories", [])
-        print([item for item, count in Counter(repos).items() if count > 1])
-        assert len(repos) == len(set(repos))
+        duplicates = [item for item, count in Counter(repos).items() if count > 1]
+        self.assertEqual(
+            len(repos),
+            len(set(repos)),
+            f"Duplicate repository entries found: {duplicates}"
+        )
 
 
 if __name__ == "__main__":
