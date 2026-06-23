@@ -29,7 +29,7 @@ LABELS_DATA_FILE = "data/labels.json"
 ISSUE_STATE = "open"
 ISSUE_SORT = "created"
 ISSUE_SORT_DIRECTION = "desc"
-ISSUE_LIMIT = 10
+ISSUE_LIMIT = 100
 SLUGIFY_REPLACEMENTS = [["#", "sharp"], ["+", "plus"]]
 MAX_INACTIVITY_DAYS = 90  # Skip repos inactive for more than 3 months
 
@@ -164,7 +164,9 @@ def get_repository_info(
                     sort=ISSUE_SORT,
                     direction=ISSUE_SORT_DIRECTION,
                 )
-                good_first_issues.update(issues_for_label)
+                for issue in issues_for_label:
+                    if not issue.pull_request_urls:
+                        good_first_issues.add(issue)
             logger.info("\t found {} good first issues", len(good_first_issues))
             # check if repo has at least one good first issue
             if good_first_issues and repository.language:
