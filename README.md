@@ -5,7 +5,7 @@
 </p>
 <hr>
 
-Welcome! 👋🏼
+Welcome!! 👋🏼
 
 **Good First Issue** is an initiative to curate easy pickings from popular projects, so developers who've never contributed to open-source can get started quickly.
 
@@ -30,6 +30,6 @@ To maintain the quality of projects in Good First Issue, please make sure your G
 
 Once your submission is reviewed and approved, it will be added to [goodfirstissue.dev](https://goodfirstissue.dev/).
 
-## Contributing
+## Contributing !
 
 Want to contribute? See [CONTRIBUTING.md](CONTRIBUTING.md) for setup instructions and guidelines.
