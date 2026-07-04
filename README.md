@@ -3,33 +3,40 @@
     <img src="public/readme-logo.svg">
   </a>
 </p>
+
+<h1 align="center">Good First Issue</h1>
+
+<p align="center">
+  Curated, beginner-friendly issues from popular open-source projects.
+</p>
+
 <hr>
 
-Welcome! 👋🏼
+## 👋 Welcome
 
-**Good First Issue** is an initiative to curate easy pickings from popular projects, so developers who've never contributed to open-source can get started quickly.
+**Good First Issue** is an initiative to curate easy pickings from popular projects, so developers who've never contributed to open source can get started quickly.
 
-Open-source maintainers are always looking to get more people involved, but new developers generally think it's challenging to become a contributor. We believe getting developers to fix super-easy issues removes the barrier for future contributions. This is why Good First Issue exists.
+Open-source maintainers are always looking to get more people involved, but new developers often think becoming a contributor is intimidating. We believe that pointing developers toward genuinely easy issues removes that barrier — and that's why Good First Issue exists.
 
-## Adding a new project
+## 📌 Adding a New Project
 
-You're welcome to add a new project to Good First Issue, and we encourage all projects &mdash; old and new, big and small.
+You're welcome to add a new project to Good First Issue, and we encourage all kinds of projects — old and new, big and small.
 
-**[Submit your repository via this form](https://docs.google.com/forms/d/e/1FAIpQLSfHSt8UHvACokWv8uwiImidTIhuSCAUXnvSGs-TULshdLl9Qw/viewform?usp=header)**
+**[Submit your repository via this form →](https://docs.google.com/forms/d/e/1FAIpQLSfHSt8UHvACokWv8uwiImidTIhuSCAUXnvSGs-TULshdLl9Qw/viewform?usp=header)**
 
-To maintain the quality of projects in Good First Issue, please make sure your GitHub repository meets the following criteria:
+To maintain quality, your GitHub repository should meet the following criteria before submission:
 
 | Requirement | Description |
-|-------------|-------------|
-| Good First Issues | At least 3 open issues with beginner-friendly labels (`good first issue`, `beginner`, `easy`, `help wanted`, etc.) |
-| Contributors | At least 10 contributors |
-| README.md | Detailed setup instructions |
-| CONTRIBUTING.md | Guidelines for new contributors |
-| Active Maintenance | Recent commits and activity |
-| License | Valid open source license |
+|---|---|
+| **Good First Issues** | At least 3 open issues with beginner-friendly labels (`good first issue`, `beginner`, `easy`, `help wanted`, etc.) |
+| **Contributors** | At least 10 contributors |
+| **README.md** | Clear, detailed setup instructions |
+| **CONTRIBUTING.md** | Guidelines for new contributors |
+| **Active Maintenance** | Recent commits and ongoing activity |
+| **License** | A valid open source license |
 
-Once your submission is reviewed and approved, it will be added to [goodfirstissue.dev](https://goodfirstissue.dev/).
+Once your submission is reviewed and approved, it will be listed on **[goodfirstissue.dev](https://goodfirstissue.dev/)**.
 
-## Contributing
+## 🤝 Contributing
 
-Want to contribute? See [CONTRIBUTING.md](CONTRIBUTING.md) for setup instructions and guidelines.
+Want to contribute to this project itself? See [CONTRIBUTING.md](CONTRIBUTING.md) for setup instructions and guidelines.
