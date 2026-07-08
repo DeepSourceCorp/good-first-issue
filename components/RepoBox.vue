@@ -2,13 +2,19 @@
   <div
     :id="`repo-${repo.id}`"
     :class="{
-      'border-juniper hover:bg-ink-400': isCardOpen,
+      'border-juniper': isCardOpen,
       'border-ink-200': !isCardOpen
     }"
-    class="select-none border w-full rounded-md mb-4 cursor-pointer hover:bg-ink-300 group"
-    @click="toggle(repo.id)"
+    class="select-none border w-full rounded-md mb-4 group"
   >
-    <div class="px-5 py-3">
+    <div
+      class="px-5 py-3 cursor-pointer hover:bg-ink-300"
+      :class="{
+        'rounded-t-md hover:bg-ink-400': isCardOpen,
+        'rounded-md': !isCardOpen
+      }"
+      @click="toggle(repo.id)"
+    >
       <div class="flex flex-row">
         <a
           :title="`Open ${repo.owner}/${repo.name} on GitHub`"
@@ -17,6 +23,7 @@
           rel="noopener noreferrer"
           class="text-lg font-semibold group-hover:text-juniper"
           :class="{ 'text-juniper': isCardOpen }"
+          @click.stop
           >{{ repo.owner }} / {{ repo.name }}</a
         >
         <span class="flex-1"></span>
