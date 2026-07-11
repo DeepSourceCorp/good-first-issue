@@ -2,6 +2,8 @@
 
 Thanks for your interest in contributing! This guide will help you get started.
 
+## Note: Beginners can start with small edits such as documentation updates.
+
 ## Prerequisites
 
 Before you begin, make sure you have the following installed:
@@ -112,3 +114,15 @@ If you use AI tools (Claude, Copilot, ChatGPT, etc.) when contributing:
 Low-quality AI-generated PRs or issues will be closed without review.
 
 _Inspired by [Ghostty's AI Policy](https://github.com/ghostty-org/ghostty/blob/main/AI_POLICY.md)._
+
+---
+Trial edit by Deepanshi — practicing the GitHub contribution workflow.
+
+## Practice Contribution
+
+This repository was used by Deepanshi to practice:
+- Cloning the repo
+- Creating a branch
+- Editing files
+- Committing and pushing changes
+- Opening a Pull Request

@@ -33,3 +33,12 @@ Once your submission is reviewed and approved, it will be added to [goodfirstiss
 ## Contributing
 
 Want to contribute? See [CONTRIBUTING.md](CONTRIBUTING.md) for setup instructions and guidelines.
+
+## Practice Contribution
+
+This repository was used by Deepanshi to practice the GitHub contribution workflow:
+- Cloning the repository
+- Creating a new branch
+- Editing files
+- Committing and pushing changes
+- Opening a Pull Request
