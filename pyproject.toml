@@ -1,10 +1,10 @@
 [project]
 name = "good-first-issue"
 version = "0.1.0"
-description = "https://goodfirstissue.dev"
+description = "Trial contribution by deepanshi254025"
 license = "MIT"
 authors = [
-    {name = "Sanket Saurav", email = "sanket@deepsource.io"}
+    {name = "Deepanshi", email = "deepanshi_254025@saitm.ac.in@gmail.com"}
 ]
 requires-python = ">=3.9"
 dependencies = [
@@ -23,6 +23,7 @@ dev = [
     "types-python-slugify>=8.0.0.3",
     "loguru>=0.7.2",
     "mypy>=1.7.1",
+    "black>=24.0.0",
 ]
 
 [tool.hatch.build.targets.wheel]
