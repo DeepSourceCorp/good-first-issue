@@ -14,7 +14,7 @@ const route = useRoute()
 const sortKey = useSortKey()
 
 const repositories = computed(() => {
-  return Repositories.filter(repository => repository.slug === route.params.slug)
+  return Repositories.filter((repository) => repository.slug === route.params.slug)
 })
 
 const sortedRepositories = computed(() => {
@@ -31,13 +31,15 @@ const sortedRepositories = computed(() => {
   return list
 })
 
-const tag = Tags.find(t => t.slug === route.params.slug)
+const tag = Tags.find((t) => t.slug === route.params.slug)
 
 useHead({
   title: `${tag.language} | Good First Issue`,
-  meta: [{
-    name: 'description',
-    content: `Curated list of issues in ${tag.language} from popular open-source projects that you can easily fix.`
-  }]
+  meta: [
+    {
+      name: 'description',
+      content: `Curated list of issues in ${tag.language} from popular open-source projects that you can easily fix.`
+    }
+  ]
 })
 </script>

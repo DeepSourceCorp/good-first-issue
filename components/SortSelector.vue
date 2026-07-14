@@ -11,7 +11,10 @@
           <component :is="selectedOption.icon" class="h-4 w-4 text-vanilla-400" />
           <span>{{ selectedOption.label }}</span>
         </span>
-        <ChevronDownIcon class="ml-2 -mr-1 h-4 w-4 transition-transform duration-200" :class="{ 'transform rotate-180': isOpen }" />
+        <ChevronDownIcon
+          class="ml-2 -mr-1 h-4 w-4 transition-transform duration-200"
+          :class="{ 'transform rotate-180': isOpen }"
+        />
       </button>
     </div>
 
@@ -39,7 +42,11 @@
             ]"
             @click="selectOption(option.key)"
           >
-            <component :is="option.icon" class="mr-3 h-4 w-4" :class="[sortKey === option.key ? 'text-juniper' : 'text-vanilla-400']" />
+            <component
+              :is="option.icon"
+              class="mr-3 h-4 w-4"
+              :class="[sortKey === option.key ? 'text-juniper' : 'text-vanilla-400']"
+            />
             {{ option.label }}
           </button>
         </div>
@@ -50,13 +57,7 @@
 
 <script setup>
 import { ref, computed, onMounted, onUnmounted } from 'vue'
-import {
-  ChevronDownIcon,
-  StarIcon,
-  ClockIcon,
-  ExclamationCircleIcon,
-  ArrowPathIcon
-} from '@heroicons/vue/24/outline'
+import { ChevronDownIcon, StarIcon, ClockIcon, ExclamationCircleIcon, ArrowPathIcon } from '@heroicons/vue/24/outline'
 
 const sortKey = useSortKey()
 const isOpen = ref(false)
@@ -71,7 +72,7 @@ const options = [
 ]
 
 const selectedOption = computed(() => {
-  return options.find(o => o.key === sortKey.value) || options[0]
+  return options.find((o) => o.key === sortKey.value) || options[0]
 })
 
 function selectOption(key) {
