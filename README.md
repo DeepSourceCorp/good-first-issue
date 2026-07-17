@@ -19,7 +19,7 @@ You're welcome to add a new project to Good First Issue, and we encourage all pr
 
 To maintain the quality of projects in Good First Issue, please make sure your GitHub repository meets the following criteria:
 
-| Requirement | Description |
+| Requirements | Description |
 |-------------|-------------|
 | Good First Issues | At least 3 open issues with beginner-friendly labels (`good first issue`, `beginner`, `easy`, `help wanted`, etc.) |
 | Contributors | At least 10 contributors |
