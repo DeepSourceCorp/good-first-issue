@@ -1,58 +1,165 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+"""Unit tests for validating the integrity and structure of data files.
+
+This module contains tests that verify:
+- The existence of required data files (repositories.toml, labels.json)
+- The validity of their contents (valid TOML, valid JSON)
+- The uniqueness of repository entries (no duplicate URLs)
+"""
+
 import json
 import os
 import unittest
 from collections import Counter
+from typing import Any
 
 import toml
 
-DATA_FILE_PATH = "data/repositories.toml"
-LABELS_FILE_PATH = "data/labels.json"
+DATA_FILE_PATH = os.path.join(
+    os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+    "data",
+    "repositories.toml",
+)
+LABELS_FILE_PATH = os.path.join(
+    os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+    "data",
+    "labels.json",
+)
 
 
-def _get_data_from_toml(file_path):
-    with open(file_path, "r") as file_desc:
-        return toml.load(file_desc)
+def _load_file(file_path: str) -> Any:
+    """Load and parse a data file based on its extension.
 
+    Supports TOML (.toml) and JSON (.json) file formats. Uses absolute
+    paths derived from the project root to ensure tests can be run from
+    any working directory.
 
-def _get_data_from_json(file_path):
-    with open(file_path, "r") as file_desc:
+    Args:
+        file_path: Absolute path to the data file.
+
+    Returns:
+        Parsed contents of the file as a Python dict.
+
+    Raises:
+        FileNotFoundError: If the file does not exist at the given path.
+        ValueError: If the file extension is not .toml or .json.
+        toml.TomlDecodeError: If the TOML file contains invalid syntax.
+        json.JSONDecodeError: If the JSON file contains invalid syntax.
+    """
+    if not os.path.exists(file_path):
+        raise FileNotFoundError(f"Data file not found: {file_path}")
+
+    ext = os.path.splitext(file_path)[1].lower()
+    valid_extensions = {".toml", ".json"}
+
+    if ext not in valid_extensions:
+        raise ValueError(
+            f"Unsupported file extension '{ext}'. "
+            f"Expected one of: {', '.join(sorted(valid_extensions))}"
+        )
+
+    with open(file_path, "r", encoding="utf-8") as file_desc:
+        if ext == ".toml":
+            return toml.load(file_desc)
         return json.load(file_desc)
 
 
 class TestDataSanity(unittest.TestCase):
-    """Test for sanity of the data file."""
+    """Tests for validating the integrity and structure of data files."""
 
-    @staticmethod
-    def test_data_file_exists():
-        """Verify that the data file exists."""
-        assert os.path.exists(DATA_FILE_PATH)
+    def test_data_file_exists(self):
+        """Verify that the repositories data file exists."""
+        self.assertTrue(
+            os.path.exists(DATA_FILE_PATH),
+            f"Data file not found: {DATA_FILE_PATH}",
+        )
 
-    @staticmethod
-    def test_labels_file_exists():
+    def test_labels_file_exists(self):
         """Verify that the labels file exists."""
-        assert os.path.exists(LABELS_FILE_PATH)
+        self.assertTrue(
+            os.path.exists(LABELS_FILE_PATH),
+            f"Labels file not found: {LABELS_FILE_PATH}",
+        )
 
-    @staticmethod
-    def test_data_file_sane():
-        """Verify that the file is a valid TOML with required data."""
-        data = _get_data_from_toml(DATA_FILE_PATH)
-        assert "repositories" in data
+    def test_data_file_is_valid_toml(self):
+        """Verify that the data file is a valid TOML document.
 
-    @staticmethod
-    def test_labels_file_sane():
-        """Verify that the labels file is a valid JSON"""
-        data = _get_data_from_json(LABELS_FILE_PATH)
-        assert "labels" in data
+        Catches TOML parsing errors with a descriptive failure message.
+        """
+        try:
+            data = _load_file(DATA_FILE_PATH)
+        except FileNotFoundError:
+            self.fail(
+                f"Data file not found: {DATA_FILE_PATH}. "
+                f"Ensure the file exists before running tests."
+            )
+        except toml.TomlDecodeError as exc:
+            self.fail(
+                f"Data file contains invalid TOML: {DATA_FILE_PATH}. "
+                f"Error: {exc}"
+            )
+        else:
+            self.assertIn(
+                "repositories",
+                data,
+                f"'repositories' key not found in {DATA_FILE_PATH}",
+            )
 
-    @staticmethod
-    def test_no_duplicates():
-        """Verify that all entries are unique."""
-        data = _get_data_from_toml(DATA_FILE_PATH)
+    def test_labels_file_is_valid_json(self):
+        """Verify that the labels file is a valid JSON document.
+
+        Catches JSON parsing errors with a descriptive failure message.
+        """
+        try:
+            data = _load_file(LABELS_FILE_PATH)
+        except FileNotFoundError:
+            self.fail(
+                f"Labels file not found: {LABELS_FILE_PATH}. "
+                f"Ensure the file exists before running tests."
+            )
+        except json.JSONDecodeError as exc:
+            self.fail(
+                f"Labels file contains invalid JSON: {LABELS_FILE_PATH}. "
+                f"Error: {exc}"
+            )
+        else:
+            self.assertIn(
+                "labels",
+                data,
+                f"'labels' key not found in {LABELS_FILE_PATH}",
+            )
+
+    def test_no_duplicate_repositories(self):
+        """Verify that all repository entries are unique.
+
+        If duplicates are found, they are listed in the failure message
+        to aid debugging.
+        """
+        try:
+            data = _load_file(DATA_FILE_PATH)
+        except FileNotFoundError:
+            self.fail(
+                f"Data file not found: {DATA_FILE_PATH}. "
+                f"Ensure the file exists before running tests."
+            )
+            return
+        except toml.TomlDecodeError as exc:
+            self.fail(
+                f"Data file contains invalid TOML: {DATA_FILE_PATH}. "
+                f"Error: {exc}"
+            )
+            return
+
         repos = data.get("repositories", [])
-        print([item for item, count in Counter(repos).items() if count > 1])
-        assert len(repos) == len(set(repos))
+        duplicates = [
+            item for item, count in Counter(repos).items() if count > 1
+        ]
+        self.assertEqual(
+            len(repos),
+            len(set(repos)),
+            f"Found {len(duplicates)} duplicate repository entries: {duplicates}",
+        )
 
 
 if __name__ == "__main__":
