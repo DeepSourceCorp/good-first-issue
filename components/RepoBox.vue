@@ -17,6 +17,7 @@
           rel="noopener noreferrer"
           class="text-lg font-semibold group-hover:text-juniper"
           :class="{ 'text-juniper': isCardOpen }"
+          @click.stop
           >{{ repo.owner }} / {{ repo.name }}</a
         >
         <span class="flex-1"></span>
@@ -53,6 +54,7 @@
             target="_blank"
             rel="noopener noreferrer"
             class="leading-snug font-medium hover:text-juniper text-vanilla-300 block flex-auto"
+            @click.stop
             >{{ issue.title }}</a
           >
           <div
