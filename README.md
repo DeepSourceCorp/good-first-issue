@@ -33,3 +33,6 @@ Once your submission is reviewed and approved, it will be added to [goodfirstiss
 ## Contributing
 
 Want to contribute? See [CONTRIBUTING.md](CONTRIBUTING.md) for setup instructions and guidelines.
+
+## Learning Github Workflow
+This repository is used for learning open sorce contribution workflow.
