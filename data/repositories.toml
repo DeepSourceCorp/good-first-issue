@@ -462,6 +462,7 @@ repositories = [
   'github.com/MovingBlocks/Terasology',
   'github.com/MrSwitch/hello.js',
   'github.com/MSaifAsif/cqengine-next',
+  'github.com/MSKazemi/yazses',
   'github.com/mui-org/material-ui',
   'github.com/muke1908/chat-e2ee',
   'github.com/mumble-voip/mumble',
