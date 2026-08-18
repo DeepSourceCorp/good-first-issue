@@ -9,7 +9,7 @@
     </div>
     <div class="pt-6">
       <h3 class="section-heading">Search projects</h3>
-      <form class="flex flex-row space-x-2" @submit.prevent>
+      <form class="flex flex-row space-x-2" @submit.prevent="handleSearch">
         <input
           v-model="searchQuery"
           type="text"
@@ -89,6 +89,12 @@ import { PlusCircleIcon, MagnifyingGlassIcon } from '@heroicons/vue/24/outline'
 import { HeartIcon } from '@heroicons/vue/24/solid'
 
 const searchQuery = useSearchQuery()
+const router = useRouter()
+const route = useRoute()
+
+function handleSearch() {
+  router.push({ path: '/', query: { q: searchQuery.value } })
+}
 </script>
 <style>
 .section-heading {

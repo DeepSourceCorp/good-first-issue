@@ -13,11 +13,33 @@
 <script setup>
 import Tags from '~/data/tags.json'
 const route = useRoute()
+const router = useRouter()
+const searchQuery = useSearchQuery()
 
 const tag = ref({})
 
 if (route.params.slug) {
   tag.value = Tags.find((t) => t.slug === route.params.slug)
+}
+
+// Sync from URL to state
+watch(
+  () => route.query.q,
+  (newVal) => {
+    if (searchQuery.value !== (newVal || '')) {
+      searchQuery.value = newVal || ''
+    }
+  },
+  { immediate: true }
+)
+
+// Sync from state to URL
+if (process.client) {
+  watch(searchQuery, (newVal) => {
+    if (route.query.q !== (newVal || undefined)) {
+      router.replace({ query: { ...route.query, q: newVal || undefined } })
+    }
+  })
 }
 
 useHead({
