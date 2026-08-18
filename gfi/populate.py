@@ -92,10 +92,10 @@ class GitHubRateLimiter:
 
     def _update_rate_limit(self):
         try:
-            info = self._client.rate_limit()['resources']['core']
-            self._remaining = info['remaining']
-            self._reset_time = info['reset']
-            logger.debug("Rate limit: {}/{}", self._remaining, info['limit'])
+            info = self._client.rate_limit()["resources"]["core"]
+            self._remaining = info["remaining"]
+            self._reset_time = info["reset"]
+            logger.debug("Rate limit: {}/{}", self._remaining, info["limit"])
         except Exception as e:
             logger.warning("Failed to check rate limit: {}", e)
 
@@ -129,9 +129,7 @@ RepositoryInfo = Dict["str", Union[str, int, Sequence]]
 
 
 def get_repository_info(
-    identifier: RepositoryIdentifier,
-    client,
-    rate_limiter: GitHubRateLimiter
+    identifier: RepositoryIdentifier, client, rate_limiter: GitHubRateLimiter
 ) -> Optional[RepositoryInfo]:
     """Get the relevant information needed for the repository from its owner login and name."""
     owner, name = identifier["owner"], identifier["name"]
@@ -203,11 +201,9 @@ def get_repository_info(
         except exceptions.ForbiddenError:
             rate_limiter.report_rate_limit_hit()
             if attempt < max_retries - 1:
-                logger.warning("Rate limited on {}/{}. Retrying after coordinated pause...",
-                             owner, name)
+                logger.warning("Rate limited on {}/{}. Retrying after coordinated pause...", owner, name)
             else:
-                logger.error("Rate limit exceeded after {} retries: {}/{}",
-                           max_retries, owner, name)
+                logger.error("Rate limit exceeded after {} retries: {}/{}", max_retries, owner, name)
                 return None
 
         except exceptions.NotFoundError:

@@ -19,14 +19,14 @@ You're welcome to add a new project to Good First Issue, and we encourage all pr
 
 To maintain the quality of projects in Good First Issue, please make sure your GitHub repository meets the following criteria:
 
-| Requirement | Description |
-|-------------|-------------|
-| Good First Issues | At least 3 open issues with beginner-friendly labels (`good first issue`, `beginner`, `easy`, `help wanted`, etc.) |
-| Contributors | At least 10 contributors |
-| README.md | Detailed setup instructions |
-| CONTRIBUTING.md | Guidelines for new contributors |
-| Active Maintenance | Recent commits and activity |
-| License | Valid open source license |
+| Requirement        | Description                                                                                                        |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------ |
+| Good First Issues  | At least 3 open issues with beginner-friendly labels (`good first issue`, `beginner`, `easy`, `help wanted`, etc.) |
+| Contributors       | At least 10 contributors                                                                                           |
+| README.md          | Detailed setup instructions                                                                                        |
+| CONTRIBUTING.md    | Guidelines for new contributors                                                                                    |
+| Active Maintenance | Recent commits and activity                                                                                        |
+| License            | Valid open source license                                                                                          |
 
 Once your submission is reviewed and approved, it will be added to [goodfirstissue.dev](https://goodfirstissue.dev/).
 
