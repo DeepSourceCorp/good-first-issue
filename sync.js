@@ -74,9 +74,9 @@ async function syncFilesDown() {
   }
 }
 
-if (!("BLOB_READ_WRITE_TOKEN" in process.env)) {
+if (!('BLOB_READ_WRITE_TOKEN' in process.env)) {
   console.error('`BLOB_READ_WRITE_TOKEN` not set in env. exiting.')
-  process.exit(1)  // skicq: JS-0263
+  process.exit(1) // skicq: JS-0263
 }
 
 switch (process.argv[2]) {
