@@ -4,6 +4,7 @@
   </a>
 </p>
 <hr>
+Bu projeye Ömer katkıda bulundu.
 
 Welcome! 👋🏼
 
