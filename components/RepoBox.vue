@@ -21,6 +21,14 @@
         >
         <span class="flex-1"></span>
         <span
+          v-if="isRecentlyActive"
+          class="hidden sm:inline-flex items-center text-xs border border-juniper text-juniper px-2 py-1 ml-2 rounded-full"
+          title="Updated within the last 30 days"
+        >
+          <span class="w-1.5 h-1.5 mr-1.5 rounded-full bg-juniper"></span>
+          Recently active
+        </span>
+        <span
           class="hidden md:inline text-sm border px-3 py-1 ml-2 rounded-full font-semibold"
           :class="{
             'text-ink-400 bg-juniper border-transparent': isCardOpen,
@@ -36,7 +44,7 @@
         class="flex-row flex text-sm py-1 font-mono"
         :class="{ 'text-honey': isCardOpen, 'text-vanilla-400': !isCardOpen }"
       >
-        <div class="mr-4"><span class="text-vanilla-400">lang: </span>{{ repo.language }}</div>
+        <div class="mr-4"><span class="text-vanilla-400">languages: </span>{{ languagesDisplay }}</div>
         <div class="mr-4"><span class="text-vanilla-400">stars: </span>{{ repo.stars_display }}</div>
         <div class="mr-4">
           <span class="text-vanilla-400">last activity: </span><span>{{ lastModifiedDisplay }}</span>
@@ -45,7 +53,9 @@
     </div>
     <ol v-if="isCardOpen" class="px-5 py-3 text-base leading-loose border-t border-ink-200">
       <li v-for="issue in repo.issues" :key="issue.url" class="flex flex-row items-start justify-start py-1">
-        <span class="text-slate text-right px-2 leading-snug font-mono" style="min-width: 70px">#{{ issue.number }}</span>
+        <span class="text-slate text-right px-2 leading-snug font-mono" style="min-width: 70px"
+          >#{{ issue.number }}</span
+        >
         <div class="flex items-start flex-row flex-auto">
           <a
             title="Open issue on GitHub"
@@ -86,12 +96,20 @@ const props = defineProps({
 const openRepoId = useOpenRepoId()
 
 const issuesDisplay = computed(() => {
-  const numIssues = props.repo.issues.length
+  const numIssues = props.repo.issues_count ?? props.repo.issues.length
   return numIssues > 1 ? `${numIssues} issues` : `${numIssues} issue`
+})
+
+const languagesDisplay = computed(() => {
+  return props.repo.languages?.map((language) => language.name).join(', ') || props.repo.language
 })
 
 const lastModifiedDisplay = computed(() => {
   return dayjs(props.repo.last_modified).fromNow()
+})
+
+const isRecentlyActive = computed(() => {
+  return dayjs().diff(dayjs(props.repo.last_modified), 'day') <= 30
 })
 
 const isCardOpen = computed(() => {

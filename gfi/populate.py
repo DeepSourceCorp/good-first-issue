@@ -10,7 +10,7 @@ from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
 from operator import itemgetter
 from os import getenv, path
-from typing import TypedDict, Dict, Union, Sequence, Optional
+from typing import Any, TypedDict, Dict, Union, Sequence, Optional
 
 import toml
 
@@ -29,7 +29,8 @@ LABELS_DATA_FILE = "data/labels.json"
 ISSUE_STATE = "open"
 ISSUE_SORT = "created"
 ISSUE_SORT_DIRECTION = "desc"
-ISSUE_LIMIT = 10
+ISSUE_DISPLAY_LIMIT = 10
+LANGUAGE_DISPLAY_LIMIT = 3
 SLUGIFY_REPLACEMENTS = [["#", "sharp"], ["+", "plus"]]
 MAX_INACTIVITY_DAYS = 90  # Skip repos inactive for more than 3 months
 
@@ -128,6 +129,36 @@ class RepositoryIdentifier(TypedDict):
 RepositoryInfo = Dict["str", Union[str, int, Sequence]]
 
 
+def get_good_first_issues(repository, rate_limiter: GitHubRateLimiter):
+    """Return unique, open issues with a configured beginner-friendly label."""
+    good_first_issues: set[Any] = set()
+    for label in ISSUE_LABELS:
+        rate_limiter.acquire()
+        issues_for_label = repository.issues(
+            labels=label,
+            state=ISSUE_STATE,
+            number=-1,
+            sort=ISSUE_SORT,
+            direction=ISSUE_SORT_DIRECTION,
+        )
+        good_first_issues.update(issue for issue in issues_for_label if issue.pull_request_urls is None)
+    return good_first_issues
+
+
+def get_top_languages(repository, rate_limiter: GitHubRateLimiter):
+    """Return the repository's three most-used languages by byte count."""
+    rate_limiter.acquire()
+    languages = sorted(repository.languages(), key=itemgetter(1), reverse=True)
+    return [
+        {
+            "name": name,
+            "slug": slugify(name, replacements=SLUGIFY_REPLACEMENTS),
+            "bytes": byte_count,
+        }
+        for name, byte_count in languages[:LANGUAGE_DISPLAY_LIMIT]
+    ]
+
+
 def get_repository_info(
     identifier: RepositoryIdentifier,
     client,
@@ -154,17 +185,7 @@ def get_repository_info(
                 logger.info("\t skipping due to inactivity ({} days since last push)", days_since_push)
                 return None
 
-            good_first_issues = set()
-            for label in ISSUE_LABELS:
-                rate_limiter.acquire()
-                issues_for_label = repository.issues(
-                    labels=label,
-                    state=ISSUE_STATE,
-                    number=ISSUE_LIMIT,
-                    sort=ISSUE_SORT,
-                    direction=ISSUE_SORT_DIRECTION,
-                )
-                good_first_issues.update(issues_for_label)
+            good_first_issues = get_good_first_issues(repository, rate_limiter)
             logger.info("\t found {} good first issues", len(good_first_issues))
             # check if repo has at least one good first issue
             if good_first_issues and repository.language:
@@ -175,6 +196,9 @@ def get_repository_info(
                 info["description"] = emojize(repository.description or "")
                 info["language"] = repository.language
                 info["slug"] = slugify(repository.language, replacements=SLUGIFY_REPLACEMENTS)
+                languages = get_top_languages(repository, rate_limiter)
+                info["languages"] = languages
+                info["slugs"] = [language["slug"] for language in languages]
                 info["url"] = repository.html_url
                 info["stars"] = repository.stargazers_count
                 info["stars_display"] = numerize.numerize(repository.stargazers_count)
@@ -183,7 +207,8 @@ def get_repository_info(
 
                 # get the latest issues with the tag
                 issues = []
-                for issue in good_first_issues:
+                latest_issues = sorted(good_first_issues, key=lambda issue: issue.created_at, reverse=True)
+                for issue in latest_issues[:ISSUE_DISPLAY_LIMIT]:
                     issues.append(
                         {
                             "title": issue.title,
@@ -195,6 +220,7 @@ def get_repository_info(
                     )
 
                 info["issues"] = issues
+                info["issues_count"] = len(good_first_issues)
                 return info
             else:
                 logger.info("\t skipping due to insufficient issues or info")
@@ -264,7 +290,8 @@ if __name__ == "__main__":
         for result in results:
             if result:
                 REPOSITORIES.append(result)
-                TAGS[result["language"]] += 1
+                for language in result["languages"]:
+                    TAGS[language["name"]] += 1
 
     # write to generated JSON files
 
