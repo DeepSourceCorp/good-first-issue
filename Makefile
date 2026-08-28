@@ -15,7 +15,7 @@ generate-prod:
 	bun generate
 
 test:
-	uv run python gfi/test_data.py
+	uv run python -m unittest discover gfi
 	uv run mypy gfi/*.py
 
 format:
