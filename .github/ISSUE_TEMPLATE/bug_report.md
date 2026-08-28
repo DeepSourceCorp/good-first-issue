@@ -32,3 +32,6 @@ What actually happened.
 ## Additional Context
 
 Add any other context, screenshots, or error messages here.
+
+## Reporting error
+Report any errors or any improvements here .Feel free to give a PR
