@@ -750,6 +750,7 @@ repositories = [
   'github.com/typetools/checker-framework',
   'github.com/typescript-eslint/typescript-eslint',
   'github.com/tzapu/WiFiManager',
+  'github.com/trendzza/minibrowser',
   'github.com/ubuntu/microk8s',
   'github.com/Udayraj123/OMRChecker',
   'github.com/unisonweb/unison',
