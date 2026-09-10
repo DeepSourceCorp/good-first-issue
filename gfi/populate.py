@@ -173,8 +173,42 @@ def get_repository_info(
                 info["name"] = name
                 info["owner"] = owner
                 info["description"] = emojize(repository.description or "")
+
+                # Fetch the top 3 languages.
+                rate_limiter.acquire()
+
+                try:
+                    languages = list(repository.languages())
+                    languages = sorted(
+                        languages,
+                        key=itemgetter(1),
+                        reverse=True,
+                    )
+                    top_languages = [
+                        language for language, _ in languages[:3]
+                    ]
+                except Exception as e:
+                    logger.warning(
+                        "Failed to fetch languages for {}/{}: {}",
+                        owner,
+                        name,
+                        e,
+                    )
+                    top_languages = []
+
+                # Fall back to the primary language if fetching languages fails.
+                if not top_languages:
+                    top_languages = [repository.language]
+
                 info["language"] = repository.language
+                info["languages"] = top_languages
                 info["slug"] = slugify(repository.language, replacements=SLUGIFY_REPLACEMENTS)
+                info["slugs"] = [
+                    slugify(
+                        language, replacements=SLUGIFY_REPLACEMENTS
+                        )
+                        for language in top_languages
+                        ]
                 info["url"] = repository.html_url
                 info["stars"] = repository.stargazers_count
                 info["stars_display"] = numerize.numerize(repository.stargazers_count)
@@ -264,7 +298,9 @@ if __name__ == "__main__":
         for result in results:
             if result:
                 REPOSITORIES.append(result)
-                TAGS[result["language"]] += 1
+
+                for language in result.get("languages", [result["language"]]):
+                    TAGS[language] += 1
 
     # write to generated JSON files
 
