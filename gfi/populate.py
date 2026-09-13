@@ -160,7 +160,6 @@ def get_repository_info(
                 issues_for_label = repository.issues(
                     labels=label,
                     state=ISSUE_STATE,
-                    number=ISSUE_LIMIT,
                     sort=ISSUE_SORT,
                     direction=ISSUE_SORT_DIRECTION,
                 )
@@ -181,9 +180,15 @@ def get_repository_info(
                 info["last_modified"] = repository.pushed_at.isoformat()
                 info["id"] = str(repository.id)
 
-                # get the latest issues with the tag
+            # store the true total, then trim to the most recent N for display
+                info["issues_count"] = len(good_first_issues)
+
+                sorted_issues = sorted(
+                    good_first_issues, key=lambda i: i.created_at, reverse=True
+                )[:ISSUE_LIMIT]
+
                 issues = []
-                for issue in good_first_issues:
+                for issue in sorted_issues:
                     issues.append(
                         {
                             "title": issue.title,
