@@ -5,7 +5,7 @@ import os
 import unittest
 from collections import Counter
 
-import toml
+import toml from gfi.populate import parse_github_url
 
 DATA_FILE_PATH = "data/repositories.toml"
 LABELS_FILE_PATH = "data/labels.json"
@@ -53,6 +53,16 @@ class TestDataSanity(unittest.TestCase):
         repos = data.get("repositories", [])
         print([item for item, count in Counter(repos).items() if count > 1])
         assert len(repos) == len(set(repos))
+
+    @staticmethod
+    def test_parse_github_url_handles_common_variants():
+        """GitHub URL parsing should accept bare, https, and trailing-slash forms."""
+        assert parse_github_url("github.com/owner/repo") == {"owner": "owner", "name": "repo"}
+        assert parse_github_url("https://github.com/owner/repo") == {"owner": "owner", "name": "repo"}
+        assert parse_github_url("https://github.com/owner/repo/") == {"owner": "owner", "name": "repo"}
+        assert parse_github_url("https://github.com/owner/repo/issues") == {"owner": "owner", "name": "repo"}
+        assert parse_github_url("notgithub.com/owner/repo") == {}
+        assert parse_github_url("https://www.github.com/owner/repo") == {"owner": "owner", "name": "repo"}
 
 
 if __name__ == "__main__":

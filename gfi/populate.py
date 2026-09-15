@@ -24,7 +24,7 @@ MAX_CONCURRENCY = 5  # max number of requests to make to GitHub in parallel
 REPO_DATA_FILE = "data/repositories.toml"
 REPO_GENERATED_DATA_FILE = "data/generated.json"
 TAGS_GENERATED_DATA_FILE = "data/tags.json"
-GH_URL_PATTERN = re.compile(r"[http://|https://]?github.com/(?P<owner>[\w\.-]+)/(?P<name>[\w\.-]+)/?")
+GH_URL_PATTERN = re.compile(r"(?:^|[^A-Za-z0-9.-])(?:https?://)?(?:www\.)?github\.com/(?P<owner>[\w\.-]+)/(?P<name>[\w\.-]+)(?:/|$)")
 LABELS_DATA_FILE = "data/labels.json"
 ISSUE_STATE = "open"
 ISSUE_SORT = "created"
@@ -113,10 +113,11 @@ class GitHubRateLimiter:
 
 
 def parse_github_url(url: str) -> dict:
-    """Take the GitHub repo URL and return a tuple with owner login and repo name."""
-    match = GH_URL_PATTERN.search(url)
+    """Take a GitHub repo URL and return the owner/repo fields."""
+       match = GH_URL_PATTERN.search(url.strip())
     if match:
-        return match.groupdict()
+        repo = match.groupdict()
+        return {"owner": repo["owner"], "name": repo["name"]}
     return {}
 
 
