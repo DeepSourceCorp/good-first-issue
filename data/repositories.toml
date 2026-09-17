@@ -302,6 +302,7 @@ repositories = [
   'github.com/helm/helm',
   'github.com/Hermit-Tools/Thumbnail-Maker',
   'github.com/hewiefreeman/GopherGameServer',
+  'github.com/heymaikol/network-doctor',
   'github.com/hoppscotch/hoppscotch',
   'github.com/home-assistant/core',
   'github.com/http4s/http4s',
