@@ -13,16 +13,16 @@
         <nuxt-link
           v-for="tag in Tags"
           :key="tag.slug"
-          :to="'/language/' + tag.slug"
+          :to="languageLink(tag.slug)"
           :class="{
-            'active-pill': $route.params.slug === tag.slug,
-            'border-slate hover:text-juniper hover:border-juniper': $route.params.slug !== tag.slug
+            'active-pill': selectedSlugs.includes(tag.slug),
+            'border-slate hover:text-juniper hover:border-juniper': !selectedSlugs.includes(tag.slug)
           }"
           class="group mx-1 border px-2 py-1 inline-block rounded-sm my-1 text-sm"
           >{{ tag.language }}
           <span
             :class="{
-              'text-vanilla-400 group-hover:text-juniper': $route.params.slug !== tag.slug
+              'text-vanilla-400 group-hover:text-juniper': !selectedSlugs.includes(tag.slug)
             }"
             >&times; {{ tag.count }}</span
           ></nuxt-link
@@ -64,6 +64,31 @@
 import Tags from '~/data/tags.json'
 import { PlusCircleIcon } from '@heroicons/vue/24/outline'
 import {HeartIcon} from '@heroicons/vue/24/solid'
+
+const route = useRoute()
+
+const selectedSlugs = computed(() => {
+  const queryLanguages = route.query.languages
+  const languages = typeof queryLanguages === 'string' ? queryLanguages.split(',') : []
+  const routeLanguage = typeof route.params.slug === 'string' ? route.params.slug : ''
+
+  return [...new Set([routeLanguage, ...languages].filter(Boolean))]
+})
+
+function languageLink(slug) {
+  const languages = selectedSlugs.value.includes(slug)
+    ? selectedSlugs.value.filter(selectedSlug => selectedSlug !== slug)
+    : [...selectedSlugs.value, slug]
+
+  if (languages.length === 0) {
+    return '/'
+  }
+
+  return {
+    path: `/language/${languages[0]}`,
+    query: languages.length > 1 ? { languages: languages.join(',') } : undefined
+  }
+}
 </script>
 <style>
 .section-heading {
