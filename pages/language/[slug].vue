@@ -10,15 +10,26 @@ import Tags from '~/data/tags.json'
 
 const route = useRoute()
 
-const repositories = Repositories.filter(repository => repository.slug === route.params.slug)
+const selectedSlugs = computed(() => {
+  const queryLanguages = route.query.languages
+  const languages = typeof queryLanguages === 'string' ? queryLanguages.split(',') : []
+  const routeLanguage = typeof route.params.slug === 'string' ? route.params.slug : ''
 
-const tag = Tags.find(t => t.slug === route.params.slug)
+  return [...new Set([routeLanguage, ...languages].filter(Boolean))]
+})
+
+const repositories = computed(() => {
+  return Repositories.filter(repository => selectedSlugs.value.includes(repository.slug))
+})
+
+const selectedTags = computed(() => Tags.filter(tag => selectedSlugs.value.includes(tag.slug)))
+const languageNames = computed(() => selectedTags.value.map(tag => tag.language).join(', '))
 
 useHead({
-  title: `${tag.language} | Good First Issue`,
+  title: `${languageNames.value} | Good First Issue`,
   meta: [{
     name: 'description',
-    content: `Curated list of issues in ${tag.language} from popular open-source projects that you can easily fix.`
+    content: `Curated list of issues in ${languageNames.value} from popular open-source projects that you can easily fix.`
   }]
 })
 </script>
