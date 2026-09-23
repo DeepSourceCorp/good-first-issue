@@ -13,11 +13,16 @@
 </template>
 
 <script setup>
+import Repositories from '~/data/generated.json'
 import Tags from '~/data/tags.json'
 
 const route = useRoute()
 
 const activeTag = computed(() => {
-  return Tags.find(tag => tag.slug === route.params.slug)
+  if (!route.params.slug) return null
+  const tag = Tags.find((t) => t.slug === route.params.slug)
+  if (tag) return tag
+  const repo = Repositories.find((r) => r.slug === route.params.slug)
+  return repo ? { language: repo.language, slug: repo.slug } : null
 })
 </script>
