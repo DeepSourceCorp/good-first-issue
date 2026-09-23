@@ -114,3 +114,4 @@ Low-quality AI-generated PRs or issues will be closed without review.
 _Inspired by [Ghostty's AI Policy](https://github.com/ghostty-org/ghostty/blob/main/AI_POLICY.md)._
 
 This is not fun at all!
+Test 2
