@@ -10,15 +10,27 @@ import Tags from '~/data/tags.json'
 
 const route = useRoute()
 
-const repositories = Repositories.filter(repository => repository.slug === route.params.slug)
+const repositories = Repositories.filter((repository) => repository.slug === route.params.slug)
 
-const tag = Tags.find(t => t.slug === route.params.slug)
+const tag = Tags.find((t) => t.slug === route.params.slug)
+
+if (!tag && repositories.length === 0) {
+  throw createError({
+    statusCode: 404,
+    statusMessage: 'Language Not Found',
+    fatal: true
+  })
+}
+
+const languageName = tag ? tag.language : repositories[0]?.language
 
 useHead({
-  title: `${tag.language} | Good First Issue`,
-  meta: [{
-    name: 'description',
-    content: `Curated list of issues in ${tag.language} from popular open-source projects that you can easily fix.`
-  }]
+  title: `${languageName} | Good First Issue`,
+  meta: [
+    {
+      name: 'description',
+      content: `Curated list of issues in ${languageName} from popular open-source projects that you can easily fix.`
+    }
+  ]
 })
 </script>
