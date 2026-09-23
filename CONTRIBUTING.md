@@ -115,3 +115,5 @@ _Inspired by [Ghostty's AI Policy](https://github.com/ghostty-org/ghostty/blob/m
 
 This is not fun at all!
 Test 2
+
+New change
