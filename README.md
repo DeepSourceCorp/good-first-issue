@@ -15,7 +15,7 @@ Open-source maintainers are always looking to get more people involved, but new 
 
 You're welcome to add a new project to Good First Issue, and we encourage all projects &mdash; old and new, big and small.
 
-**[Submit your repository via this form](https://docs.google.com/forms/d/e/1FAIpQLSfHSt8UHvACokWv8uwiImidTIhuSCAUXnvSGs-TULshdLl9Qw/viewform?usp=header)**
+[Submit your repository via this form](https://docs.google.com/forms/d/e/1FAIpQLSfHSt8UHvACokWv8uwiImidTIhuSCAUXnvSGs-TULshdLl9Qw/viewform?usp=header)
 
 To maintain the quality of projects in Good First Issue, please make sure your GitHub repository meets the following criteria:
 
