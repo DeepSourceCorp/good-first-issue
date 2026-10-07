@@ -33,3 +33,5 @@ Once your submission is reviewed and approved, it will be added to [goodfirstiss
 ## Contributing
 
 Want to contribute? See [CONTRIBUTING.md](CONTRIBUTING.md) for setup instructions and guidelines.
+
+New contributors should read the contribution guidelines before making changes to the project.
