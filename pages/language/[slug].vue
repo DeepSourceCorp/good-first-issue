@@ -14,6 +14,14 @@ const repositories = Repositories.filter(repository => repository.slug === route
 
 const tag = Tags.find(t => t.slug === route.params.slug)
 
+if (!tag) {
+  throw createError({
+    statusCode: 404,
+    statusMessage: 'Language not found',
+    fatal: true
+  })
+}
+
 useHead({
   title: `${tag.language} | Good First Issue`,
   meta: [{

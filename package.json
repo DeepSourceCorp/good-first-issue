@@ -3,16 +3,17 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
-    "generate": "nuxt generate",
+    "init-data": "node -e \"const fs=require('fs'); if(!fs.existsSync('data/generated.json')) fs.copyFileSync('data/generated.sample.json', 'data/generated.json'); if(!fs.existsSync('data/tags.json')) fs.copyFileSync('data/tags.sample.json', 'data/tags.json');\"",
+    "build": "npm run init-data && nuxt build",
+    "dev": "npm run init-data && nuxt dev",
+    "generate": "npm run init-data && nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare",
+    "postinstall": "npm run init-data && nuxt prepare",
     "sync": "bun sync.js"
   },
   "devDependencies": {
-    "@nuxt/devtools": "latest",
-    "@nuxtjs/tailwindcss": "latest",
+    "@nuxt/devtools": "^1.7.0",
+    "@nuxtjs/tailwindcss": "^6.14.0",
     "nuxt": "^3.20.2",
     "nuxt-gtag": "^4.1.0",
     "nuxt-simple-sitemap": "^4.4.1",
