@@ -518,6 +518,7 @@ repositories = [
   'github.com/OpenLightingProject/open-fixture-library',
   'github.com/OpenLiveWriter/OpenLiveWriter',
   'github.com/OpenMined/PySyft',
+  'github.com/open-compass/opencompass',
   'github.com/OpenRCT2/OpenRCT2',
   'github.com/OpenRefine/OpenRefine',
   'github.com/openseadragon/openseadragon',
