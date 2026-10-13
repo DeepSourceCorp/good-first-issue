@@ -546,6 +546,7 @@ repositories = [
   'github.com/phpmyadmin/phpmyadmin',
   'github.com/phpservermon/phpservermon',
   'github.com/physicshub/physicshub.github.io',
+  'github.com/PicadoLabs/build-with-ai',
   'github.com/pieces-app/example-ts',
   'github.com/playframework/playframework',
   'github.com/Plume-org/Plume',
