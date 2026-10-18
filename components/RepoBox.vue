@@ -15,6 +15,7 @@
           :href="repo.url"
           target="_blank"
           rel="noopener noreferrer"
+          @click.stop
           class="text-lg font-semibold group-hover:text-juniper"
           :class="{ 'text-juniper': isCardOpen }"
           >{{ repo.owner }} / {{ repo.name }}</a
@@ -52,6 +53,7 @@
             :href="issue.url"
             target="_blank"
             rel="noopener noreferrer"
+            @click.stop
             class="leading-snug font-medium hover:text-juniper text-vanilla-300 block flex-auto"
             >{{ issue.title }}</a
           >
