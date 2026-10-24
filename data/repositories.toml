@@ -621,6 +621,7 @@ repositories = [
   'github.com/rjsf-team/react-jsonschema-form',
   'github.com/rodrigo-arenas/Sklearn-genetic-opt',
   'github.com/rolisteam/rolisteam',
+  'github.com/rootsiemen/loophole',
   'github.com/rstudio/keras',
   'github.com/rubberduck-vba/Rubberduck',
   'github.com/rubocop-hq/rubocop',
