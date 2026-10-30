@@ -5,8 +5,7 @@
       'border-juniper hover:bg-ink-400': isCardOpen,
       'border-ink-200': !isCardOpen
     }"
-    class="select-none border w-full rounded-md mb-4 cursor-pointer hover:bg-ink-300 group"
-    @click="toggle(repo.id)"
+    class="select-none border w-full rounded-md mb-4 hover:bg-ink-300 group"
   >
     <div class="px-5 py-3">
       <div class="flex flex-row">
@@ -20,30 +19,48 @@
           >{{ repo.owner }} / {{ repo.name }}</a
         >
         <span class="flex-1"></span>
-        <span
-          class="hidden md:inline text-sm border px-3 py-1 ml-2 rounded-full font-semibold"
+        <button
+          type="button"
+          :aria-label="`${isCardOpen ? 'Hide' : 'Show'} issues for ${repo.owner}/${repo.name}`"
+          :aria-expanded="isCardOpen"
+          :aria-controls="`repo-issues-${repo.id}`"
+          class="text-sm border px-3 py-1 ml-2 rounded-full font-semibold cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-juniper focus-visible:outline-offset-2"
           :class="{
             'text-ink-400 bg-juniper border-transparent': isCardOpen,
             'text-vanilla-200': !isCardOpen
           }"
-          >{{ issuesDisplay }}</span
+          @click="toggle(repo.id)"
+          >{{ issuesDisplay }}</button
         >
       </div>
-      <div class="flex-row flex text-sm py-1 overflow-auto">
-        {{ repo.description }}
-      </div>
-      <div
-        class="flex-row flex text-sm py-1 font-mono"
-        :class="{ 'text-honey': isCardOpen, 'text-vanilla-400': !isCardOpen }"
+      <button
+        type="button"
+        :aria-label="`${isCardOpen ? 'Hide' : 'Show'} issues for ${repo.owner}/${repo.name}`"
+        :aria-expanded="isCardOpen"
+        :aria-controls="`repo-issues-${repo.id}`"
+        class="block w-full text-left cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-juniper focus-visible:outline-offset-2"
+        @click="toggle(repo.id)"
       >
-        <div class="mr-4"><span class="text-vanilla-400">lang: </span>{{ repo.language }}</div>
-        <div class="mr-4"><span class="text-vanilla-400">stars: </span>{{ repo.stars_display }}</div>
-        <div class="mr-4">
-          <span class="text-vanilla-400">last activity: </span><span>{{ lastModifiedDisplay }}</span>
+        <div class="flex-row flex text-sm py-1 overflow-auto">
+          {{ repo.description }}
         </div>
-      </div>
+        <div
+          class="flex-row flex text-sm py-1 font-mono"
+          :class="{ 'text-honey': isCardOpen, 'text-vanilla-400': !isCardOpen }"
+        >
+          <div class="mr-4"><span class="text-vanilla-400">lang: </span>{{ repo.language }}</div>
+          <div class="mr-4"><span class="text-vanilla-400">stars: </span>{{ repo.stars_display }}</div>
+          <div class="mr-4">
+            <span class="text-vanilla-400">last activity: </span><span>{{ lastModifiedDisplay }}</span>
+          </div>
+        </div>
+      </button>
     </div>
-    <ol v-if="isCardOpen" class="px-5 py-3 text-base leading-loose border-t border-ink-200">
+    <ol
+      v-show="isCardOpen"
+      :id="`repo-issues-${repo.id}`"
+      class="px-5 py-3 text-base leading-loose border-t border-ink-200"
+    >
       <li v-for="issue in repo.issues" :key="issue.url" class="flex flex-row items-start justify-start py-1">
         <span class="text-slate text-right px-2 leading-snug font-mono" style="min-width: 70px">#{{ issue.number }}</span>
         <div class="flex items-start flex-row flex-auto">
