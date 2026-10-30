@@ -55,5 +55,41 @@ class TestDataSanity(unittest.TestCase):
         assert len(repos) == len(set(repos))
 
 
+class TestPopulateUtils(unittest.TestCase):
+    """Test utility functions and rate limiting logic in populate."""
+
+    def test_parse_github_url_valid(self):
+        from gfi.populate import parse_github_url
+
+        self.assertEqual(
+            parse_github_url("https://github.com/DeepSourceCorp/good-first-issue"),
+            {"owner": "DeepSourceCorp", "name": "good-first-issue"},
+        )
+        self.assertEqual(
+            parse_github_url("https://github.com/torvalds/linux/"),
+            {"owner": "torvalds", "name": "linux"},
+        )
+        self.assertEqual(parse_github_url("not-a-valid-url"), {})
+
+    def test_rate_limiter_report_rate_limit_hit(self):
+        import time
+        from unittest.mock import MagicMock
+        from gfi.populate import GitHubRateLimiter
+
+        mock_client = MagicMock()
+        mock_client.rate_limit.return_value = {
+            "resources": {"core": {"remaining": 5000, "reset": time.time() + 3600, "limit": 5000}}
+        }
+        limiter = GitHubRateLimiter(mock_client, requests_per_second=100.0)
+        limiter.acquire()
+        self.assertEqual(limiter._remaining, 4999)
+
+        # Test retry-after handling
+        now = time.time()
+        limiter.report_rate_limit_hit(retry_after=45)
+        self.assertGreaterEqual(limiter._paused_until, now + 45)
+        self.assertEqual(limiter._remaining, 0)
+
+
 if __name__ == "__main__":
     unittest.main()

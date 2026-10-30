@@ -54,8 +54,8 @@ class GitHubRateLimiter:
         self._lock = threading.Lock()
         self._min_interval = 1.0 / requests_per_second
         self._last_request_time = 0.0
-        self._remaining = None
-        self._reset_time = None
+        self._remaining: Optional[int] = None
+        self._reset_time: Optional[float] = None
         self._paused_until = 0.0
 
     def acquire(self):
@@ -74,7 +74,7 @@ class GitHubRateLimiter:
             # Proactive pause if quota low
             if self._remaining is not None and self._remaining < 100:
                 if self._reset_time:
-                    wait_time = max(0, self._reset_time - time.time() + 5)
+                    wait_time = max(0.0, self._reset_time - time.time() + 5)
                     if wait_time > 0:
                         logger.warning("Low quota ({}). Pausing {:.0f}s", self._remaining, wait_time)
                         self._paused_until = time.time() + wait_time
@@ -92,22 +92,24 @@ class GitHubRateLimiter:
 
     def _update_rate_limit(self):
         try:
-            info = self._client.rate_limit()['resources']['core']
-            self._remaining = info['remaining']
-            self._reset_time = info['reset']
-            logger.debug("Rate limit: {}/{}", self._remaining, info['limit'])
+            info = self._client.rate_limit()["resources"]["core"]
+            self._remaining = info["remaining"]
+            self._reset_time = info["reset"]
+            logger.debug("Rate limit: {}/{}", self._remaining, info["limit"])
         except Exception as e:
             logger.warning("Failed to check rate limit: {}", e)
 
-    def report_rate_limit_hit(self):
-        """Call when ForbiddenError received - triggers coordinated pause."""
+    def report_rate_limit_hit(self, retry_after: Optional[int] = None):
+        """Call when rate limit or 429 received - triggers coordinated pause."""
         with self._lock:
             self._update_rate_limit()
-            if self._reset_time:
-                wait_time = max(60, self._reset_time - time.time() + 5)
+            if retry_after is not None and retry_after > 0:
+                wait_time = float(retry_after) + 5
+            elif self._reset_time and self._reset_time > time.time():
+                wait_time = max(60.0, self._reset_time - time.time() + 5)
             else:
-                wait_time = 60
-            self._paused_until = time.time() + wait_time
+                wait_time = 60.0
+            self._paused_until = max(self._paused_until, time.time() + wait_time)
             self._remaining = 0
             logger.warning("Rate limit hit. All workers pause for {:.0f}s", wait_time)
 
@@ -129,9 +131,7 @@ RepositoryInfo = Dict["str", Union[str, int, Sequence]]
 
 
 def get_repository_info(
-    identifier: RepositoryIdentifier,
-    client,
-    rate_limiter: GitHubRateLimiter
+    identifier: RepositoryIdentifier, client, rate_limiter: GitHubRateLimiter
 ) -> Optional[RepositoryInfo]:
     """Get the relevant information needed for the repository from its owner login and name."""
     owner, name = identifier["owner"], identifier["name"]
@@ -154,7 +154,7 @@ def get_repository_info(
                 logger.info("\t skipping due to inactivity ({} days since last push)", days_since_push)
                 return None
 
-            good_first_issues = set()
+            good_first_issues: set = set()
             for label in ISSUE_LABELS:
                 rate_limiter.acquire()
                 issues_for_label = repository.issues(
@@ -164,7 +164,12 @@ def get_repository_info(
                     sort=ISSUE_SORT,
                     direction=ISSUE_SORT_DIRECTION,
                 )
-                good_first_issues.update(issues_for_label)
+                for issue in issues_for_label:
+                    # Filter out pull requests, which GitHub's issue endpoint returns
+                    if getattr(issue, "pull_request_urls", None):
+                        continue
+                    good_first_issues.add(issue)
+
             logger.info("\t found {} good first issues", len(good_first_issues))
             # check if repo has at least one good first issue
             if good_first_issues and repository.language:
@@ -181,9 +186,12 @@ def get_repository_info(
                 info["last_modified"] = repository.pushed_at.isoformat()
                 info["id"] = str(repository.id)
 
+                # Sort by created_at descending and get the latest issues up to ISSUE_LIMIT
+                sorted_issues = sorted(good_first_issues, key=lambda x: x.created_at, reverse=True)[:ISSUE_LIMIT]
+
                 # get the latest issues with the tag
                 issues = []
-                for issue in good_first_issues:
+                for issue in sorted_issues:
                     issues.append(
                         {
                             "title": issue.title,
@@ -200,22 +208,60 @@ def get_repository_info(
                 logger.info("\t skipping due to insufficient issues or info")
                 return None
 
-        except exceptions.ForbiddenError:
-            rate_limiter.report_rate_limit_hit()
+        except (exceptions.ForbiddenError, exceptions.ClientError) as exc:
+            # Check if this is a rate limit (403 Forbidden or 429 Too Many Requests)
+            status_code = getattr(exc, "code", None)
+            is_rate_limit = isinstance(exc, exceptions.ForbiddenError) or status_code == 429
+            if not is_rate_limit:
+                logger.warning("Client error ({}) on {}/{}: {}", status_code, owner, name, exc)
+                return None
+
+            response = getattr(exc, "response", None)
+            retry_after_str = getattr(response, "headers", {}).get("Retry-After") if response else None
+            retry_after = int(retry_after_str) if retry_after_str and retry_after_str.isdigit() else None
+
+            rate_limiter.report_rate_limit_hit(retry_after=retry_after)
             if attempt < max_retries - 1:
-                logger.warning("Rate limited on {}/{}. Retrying after coordinated pause...",
-                             owner, name)
+                backoff = (2**attempt) + random.uniform(0.5, 1.5)
+                logger.warning(
+                    "Rate limited on {}/{} (attempt {}/{}). Retrying after coordinated pause and {:.1f}s backoff...",
+                    owner,
+                    name,
+                    attempt + 1,
+                    max_retries,
+                    backoff,
+                )
+                time.sleep(backoff)
             else:
-                logger.error("Rate limit exceeded after {} retries: {}/{}",
-                           max_retries, owner, name)
+                logger.error("Rate limit exceeded after {} retries: {}/{}", max_retries, owner, name)
+                return None
+
+        except (exceptions.ConnectionError, exceptions.ServerError) as exc:
+            if attempt < max_retries - 1:
+                backoff = (2**attempt) + random.uniform(0.5, 1.5)
+                logger.warning(
+                    "Network error ({}) on {}/{} (attempt {}/{}). Retrying in {:.1f}s...",
+                    type(exc).__name__,
+                    owner,
+                    name,
+                    attempt + 1,
+                    max_retries,
+                    backoff,
+                )
+                time.sleep(backoff)
+            else:
+                logger.error(
+                    "Failed to fetch {}/{} after {} retries due to {}: {}",
+                    owner,
+                    name,
+                    max_retries,
+                    type(exc).__name__,
+                    exc,
+                )
                 return None
 
         except exceptions.NotFoundError:
             logger.warning("Not Found: {}/{}", owner, name)
-            return None
-
-        except exceptions.ConnectionError:
-            logger.warning("Connection error: {}/{}", owner, name)
             return None
 
     return None
