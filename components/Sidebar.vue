@@ -53,7 +53,7 @@
         <span class="ml-2"
           >A
           <span class="inline hover:underline text-juniper" title="Visit DeepSource website">DeepSource</span>
-          initative</span
+          initiative</span
         >
       </a>
     </div>
