@@ -698,6 +698,7 @@ repositories = [
   'github.com/styleguidist/react-styleguidist',
   'github.com/stylelint/stylelint',
   'github.com/subethaedit/SubEthaEdit',
+  'github.com/supabase/supabase-py',
   'github.com/supercollider/supercollider',
   'github.com/sveltejs/sapper',
   'github.com/sveltejs/svelte',
