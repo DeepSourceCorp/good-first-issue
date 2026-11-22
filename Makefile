@@ -16,6 +16,7 @@ generate-prod:
 
 test:
 	uv run python gfi/test_data.py
+	uv run python gfi/test_populate.py
 	uv run mypy gfi/*.py
 
 format:
