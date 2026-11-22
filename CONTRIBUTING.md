@@ -77,13 +77,19 @@ To run the data sanity tests:
 uv run python gfi/test_data.py
 ```
 
+To run the URL parsing tests:
+
+```bash
+uv run python gfi/test_populate.py
+```
+
 To run type checking:
 
 ```bash
 uv run mypy gfi/*.py
 ```
 
-Or run both with:
+Or run all of them with:
 
 ```bash
 make test

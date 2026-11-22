@@ -11,6 +11,7 @@ from datetime import datetime, timezone
 from operator import itemgetter
 from os import getenv, path
 from typing import TypedDict, Dict, Union, Sequence, Optional
+from urllib.parse import urlsplit
 
 import toml
 
@@ -24,7 +25,9 @@ MAX_CONCURRENCY = 5  # max number of requests to make to GitHub in parallel
 REPO_DATA_FILE = "data/repositories.toml"
 REPO_GENERATED_DATA_FILE = "data/generated.json"
 TAGS_GENERATED_DATA_FILE = "data/tags.json"
-GH_URL_PATTERN = re.compile(r"[http://|https://]?github.com/(?P<owner>[\w\.-]+)/(?P<name>[\w\.-]+)/?")
+GITHUB_HOSTS = frozenset({"github.com", "www.github.com"})
+GITHUB_ALLOWED_SCHEMES = frozenset({"http", "https"})
+GITHUB_OWNER_NAME_PATTERN = re.compile(r"^[\w-](?:[\w.-]*[\w-])?$")
 LABELS_DATA_FILE = "data/labels.json"
 ISSUE_STATE = "open"
 ISSUE_SORT = "created"
@@ -113,11 +116,47 @@ class GitHubRateLimiter:
 
 
 def parse_github_url(url: str) -> dict:
-    """Take the GitHub repo URL and return a tuple with owner login and repo name."""
-    match = GH_URL_PATTERN.search(url)
-    if match:
-        return match.groupdict()
-    return {}
+    """Take the GitHub repo URL and return the owner login and repo name.
+
+    Only URLs whose host is exactly `github.com` (or `www.github.com`) are
+    accepted. `data/repositories.toml` stores the URLs without a scheme, so a
+    missing `https://` prefix is tolerated. Look-alike hosts such as
+    `evilgithub.com`, and URLs that merely contain `github.com` in their path,
+    return an empty dict.
+    """
+    if not isinstance(url, str):
+        return {}
+
+    candidate = url.strip()
+    if not candidate:
+        return {}
+
+    if "://" not in candidate:
+        candidate = f"https://{candidate}"
+
+    try:
+        parsed = urlsplit(candidate)
+    except ValueError:
+        return {}
+
+    if parsed.scheme.lower() not in GITHUB_ALLOWED_SCHEMES:
+        return {}
+
+    if (parsed.hostname or "").lower() not in GITHUB_HOSTS:
+        return {}
+
+    segments = [segment for segment in parsed.path.split("/") if segment]
+    if len(segments) < 2:
+        return {}
+
+    owner, name = segments[0], segments[1]
+    if name.endswith(".git") and len(name) > len(".git"):
+        name = name[: -len(".git")]
+
+    if not GITHUB_OWNER_NAME_PATTERN.match(owner) or not GITHUB_OWNER_NAME_PATTERN.match(name):
+        return {}
+
+    return {"owner": owner, "name": name}
 
 
 class RepositoryIdentifier(TypedDict):
