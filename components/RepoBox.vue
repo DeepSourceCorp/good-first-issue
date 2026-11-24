@@ -69,19 +69,36 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import dayjs from 'dayjs'
 import relativeTime from 'dayjs/plugin/relativeTime'
 import { ChatBubbleLeftRightIcon } from '@heroicons/vue/24/outline'
 
 dayjs.extend(relativeTime)
 
-const props = defineProps({
-  repo: {
-    type: Object,
-    required: true
-  }
-})
+interface RepositoryIssue {
+  title: string
+  url: string
+  number: number
+  comments_count: number
+  created_at: string
+}
+
+interface Repository {
+  id: string
+  owner: string
+  name: string
+  description: string
+  language: string
+  url: string
+  stars_display: string
+  last_modified: string
+  issues: RepositoryIssue[]
+}
+
+const props = defineProps<{
+  repo: Repository
+}>()
 
 const openRepoId = useOpenRepoId()
 
@@ -98,7 +115,7 @@ const isCardOpen = computed(() => {
   return openRepoId.value === props.repo.id
 })
 
-function toggle(repoId) {
+function toggle(repoId: string) {
   if (isCardOpen.value) {
     openRepoId.value = null
   } else {
@@ -106,7 +123,7 @@ function toggle(repoId) {
   }
 }
 
-function getIssueCommentsCounterTooltip(issue) {
+function getIssueCommentsCounterTooltip(issue: RepositoryIssue) {
   const numComments = issue.comments_count
   if (numComments === 0) {
     return `There are no comments on this issue`
