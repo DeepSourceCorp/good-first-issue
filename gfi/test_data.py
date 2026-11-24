@@ -63,28 +63,42 @@ class TestParseGithubUrl(unittest.TestCase):
 
     def test_parse_url_without_protocol(self):
         result = parse_github_url("github.com/owner/repo")
-        self.assertEqual(result, {"owner": "owner", "name": "repo"})
+
+        self.assertEqual(
+            result,
+            {"owner": "owner", "name": "repo"},
+        )
 
     def test_parse_url_with_https(self):
         result = parse_github_url("https://github.com/owner/repo")
-        self.assertEqual(result, {"owner": "owner", "name": "repo"})
+
+        self.assertEqual(
+            result,
+            {"owner": "owner", "name": "repo"},
+        )
 
     def test_parse_url_with_http(self):
         result = parse_github_url("http://github.com/owner/repo")
-        self.assertEqual(result, {"owner": "owner", "name": "repo"})
+
+        self.assertEqual(
+            result,
+            {"owner": "owner", "name": "repo"},
+        )
 
     def test_reject_invalid_url(self):
         result = parse_github_url("texto-aleatorio")
+
         self.assertEqual(result, {})
 
     def test_reject_url_with_invalid_prefix(self):
         result = parse_github_url("prefixo-github.com/owner/repo")
+
         self.assertEqual(result, {})
 
     def test_reject_url_with_extra_path(self):
         result = parse_github_url("https://github.com/owner/repo/issues")
-        self.assertEqual(result, {})
 
+        self.assertEqual(result, {})
 
 if __name__ == "__main__":
     unittest.main()
