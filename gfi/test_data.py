@@ -1,11 +1,14 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+
 import json
 import os
 import unittest
 from collections import Counter
 
 import toml
+
+from gfi.populate import parse_github_url
 
 DATA_FILE_PATH = "data/repositories.toml"
 LABELS_FILE_PATH = "data/labels.json"
@@ -54,6 +57,48 @@ class TestDataSanity(unittest.TestCase):
         print([item for item, count in Counter(repos).items() if count > 1])
         assert len(repos) == len(set(repos))
 
+
+class TestParseGithubUrl(unittest.TestCase):
+    """Tests for GitHub repository URL parsing."""
+
+    def test_parse_url_without_protocol(self):
+        result = parse_github_url("github.com/owner/repo")
+
+        self.assertEqual(
+            result,
+            {"owner": "owner", "name": "repo"},
+        )
+
+    def test_parse_url_with_https(self):
+        result = parse_github_url("https://github.com/owner/repo")
+
+        self.assertEqual(
+            result,
+            {"owner": "owner", "name": "repo"},
+        )
+
+    def test_parse_url_with_http(self):
+        result = parse_github_url("http://github.com/owner/repo")
+
+        self.assertEqual(
+            result,
+            {"owner": "owner", "name": "repo"},
+        )
+
+    def test_reject_invalid_url(self):
+        result = parse_github_url("texto-aleatorio")
+
+        self.assertEqual(result, {})
+
+    def test_reject_url_with_invalid_prefix(self):
+        result = parse_github_url("prefixo-github.com/owner/repo")
+
+        self.assertEqual(result, {})
+
+    def test_reject_url_with_extra_path(self):
+        result = parse_github_url("https://github.com/owner/repo/issues")
+
+        self.assertEqual(result, {})
 
 if __name__ == "__main__":
     unittest.main()
