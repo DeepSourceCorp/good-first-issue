@@ -1,10 +1,12 @@
 <template>
   <header
-    class="w-full py-4 px-6 border-b border-ink-200 transition-colors duration-1000"
-    :class="bannerActive ? 'bg-robin' : 'bg-ink-300'"
+    role="banner"
+    aria-live="polite"
+    class="w-full py-4 px-6 border-b border-ink-200 transition-colors motion-reduce:transition-none duration-1000"
+    :class="bannerActive ? 'bg-robin text-ink-400' : 'bg-ink-300 text-vanilla-300'"
   >
-    <div class="flex items-center justify-center flex-wrap text-sm font-medium">
-      <div class="md:flex items-center">
+    <div class="max-w-7xl mx-auto flex items-center justify-center flex-wrap text-sm font-medium">
+      <div class="md:flex items-center gap-2">
         <slot />
       </div>
     </div>
@@ -16,15 +18,17 @@ import { ref, onMounted, onUnmounted } from 'vue'
 
 const BANNER_ACTIVE_TIME = 2000
 const bannerActive = ref(true)
-let timerId = null
+let timeoutId = null
 
 onMounted(() => {
-  timerId = setTimeout(() => {
+  timeoutId = window.setTimeout(() => {
     bannerActive.value = false
   }, BANNER_ACTIVE_TIME)
 })
 
 onUnmounted(() => {
-  if (timerId) clearTimeout(timerId)
+  if (timeoutId !== null) {
+    window.clearTimeout(timeoutId)
+  }
 })
 </script>
