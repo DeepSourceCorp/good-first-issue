@@ -1,4 +1,3 @@
-
 <template>
   <div
     :id="`repo-${repo.id}`"
@@ -47,13 +46,9 @@
         class="flex-row flex text-sm py-1 font-mono"
         :class="{ 'text-honey': isCardOpen, 'text-vanilla-400': !isCardOpen }"
       >
-        <div class="mr-4">
-          <span class="text-vanilla-400">lang: </span>{{ repo.language }}
-        </div>
+        <div class="mr-4"><span class="text-vanilla-400">lang: </span>{{ repo.language }}</div>
 
-        <div class="mr-4">
-          <span class="text-vanilla-400">stars: </span>{{ repo.stars_display }}
-        </div>
+        <div class="mr-4"><span class="text-vanilla-400">stars: </span>{{ repo.stars_display }}</div>
 
         <div class="mr-4">
           <span class="text-vanilla-400">last activity: </span>
@@ -67,15 +62,8 @@
       v-show="isCardOpen"
       class="px-5 py-3 text-base leading-loose border-t border-ink-200"
     >
-      <li
-        v-for="issue in repo.issues"
-        :key="issue.url"
-        class="flex flex-row items-start justify-start py-1"
-      >
-        <span
-          class="text-slate text-right px-2 leading-snug font-mono"
-          style="min-width: 70px"
-        >
+      <li v-for="issue in repo.issues" :key="issue.url" class="flex flex-row items-start justify-start py-1">
+        <span class="text-slate text-right px-2 leading-snug font-mono" style="min-width: 70px">
           #{{ issue.number }}
         </span>
 
@@ -95,10 +83,7 @@
             class="flex flex-row items-center justify-end mt-1 w-10"
             :title="getIssueCommentsCounterTooltip(issue)"
           >
-            <ChatBubbleLeftRightIcon
-              class="mt-px w-3.5 h-3.5"
-              aria-hidden="true"
-            />
+            <ChatBubbleLeftRightIcon class="mt-px w-3.5 h-3.5" aria-hidden="true" />
             <span class="ml-1 text-sm leading-snug font-mono">
               {{ issue.comments_count }}
             </span>
@@ -153,8 +138,6 @@ function getIssueCommentsCounterTooltip(issue) {
     return `There are no comments on this issue`
   }
 
-  return numComments > 1
-    ? `There are ${numComments} comments on this issue`
-    : `There is one comment on this issue`
+  return numComments > 1 ? `There are ${numComments} comments on this issue` : `There is one comment on this issue`
 }
 </script>
