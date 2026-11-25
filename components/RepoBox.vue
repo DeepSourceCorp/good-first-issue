@@ -1,3 +1,4 @@
+
 <template>
   <div
     :id="`repo-${repo.id}`"
@@ -5,11 +6,10 @@
       'border-juniper hover:bg-ink-400': isCardOpen,
       'border-ink-200': !isCardOpen
     }"
-    class="select-none border w-full rounded-md mb-4 cursor-pointer hover:bg-ink-300 group"
-    @click="toggle(repo.id)"
+    class="border w-full rounded-md mb-4 hover:bg-ink-300 group"
   >
     <div class="px-5 py-3">
-      <div class="flex flex-row">
+      <div class="flex flex-row items-center">
         <a
           :title="`Open ${repo.owner}/${repo.name} on GitHub`"
           :href="repo.url"
@@ -17,20 +17,26 @@
           rel="noopener noreferrer"
           class="text-lg font-semibold group-hover:text-juniper"
           :class="{ 'text-juniper': isCardOpen }"
-          @click.stop
         >
           {{ repo.owner }} / {{ repo.name }}
         </a>
+
         <span class="flex-1"></span>
-        <span
-          class="hidden md:inline text-sm border px-3 py-1 ml-2 rounded-full font-semibold"
+
+        <button
+          type="button"
+          :aria-expanded="isCardOpen"
+          :aria-controls="`repo-issues-${repo.id}`"
+          :aria-label="`${isCardOpen ? 'Hide' : 'Show'} issues for ${repo.owner}/${repo.name}`"
+          class="text-sm border px-3 py-1 ml-2 rounded-full font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-juniper"
           :class="{
             'text-ink-400 bg-juniper border-transparent': isCardOpen,
             'text-vanilla-200': !isCardOpen
           }"
+          @click="toggle(repo.id)"
         >
           {{ issuesDisplay }}
-        </span>
+        </button>
       </div>
 
       <div class="flex-row flex text-sm py-1 overflow-auto">
@@ -41,8 +47,14 @@
         class="flex-row flex text-sm py-1 font-mono"
         :class="{ 'text-honey': isCardOpen, 'text-vanilla-400': !isCardOpen }"
       >
-        <div class="mr-4"><span class="text-vanilla-400">lang: </span>{{ repo.language }}</div>
-        <div class="mr-4"><span class="text-vanilla-400">stars: </span>{{ repo.stars_display }}</div>
+        <div class="mr-4">
+          <span class="text-vanilla-400">lang: </span>{{ repo.language }}
+        </div>
+
+        <div class="mr-4">
+          <span class="text-vanilla-400">stars: </span>{{ repo.stars_display }}
+        </div>
+
         <div class="mr-4">
           <span class="text-vanilla-400">last activity: </span>
           <span>{{ lastModifiedDisplay }}</span>
@@ -50,9 +62,20 @@
       </div>
     </div>
 
-    <ol v-if="isCardOpen" class="px-5 py-3 text-base leading-loose border-t border-ink-200">
-      <li v-for="issue in repo.issues" :key="issue.url" class="flex flex-row items-start justify-start py-1">
-        <span class="text-slate text-right px-2 leading-snug font-mono" style="min-width: 70px">
+    <ol
+      :id="`repo-issues-${repo.id}`"
+      v-show="isCardOpen"
+      class="px-5 py-3 text-base leading-loose border-t border-ink-200"
+    >
+      <li
+        v-for="issue in repo.issues"
+        :key="issue.url"
+        class="flex flex-row items-start justify-start py-1"
+      >
+        <span
+          class="text-slate text-right px-2 leading-snug font-mono"
+          style="min-width: 70px"
+        >
           #{{ issue.number }}
         </span>
 
@@ -63,7 +86,6 @@
             target="_blank"
             rel="noopener noreferrer"
             class="leading-snug font-medium hover:text-juniper text-vanilla-300 block flex-auto"
-            @click.stop
           >
             {{ issue.title }}
           </a>
@@ -73,7 +95,10 @@
             class="flex flex-row items-center justify-end mt-1 w-10"
             :title="getIssueCommentsCounterTooltip(issue)"
           >
-            <ChatBubbleLeftRightIcon class="mt-px w-3.5 h-3.5" />
+            <ChatBubbleLeftRightIcon
+              class="mt-px w-3.5 h-3.5"
+              aria-hidden="true"
+            />
             <span class="ml-1 text-sm leading-snug font-mono">
               {{ issue.comments_count }}
             </span>
@@ -128,6 +153,8 @@ function getIssueCommentsCounterTooltip(issue) {
     return `There are no comments on this issue`
   }
 
-  return numComments > 1 ? `There are ${numComments} comments on this issue` : `There is one comment on this issue`
+  return numComments > 1
+    ? `There are ${numComments} comments on this issue`
+    : `There is one comment on this issue`
 }
 </script>
